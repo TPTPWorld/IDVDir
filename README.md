@@ -12,13 +12,13 @@
 mod-wsgi works better if python is compiled using the --enable-shared flag:
 
 - Run the following (modifying paths where necessary) to build local Python in `IDVPython`:
-* `bash`
-* `wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
-* `tar -zxvf Python-3.7.5.tgz`
-* `cd Python-3.7.5`
-* `./configure --prefix=/home/tptp/ServiceTools/IDVDir/IDVPython --enable-shared --enable-optimizations LDFLAGS="-Wl,--rpath=/home/tptp/ServiceTools/IDVDir/IDVPython/lib"`
-* `make`
-* `make install`
+    * `bash`
+    * `wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
+    * `tar -zxvf Python-3.7.5.tgz`
+    * `cd Python-3.7.5`
+    * `./configure --prefix=/home/tptp/ServiceTools/IDVDir/IDVPython --enable-shared --enable-optimizations LDFLAGS="-Wl,--rpath=/home/tptp/ServiceTools/IDVDir/IDVPython/lib"`
+    * `make`
+    * `make install`
 
 At this point, IDV will be installed at the path you specified for --prefix and you can run 
 the python binary under the bin subdirectory.
