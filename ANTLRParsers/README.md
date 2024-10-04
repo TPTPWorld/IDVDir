@@ -1,10 +1,3 @@
-- How to build *** WHAT?:
-npm install     % To update dependencies
-cd TPTP-ANTLR4-Grammar.old
-java -jar antlr-4.10.1-complete.jar -Dlanguage=JavaScript TPTPv8.g4
-cd ..
-npm run build
-
 - To compile a Java parser
 cd TPTP-ANTLR4-Grammar
 mkdir JavaParser
