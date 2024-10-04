@@ -1,9 +1,12 @@
+
+# IDV DIR
+
 - How to build *** WHAT?:
-npm install     % To update dependencies
-cd TPTP-ANTLR4-Grammar.old
-java -jar antlr-4.10.1-complete.jar -Dlanguage=JavaScript TPTPv8.g4
-cd ..
-npm run build
+`npm install`     % To update dependencies
+`cd TPTP-ANTLR4-Grammar.old`
+`java -jar antlr-4.10.1-complete.jar -Dlanguage=JavaScript TPTPv8.g4`
+`cd ..`
+`npm run build`
 
 - How to setup with Apache using mod-wsgi.
 mod-wsgi works better if python is compiled using the --enable-shared flag:
@@ -26,3 +29,4 @@ Then you can install flask and mod-wsgi using ...
     /home/tptp/ServiceTools/IDVDir/IDVPython/bin/python -m pip install flask mod-wsgi
 Once these are installed, you can symlink the idv.conf file into the /etc/httpd/conf.d apache 
 config folder and wsgi.conf into the /etc/httpd/conf.modules.d apache config folder.
+
