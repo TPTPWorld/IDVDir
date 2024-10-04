@@ -11,10 +11,10 @@
 - How to setup with Apache using mod-wsgi.
 mod-wsgi works better if python is compiled using the --enable-shared flag:
 
-So inside this repo (IDVDir), run the following (modifying paths where necessary):
-bash
-wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
-tar -zxvf Python-3.7.5.tgz
+- Run the following (modifying paths where necessary) to build local Python in `IDVPython`:
+-- `bash`
+-- `wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz
+-- `tar -zxvf Python-3.7.5.tgz`
 
 cd Python-3.7.5
 ./configure --prefix=/home/tptp/ServiceTools/IDVDir/IDVPython --enable-shared --enable-optimizations LDFLAGS="-Wl,--rpath=/home/tptp/ServiceTools/IDVDir/IDVPython/lib"
