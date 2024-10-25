@@ -1,4 +1,4 @@
-// Generated from g4/TPTPv9.g4 by ANTLR 4.13.2
+// Generated from TPTPv9.g4 by ANTLR 4.13.2
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import TPTPv9Listener from './TPTPv9Listener.js';
