@@ -1,0 +1,33 @@
+%--------------------------------------------------------------------------
+% File     : SYN007+1.005 : TPTP v9.0.0. Released v2.0.0.
+% Domain   : Syntactic
+% Problem  : Pelletier Problem 71
+% Version  : Especial.
+%            Theorem formulation : For N = SIZE.
+% English  : Clausal forms of statements of the form :
+%            (p1 <-> (p2 <->...(pN <-> (p1 <-> (p2 <->...<-> pN)...)
+
+% Refs     : [Pel86] Pelletier (1986), Seventy-five Problems for Testing Au
+%          : [Urq87] Urquart (1987), Hard Problems for Resolution
+% Source   : [Pel86]
+% Names    : Pelletier 71 [Pel86]
+
+% Status   : Theorem
+% Rating   : ? v2.0.0
+% Syntax   :
+
+% Comments : The number of distinct letters in U-N is N. The number of
+%            occurrences of sentence letters in 2N. The number of clauses
+%            goes up dramatically as N increases, but I don't think it
+%            shows that the problems are dramatically more difficult as N
+%            increases. Rather, it's that the awkward clause form
+%            representation comes to the fore most dramatically with
+%            embedded biconditionals. On all other measures of complexity,
+%            one should say that the problems increase linearly in
+%            difficulty. Urquhart says that the proof size of any resolution
+%            system increases exponentially with increase in N.
+%          : This problem can also be done in terms of graphs, as described
+%            in [Pel86] Problem 74.
+%          : tptp2X: -ftptp -s5 SYN007+1.g
+% Bugfixes : v2.1.0 - Replaced by a new SOTA size.
+%--------------------------------------------------------------------------

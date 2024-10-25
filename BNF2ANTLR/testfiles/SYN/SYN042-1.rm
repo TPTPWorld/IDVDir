@@ -1,0 +1,21 @@
+%--------------------------------------------------------------------------
+% File     : SYN042-1 : TPTP v9.0.0. Bugfixed v1.1.1.
+% Domain   : Syntactic
+% Problem  : Pelletier Problem 4
+% Version  : Especial.
+% English  : Judged by [SRM73] to be the 'hardest' of the
+%            first 52 theorems of Whitehead and Russell.
+
+% Refs     : [WR27]  Whitehead & Russell (1927), Principia Mathematica
+%          : [Pel86] Pelletier (1986), Seventy-five Problems for Testing Au
+%          : [SRM73] Siklossy et al. (1973), Breadth First Search: Some Sur
+% Source   : [Pel86]
+% Names    : Pelletier 4 [Pel86]
+
+% Status   :
+% Rating   : ? v2.0.0
+% Syntax   :
+
+% Comments :
+% Bugfixes : v1.1.1 - Renamed to LCL181-2.
+%--------------------------------------------------------------------------
