@@ -1,6 +1,6 @@
 ## Step 1.
 run bnf2antlr.py, 
-this will have a preset file name on line 9, so change this to "bNF/NAMEOFYOURNEWBNFFILE" if you want to change your bnf input file.
+this will have a preset input file name on line 9, so change this to "bnf/yourNewBNFFile" if you want to change your bnf input file.
 
 bnf2antlr.py will output a new ANTLR (.g4) file in the g4 directory.
 
@@ -8,6 +8,7 @@ bnf2antlr.py will output a new ANTLR (.g4) file in the g4 directory.
 ## Step 2.
 
 make a new directory for your JavaScript parser.
+
 
 ```
 mkdir JSParser
