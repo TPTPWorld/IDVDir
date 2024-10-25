@@ -1,4 +1,4 @@
-# 🚀 electron stand-alone app using electron 
+# 🚀 Interactive Derivation Viewer stand-alone app using electron 
 
 MAKE SURE YOU'RE IN IDVApp
 
