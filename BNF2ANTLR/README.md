@@ -1,21 +1,28 @@
 ## Step 1.
-run bnf2antlr.py, 
-this will have a preset input file name on line 9, so change this to "bnf/yourNewBNFFile" if you want to change your bnf input file.
 
 bnf2antlr.py will output a new ANTLR (.g4) file in the g4 directory.
 
+make sure your current working directory is 'BNF2ANTLR'
+```bash
+python3 bnf2antlr.py 
+```
+if this fails run this:
+  ```bash
+  python bnf2antlr.py
+  ```
 
 ## Step 2.
+This will output a JavaScript parser for your new antlr grammar.
 
-make a new directory for your JavaScript parser.
+go into your directory for your antlr grammar
 
-
+```bash
+cd g4; antlr4 -Dlanguage=JavaScript TPTPv9.g4 -o ../../IDVApp/; cd ../
 ```
-mkdir JSParser
-antlr4 -Dlanguage=JavaScript g4/TPTPv9.g4 -o JSParser/
-npm i antlr4
-```
-
-all JavaScript files will now be in JSParser directory
+if this fails, try pip installing antlr4-tools
+  ```bash
+  pip install antlr4-tools
+  ```
+- Output JS antlr parsers will be in IDVApp/ for the electron app to use
 
 

@@ -1,12 +1,13 @@
-
-
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, "bnf", "SyntaxBNF")
 import re
 
 lexer_rules = {'Or': '|', 'And': '&', 'Iff': '<=>', 'Impl': '=>', 'If': '<=', 'Niff': '<~>', 'Nor': '~|', 'Nand': '~&', 'Not': '~', 'ForallComb': '!!', 'TyForall': '!>', 'Infix_inequality': '!=', 'Infix_equality': '=', 'Forall': '!', 'ExistsComb': '??', 'TyExists': '?*', 'Exists': '?', 'Lambda': '^', 'ChoiceComb': '@@+', 'Choice': '@+', 'DescriptionComb': '@@-', 'Description': '@-', 'EqComb': '@=', 'App': '@', 'Assignment': '', 'Identical': '==', 'Arrow': '>', 'Star': '*', 'Plus': '+', 'Hash': '#', 'Subtype_sign': '<<', 'Gentzen_arrow': '-->'}
 
 
 def get_optional_rules():
-    file = open("bnf/SyntaxBNF-v9.0.0.3", "r")
+    file = open("bnf/SyntaxBNF", "r")
     text = file.readlines()
     file.close()
 
@@ -28,12 +29,12 @@ def read_bnf_file(file_path):
 
 
 def write_antlr_file(antlr_lines):
-    file = open("g4/TPTPv9.g4", "w")
+    file = open("g4/TPTP.g4", "w")
     
     new_lines = []
     
     lexer_rules = r"""
-grammar TPTPv9;
+grammar TPTP;
 WS : [ \r\t\n]+ -> skip ;
 Comment_line : '%' ~[\r\n]* -> skip;
 Comment_block : '/*' .*? '*/' -> skip;
@@ -363,7 +364,9 @@ def get_all_semantic_rules(bnf_lines):
 
 
 def main():
-    bnf_lines = read_bnf_file("/Users/daniel/Documents/coding_stuff/antlr_parser/bnf/SyntaxBNF-v9.0.0 copy.3")
+    
+    
+    bnf_lines = read_bnf_file(file_path)
     antlr_lines = []
     token_rules = []
     bnf_line = ""
@@ -417,6 +420,7 @@ def main():
     antlr_lines = replace_capitals(["//# HERE ARE THE LEXER RULES\n"] + token_rules + ["\n//# END THE LEXER RULES\n\n"] + antlr_lines)
     # antlr_lines = replace_capitals(antlr_lines)
     write_antlr_file(antlr_lines)
+    print("bnf to antlr conversion complete")
         
     
 main()
