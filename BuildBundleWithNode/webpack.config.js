@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './static/js/helpers.js',
+  entry: '../Flask4Web/static/js/helpers.js',
   output: {
-    path: path.resolve(__dirname, 'static/js'),
+    path: path.resolve(__dirname, '../Flask4Web/static/js'),
     filename: 'bundle.js'
   },
   resolve: {
