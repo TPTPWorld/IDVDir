@@ -2,3 +2,6 @@ node_modules/
 Python-3.7.5/
 __pycache__/
 venv/
+.vscode/
+IDVApp/electron_executables/*
+.DS_Store

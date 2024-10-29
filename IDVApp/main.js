@@ -5,6 +5,7 @@ app.on("ready", () => {
   let mainWindow = new BrowserWindow({
     width: 1024,
     height: 800,
+    icon: "favicon.icns",
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -13,12 +14,12 @@ app.on("ready", () => {
 
   let sharedData = 'test';
 
-  mainWindow.loadFile("index.html");
+  mainWindow.loadFile("templates/index.html");
 
   // Modify the send-data handler to use webContents
   ipcMain.on('send-data', (event, data) => {
     sharedData = data;
-    mainWindow.loadFile('idv.html').then(() => {
+    mainWindow.loadFile('templates/idv.html').then(() => {
       // Send data once the page is loaded
       mainWindow.webContents.send('response-data', sharedData);
     });

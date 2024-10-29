@@ -500,8 +500,7 @@
 %----Top of Page-----------------------------------------------------------------------------------
 %----Formula sources
 %----Expanded semantic rules for IDV. It was <source>               ::= <general_term>
-<source>               ::= <dag_source> | <internal_source> | <external_source> | unknown |
-                           [<sources>]
+<source>               ::= <dag_source> | <internal_source> | <external_source> | [<sources>]
 %----Alternative sources are recorded like this, thus allowing representation
 %----of alternative derivations with shared parts.
 <sources>              ::= <source> | <source>,<sources>
