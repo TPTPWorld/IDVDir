@@ -1,19 +1,18 @@
-
 const path = require("path");
 
 module.exports = {
-    entry: "./helpers.js",
-    output: {
-        path: __dirname,
-        filename: "./bundle.js"
+  entry: "/js/helpers.js",
+  output: {
+    path: path.resolve(__dirname, 'js'),
+    filename: "IDVBundle.js",
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".css", ".mjs"],
+    fallback: {
+      fs: false,
+      module: false,
+      net: false,
     },
-    mode: "development",
-    resolve: {
-        extensions: [".ts", ".tsx", ".js", ".css"],
-        fallback: {
-          fs: false,
-          module: false,
-          net: false,
-        },
-    },
-}
+  },
+  mode: "development",
+};

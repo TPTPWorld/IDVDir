@@ -1,4 +1,4 @@
-// Generated from /Users/daniel/Documents/coding_stuff/antlr_parser/g4/TPTPv9.g4 by ANTLR 4.13.1
+// Generated from /Users/daniel/Documents/coding_stuff/IDVDir/BNF2ANTLR/g4/TPTPv9.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -1906,6 +1906,176 @@ public interface TPTPv9Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSource(TPTPv9Parser.SourceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#sources}.
+	 * @param ctx the parse tree
+	 */
+	void enterSources(TPTPv9Parser.SourcesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#sources}.
+	 * @param ctx the parse tree
+	 */
+	void exitSources(TPTPv9Parser.SourcesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#dag_source}.
+	 * @param ctx the parse tree
+	 */
+	void enterDag_source(TPTPv9Parser.Dag_sourceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#dag_source}.
+	 * @param ctx the parse tree
+	 */
+	void exitDag_source(TPTPv9Parser.Dag_sourceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#inference_record}.
+	 * @param ctx the parse tree
+	 */
+	void enterInference_record(TPTPv9Parser.Inference_recordContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#inference_record}.
+	 * @param ctx the parse tree
+	 */
+	void exitInference_record(TPTPv9Parser.Inference_recordContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#inference_rule}.
+	 * @param ctx the parse tree
+	 */
+	void enterInference_rule(TPTPv9Parser.Inference_ruleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#inference_rule}.
+	 * @param ctx the parse tree
+	 */
+	void exitInference_rule(TPTPv9Parser.Inference_ruleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#internal_source}.
+	 * @param ctx the parse tree
+	 */
+	void enterInternal_source(TPTPv9Parser.Internal_sourceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#internal_source}.
+	 * @param ctx the parse tree
+	 */
+	void exitInternal_source(TPTPv9Parser.Internal_sourceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#intro_type}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntro_type(TPTPv9Parser.Intro_typeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#intro_type}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntro_type(TPTPv9Parser.Intro_typeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#external_source}.
+	 * @param ctx the parse tree
+	 */
+	void enterExternal_source(TPTPv9Parser.External_sourceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#external_source}.
+	 * @param ctx the parse tree
+	 */
+	void exitExternal_source(TPTPv9Parser.External_sourceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#file_source}.
+	 * @param ctx the parse tree
+	 */
+	void enterFile_source(TPTPv9Parser.File_sourceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#file_source}.
+	 * @param ctx the parse tree
+	 */
+	void exitFile_source(TPTPv9Parser.File_sourceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#file_info}.
+	 * @param ctx the parse tree
+	 */
+	void enterFile_info(TPTPv9Parser.File_infoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#file_info}.
+	 * @param ctx the parse tree
+	 */
+	void exitFile_info(TPTPv9Parser.File_infoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#theory}.
+	 * @param ctx the parse tree
+	 */
+	void enterTheory(TPTPv9Parser.TheoryContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#theory}.
+	 * @param ctx the parse tree
+	 */
+	void exitTheory(TPTPv9Parser.TheoryContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#theory_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterTheory_name(TPTPv9Parser.Theory_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#theory_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitTheory_name(TPTPv9Parser.Theory_nameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#creator_source}.
+	 * @param ctx the parse tree
+	 */
+	void enterCreator_source(TPTPv9Parser.Creator_sourceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#creator_source}.
+	 * @param ctx the parse tree
+	 */
+	void exitCreator_source(TPTPv9Parser.Creator_sourceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#creator_name}.
+	 * @param ctx the parse tree
+	 */
+	void enterCreator_name(TPTPv9Parser.Creator_nameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#creator_name}.
+	 * @param ctx the parse tree
+	 */
+	void exitCreator_name(TPTPv9Parser.Creator_nameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#parents}.
+	 * @param ctx the parse tree
+	 */
+	void enterParents(TPTPv9Parser.ParentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#parents}.
+	 * @param ctx the parse tree
+	 */
+	void exitParents(TPTPv9Parser.ParentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#parent_list}.
+	 * @param ctx the parse tree
+	 */
+	void enterParent_list(TPTPv9Parser.Parent_listContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#parent_list}.
+	 * @param ctx the parse tree
+	 */
+	void exitParent_list(TPTPv9Parser.Parent_listContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#parent_info}.
+	 * @param ctx the parse tree
+	 */
+	void enterParent_info(TPTPv9Parser.Parent_infoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#parent_info}.
+	 * @param ctx the parse tree
+	 */
+	void exitParent_info(TPTPv9Parser.Parent_infoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link TPTPv9Parser#parent_details}.
+	 * @param ctx the parse tree
+	 */
+	void enterParent_details(TPTPv9Parser.Parent_detailsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link TPTPv9Parser#parent_details}.
+	 * @param ctx the parse tree
+	 */
+	void exitParent_details(TPTPv9Parser.Parent_detailsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link TPTPv9Parser#optional_info}.
 	 * @param ctx the parse tree

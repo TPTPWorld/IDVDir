@@ -1,15 +1,10 @@
 
-
 import * as antlr4 from 'antlr4';
 window.antlr4 = antlr4;
 
-import {default as Lexer} from './TPTPv9Lexer';
-import {default as Parser} from './TPTPv9Parser';
-import {default as Listener} from './TPTPv9Listener';
-
-// import {default as Lexer} from './tptpLexer.js';
-// import {default as Parser} from './TPTPParser.js';
-// import {default as Listener} from './TPTPListener.js';
+import {default as Lexer} from '../tptp/TPTPLexer';
+import {default as Parser} from '../tptp/TPTPParser';
+import {default as Listener} from '../tptp/TPTPListener';
 
 function stripParens(formula){
 	return formula.replace(/\s+/g,'').replace(/[()]/g, '');
@@ -80,7 +75,6 @@ window.scaleFromInterestingness = scaleFromInterestingness;
 function getParentsFromSource(source, node){
 
 	let dag = source.dag_source();
-	
 	let sources = source.sources();
 	if (sources !== null){
 		for(let s of sources){
@@ -222,15 +216,9 @@ class Formatter extends Listener {
 	    let source;
 		try {
             source = ctx.annotations().source();
-
-			// console.log(source); //~ REMOVE LATER
-			
 			getParentsFromSource(source, node);
 		}
 		catch (e) {
-
-			// console.log(e); //~ REMOVE LATER
-
 			console.log(`"${node.name}" has no sources (or we failed getting them).`)
 		}
         

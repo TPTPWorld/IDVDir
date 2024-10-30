@@ -483,7 +483,7 @@ variable : Upper_word;
 //%----Top of Page----------------------------------------------------------------------------------- 
 //%----Formula sources 
 //%----Expanded semantic rules for IDV. It was <source>               ::= <general_term> 
-source : dag_source  |  internal_source  |  external_source  |  'unknown'  |  '['sources']';
+source : dag_source  |  internal_source  |  external_source  |  '['sources']';
 //%----Alternative sources are recorded like this, thus allowing representation 
 //%----of alternative derivations with shared parts. 
 sources : source  |  source','sources;
@@ -514,7 +514,25 @@ creator_name : atomic_word;
 //%----cases when a tautology is introduced as a leaf, e.g., for splitting, then use an  
 //%----<internal_source>. 
 parents : '[]'  |  '['parent_list']';
-parent_list : parent_info  |  parent_info','parent_list;
+
+
+
+
+
+
+
+
+// parent_list : parent_info  |  parent_info','parent_list; // THIS LINE BREAKS THE IDV
+
+
+parent_list             : parent_info ( ',' parent_info )*; // THIS LINE FIXES IDV AND IS FROM TOBIAS G4
+
+
+
+
+
+
+
 parent_info : source parent_details;
 parent_details : ':'general_list  |  null;
 //%----Useful info fields 

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>IDV App</title>
+
+    <link rel="shortcut icon" href="https://tptp.org/CGIcons/TPTPWorld.png" type="image/x-icon">
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+	<script src="https://unpkg.com/@hpcc-js/wasm@1.20.1/dist/index.js" type="text/javascript"></script>
+	<script type="javascript/worker" src="https://unpkg.com/viz.js@2.0.0/viz.js"></script>
+	<script src="https://unpkg.com/d3-graphviz@4.4.0/build/d3-graphviz.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<style>
+        html, body {
+            font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        
+        * {
+            /* word-break: break-all; */
+        }
+        
+        body {
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        
+        
+        /* loading symbol stuff */
+        
+        #loadingSymbol, g.node, g.node > polygon, g.node > ellipse {
+            transition: opacity 0.3s, fill 0.3s;
+        }
+        
+        #loadingSymbol {
+            position: fixed;
+            padding:45px;
+            right: 20px;
+            top: 20px;
+            background-color:rgba(150, 150, 150, 0.2);
+            border-radius:100px;
+            box-shadow:2px 2px 5px 0px rgb(177, 177, 177);;
+            opacity:1;
+        }
+        
+        #loadingSymbol.hidden {
+            opacity:0;
+            height:0px;
+            width:0px;
+            padding:0px;
+            margin:0px;
+        }
+        
+        
+        
+        /* settings stuff */
+        
+        .interestHidden {
+            display:none;
+        }
+        
+        .settingsHeader{
+            cursor: pointer;
+        }
+        
+        
+        .triangle {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            
+            transform: rotate(45deg) translateY(-4px);
+        }
+        
+        .open > .triangle {
+            transform: rotate(-135deg) translate(-3px, 3px);
+        }
+        
+        
+        .collapsable{
+            overflow:auto;
+            padding:0px;
+        }
+        
+        .box {
+            border: 1px solid black;
+            background: rgba(100, 100, 100, 0.4);
+            padding: 10px;
+            margin:5px;
+        }
+        
+        #nodeInfo {
+            overflow:auto;
+            font-family: monospace;
+        }
+        
+        #settings {
+            /* position: fixed; */
+            left: 5px;
+            max-height: 96%;
+            width: 550px;
+            top: 2%;
+            user-select:none;
+            overflow:auto;
+            border-right: 1px solid black;
+        
+            font-size:0.87em;
+        }
+        
+        #tptpTextarea {
+            display: none;
+            width: 90%;
+            margin:auto;
+            border:0px;
+            min-height:100px;
+            height:0px;
+        }
+        
+        #tptpTextarea.open {
+            height: 100%;
+            display: block;
+        }
+        
+        
+        button, input[type='button']{
+            position: relative;
+            display:block;
+            margin-top: 10px;
+        
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            background-color: rgb(201, 201, 201);
+            cursor: pointer;
+        
+            font-size:0.9em;
+        }
+        
+        
+        button:hover,  input[type='button']:hover{
+            top:-1px;
+            left:-1px;
+            box-shadow:1px 1px 7px -3px black;
+        }
+        
+        
+        
+        .settingsHeader{
+            line-height:2.5;
+            margin:0px;
+            padding:0px;
+        }
+        
+        
+        
+        /* graphviz */
+        
+        #graph svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        
+        
+        
+        
+        
+        /* generated slider css */
+        
+        
+        input[type=range].mySlider {
+            -webkit-appearance: none;
+            width: 90%;
+            margin: auto;
+          }
+          input[type=range].mySlider:focus {
+            outline: none;
+          }
+          input[type=range].mySlider::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 17.8px;
+            cursor: pointer;
+            box-shadow: 0.3px 0.3px 6px rgba(0, 0, 99, 0.58), 0px 0px 0.3px rgba(0, 0, 125, 0.58);
+            background: rgba(192, 192, 190, 0.76);
+            border-radius: 0px;
+            border: 1.2px solid rgba(0, 0, 0, 0);
+          }
+          input[type=range].mySlider::-webkit-slider-thumb {
+            box-shadow: 1.7px 1.7px 9.5px rgba(0, 0, 0, 0.51), 0px 0px 1.7px rgba(13, 13, 13, 0.51);
+            border: 2.4px solid rgba(44, 30, 0, 0.56);
+            height: 29px;
+            width: 26px;
+            border-radius: 9px;
+            background: rgba(148, 136, 126, 0.98);
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -6.8px;
+          }
+          input[type=range].mySlider:focus::-webkit-slider-runnable-track {
+            background: rgba(192, 192, 190, 0.76);
+          }
+          input[type=range].mySlider::-moz-range-track {
+            width: 100%;
+            height: 17.8px;
+            cursor: pointer;
+            box-shadow: 0.3px 0.3px 6px rgba(0, 0, 99, 0.58), 0px 0px 0.3px rgba(0, 0, 125, 0.58);
+            background: rgba(192, 192, 190, 0.76);
+            border-radius: 0px;
+            border: 1.2px solid rgba(0, 0, 0, 0);
+          }
+          input[type=range].mySlider::-moz-range-thumb {
+            box-shadow: 1.7px 1.7px 9.5px rgba(0, 0, 0, 0.51), 0px 0px 1.7px rgba(13, 13, 13, 0.51);
+            border: 2.4px solid rgba(44, 30, 0, 0.56);
+            height: 29px;
+            width: 26px;
+            border-radius: 9px;
+            background: rgba(148, 136, 126, 0.98);
+            cursor: pointer;
+          }
+          input[type=range].mySlider::-ms-track {
+            width: 100%;
+            height: 17.8px;
+            cursor: pointer;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+          }
+          input[type=range].mySlider::-ms-fill-lower {
+            background: rgba(192, 192, 190, 0.76);
+            border: 1.2px solid rgba(0, 0, 0, 0);
+            border-radius: 0px;
+            box-shadow: 0.3px 0.3px 6px rgba(0, 0, 99, 0.58), 0px 0px 0.3px rgba(0, 0, 125, 0.58);
+          }
+          input[type=range].mySlider::-ms-fill-upper {
+            background: rgba(192, 192, 190, 0.76);
+            border: 1.2px solid rgba(0, 0, 0, 0);
+            border-radius: 0px;
+            box-shadow: 0.3px 0.3px 6px rgba(0, 0, 99, 0.58), 0px 0px 0.3px rgba(0, 0, 125, 0.58);
+          }
+          input[type=range].mySlider::-ms-thumb {
+            box-shadow: 1.7px 1.7px 9.5px rgba(0, 0, 0, 0.51), 0px 0px 1.7px rgba(13, 13, 13, 0.51);
+            border: 2.4px solid rgba(44, 30, 0, 0.56);
+            height: 29px;
+            width: 26px;
+            border-radius: 9px;
+            background: rgba(148, 136, 126, 0.98);
+            cursor: pointer;
+            height: 17.8px;
+          }
+          input[type=range].mySlider:focus::-ms-fill-lower {
+            background: rgba(192, 192, 190, 0.76);
+          }
+          input[type=range].mySlider:focus::-ms-fill-upper {
+            background: rgba(192, 192, 190, 0.76);
+          }        
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="index">
+
+        <h1>Upload a File</h1>
+
+        <input type="file" name="fileUploadBtn" id="fileUploadBtn">
+
+        <pre id="output" style="display: none;"></pre>
+
+        <button id="visualizeBtn" onclick="visualize()">Visualize</button>
+
+        <script type="text/javascript">
+            document.getElementById('fileUploadBtn')
+            .addEventListener('change', function () {
+
+                let fr = new FileReader();
+                fr.onload = function () {
+                    document.getElementById('output')
+                        .textContent = fr.result;
+                }
+
+                fr.readAsBinaryString(this.files[0]);
+            })
+
+            function visualize() {
+
+                document.querySelector("#index").style.display = "none";
+                document.querySelector("#idv").style.display = "flex";
+                document.querySelector("#proofText").innerHTML = document.getElementById('output').innerHTML;
+
+            }
+        </script>
+
+    </div>
+
+    <div id="idv" style="display: none; align-items: flex-start; height: 100%;">
+
+        <div id="loadingSymbol"></div>
+
+        <div id="settings" class="box">
+            <h1 class="settingsHeader" onclick="collapseBox(this)">Settings/Tools <span class="triangle"></span></h1>
+            <div class="collapsable" style="height:0px;">
+                <div id="nodeInfoContainer" class="box">
+                    <h2 class="settingsHeader" onclick="collapseBox(this)">Node Information <span class="triangle"></span></h2>
+                    <div class="collapsable" id="nodeInfo" style="height:0px">
+                            <h3><i>Hover over a node to see info about it here!</i></h3>
+                    </div>
+                </div>
+                <div id="interestingnessOptions" class="box">
+                    <h2 class="settingsHeader" onclick="collapseBox(this)">Show/Hide Nodes <span class="triangle"></span></h2>
+                    <div class="collapsable" style="height:0px;">
+                        <hr>
+                        <button onclick="getInterest()">Compute interestingness for FOF/CNF derivations</button>
+
+                        <button  class="interestHidden" id="interestScaleToggle" onclick="toggleInterestScaling()">Enable interestingness scaling</button>
+                        <hr>
+            
+                        <h3 class="interestHidden" >Blacken boring nodes:</h3>
+                        <input type="range" class="mySlider interestHidden" name="interestingnessSlider" id="interestingnessSlider" oninput="recolorNodesByInterest()" min="-1.1" max="1.1" step="0.01" value="-1.1">
+                        <hr class="interestHidden" >
+                        <button onclick="toggleConjectureVisible(this)" id="hideConjNodesButton">Blacken non-lemmas</button>
+                        <button onclick="redrawNodesByInterest()">Remove black nodes</button>
+                        <button onclick="resetGraph()">Reset</button>
+
+                    </div>
+                </div>
+
+                <div id="about" class="box">
+                    <h2 class="settingsHeader" onclick="collapseBox(this)">About<span class="triangle"></span></h2>
+                    <div class="collapsable" style="height:0px; font-size:12pt">
+                        <hr>
+                        <ul>
+                            <li>The Interactive Derivation Viewer (IDV) <br>was written at the <a href="https://miami.edu">University of Miami.</a></li>
+                            <li>Daniel Li & Esteban Morales developed a standalone IDV to be distributed</li>
+                            <li>Jack McKeown finished the conversion and deployment.</li>
+                            <li>Jack McKeown adapted it for viewing intepretations.</li>
+                            <li>Joe Masterjohn started the conversion to a web app.</li>
+                            <li>Steven Trac wrote the original IDV as a Java applet.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div id="back" class="box">
+
+                    <a href=""><h2>Back To Home</h2></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="graph" style="text-align: center; width:100%;height:100%; border-left:1px solid black;"></div>
+
+        <p id="proofText" style="display: none;"></p>
+
+        <script src="https://tptp.org/CGIFormData/IDVBundle.js"></script>
+        <script>
+            window.interestScalingBool = false;
+
+            function removeTooltips() {
+            // Remove all title tags beneath svg tags to remove tooltips
+            let keys = Array.from(document.querySelectorAll("g.node title")).map(
+                (x) => x.innerHTML
+            );
+            let titles = Array.from(document.querySelectorAll("svg title"));
+
+            // We might have to try again if the graph isn't loaded yet
+            if (keys.length < Object.keys(window.proof).length) {
+                setTimeout(removeTooltips, 500);
+                return;
+            }
+
+            console.log(
+                `Removing ${titles.length} titles (${keys.length} nodes + edges)`
+            );
+
+            titles.forEach(function (x) {
+                x.remove();
+            });
+
+            // Since titles have been removed and SVG texts
+            // no longer link back to the global proof object,
+            // we need to somehow have that data available on hover.
+            let nodes = Array.from(document.querySelectorAll("g.node text"));
+            nodes.forEach(function (x, i) {
+                x.setAttribute("proofKey", keys[i]);
+            });
+            }
+
+            // if (window.interpretation){
+            // 	document.querySelector("#interestingnessOptions").hidden = true;
+            // }
+
+            function show_original_graph() {
+            setTimeout(function () {
+                window.proofText = document.getElementById("proofText").innerText;
+                window.originalProof = parseProof(proofText);
+                window.proof = JSON.parse(JSON.stringify(originalProof));
+
+                assignInterestingnessToHeightAndWidth();
+                showGV(proofToGV(proof));
+                // if (window.interpretation) {
+                // 	removeTooltips();
+                // }
+
+                // Weird Hacks for initializing gui
+                document.querySelector("#settings").children[0].click();
+                setTimeout(
+                () =>
+                    document.querySelector("#nodeInfoContainer > .settingsHeader").click(),
+                500
+                );
+            }, 200);
+            }
+
+            document.querySelector("#visualizeBtn").addEventListener("click", show_original_graph);
+            // if (window.addEventListener)
+            // window.addEventListener("load", show_original_graph, false);
+            // else if (window.attachEvent)
+            // window.attachEvent("onload", show_original_graph);
+
+            document.querySelector("")
+
+        </script>
+
+    </div>
+    
+  </body>
+
+</html>
