@@ -12,6 +12,11 @@ app.on("ready", () => {
     },
   });
 
+  app.setAboutPanelOptions({
+    applicationName: "IDV App",
+    credits: "Developed by Daniel Li and Esteban Morales",
+  });
+
   let sharedData = 'test';
 
   mainWindow.loadFile("templates/index.html");

@@ -1,6 +1,6 @@
 {
   "name": "idv-app",
-  "productName": "IDV Standalone",
+  "productName": "IDV App",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {

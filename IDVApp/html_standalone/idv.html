@@ -4,7 +4,7 @@
   <head>
     <title>IDV App</title>
 
-    <link rel="shortcut icon" href="https://bananaapache.github.io/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://tptp.org/CGIcons/TPTPWorld.png" type="image/x-icon">
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
 	<script src="https://unpkg.com/@hpcc-js/wasm@1.20.1/dist/index.js" type="text/javascript"></script>
@@ -294,12 +294,6 @@
                 document.querySelector("#idv").style.display = "flex";
                 document.querySelector("#proofText").innerHTML = document.getElementById('output').innerHTML;
 
-                setTimeout(() => {
-                    const script = document.createElement('script');
-                    script.src = "https://bananaapache.github.io/index.js";
-                    document.querySelector("#idv").appendChild(script);
-                }, 2000)
-
             }
         </script>
 
@@ -365,7 +359,7 @@
 
         <p id="proofText" style="display: none;"></p>
 
-        <script src="https://bananaapache.github.io/bundle.js"></script>
+        <script src="https://tptp.org/CGIFormData/IDVBundle.js"></script>
         <script>
             window.interestScalingBool = false;
 

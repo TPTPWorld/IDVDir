@@ -4,7 +4,7 @@ module.exports = {
   entry: "/js/helpers.js",
   output: {
     path: path.resolve(__dirname, 'js'),
-    filename: "bundle.js",
+    filename: "IDVBundle.js",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".css", ".mjs"],
