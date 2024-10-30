@@ -30,7 +30,7 @@ app.on("ready", () => {
     event.sender.send('response-data', sharedData);
   });
 
-  mainWindow.openDevTools();
+  // mainWindow.openDevTools();
 });
 
 
