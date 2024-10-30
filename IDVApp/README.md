@@ -37,3 +37,9 @@ electron-packager . idv-app --all --asar --icon=favicon.icns --out=electron_exec
 
 - NOTE: wine64 might be needed to package the app for windows.
 - NOTE: The --asar flag makes hides the source code from users.
+
+
+
+### There is also a standalone HTML file that also works as IDV.
+
+ - Under IDVDir/IDVApp/html_standalone/idv.html
