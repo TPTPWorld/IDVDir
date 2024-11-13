@@ -239,16 +239,36 @@ function getInterest() {
 		toggleInterestScaling();
 	}
 
-	fetch("/idv/interestingness", {
+
+	// MODIFIED FOR STANDALONE HTML
+	const formData = new FormData();
+	formData.append('ProblemSource', 'FORMULAE');
+	formData.append('FORMULAEProblem', document.getElementById("proofText").innerText); 
+	formData.append('SolutionFormat', 'TPTP');
+	formData.append('QuietFlag', '-q01');
+	formData.append('SubmitButton', 'ProcessSolution');
+	formData.append('System___AGInTRater---0.0', 'AGInTRater---0.0');
+	formData.append('TimeLimit___AGInTRater---0.0', '60');
+	formData.append('Transform___AGInTRater---0.0', 'none');
+	formData.append('Format___AGInTRater---0.0', 'tptp:raw');
+	formData.append('Command___AGInTRater---0.0', 'AGInTRater -c %s');
+
+	fetch("https://tptp.org/cgi-bin/SystemOnTPTPFormReply", {
 		method: 'POST',
-		body: JSON.stringify({
-			"proof": document.getElementById("proofText").innerText
-		})
+		body: formData
 	})
 	.then(response => response.text())
 	.then(function (response) { console.log(response); return response })
 	.then(function (text) {
+		const begin = text.indexOf("<PRE>") + 5;
+		const end = text.indexOf("</PRE>");
+		text = text.slice(begin, end);
+
+		console.log(text);
+
 		text = htmlDecode(text);
+		window.text = text;
+		
 		let interestProof = parseProof(text);
 
 		for (let key of Object.keys(originalProof)) {
@@ -256,8 +276,6 @@ function getInterest() {
 		}
 		redrawNodesByInterest();
 	})
-	.catch(function(v){alert("Failed to query TPTP for interestingness!");})
-	.finally(console.log("DONE"));
 }
 window.getInterest = getInterest;
 

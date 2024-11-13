@@ -88,8 +88,20 @@ function getParentsFromSource(source, node){
 	if (dag.inference_record()) {
 		let inference_record = dag.inference_record();
 		node.inference_record = inference_record.getText();
-		let parent_list = inference_record.parents().parent_list().parent_info();
 
+		//@=========================================================================================
+		//~ ORIGINAL FROM JACK
+		// let parent_list = inference_record.parents().parent_list().parent_info();
+
+		//~ MODIFIED TO USE COMMA_PARENT_INFO
+		let parent_list = [inference_record.parents().parent_list().parent_info()];
+
+		parent_list = parent_list.concat(
+			inference_record.parents().parent_list().comma_parent_info()
+				.map(comma_info => comma_info.parent_info())
+		);
+		//@=========================================================================================
+		
 		for (let i = 0; i < parent_list.length; i++) {
 			let p = parent_list[i];
 			let ps = p.source();
@@ -200,7 +212,12 @@ class Formatter extends Listener {
 
 		// try to get node info...(contains interestingness)
 		try {
-			let info = ctx.annotations().optional_info().useful_info().info_items().getText().split(",");
+			//@=========================================================================================
+			//~ ORIGINAL BY JACK
+			// let info = ctx.annotations().optional_info().useful_info().info_items().getText().split(",");
+			//~ MODIFIED TO USE GENERAL_TERMS
+			let info = ctx.annotations().optional_info().useful_info().general_list().general_terms().getText().split(",");
+			//@=========================================================================================
 			let infoObj = {};
 			for (let s of info) {
 				let [key, value] = s.split("(");
@@ -209,7 +226,8 @@ class Formatter extends Listener {
 			}
 			node.info = infoObj;
 		} catch (e) {
-			// console.log(`"${node.name}" has no info (or we failed getting it)`)
+			console.log(`"${node.name}" has no info (or we failed getting it)`)
+			console.log(e)
 		}
 
 		// try to get source...(contains parents)
@@ -227,6 +245,7 @@ class Formatter extends Listener {
         }
         catch (e) {
             console.log(`"${node.name}" has no level (or we failed getting it).`);
+			console.log(e);
         }
 
 		this.node_map[node.name] = node;

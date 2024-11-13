@@ -1850,6 +1850,15 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TPTPParser#comma_parent_info.
+	enterComma_parent_info(ctx) {
+	}
+
+	// Exit a parse tree produced by TPTPParser#comma_parent_info.
+	exitComma_parent_info(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TPTPParser#parent_info.
 	enterParent_info(ctx) {
 	}
