@@ -79,6 +79,8 @@ Viewable_char : '.\n';
 //%----v9.0.0.6 Converted <source> and it's descendents to grammar rules. That required adding 
 //%----         a grammar rule for <intro_type>. 
 //%----         Changed <file_name> to <atomic_word>, to allow non-quoted filenames. 
+//%----v9.0.0.7 Linearised <thf_formula_list>, <tff_arguments>, <fof_formula_tuple_list>, 
+//%----         <parent_list>, <info_items>, <general_terms>. 
 //%-------------------------------------------------------------------------------------------------- 
 //%----README ... this header provides important meta- and usage information 
 //%---- 
@@ -104,7 +106,7 @@ Viewable_char : '.\n';
 //%----Multiple languages are defined. Depending on your need, you can implement just the one(s) you 
 //%----need. The common rules for atoms, terms, etc, come after the definitions of the languages, and 
 //%----mostly all needed for all the languages. 
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----Files. Empty file is OK. 
 tptp_file               : tptp_input* EOF;
 tptp_input              : annotated_formula | include;
@@ -143,7 +145,7 @@ formula_role : Lower_word  |  Lower_word'-'general_term;
 //%----recording the domain, interpretation of functors, and interpretation of predicates, for a 
 //%----finite interpretation. "type" defines the type globally for one symbol; treat as $true. 
 //%----"unknown"s have unknown role, and this is an error situation. 
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----THF formulae. 
 thf_formula : thf_logic_formula  |  thf_atom_typing  |  thf_subtype;
 thf_logic_formula : thf_unitary_formula  |  thf_unary_formula  |  thf_binary_formula  |  thf_defined_infix  |  thf_definition  |  thf_sequent;
@@ -202,7 +204,8 @@ thf_tuple : '[]'  |  '['thf_formula_list']';
 thf_fof_function : functor'('thf_arguments')'  |  defined_functor'('thf_arguments')'  |  system_functor'('thf_arguments')';
 //%----Arguments recurse back up to formulae (this is the THF world here) 
 thf_arguments : thf_formula_list;
-thf_formula_list : thf_logic_formula  |  thf_logic_formula','thf_formula_list;
+thf_formula_list : thf_logic_formula comma_thf_logic_formula'*';
+comma_thf_logic_formula : ','thf_logic_formula;
 //%----<thf_top_level_type> appears after ":", where a type is being specified 
 //%----for a term or variable. <thf_unitary_type> includes <thf_unitary_formula>, 
 //%----so the syntax is very loose, but trying to be more specific about 
@@ -231,7 +234,7 @@ thf_subtype : untyped_atom subtype_sign atom;
 //%----These are also used for NHF logic definitions 
 thf_definition : thf_atomic_formula identical thf_logic_formula;
 thf_sequent : thf_tuple gentzen_arrow thf_tuple;
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----TFF formulae. 
 tff_formula : tff_logic_formula  |  tff_atom_typing  |  tff_subtype;
 tff_logic_formula : tff_unitary_formula  |  tff_unary_formula  |  tff_binary_formula  |  tff_defined_infix  |  txf_definition  |  txf_sequent;
@@ -286,7 +289,8 @@ nxf_atom : nxf_long_connective '@' '('tff_arguments')';
 tff_term : tff_logic_formula  |  defined_term  |  txf_tuple;
 tff_unitary_term : tff_atomic_formula  |  defined_term  |  txf_tuple  |  variable  |  '('tff_logic_formula')';
 txf_tuple : '[]'  |  '['tff_arguments']';
-tff_arguments : tff_term  |  tff_term','tff_arguments;
+tff_arguments : tff_term comma_tff_term'*';
+comma_tff_term : ','tff_term;
 //%----<tff_atom_typing> can appear only at top level. 
 tff_atom_typing : untyped_atom ':' tff_top_level_type  |  '('tff_atom_typing')';
 tff_top_level_type : tff_atomic_type  |  tff_non_atomic_type;
@@ -305,7 +309,7 @@ tff_subtype : untyped_atom subtype_sign atom;
 //%----These are also used for NXF logic definitions 
 txf_definition : tff_atomic_formula identical tff_term;
 txf_sequent : txf_tuple gentzen_arrow txf_tuple;
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----Typed non-classical here 
 //%----Have to duplicate NHF and NXF because they lead to <thf_definition> and <txf_definition> 
 nhf_long_connective : '{'ntf_connective_name'}'  |  '{'ntf_connective_name'('nhf_parameter_list')}';
@@ -350,12 +354,12 @@ ntf_short_connective : '[.]'  |  Less_sign'.'Arrow  |  '{.}'  |  '(.)';
 //<ntf_time_type_list>   :== <ntf_time_type> | <ntf_time_type>,<ntf_time_type_list> 
 //<ntf_modal_system>     :== $modal_system_K | $modal_system_M | $modal_system_B | $modal_system_D | $modal_system_S4 | $modal_system_S5 
 //<ntf_modal_axiom>      :== $modal_axiom_K | $modal_axiom_M | $modal_axiom_B | $modal_axiom_D | $modal_axiom_4 | $modal_axiom_5 
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----TCF formulae. 
 tcf_formula : tcf_logic_formula  |  tff_atom_typing;
 tcf_logic_formula : tcf_quantified_formula  |  cnf_formula;
 tcf_quantified_formula : '!' '['tff_variable_list']' ':' tcf_logic_formula;
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----FOF formulae. 
 fof_formula : fof_logic_formula  |  fof_sequent;
 fof_logic_formula : fof_binary_formula  |  fof_unary_formula  |  fof_unitary_formula;
@@ -409,17 +413,18 @@ fof_arguments : fof_term  |  fof_term','fof_arguments;
 //%----<tff_atomic_formula>. 
 fof_term : fof_function_term  |  variable;
 fof_function_term : fof_plain_term  |  fof_defined_term  |  fof_system_term;
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----This section is the FOFX syntax. Not yet in use. 
 fof_sequent : fof_formula_tuple gentzen_arrow fof_formula_tuple  |  '('fof_sequent')';
 fof_formula_tuple : '[]'  |  '['fof_formula_tuple_list']';
-fof_formula_tuple_list : fof_logic_formula  |  fof_logic_formula','fof_formula_tuple_list;
-//%----Top of Page----------------------------------------------------------------------------------- 
+fof_formula_tuple_list : fof_logic_formula comma_fof_logic_formula'*';
+comma_fof_logic_formula : ','fof_logic_formula;
+//%-------------------------------------------------------------------------------------------------- 
 //%----CNF formulae (variables implicitly universally quantified) 
 cnf_formula : cnf_disjunction  |  '(' cnf_formula ')';
 cnf_disjunction : cnf_literal  |  cnf_disjunction Vline cnf_literal;
 cnf_literal : fof_atomic_formula  |  '~' fof_atomic_formula  |  '~' '('fof_atomic_formula')'  |  fof_infix_unary;
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----Connectives - THF 
 thf_quantifier : fof_quantifier  |  th0_quantifier  |  th1_quantifier;
 thf_unary_connective : unary_connective  |  ntf_short_connective;
@@ -480,10 +485,10 @@ def_or_sys_constant : defined_constant  |  system_constant;
 th1_defined_term : '!!'  |  '??'  |  '@@+'  |  '@@-'  |  '@=';
 defined_term : number  |  Distinct_object;
 variable : Upper_word;
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----Formula sources 
 //%----Expanded semantic rules for IDV. It was <source>               ::= <general_term> 
-source : dag_source  |  internal_source  |  external_source  |  '['sources']';
+source : dag_source  |  internal_source  |  external_source  |  'unknown'  |  '['sources']';
 //%----Alternative sources are recorded like this, thus allowing representation 
 //%----of alternative derivations with shared parts. 
 sources : source  |  source','sources;
@@ -514,14 +519,16 @@ creator_name : atomic_word;
 //%----cases when a tautology is introduced as a leaf, e.g., for splitting, then use an  
 //%----<internal_source>. 
 parents : '[]'  |  '['parent_list']';
-parent_list : parent_info  |  parent_info','parent_list;
+parent_list : parent_info comma_parent_info'*';
+comma_parent_info : ','parent_info;
 parent_info : source parent_details;
 parent_details : ':'general_list  |  null;
 //%----Useful info fields 
 optional_info : ','useful_info  |  null;
 useful_info : general_list;
 //<useful_info>          :== [] | [<info_items>] 
-//<info_items>           :== <info_item> | <info_item>,<info_items> 
+//<info_items>           :== <info_item> <comma_info_item>* 
+//<comma_info_items>     :== ,<info_item> 
 //<info_item>            :== <formula_item> | <inference_item> | <general_function> 
 //%----Useful info for formula records 
 //<formula_item>         :== <description_item> | <iquote_item> 
@@ -576,7 +583,8 @@ general_function : atomic_word'('general_terms')';
 //<bound_type>           :== $thf(<thf_top_level_type>) | $tff(<tff_top_level_type>) 
 formula_data : '$thf('thf_formula')'  |  '$tff('tff_formula')'  |  '$fof('fof_formula')'  |  '$cnf('cnf_formula')'  |  '$fot('fof_term')';
 general_list : '[]'  |  '['general_terms']';
-general_terms : general_term  |  general_term','general_terms;
+general_terms : general_term comma_general_term'*';
+comma_general_term : ','general_term;
 //%----General purpose 
 name : atomic_word  |  Integer;
 //%----Integer names are expected to be unsigned 
@@ -594,7 +602,7 @@ number : Integer  |  Rational  |  Real;
 //%----All numbers are base 10 at the moment. 
 file_name : atomic_word;
 null : ;
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 
 //%----Rules from here on down are for defining tokens (terminal symbols) of the grammar, assuming 
 //%----they will be recognized by a lexical scanner. 
 //%----A ::- rule defines a token, a ::: rule defines a macro that is not a token. Usual regexp 
@@ -647,4 +655,4 @@ null : ;
 //%----<Printable_char> is any printable ASCII character, codes 32 (space) to 126 (tilde). 
 //%----<Printable_char> does not include tabs, newlines, bells, etc. The use of . does not not 
 //%----exclude tab, so this is a bit loose. 
-//%----Top of Page----------------------------------------------------------------------------------- 
+//%-------------------------------------------------------------------------------------------------- 

@@ -1,5 +1,3 @@
-
-asdflkj
 %----v9.0.0.0 (TPTP version.internal development number)
 %----v9.0.0.1 Added <tff_quantifier>. Added <hash> (for epsilon terms) to <thf_quantifier> and
 %----         <tff_quantifier>. Changed <tff_quantified_formula> to use <tff_quantifier>.
@@ -16,6 +14,8 @@ asdflkj
 %----v9.0.0.6 Converted <source> and it's descendents to grammar rules. That required adding
 %----         a grammar rule for <intro_type>.
 %----         Changed <file_name> to <atomic_word>, to allow non-quoted filenames.
+%----v9.0.0.7 Linearised <thf_formula_list>, <tff_arguments>, <fof_formula_tuple_list>,
+%----         <parent_list>, <info_items>, <general_terms>.
 %--------------------------------------------------------------------------------------------------
 %----README ... this header provides important meta- and usage information
 %----
@@ -41,7 +41,7 @@ asdflkj
 %----Multiple languages are defined. Depending on your need, you can implement just the one(s) you
 %----need. The common rules for atoms, terms, etc, come after the definitions of the languages, and
 %----mostly all needed for all the languages.
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----Files. Empty file is OK.
 <TPTP_file>            ::= <TPTP_input>*
 <TPTP_input>           ::= <annotated_formula> | <include>
@@ -85,7 +85,7 @@ asdflkj
 %----recording the domain, interpretation of functors, and interpretation of predicates, for a
 %----finite interpretation. "type" defines the type globally for one symbol; treat as $true.
 %----"unknown"s have unknown role, and this is an error situation.
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----THF formulae.
 <thf_formula>          ::= <thf_logic_formula> | <thf_atom_typing> | <thf_subtype>
 <thf_logic_formula>    ::= <thf_unitary_formula> | <thf_unary_formula> | <thf_binary_formula> |
@@ -156,7 +156,8 @@ asdflkj
                            <system_functor>(<thf_arguments>)
 %----Arguments recurse back up to formulae (this is the THF world here)
 <thf_arguments>        ::= <thf_formula_list>
-<thf_formula_list>     ::= <thf_logic_formula> | <thf_logic_formula>,<thf_formula_list>
+<thf_formula_list>     ::= <thf_logic_formula><comma_thf_logic_formula>*
+<comma_thf_logic_formula> ::= ,<thf_logic_formula>
 
 %----<thf_top_level_type> appears after ":", where a type is being specified
 %----for a term or variable. <thf_unitary_type> includes <thf_unitary_formula>,
@@ -193,7 +194,7 @@ asdflkj
 <thf_definition>       ::= <thf_atomic_formula> <identical> <thf_logic_formula>
 <thf_sequent>          ::= <thf_tuple> <gentzen_arrow> <thf_tuple>
 
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----TFF formulae.
 <tff_formula>          ::= <tff_logic_formula> | <tff_atom_typing> | <tff_subtype>
 <tff_logic_formula>    ::= <tff_unitary_formula> | <tff_unary_formula> | <tff_binary_formula> |
@@ -260,7 +261,8 @@ asdflkj
                            (<tff_logic_formula>)
 <txf_tuple>            ::= [] | [<tff_arguments>]
 
-<tff_arguments>        ::= <tff_term> | <tff_term>,<tff_arguments>
+<tff_arguments>        ::= <tff_term><comma_tff_term>*
+<comma_tff_term>       ::= ,<tff_term>
 
 %----<tff_atom_typing> can appear only at top level.
 <tff_atom_typing>      ::= <untyped_atom> : <tff_top_level_type> | (<tff_atom_typing>)
@@ -286,7 +288,7 @@ asdflkj
 <txf_definition>       ::= <tff_atomic_formula> <identical> <tff_term>
 <txf_sequent>          ::= <txf_tuple> <gentzen_arrow> <txf_tuple>
 
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----Typed non-classical here
 %----Have to duplicate NHF and NXF because they lead to <thf_definition> and <txf_definition>
 <nhf_long_connective>  ::= {<ntf_connective_name>} | {<ntf_connective_name>(<nhf_parameter_list>)}
@@ -348,13 +350,13 @@ asdflkj
                            $modal_system_S4 | $modal_system_S5
 <ntf_modal_axiom>      :== $modal_axiom_K | $modal_axiom_M | $modal_axiom_B | $modal_axiom_D |
                            $modal_axiom_4 | $modal_axiom_5
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----TCF formulae.
 <tcf_formula>          ::= <tcf_logic_formula> | <tff_atom_typing>
 <tcf_logic_formula>    ::= <tcf_quantified_formula> | <cnf_formula>
 <tcf_quantified_formula> ::= ! [<tff_variable_list>] : <tcf_logic_formula>
 
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----FOF formulae.
 <fof_formula>          ::= <fof_logic_formula> | <fof_sequent>
 <fof_logic_formula>    ::= <fof_binary_formula> | <fof_unary_formula> | <fof_unitary_formula>
@@ -413,22 +415,23 @@ asdflkj
 <fof_term>             ::= <fof_function_term> | <variable>
 <fof_function_term>    ::= <fof_plain_term> | <fof_defined_term> | <fof_system_term>
 
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----This section is the FOFX syntax. Not yet in use.
 <fof_sequent>          ::= <fof_formula_tuple> <gentzen_arrow> <fof_formula_tuple> |
                            (<fof_sequent>)
 
 <fof_formula_tuple>    ::= [] | [<fof_formula_tuple_list>]
-<fof_formula_tuple_list> ::= <fof_logic_formula> | <fof_logic_formula>,<fof_formula_tuple_list>
+<fof_formula_tuple_list>  ::= <fof_logic_formula><comma_fof_logic_formula>*
+<comma_fof_logic_formula> ::= ,<fof_logic_formula>
 
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----CNF formulae (variables implicitly universally quantified)
 <cnf_formula>          ::= <cnf_disjunction> | ( <cnf_formula> )
 <cnf_disjunction>      ::= <cnf_literal> | <cnf_disjunction> <vline> <cnf_literal>
 <cnf_literal>          ::= <fof_atomic_formula> | ~ <fof_atomic_formula> |
                            ~ (<fof_atomic_formula>) | <fof_infix_unary>
 
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----Connectives - THF
 <thf_quantifier>       ::= <fof_quantifier> | <th0_quantifier> | <th1_quantifier>
 <thf_unary_connective> ::= <unary_connective> | <ntf_short_connective>
@@ -499,10 +502,11 @@ asdflkj
 <th1_defined_term>     ::= !! | ?? | @@+ | @@- | @=
 <defined_term>         ::= <number> | <distinct_object>
 <variable>             ::= <upper_word>
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----Formula sources
 %----Expanded semantic rules for IDV. It was <source>               ::= <general_term>
-<source>               ::= <dag_source> | <internal_source> | <external_source> | [<sources>]
+<source>               ::= <dag_source> | <internal_source> | <external_source> | unknown |
+                           [<sources>]
 %----Alternative sources are recorded like this, thus allowing representation
 %----of alternative derivations with shared parts.
 <sources>              ::= <source> | <source>,<sources>
@@ -534,7 +538,8 @@ asdflkj
 %----cases when a tautology is introduced as a leaf, e.g., for splitting, then use an 
 %----<internal_source>.
 <parents>              ::= [] | [<parent_list>]
-<parent_list>          ::= <parent_info> | <parent_info>,<parent_list>
+<parent_list>          ::= <parent_info><comma_parent_info>*
+<comma_parent_info>    ::= ,<parent_info>
 <parent_info>          ::= <source><parent_details>
 <parent_details>       ::= :<general_list> | <null>
 
@@ -542,7 +547,8 @@ asdflkj
 <optional_info>        ::= ,<useful_info> | <null>
 <useful_info>          ::= <general_list>
 <useful_info>          :== [] | [<info_items>]
-<info_items>           :== <info_item> | <info_item>,<info_items>
+<info_items>           :== <info_item><comma_info_item>*
+<comma_info_items>     :== ,<info_item>
 <info_item>            :== <formula_item> | <inference_item> | <general_function>
 %----Useful info for formula records
 <formula_item>         :== <description_item> | <iquote_item>
@@ -604,7 +610,8 @@ asdflkj
 <formula_data>         ::= $thf(<thf_formula>) | $tff(<tff_formula>) | $fof(<fof_formula>) |
                            $cnf(<cnf_formula>) | $fot(<fof_term>)
 <general_list>         ::= [] | [<general_terms>]
-<general_terms>        ::= <general_term> | <general_term>,<general_terms>
+<general_terms>        ::= <general_term><comma_general_term>*
+<comma_general_term>   ::= ,<general_term>
 
 %----General purpose
 <name>                 ::= <atomic_word> | <integer>
@@ -623,7 +630,7 @@ asdflkj
 %----All numbers are base 10 at the moment.
 <file_name>            ::= <atomic_word>
 <null>                 ::=
-%----Top of Page-----------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
 %----Rules from here on down are for defining tokens (terminal symbols) of the grammar, assuming
 %----they will be recognized by a lexical scanner.
 %----A ::- rule defines a token, a ::: rule defines a macro that is not a token. Usual regexp
@@ -739,88 +746,4 @@ asdflkj
 %----<printable_char> does not include tabs, newlines, bells, etc. The use of . does not not
 %----exclude tab, so this is a bit loose.
 <viewable_char>        ::: [.\n]
-%----Top of Page-----------------------------------------------------------------------------------
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
+%--------------------------------------------------------------------------------------------------

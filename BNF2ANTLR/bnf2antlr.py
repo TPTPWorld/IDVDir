@@ -418,8 +418,12 @@ def main():
             bnf_line = convert_comment(bnf_lines[index])
             antlr_lines.append(bnf_line)
         else:
-            print(f"unknown characters in SynxtaxBNF at line : {index + 1},  {bnf_lines[index]}, please either comment or fix definition")
-            errCount +=1
+            if is_empty_line(bnf_lines[index]):
+                print(f"empty newline character in SyntaxBNF at line: {index + 1},  {bnf_lines[index]}, please either comment or fix definition")
+                errCount += 1
+            else:
+                print(f"unknown characters in SynxtaxBNF at line : {index + 1},  {bnf_lines[index]}, please either comment or fix definition")
+                errCount +=1
     if errCount != 0:
         print("-" * 100)
         print(f"errors in BNF, writing cancelled, please fix then re-run!")
@@ -431,5 +435,6 @@ def main():
         write_antlr_file(antlr_lines)
         print("bnf to antlr conversion complete")
         
-    
+def is_empty_line(line):
+    return line.strip() == ""
 main()
