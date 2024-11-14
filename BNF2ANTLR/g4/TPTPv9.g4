@@ -1,4 +1,4 @@
-grammar TPTP;
+grammar TPTPv9;
 WS : [ \r\t\n]+ -> skip ;
 Comment_line : '%' ~[\r\n]* -> skip;
 Comment_block : '/*' .*? '*/' -> skip;
@@ -483,7 +483,7 @@ variable : Upper_word;
 //%----Top of Page----------------------------------------------------------------------------------- 
 //%----Formula sources 
 //%----Expanded semantic rules for IDV. It was <source>               ::= <general_term> 
-source : dag_source  |  internal_source  |  external_source  |  '['sources']';
+source : dag_source  |  internal_source  |  external_source  |  'unknown'  |  '['sources']';
 //%----Alternative sources are recorded like this, thus allowing representation 
 //%----of alternative derivations with shared parts. 
 sources : source  |  source','sources;
@@ -576,7 +576,7 @@ general_function : atomic_word'('general_terms')';
 //<bound_type>           :== $thf(<thf_top_level_type>) | $tff(<tff_top_level_type>) 
 formula_data : '$thf('thf_formula')'  |  '$tff('tff_formula')'  |  '$fof('fof_formula')'  |  '$cnf('cnf_formula')'  |  '$fot('fof_term')';
 general_list : '[]'  |  '['general_terms']';
-general_terms : general_term  |  general_term','general_terms;
+general_terms           : general_term (',' general_term)*; // #INFO flattened
 //%----General purpose 
 name : atomic_word  |  Integer;
 //%----Integer names are expected to be unsigned 

@@ -1,5 +1,3 @@
-
-asdflkj
 %----v9.0.0.0 (TPTP version.internal development number)
 %----v9.0.0.1 Added <tff_quantifier>. Added <hash> (for epsilon terms) to <thf_quantifier> and
 %----         <tff_quantifier>. Changed <tff_quantified_formula> to use <tff_quantifier>.
@@ -502,7 +500,8 @@ asdflkj
 %----Top of Page-----------------------------------------------------------------------------------
 %----Formula sources
 %----Expanded semantic rules for IDV. It was <source>               ::= <general_term>
-<source>               ::= <dag_source> | <internal_source> | <external_source> | [<sources>]
+<source>               ::= <dag_source> | <internal_source> | <external_source> | unknown |
+                           [<sources>]
 %----Alternative sources are recorded like this, thus allowing representation
 %----of alternative derivations with shared parts.
 <sources>              ::= <source> | <source>,<sources>
