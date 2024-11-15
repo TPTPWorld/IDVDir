@@ -2,7 +2,6 @@ grammar TPTP;
 WS : [ \r\t\n]+ -> skip ;
 Comment_line : '%' ~[\r\n]* -> skip;
 Comment_block : '/*' .*? '*/' -> skip;
-
 //# HERE ARE THE LEXER RULES
 
 ///
