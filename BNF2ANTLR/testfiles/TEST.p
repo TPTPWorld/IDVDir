@@ -1,1 +1,0 @@
-fof(an,axiom,p).

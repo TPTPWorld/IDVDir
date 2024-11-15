@@ -1,9 +1,18 @@
 import * as antlr4 from 'antlr4';
 window.antlr4 = antlr4;
 
-import {default as Lexer} from '../../TPTP-ANTLR4-Grammar/TPTPLexer';
-import {default as Parser} from '../../TPTP-ANTLR4-Grammar/TPTPParser';
-import {default as Listener} from '../../TPTP-ANTLR4-Grammar/TPTPListener';
+
+import {default as Lexer} from './TPTPv9Lexer';
+import {default as Parser} from './TPTPv9Parser';
+import {default as Listener} from './TPTPv9Listener';
+
+//import {default as Lexer} from '../../../IDVApp/TPTPv9Lexer';
+//import {default as Parser} from '../../../IDVApp/TPTPv9Parser';
+//import {default as Listener} from '../../../IDVApp/TPTPv9Listener';
+
+//import {default as Lexer} from '../../TPTP-ANTLR4-Grammar/TPTPLexer';
+//import {default as Parser} from '../../TPTP-ANTLR4-Grammar/TPTPParser';
+//import {default as Listener} from '../../TPTP-ANTLR4-Grammar/TPTPListener';
 
 function stripParens(formula){
 	return formula.replace(/\s+/g,'').replace(/[()]/g, '');
@@ -87,7 +96,7 @@ function getParentsFromSource(source, node){
 	if (dag.inference_record()) {
 		let inference_record = dag.inference_record();
 		node.inference_record = inference_record.getText();
-		let parent_list = inference_record.inference_parents().parent_list().parent_info();
+		let parent_list = inference_record.parents().parent_list().parent_info();
 
 		for (let i = 0; i < parent_list.length; i++) {
 			let p = parent_list[i];
@@ -100,7 +109,7 @@ function getParentsFromSource(source, node){
 				else{
 					try{
 						let sources = [];
-						let parents = ps.dag_source().inference_record().inference_parents().parent_list().parent_info();
+						let parents = ps.dag_source().inference_record().parents().parent_list().parent_info();
 						sources = parents.map(x => x.source());
 						
 						for(let s of sources){
