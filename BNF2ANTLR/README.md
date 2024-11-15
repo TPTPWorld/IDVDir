@@ -4,7 +4,7 @@
 
 ## Step 1.
 
-bnf2antlr.py will take input from bnf/SyntaxBNF, convert it all to antlr grammar, and then outputs it to g4/TPTP.g4
+bnf2antlr.py will take input from the file "bnf/SyntaxBNF" ,convert it all to antlr grammar, and then outputs it to g4/TPTP.g4
 
 - To convert files, run this command:
 

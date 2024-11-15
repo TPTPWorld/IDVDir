@@ -1,4 +1,4 @@
-grammar TPTP;
+grammar TPTP_v9_0_0_7;
 WS : [ \r\t\n]+ -> skip ;
 Comment_line : '%' ~[\r\n]* -> skip;
 Comment_block : '/*' .*? '*/' -> skip;

@@ -4,6 +4,15 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, "bnf", "SyntaxBNF")
 import re
 
+import sys
+
+if len(sys.argv) <= 1:
+    print("Please provide the path to the BNF file")
+    sys.exit()
+
+file_path = sys.argv[1]
+version = file_path.split("/")[-1].split("v")[-1].replace(".", "_")
+
 lexer_rules = {'Or': '|', 'And': '&', 'Iff': '<=>', 'Impl': '=>', 'If': '<=', 'Niff': '<~>', 'Nor': '~|', 'Nand': '~&', 'Not': '~', 'ForallComb': '!!', 'TyForall': '!>', 'Infix_inequality': '!=', 'Infix_equality': '=', 'Forall': '!', 'ExistsComb': '??', 'TyExists': '?*', 'Exists': '?', 'Lambda': '^', 'ChoiceComb': '@@+', 'Choice': '@+', 'DescriptionComb': '@@-', 'Description': '@-', 'EqComb': '@=', 'App': '@', 'Assignment': '', 'Identical': '==', 'Arrow': '>', 'Star': '*', 'Plus': '+', 'Hash': '#', 'Subtype_sign': '<<', 'Gentzen_arrow': '-->'}
 
 
@@ -29,17 +38,21 @@ def read_bnf_file(file_path):
     return lines
 
 
-def write_antlr_file(antlr_lines):
-    file = open("g4/TPTP.g4", "w")
+def write_antlr_file(antlr_lines, filename):
+    file = open(f"g4/{filename}.g4", "w")
     
     new_lines = []
     
-    lexer_rules = r"""
-grammar TPTP;
+    lexer_rules = fr"""
+grammar {filename};
 WS : [ \r\t\n]+ -> skip ;
 Comment_line : '%' ~[\r\n]* -> skip;
 Comment_block : '/*' .*? '*/' -> skip;
-    """
+"""
+    
+    
+    
+   
 
     for line in lexer_rules.split("\n"):
         if line != "":
@@ -379,14 +392,14 @@ def main():
     bnf_lines = clean_up(bnf_lines)
     # bnf_lines = another_clean_up(bnf_lines)
     grammar_count = 0
-    
+    errCount = 0 
     for index in range(len(bnf_lines)):
         
         # comment is %
         if bnf_lines[index].startswith("%"):
             bnf_line = convert_comment(bnf_lines[index])
             antlr_lines.append(bnf_line)
-        
+               
         # grammar rule is ::=
         elif "::=" in bnf_lines[index]:
             if bnf_lines[index].split("::=")[0].strip() in all_semantic_rules:
@@ -417,11 +430,25 @@ def main():
             # bnf_line = convert_semantic_rule(bnf_lines[index])
             bnf_line = convert_comment(bnf_lines[index])
             antlr_lines.append(bnf_line)
-    
-    antlr_lines = replace_capitals(["//# HERE ARE THE LEXER RULES\n"] + token_rules + ["\n//# END THE LEXER RULES\n\n"] + antlr_lines)
-    # antlr_lines = replace_capitals(antlr_lines)
-    write_antlr_file(antlr_lines)
-    print("bnf to antlr conversion complete")
+        else:
+            if is_empty_line(bnf_lines[index]):
+                print(f"empty newline character in SyntaxBNF at line: {index + 1},  {bnf_lines[index]}, please either comment or fix definition")
+                errCount += 1
+            else:
+                print(f"unknown characters in SynxtaxBNF at line : {index + 1},  {bnf_lines[index]}, please either comment or fix definition")
+                errCount +=1
+    if errCount != 0:
+        print("-" * 100)
+        print(f"errors in BNF, writing cancelled, please fix then re-run!")
+        print(f"BNF file path is : {file_path}")
+        exit()
+    else:
+        antlr_lines = replace_capitals(["//# HERE ARE THE LEXER RULES\n"] + token_rules + ["\n//# END THE LEXER RULES\n\n"] + antlr_lines)
+        # antlr_lines = replace_capitals(antlr_lines)
+        write_antlr_file(antlr_lines, f"TPTP_v{version}")
+        write_antlr_file(antlr_lines, f"TPTP")
+        print("bnf to antlr conversion complete")
         
-    
+def is_empty_line(line):
+    return line.strip() == ""
 main()
