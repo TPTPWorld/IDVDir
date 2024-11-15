@@ -2,9 +2,9 @@
 import * as antlr4 from 'antlr4';
 window.antlr4 = antlr4;
 
-import {default as Lexer} from '../tptp/TPTPLexer';
-import {default as Parser} from '../tptp/TPTPParser';
-import {default as Listener} from '../tptp/TPTPListener';
+import {default as Lexer} from './TPTPLexer';
+import {default as Parser} from './TPTPParser';
+import {default as Listener} from './TPTPListener';
 
 function stripParens(formula){
 	return formula.replace(/\s+/g,'').replace(/[()]/g, '');

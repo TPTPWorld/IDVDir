@@ -1,18 +1,10 @@
+
 import * as antlr4 from 'antlr4';
 window.antlr4 = antlr4;
 
-
-import {default as Lexer} from './TPTPv9Lexer';
-import {default as Parser} from './TPTPv9Parser';
-import {default as Listener} from './TPTPv9Listener';
-
-//import {default as Lexer} from '../../../IDVApp/TPTPv9Lexer';
-//import {default as Parser} from '../../../IDVApp/TPTPv9Parser';
-//import {default as Listener} from '../../../IDVApp/TPTPv9Listener';
-
-//import {default as Lexer} from '../../TPTP-ANTLR4-Grammar/TPTPLexer';
-//import {default as Parser} from '../../TPTP-ANTLR4-Grammar/TPTPParser';
-//import {default as Listener} from '../../TPTP-ANTLR4-Grammar/TPTPListener';
+import {default as Lexer} from './TPTPLexer';
+import {default as Parser} from './TPTPParser';
+import {default as Listener} from './TPTPListener';
 
 function stripParens(formula){
 	return formula.replace(/\s+/g,'').replace(/[()]/g, '');
@@ -96,8 +88,20 @@ function getParentsFromSource(source, node){
 	if (dag.inference_record()) {
 		let inference_record = dag.inference_record();
 		node.inference_record = inference_record.getText();
-		let parent_list = inference_record.parents().parent_list().parent_info();
 
+		//@=========================================================================================
+		//~ ORIGINAL FROM JACK
+		// let parent_list = inference_record.parents().parent_list().parent_info();
+
+		//~ MODIFIED TO USE COMMA_PARENT_INFO
+		let parent_list = [inference_record.parents().parent_list().parent_info()];
+
+		parent_list = parent_list.concat(
+			inference_record.parents().parent_list().comma_parent_info()
+				.map(comma_info => comma_info.parent_info())
+		);
+		//@=========================================================================================
+		
 		for (let i = 0; i < parent_list.length; i++) {
 			let p = parent_list[i];
 			let ps = p.source();
@@ -208,7 +212,12 @@ class Formatter extends Listener {
 
 		// try to get node info...(contains interestingness)
 		try {
-			let info = ctx.annotations().optional_info().useful_info().info_items().getText().split(",");
+			//@=========================================================================================
+			//~ ORIGINAL BY JACK
+			// let info = ctx.annotations().optional_info().useful_info().info_items().getText().split(",");
+			//~ MODIFIED TO USE GENERAL_TERMS
+			let info = ctx.annotations().optional_info().useful_info().general_list().general_terms().getText().split(",");
+			//@=========================================================================================
 			let infoObj = {};
 			for (let s of info) {
 				let [key, value] = s.split("(");
@@ -217,7 +226,8 @@ class Formatter extends Listener {
 			}
 			node.info = infoObj;
 		} catch (e) {
-			// console.log(`"${node.name}" has no info (or we failed getting it)`)
+			console.log(`"${node.name}" has no info (or we failed getting it)`)
+			console.log(e)
 		}
 
 		// try to get source...(contains parents)
@@ -235,6 +245,7 @@ class Formatter extends Listener {
         }
         catch (e) {
             console.log(`"${node.name}" has no level (or we failed getting it).`);
+			console.log(e);
         }
 
 		this.node_map[node.name] = node;
