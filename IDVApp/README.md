@@ -15,7 +15,7 @@ npm install --force
 - This will build a JavaScript parser for the antlr grammar.
 
 ```bash
-cd g4; antlr4 -Dlanguage=JavaScript TPTP.g4 -o ../../IDVApp/tptp; cd ..  FIX THIS
+antlr4 -Dlanguage=JavaScript path_to_grammar.g4 -o path_to_js_parser_dir
 ```
 
 - If you don't have antlr4, you can install it with:
