@@ -24,7 +24,7 @@ antlr4 -Dlanguage=JavaScript path_to_grammar.g4 -o path_to_js_parser_dir
 pip install antlr4-tools
 ```
 
-- Output JS antlr parsers will be in IDVApp for the electron app to use
+- Output JS antlr parsers to IDVApp/JavaScriptParser for the app to use
 
 - Then 
 
