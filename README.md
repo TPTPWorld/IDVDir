@@ -1,7 +1,8 @@
 
 # IDV DIR
 
-- How to build *** WHAT?:
+- How to build `bundle.js` for web deployment
+`cd BuildBundleWithNode`
 `npm install`     % To update dependencies
 `cd TPTP-ANTLR4-Grammar.old`
 `java -jar antlr-4.10.1-complete.jar -Dlanguage=JavaScript TPTPv8.g4`
