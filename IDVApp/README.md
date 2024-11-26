@@ -10,6 +10,24 @@ npm install --force
 
 - Then run this if you've made changes
 
+## Step 2.
+
+- This will build a JavaScript parser for the antlr grammar.
+
+```bash
+antlr4 -Dlanguage=JavaScript path_to_grammar.g4 -o path_to_js_parser_dir
+```
+
+- If you don't have antlr4, you can install it with:
+
+```bash
+pip install antlr4-tools
+```
+
+- Output JS antlr parsers to IDVApp/JavaScriptParser for the app to use
+
+- Then 
+
 ```bash
 npm run build
 ```

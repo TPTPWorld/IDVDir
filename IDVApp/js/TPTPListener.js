@@ -1,4 +1,4 @@
-// Generated from TPTP.g4 by ANTLR 4.13.2
+// Generated from ../BNF2ANTLR/g4/TPTP.g4 by ANTLR 4.13.2
 // jshint ignore: start
 import antlr4 from 'antlr4';
 
@@ -437,6 +437,15 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TPTPParser#comma_thf_logic_formula.
+	enterComma_thf_logic_formula(ctx) {
+	}
+
+	// Exit a parse tree produced by TPTPParser#comma_thf_logic_formula.
+	exitComma_thf_logic_formula(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TPTPParser#thf_atom_typing.
 	enterThf_atom_typing(ctx) {
 	}
@@ -857,6 +866,15 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by TPTPParser#tff_arguments.
 	exitTff_arguments(ctx) {
+	}
+
+
+	// Enter a parse tree produced by TPTPParser#comma_tff_term.
+	enterComma_tff_term(ctx) {
+	}
+
+	// Exit a parse tree produced by TPTPParser#comma_tff_term.
+	exitComma_tff_term(ctx) {
 	}
 
 
@@ -1391,6 +1409,15 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TPTPParser#comma_fof_logic_formula.
+	enterComma_fof_logic_formula(ctx) {
+	}
+
+	// Exit a parse tree produced by TPTPParser#comma_fof_logic_formula.
+	exitComma_fof_logic_formula(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TPTPParser#cnf_formula.
 	enterCnf_formula(ctx) {
 	}
@@ -1850,6 +1877,15 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TPTPParser#comma_parent_info.
+	enterComma_parent_info(ctx) {
+	}
+
+	// Exit a parse tree produced by TPTPParser#comma_parent_info.
+	exitComma_parent_info(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TPTPParser#parent_info.
 	enterParent_info(ctx) {
 	}
@@ -1985,6 +2021,15 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TPTPParser#comma_general_term.
+	enterComma_general_term(ctx) {
+	}
+
+	// Exit a parse tree produced by TPTPParser#comma_general_term.
+	exitComma_general_term(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TPTPParser#name.
 	enterName(ctx) {
 	}
@@ -2039,12 +2084,12 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
-	// Enter a parse tree produced by TPTPParser#null.
-	enterNull(ctx) {
+	// Enter a parse tree produced by TPTPParser#nothing.
+	enterNothing(ctx) {
 	}
 
-	// Exit a parse tree produced by TPTPParser#null.
-	exitNull(ctx) {
+	// Exit a parse tree produced by TPTPParser#nothing.
+	exitNothing(ctx) {
 	}
 
 
