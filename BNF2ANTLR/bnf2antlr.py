@@ -3,6 +3,14 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, "bnf", "SyntaxBNF")
 import re
+import sys
+
+if len(sys.argv) <= 1:
+    print("Please provide the path to the BNF file")
+    sys.exit()
+
+file_path = sys.argv[1]
+version = file_path.split("/")[-1].split("v")[-1].replace(".", "_")
 
 lexer_rules = {'Or': '|', 'And': '&', 'Iff': '<=>', 'Impl': '=>', 'If': '<=', 'Niff': '<~>', 'Nor': '~|', 'Nand': '~&', 'Not': '~', 'ForallComb': '!!', 'TyForall': '!>', 'Infix_inequality': '!=', 'Infix_equality': '=', 'Forall': '!', 'ExistsComb': '??', 'TyExists': '?*', 'Exists': '?', 'Lambda': '^', 'ChoiceComb': '@@+', 'Choice': '@+', 'DescriptionComb': '@@-', 'Description': '@-', 'EqComb': '@=', 'App': '@', 'Assignment': '', 'Identical': '==', 'Arrow': '>', 'Star': '*', 'Plus': '+', 'Hash': '#', 'Subtype_sign': '<<', 'Gentzen_arrow': '-->'}
 
@@ -29,17 +37,17 @@ def read_bnf_file(file_path):
     return lines
 
 
-def write_antlr_file(antlr_lines):
-    file = open("g4/TPTP.g4", "w")
+def write_antlr_file(antlr_lines, filename):
+    file = open(f"g4/{filename}.g4", "w")
     
     new_lines = []
     
-    lexer_rules = r"""
-grammar TPTP;
+    lexer_rules = fr"""
+grammar {filename};
 WS : [ \r\t\n]+ -> skip ;
 Comment_line : '%' ~[\r\n]* -> skip;
 Comment_block : '/*' .*? '*/' -> skip;
-    """
+"""
 
     for line in lexer_rules.split("\n"):
         if line != "":
@@ -182,13 +190,14 @@ def remove_quotes(line):
 
 #~ CONVERT RULES
 
-
 # grammar rule is ::=
 def convert_grammar_rule(line, append_EOF=False):
     if append_EOF:
         return "tptp_file               : tptp_input* EOF;"
     elif line.startswith("<TPTP_input> "):
         return "tptp_input              : annotated_formula | include;"
+    # elif line.startswith("<parent_list>"):
+    #     return "parent_list             : parent_info ( ',' parent_info )*;"
     
     line = line.replace("><", "> <")
     
@@ -227,9 +236,12 @@ def convert_grammar_rule(line, append_EOF=False):
             result_str += " "
             
         index += 1
-    
+        
+    result_str = remove_quotes(result_str)
+    result_str = result_str.replace("'*'", "*")
             
-    return before_line + " : " + remove_quotes(result_str) + ";"
+    return before_line + " : " + result_str + ";"
+
 
 
 # token rule is ::-
@@ -420,7 +432,9 @@ def main():
     
     antlr_lines = replace_capitals(["//# HERE ARE THE LEXER RULES\n"] + token_rules + ["\n//# END THE LEXER RULES\n\n"] + antlr_lines)
     # antlr_lines = replace_capitals(antlr_lines)
-    write_antlr_file(antlr_lines)
+    write_antlr_file(antlr_lines, f"TPTP_v{version}")
+    write_antlr_file(antlr_lines, f"TPTP")
+
     print("bnf to antlr conversion complete")
         
     

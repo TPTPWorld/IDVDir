@@ -1,4 +1,4 @@
-// Generated from /Users/daniel/Documents/coding_stuff/IDVDir/BNF2ANTLR/g4/TPTP.g4 by ANTLR 4.13.1
+// Generated from /Users/daniel/Documents/coding_stuff/IDVDir/BNF2ANTLR/g4/TPTP_v9_0_0_7.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class TPTPParser extends Parser {
+public class TPTP_v9_0_0_7Parser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -244,7 +244,7 @@ public class TPTPParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "TPTP.g4"; }
+	public String getGrammarFileName() { return "TPTP_v9_0_0_7.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -255,14 +255,14 @@ public class TPTPParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public TPTPParser(TokenStream input) {
+	public TPTP_v9_0_0_7Parser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Tptp_fileContext extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(TPTPParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(TPTP_v9_0_0_7Parser.EOF, 0); }
 		public List<Tptp_inputContext> tptp_input() {
 			return getRuleContexts(Tptp_inputContext.class);
 		}
@@ -877,7 +877,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Formula_roleContext extends ParserRuleContext {
-		public TerminalNode Lower_word() { return getToken(TPTPParser.Lower_word, 0); }
+		public TerminalNode Lower_word() { return getToken(TPTP_v9_0_0_7Parser.Lower_word, 0); }
 		public General_termContext general_term() {
 			return getRuleContext(General_termContext.class,0);
 		}
@@ -1237,7 +1237,7 @@ public class TPTPParser extends Parser {
 		public Thf_unit_formulaContext thf_unit_formula(int i) {
 			return getRuleContext(Thf_unit_formulaContext.class,i);
 		}
-		public TerminalNode Vline() { return getToken(TPTPParser.Vline, 0); }
+		public TerminalNode Vline() { return getToken(TPTP_v9_0_0_7Parser.Vline, 0); }
 		public Thf_or_formulaContext thf_or_formula() {
 			return getRuleContext(Thf_or_formulaContext.class,0);
 		}
@@ -3287,7 +3287,7 @@ public class TPTPParser extends Parser {
 		public Thf_unitary_typeContext thf_unitary_type(int i) {
 			return getRuleContext(Thf_unitary_typeContext.class,i);
 		}
-		public TerminalNode Arrow() { return getToken(TPTPParser.Arrow, 0); }
+		public TerminalNode Arrow() { return getToken(TPTP_v9_0_0_7Parser.Arrow, 0); }
 		public Thf_mapping_typeContext thf_mapping_type() {
 			return getRuleContext(Thf_mapping_typeContext.class,0);
 		}
@@ -3347,7 +3347,7 @@ public class TPTPParser extends Parser {
 		public Thf_unitary_typeContext thf_unitary_type(int i) {
 			return getRuleContext(Thf_unitary_typeContext.class,i);
 		}
-		public TerminalNode Star() { return getToken(TPTPParser.Star, 0); }
+		public TerminalNode Star() { return getToken(TPTP_v9_0_0_7Parser.Star, 0); }
 		public Thf_xprod_typeContext thf_xprod_type() {
 			return getRuleContext(Thf_xprod_typeContext.class,0);
 		}
@@ -3426,7 +3426,7 @@ public class TPTPParser extends Parser {
 		public Thf_unitary_typeContext thf_unitary_type(int i) {
 			return getRuleContext(Thf_unitary_typeContext.class,i);
 		}
-		public TerminalNode Plus() { return getToken(TPTPParser.Plus, 0); }
+		public TerminalNode Plus() { return getToken(TPTP_v9_0_0_7Parser.Plus, 0); }
 		public Thf_union_typeContext thf_union_type() {
 			return getRuleContext(Thf_union_typeContext.class,0);
 		}
@@ -3915,7 +3915,7 @@ public class TPTPParser extends Parser {
 		public Tff_unit_formulaContext tff_unit_formula(int i) {
 			return getRuleContext(Tff_unit_formulaContext.class,i);
 		}
-		public TerminalNode Vline() { return getToken(TPTPParser.Vline, 0); }
+		public TerminalNode Vline() { return getToken(TPTP_v9_0_0_7Parser.Vline, 0); }
 		public Tff_or_formulaContext tff_or_formula() {
 			return getRuleContext(Tff_or_formulaContext.class,0);
 		}
@@ -6139,7 +6139,7 @@ public class TPTPParser extends Parser {
 		public Tff_unitary_typeContext tff_unitary_type() {
 			return getRuleContext(Tff_unitary_typeContext.class,0);
 		}
-		public TerminalNode Arrow() { return getToken(TPTPParser.Arrow, 0); }
+		public TerminalNode Arrow() { return getToken(TPTP_v9_0_0_7Parser.Arrow, 0); }
 		public Tff_atomic_typeContext tff_atomic_type() {
 			return getRuleContext(Tff_atomic_typeContext.class,0);
 		}
@@ -6179,7 +6179,7 @@ public class TPTPParser extends Parser {
 		public Tff_unitary_typeContext tff_unitary_type() {
 			return getRuleContext(Tff_unitary_typeContext.class,0);
 		}
-		public TerminalNode Star() { return getToken(TPTPParser.Star, 0); }
+		public TerminalNode Star() { return getToken(TPTP_v9_0_0_7Parser.Star, 0); }
 		public Tff_atomic_typeContext tff_atomic_type() {
 			return getRuleContext(Tff_atomic_typeContext.class,0);
 		}
@@ -6911,7 +6911,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Ntf_indexContext extends ParserRuleContext {
-		public TerminalNode Hash() { return getToken(TPTPParser.Hash, 0); }
+		public TerminalNode Hash() { return getToken(TPTP_v9_0_0_7Parser.Hash, 0); }
 		public Tff_unitary_termContext tff_unitary_term() {
 			return getRuleContext(Tff_unitary_termContext.class,0);
 		}
@@ -6946,8 +6946,8 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Ntf_short_connectiveContext extends ParserRuleContext {
-		public TerminalNode Less_sign() { return getToken(TPTPParser.Less_sign, 0); }
-		public TerminalNode Arrow() { return getToken(TPTPParser.Arrow, 0); }
+		public TerminalNode Less_sign() { return getToken(TPTP_v9_0_0_7Parser.Less_sign, 0); }
+		public TerminalNode Arrow() { return getToken(TPTP_v9_0_0_7Parser.Arrow, 0); }
 		public Ntf_short_connectiveContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -7413,7 +7413,7 @@ public class TPTPParser extends Parser {
 		public Fof_unit_formulaContext fof_unit_formula(int i) {
 			return getRuleContext(Fof_unit_formulaContext.class,i);
 		}
-		public TerminalNode Vline() { return getToken(TPTPParser.Vline, 0); }
+		public TerminalNode Vline() { return getToken(TPTP_v9_0_0_7Parser.Vline, 0); }
 		public Fof_or_formulaContext fof_or_formula() {
 			return getRuleContext(Fof_or_formulaContext.class,0);
 		}
@@ -8837,7 +8837,7 @@ public class TPTPParser extends Parser {
 		public Cnf_disjunctionContext cnf_disjunction() {
 			return getRuleContext(Cnf_disjunctionContext.class,0);
 		}
-		public TerminalNode Vline() { return getToken(TPTPParser.Vline, 0); }
+		public TerminalNode Vline() { return getToken(TPTP_v9_0_0_7Parser.Vline, 0); }
 		public Cnf_disjunctionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -9281,7 +9281,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Fof_quantifierContext extends ParserRuleContext {
-		public TerminalNode Hash() { return getToken(TPTPParser.Hash, 0); }
+		public TerminalNode Hash() { return getToken(TPTP_v9_0_0_7Parser.Hash, 0); }
 		public Fof_quantifierContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -9320,7 +9320,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Nonassoc_connectiveContext extends ParserRuleContext {
-		public TerminalNode Vline() { return getToken(TPTPParser.Vline, 0); }
+		public TerminalNode Vline() { return getToken(TPTP_v9_0_0_7Parser.Vline, 0); }
 		public Nonassoc_connectiveContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -9395,7 +9395,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Assoc_connectiveContext extends ParserRuleContext {
-		public TerminalNode Vline() { return getToken(TPTPParser.Vline, 0); }
+		public TerminalNode Vline() { return getToken(TPTP_v9_0_0_7Parser.Vline, 0); }
 		public Assoc_connectiveContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -10122,7 +10122,7 @@ public class TPTPParser extends Parser {
 		public NumberContext number() {
 			return getRuleContext(NumberContext.class,0);
 		}
-		public TerminalNode Distinct_object() { return getToken(TPTPParser.Distinct_object, 0); }
+		public TerminalNode Distinct_object() { return getToken(TPTP_v9_0_0_7Parser.Distinct_object, 0); }
 		public Defined_termContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -10169,7 +10169,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class VariableContext extends ParserRuleContext {
-		public TerminalNode Upper_word() { return getToken(TPTPParser.Upper_word, 0); }
+		public TerminalNode Upper_word() { return getToken(TPTP_v9_0_0_7Parser.Upper_word, 0); }
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -11284,7 +11284,7 @@ public class TPTPParser extends Parser {
 		public Name_listContext name_list() {
 			return getRuleContext(Name_listContext.class,0);
 		}
-		public TerminalNode Star() { return getToken(TPTPParser.Star, 0); }
+		public TerminalNode Star() { return getToken(TPTP_v9_0_0_7Parser.Star, 0); }
 		public Formula_selectionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -11491,7 +11491,7 @@ public class TPTPParser extends Parser {
 		public NumberContext number() {
 			return getRuleContext(NumberContext.class,0);
 		}
-		public TerminalNode Distinct_object() { return getToken(TPTPParser.Distinct_object, 0); }
+		public TerminalNode Distinct_object() { return getToken(TPTP_v9_0_0_7Parser.Distinct_object, 0); }
 		public Formula_dataContext formula_data() {
 			return getRuleContext(Formula_dataContext.class,0);
 		}
@@ -11847,7 +11847,7 @@ public class TPTPParser extends Parser {
 		public Atomic_wordContext atomic_word() {
 			return getRuleContext(Atomic_wordContext.class,0);
 		}
-		public TerminalNode Integer() { return getToken(TPTPParser.Integer, 0); }
+		public TerminalNode Integer() { return getToken(TPTP_v9_0_0_7Parser.Integer, 0); }
 		public NameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -11893,8 +11893,8 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Atomic_wordContext extends ParserRuleContext {
-		public TerminalNode Lower_word() { return getToken(TPTPParser.Lower_word, 0); }
-		public TerminalNode Single_quoted() { return getToken(TPTPParser.Single_quoted, 0); }
+		public TerminalNode Lower_word() { return getToken(TPTP_v9_0_0_7Parser.Lower_word, 0); }
+		public TerminalNode Single_quoted() { return getToken(TPTP_v9_0_0_7Parser.Single_quoted, 0); }
 		public Atomic_wordContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -11933,7 +11933,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Atomic_defined_wordContext extends ParserRuleContext {
-		public TerminalNode Dollar_word() { return getToken(TPTPParser.Dollar_word, 0); }
+		public TerminalNode Dollar_word() { return getToken(TPTP_v9_0_0_7Parser.Dollar_word, 0); }
 		public Atomic_defined_wordContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -11963,7 +11963,7 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Atomic_system_wordContext extends ParserRuleContext {
-		public TerminalNode Dollar_dollar_word() { return getToken(TPTPParser.Dollar_dollar_word, 0); }
+		public TerminalNode Dollar_dollar_word() { return getToken(TPTP_v9_0_0_7Parser.Dollar_dollar_word, 0); }
 		public Atomic_system_wordContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -11993,9 +11993,9 @@ public class TPTPParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class NumberContext extends ParserRuleContext {
-		public TerminalNode Integer() { return getToken(TPTPParser.Integer, 0); }
-		public TerminalNode Rational() { return getToken(TPTPParser.Rational, 0); }
-		public TerminalNode Real() { return getToken(TPTPParser.Real, 0); }
+		public TerminalNode Integer() { return getToken(TPTP_v9_0_0_7Parser.Integer, 0); }
+		public TerminalNode Rational() { return getToken(TPTP_v9_0_0_7Parser.Rational, 0); }
+		public TerminalNode Real() { return getToken(TPTP_v9_0_0_7Parser.Real, 0); }
 		public NumberContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}

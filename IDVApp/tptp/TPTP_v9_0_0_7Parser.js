@@ -1,7 +1,7 @@
-// Generated from TPTP.g4 by ANTLR 4.13.2
+// Generated from TPTP_v9_0_0_7.g4 by ANTLR 4.13.2
 // jshint ignore: start
 import antlr4 from 'antlr4';
-import TPTPListener from './TPTPListener.js';
+import TPTP_v9_0_0_7Listener from './TPTP_v9_0_0_7Listener.js';
 const serializedATN = [4,1,106,1771,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,
 7,4,2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,
 2,13,7,13,2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,
@@ -606,9 +606,9 @@ const decisionsToDFA = atn.decisionToState.map( (ds, index) => new antlr4.dfa.DF
 
 const sharedContextCache = new antlr4.atn.PredictionContextCache();
 
-export default class TPTPParser extends antlr4.Parser {
+export default class TPTP_v9_0_0_7Parser extends antlr4.Parser {
 
-    static grammarFileName = "TPTP.g4";
+    static grammarFileName = "TPTP_v9_0_0_7.g4";
     static literalNames = [ null, "'tpi('", "','", "').'", "'thf('", "'tff('", 
                             "'tcf('", "'fof('", "'cnf('", "'-'", "'&'", 
                             "'@'", "'('", "')'", "'['", "']'", "':'", "'$let('", 
@@ -728,9 +728,9 @@ export default class TPTPParser extends antlr4.Parser {
     constructor(input) {
         super(input);
         this._interp = new antlr4.atn.ParserATNSimulator(this, atn, decisionsToDFA, sharedContextCache);
-        this.ruleNames = TPTPParser.ruleNames;
-        this.literalNames = TPTPParser.literalNames;
-        this.symbolicNames = TPTPParser.symbolicNames;
+        this.ruleNames = TPTP_v9_0_0_7Parser.ruleNames;
+        this.literalNames = TPTP_v9_0_0_7Parser.literalNames;
+        this.symbolicNames = TPTP_v9_0_0_7Parser.symbolicNames;
     }
 
     sempred(localctx, ruleIndex, predIndex) {
@@ -866,7 +866,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tptp_file() {
 	    let localctx = new Tptp_fileContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 0, TPTPParser.RULE_tptp_file);
+	    this.enterRule(localctx, 0, TPTP_v9_0_0_7Parser.RULE_tptp_file);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -881,7 +881,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            _la = this._input.LA(1);
 	        }
 	        this.state = 470;
-	        this.match(TPTPParser.EOF);
+	        this.match(TPTP_v9_0_0_7Parser.EOF);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -900,7 +900,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tptp_input() {
 	    let localctx = new Tptp_inputContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 2, TPTPParser.RULE_tptp_input);
+	    this.enterRule(localctx, 2, TPTP_v9_0_0_7Parser.RULE_tptp_input);
 	    try {
 	        this.state = 474;
 	        this._errHandler.sync(this);
@@ -941,7 +941,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	annotated_formula() {
 	    let localctx = new Annotated_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 4, TPTPParser.RULE_annotated_formula);
+	    this.enterRule(localctx, 4, TPTP_v9_0_0_7Parser.RULE_annotated_formula);
 	    try {
 	        this.state = 482;
 	        this._errHandler.sync(this);
@@ -997,25 +997,25 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tpi_annotated() {
 	    let localctx = new Tpi_annotatedContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 6, TPTPParser.RULE_tpi_annotated);
+	    this.enterRule(localctx, 6, TPTP_v9_0_0_7Parser.RULE_tpi_annotated);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 484;
-	        this.match(TPTPParser.T__0);
+	        this.match(TPTP_v9_0_0_7Parser.T__0);
 	        this.state = 485;
 	        this.name();
 	        this.state = 486;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 487;
 	        this.formula_role();
 	        this.state = 488;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 489;
 	        this.tpi_formula();
 	        this.state = 490;
 	        this.annotations();
 	        this.state = 491;
-	        this.match(TPTPParser.T__2);
+	        this.match(TPTP_v9_0_0_7Parser.T__2);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1034,7 +1034,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tpi_formula() {
 	    let localctx = new Tpi_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 8, TPTPParser.RULE_tpi_formula);
+	    this.enterRule(localctx, 8, TPTP_v9_0_0_7Parser.RULE_tpi_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 493;
@@ -1057,25 +1057,25 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_annotated() {
 	    let localctx = new Thf_annotatedContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 10, TPTPParser.RULE_thf_annotated);
+	    this.enterRule(localctx, 10, TPTP_v9_0_0_7Parser.RULE_thf_annotated);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 495;
-	        this.match(TPTPParser.T__3);
+	        this.match(TPTP_v9_0_0_7Parser.T__3);
 	        this.state = 496;
 	        this.name();
 	        this.state = 497;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 498;
 	        this.formula_role();
 	        this.state = 499;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 500;
 	        this.thf_formula();
 	        this.state = 501;
 	        this.annotations();
 	        this.state = 502;
-	        this.match(TPTPParser.T__2);
+	        this.match(TPTP_v9_0_0_7Parser.T__2);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1094,25 +1094,25 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_annotated() {
 	    let localctx = new Tff_annotatedContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 12, TPTPParser.RULE_tff_annotated);
+	    this.enterRule(localctx, 12, TPTP_v9_0_0_7Parser.RULE_tff_annotated);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 504;
-	        this.match(TPTPParser.T__4);
+	        this.match(TPTP_v9_0_0_7Parser.T__4);
 	        this.state = 505;
 	        this.name();
 	        this.state = 506;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 507;
 	        this.formula_role();
 	        this.state = 508;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 509;
 	        this.tff_formula();
 	        this.state = 510;
 	        this.annotations();
 	        this.state = 511;
-	        this.match(TPTPParser.T__2);
+	        this.match(TPTP_v9_0_0_7Parser.T__2);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1131,25 +1131,25 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tcf_annotated() {
 	    let localctx = new Tcf_annotatedContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 14, TPTPParser.RULE_tcf_annotated);
+	    this.enterRule(localctx, 14, TPTP_v9_0_0_7Parser.RULE_tcf_annotated);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 513;
-	        this.match(TPTPParser.T__5);
+	        this.match(TPTP_v9_0_0_7Parser.T__5);
 	        this.state = 514;
 	        this.name();
 	        this.state = 515;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 516;
 	        this.formula_role();
 	        this.state = 517;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 518;
 	        this.tcf_formula();
 	        this.state = 519;
 	        this.annotations();
 	        this.state = 520;
-	        this.match(TPTPParser.T__2);
+	        this.match(TPTP_v9_0_0_7Parser.T__2);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1168,25 +1168,25 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_annotated() {
 	    let localctx = new Fof_annotatedContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 16, TPTPParser.RULE_fof_annotated);
+	    this.enterRule(localctx, 16, TPTP_v9_0_0_7Parser.RULE_fof_annotated);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 522;
-	        this.match(TPTPParser.T__6);
+	        this.match(TPTP_v9_0_0_7Parser.T__6);
 	        this.state = 523;
 	        this.name();
 	        this.state = 524;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 525;
 	        this.formula_role();
 	        this.state = 526;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 527;
 	        this.fof_formula();
 	        this.state = 528;
 	        this.annotations();
 	        this.state = 529;
-	        this.match(TPTPParser.T__2);
+	        this.match(TPTP_v9_0_0_7Parser.T__2);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1205,25 +1205,25 @@ export default class TPTPParser extends antlr4.Parser {
 
 	cnf_annotated() {
 	    let localctx = new Cnf_annotatedContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 18, TPTPParser.RULE_cnf_annotated);
+	    this.enterRule(localctx, 18, TPTP_v9_0_0_7Parser.RULE_cnf_annotated);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 531;
-	        this.match(TPTPParser.T__7);
+	        this.match(TPTP_v9_0_0_7Parser.T__7);
 	        this.state = 532;
 	        this.name();
 	        this.state = 533;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 534;
 	        this.formula_role();
 	        this.state = 535;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 536;
 	        this.cnf_formula();
 	        this.state = 537;
 	        this.annotations();
 	        this.state = 538;
-	        this.match(TPTPParser.T__2);
+	        this.match(TPTP_v9_0_0_7Parser.T__2);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1242,7 +1242,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	annotations() {
 	    let localctx = new AnnotationsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 20, TPTPParser.RULE_annotations);
+	    this.enterRule(localctx, 20, TPTP_v9_0_0_7Parser.RULE_annotations);
 	    try {
 	        this.state = 545;
 	        this._errHandler.sync(this);
@@ -1250,7 +1250,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 540;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 541;
 	            this.source();
 	            this.state = 542;
@@ -1282,7 +1282,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	formula_role() {
 	    let localctx = new Formula_roleContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 22, TPTPParser.RULE_formula_role);
+	    this.enterRule(localctx, 22, TPTP_v9_0_0_7Parser.RULE_formula_role);
 	    try {
 	        this.state = 551;
 	        this._errHandler.sync(this);
@@ -1291,15 +1291,15 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 547;
-	            this.match(TPTPParser.Lower_word);
+	            this.match(TPTP_v9_0_0_7Parser.Lower_word);
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 548;
-	            this.match(TPTPParser.Lower_word);
+	            this.match(TPTP_v9_0_0_7Parser.Lower_word);
 	            this.state = 549;
-	            this.match(TPTPParser.T__8);
+	            this.match(TPTP_v9_0_0_7Parser.T__8);
 	            this.state = 550;
 	            this.general_term();
 	            break;
@@ -1323,7 +1323,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_formula() {
 	    let localctx = new Thf_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 24, TPTPParser.RULE_thf_formula);
+	    this.enterRule(localctx, 24, TPTP_v9_0_0_7Parser.RULE_thf_formula);
 	    try {
 	        this.state = 556;
 	        this._errHandler.sync(this);
@@ -1366,7 +1366,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_logic_formula() {
 	    let localctx = new Thf_logic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 26, TPTPParser.RULE_thf_logic_formula);
+	    this.enterRule(localctx, 26, TPTP_v9_0_0_7Parser.RULE_thf_logic_formula);
 	    try {
 	        this.state = 564;
 	        this._errHandler.sync(this);
@@ -1427,7 +1427,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_binary_formula() {
 	    let localctx = new Thf_binary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 28, TPTPParser.RULE_thf_binary_formula);
+	    this.enterRule(localctx, 28, TPTP_v9_0_0_7Parser.RULE_thf_binary_formula);
 	    try {
 	        this.state = 569;
 	        this._errHandler.sync(this);
@@ -1470,7 +1470,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_binary_nonassoc() {
 	    let localctx = new Thf_binary_nonassocContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 30, TPTPParser.RULE_thf_binary_nonassoc);
+	    this.enterRule(localctx, 30, TPTP_v9_0_0_7Parser.RULE_thf_binary_nonassoc);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 571;
@@ -1497,7 +1497,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_binary_assoc() {
 	    let localctx = new Thf_binary_assocContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 32, TPTPParser.RULE_thf_binary_assoc);
+	    this.enterRule(localctx, 32, TPTP_v9_0_0_7Parser.RULE_thf_binary_assoc);
 	    try {
 	        this.state = 578;
 	        this._errHandler.sync(this);
@@ -1546,13 +1546,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Thf_or_formulaContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 34;
-	    this.enterRecursionRule(localctx, 34, TPTPParser.RULE_thf_or_formula, _p);
+	    this.enterRecursionRule(localctx, 34, TPTP_v9_0_0_7Parser.RULE_thf_or_formula, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 581;
 	        this.thf_unit_formula();
 	        this.state = 582;
-	        this.match(TPTPParser.Vline);
+	        this.match(TPTP_v9_0_0_7Parser.Vline);
 	        this.state = 583;
 	        this.thf_unit_formula();
 	        this._ctx.stop = this._input.LT(-1);
@@ -1566,13 +1566,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Thf_or_formulaContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_thf_or_formula);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_thf_or_formula);
 	                this.state = 585;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 586;
-	                this.match(TPTPParser.Vline);
+	                this.match(TPTP_v9_0_0_7Parser.Vline);
 	                this.state = 587;
 	                this.thf_unit_formula(); 
 	            }
@@ -1605,13 +1605,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Thf_and_formulaContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 36;
-	    this.enterRecursionRule(localctx, 36, TPTPParser.RULE_thf_and_formula, _p);
+	    this.enterRecursionRule(localctx, 36, TPTP_v9_0_0_7Parser.RULE_thf_and_formula, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 594;
 	        this.thf_unit_formula();
 	        this.state = 595;
-	        this.match(TPTPParser.T__9);
+	        this.match(TPTP_v9_0_0_7Parser.T__9);
 	        this.state = 596;
 	        this.thf_unit_formula();
 	        this._ctx.stop = this._input.LT(-1);
@@ -1625,13 +1625,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Thf_and_formulaContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_thf_and_formula);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_thf_and_formula);
 	                this.state = 598;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 599;
-	                this.match(TPTPParser.T__9);
+	                this.match(TPTP_v9_0_0_7Parser.T__9);
 	                this.state = 600;
 	                this.thf_unit_formula(); 
 	            }
@@ -1664,13 +1664,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Thf_apply_formulaContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 38;
-	    this.enterRecursionRule(localctx, 38, TPTPParser.RULE_thf_apply_formula, _p);
+	    this.enterRecursionRule(localctx, 38, TPTP_v9_0_0_7Parser.RULE_thf_apply_formula, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 607;
 	        this.thf_unit_formula();
 	        this.state = 608;
-	        this.match(TPTPParser.T__10);
+	        this.match(TPTP_v9_0_0_7Parser.T__10);
 	        this.state = 609;
 	        this.thf_unit_formula();
 	        this._ctx.stop = this._input.LT(-1);
@@ -1684,13 +1684,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Thf_apply_formulaContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_thf_apply_formula);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_thf_apply_formula);
 	                this.state = 611;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 612;
-	                this.match(TPTPParser.T__10);
+	                this.match(TPTP_v9_0_0_7Parser.T__10);
 	                this.state = 613;
 	                this.thf_unit_formula(); 
 	            }
@@ -1717,7 +1717,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_unit_formula() {
 	    let localctx = new Thf_unit_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 40, TPTPParser.RULE_thf_unit_formula);
+	    this.enterRule(localctx, 40, TPTP_v9_0_0_7Parser.RULE_thf_unit_formula);
 	    try {
 	        this.state = 622;
 	        this._errHandler.sync(this);
@@ -1760,7 +1760,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_preunit_formula() {
 	    let localctx = new Thf_preunit_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 42, TPTPParser.RULE_thf_preunit_formula);
+	    this.enterRule(localctx, 42, TPTP_v9_0_0_7Parser.RULE_thf_preunit_formula);
 	    try {
 	        this.state = 626;
 	        this._errHandler.sync(this);
@@ -1826,7 +1826,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_unitary_formula() {
 	    let localctx = new Thf_unitary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 44, TPTPParser.RULE_thf_unitary_formula);
+	    this.enterRule(localctx, 44, TPTP_v9_0_0_7Parser.RULE_thf_unitary_formula);
 	    try {
 	        this.state = 635;
 	        this._errHandler.sync(this);
@@ -1853,11 +1853,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 4:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 631;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 632;
 	            this.thf_logic_formula();
 	            this.state = 633;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -1879,7 +1879,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_quantified_formula() {
 	    let localctx = new Thf_quantified_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 46, TPTPParser.RULE_thf_quantified_formula);
+	    this.enterRule(localctx, 46, TPTP_v9_0_0_7Parser.RULE_thf_quantified_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 637;
@@ -1904,19 +1904,19 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_quantification() {
 	    let localctx = new Thf_quantificationContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 48, TPTPParser.RULE_thf_quantification);
+	    this.enterRule(localctx, 48, TPTP_v9_0_0_7Parser.RULE_thf_quantification);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 640;
 	        this.thf_quantifier();
 	        this.state = 641;
-	        this.match(TPTPParser.T__13);
+	        this.match(TPTP_v9_0_0_7Parser.T__13);
 	        this.state = 642;
 	        this.thf_variable_list();
 	        this.state = 643;
-	        this.match(TPTPParser.T__14);
+	        this.match(TPTP_v9_0_0_7Parser.T__14);
 	        this.state = 644;
-	        this.match(TPTPParser.T__15);
+	        this.match(TPTP_v9_0_0_7Parser.T__15);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -1935,7 +1935,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_variable_list() {
 	    let localctx = new Thf_variable_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 50, TPTPParser.RULE_thf_variable_list);
+	    this.enterRule(localctx, 50, TPTP_v9_0_0_7Parser.RULE_thf_variable_list);
 	    try {
 	        this.state = 651;
 	        this._errHandler.sync(this);
@@ -1952,7 +1952,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 647;
 	            this.thf_typed_variable();
 	            this.state = 648;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 649;
 	            this.thf_variable_list();
 	            break;
@@ -1976,13 +1976,13 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_typed_variable() {
 	    let localctx = new Thf_typed_variableContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 52, TPTPParser.RULE_thf_typed_variable);
+	    this.enterRule(localctx, 52, TPTP_v9_0_0_7Parser.RULE_thf_typed_variable);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 653;
 	        this.variable();
 	        this.state = 654;
-	        this.match(TPTPParser.T__15);
+	        this.match(TPTP_v9_0_0_7Parser.T__15);
 	        this.state = 655;
 	        this.thf_top_level_type();
 	    } catch (re) {
@@ -2003,7 +2003,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_unary_formula() {
 	    let localctx = new Thf_unary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 54, TPTPParser.RULE_thf_unary_formula);
+	    this.enterRule(localctx, 54, TPTP_v9_0_0_7Parser.RULE_thf_unary_formula);
 	    try {
 	        this.state = 659;
 	        this._errHandler.sync(this);
@@ -2061,7 +2061,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_prefix_unary() {
 	    let localctx = new Thf_prefix_unaryContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 56, TPTPParser.RULE_thf_prefix_unary);
+	    this.enterRule(localctx, 56, TPTP_v9_0_0_7Parser.RULE_thf_prefix_unary);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 661;
@@ -2086,7 +2086,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_infix_unary() {
 	    let localctx = new Thf_infix_unaryContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 58, TPTPParser.RULE_thf_infix_unary);
+	    this.enterRule(localctx, 58, TPTP_v9_0_0_7Parser.RULE_thf_infix_unary);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 664;
@@ -2113,7 +2113,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_atomic_formula() {
 	    let localctx = new Thf_atomic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 60, TPTPParser.RULE_thf_atomic_formula);
+	    this.enterRule(localctx, 60, TPTP_v9_0_0_7Parser.RULE_thf_atomic_formula);
 	    try {
 	        this.state = 672;
 	        this._errHandler.sync(this);
@@ -2162,7 +2162,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_plain_atomic() {
 	    let localctx = new Thf_plain_atomicContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 62, TPTPParser.RULE_thf_plain_atomic);
+	    this.enterRule(localctx, 62, TPTP_v9_0_0_7Parser.RULE_thf_plain_atomic);
 	    try {
 	        this.state = 676;
 	        this._errHandler.sync(this);
@@ -2200,7 +2200,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_defined_atomic() {
 	    let localctx = new Thf_defined_atomicContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 64, TPTPParser.RULE_thf_defined_atomic);
+	    this.enterRule(localctx, 64, TPTP_v9_0_0_7Parser.RULE_thf_defined_atomic);
 	    try {
 	        this.state = 686;
 	        this._errHandler.sync(this);
@@ -2226,11 +2226,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 12:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 680;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 681;
 	            this.thf_conn_term();
 	            this.state = 682;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        case 20:
 	            this.enterOuterAlt(localctx, 4);
@@ -2263,7 +2263,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_defined_term() {
 	    let localctx = new Thf_defined_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 66, TPTPParser.RULE_thf_defined_term);
+	    this.enterRule(localctx, 66, TPTP_v9_0_0_7Parser.RULE_thf_defined_term);
 	    try {
 	        this.state = 690;
 	        this._errHandler.sync(this);
@@ -2306,7 +2306,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_defined_infix() {
 	    let localctx = new Thf_defined_infixContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 68, TPTPParser.RULE_thf_defined_infix);
+	    this.enterRule(localctx, 68, TPTP_v9_0_0_7Parser.RULE_thf_defined_infix);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 692;
@@ -2333,7 +2333,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_system_atomic() {
 	    let localctx = new Thf_system_atomicContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 70, TPTPParser.RULE_thf_system_atomic);
+	    this.enterRule(localctx, 70, TPTP_v9_0_0_7Parser.RULE_thf_system_atomic);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 696;
@@ -2356,23 +2356,23 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_let() {
 	    let localctx = new Thf_letContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 72, TPTPParser.RULE_thf_let);
+	    this.enterRule(localctx, 72, TPTP_v9_0_0_7Parser.RULE_thf_let);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 698;
-	        this.match(TPTPParser.T__16);
+	        this.match(TPTP_v9_0_0_7Parser.T__16);
 	        this.state = 699;
 	        this.thf_let_types();
 	        this.state = 700;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 701;
 	        this.thf_let_defns();
 	        this.state = 702;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 703;
 	        this.thf_logic_formula();
 	        this.state = 704;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -2391,7 +2391,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_let_types() {
 	    let localctx = new Thf_let_typesContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 74, TPTPParser.RULE_thf_let_types);
+	    this.enterRule(localctx, 74, TPTP_v9_0_0_7Parser.RULE_thf_let_types);
 	    try {
 	        this.state = 711;
 	        this._errHandler.sync(this);
@@ -2407,11 +2407,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 14:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 707;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 708;
 	            this.thf_atom_typing_list();
 	            this.state = 709;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -2434,7 +2434,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_atom_typing_list() {
 	    let localctx = new Thf_atom_typing_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 76, TPTPParser.RULE_thf_atom_typing_list);
+	    this.enterRule(localctx, 76, TPTP_v9_0_0_7Parser.RULE_thf_atom_typing_list);
 	    try {
 	        this.state = 718;
 	        this._errHandler.sync(this);
@@ -2451,7 +2451,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 714;
 	            this.thf_atom_typing();
 	            this.state = 715;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 716;
 	            this.thf_atom_typing_list();
 	            break;
@@ -2475,7 +2475,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_let_defns() {
 	    let localctx = new Thf_let_defnsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 78, TPTPParser.RULE_thf_let_defns);
+	    this.enterRule(localctx, 78, TPTP_v9_0_0_7Parser.RULE_thf_let_defns);
 	    try {
 	        this.state = 725;
 	        this._errHandler.sync(this);
@@ -2490,11 +2490,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 721;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 722;
 	            this.thf_let_defn_list();
 	            this.state = 723;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 
 	        }
@@ -2516,7 +2516,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_let_defn() {
 	    let localctx = new Thf_let_defnContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 80, TPTPParser.RULE_thf_let_defn);
+	    this.enterRule(localctx, 80, TPTP_v9_0_0_7Parser.RULE_thf_let_defn);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 727;
@@ -2543,7 +2543,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_let_defn_list() {
 	    let localctx = new Thf_let_defn_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 82, TPTPParser.RULE_thf_let_defn_list);
+	    this.enterRule(localctx, 82, TPTP_v9_0_0_7Parser.RULE_thf_let_defn_list);
 	    try {
 	        this.state = 736;
 	        this._errHandler.sync(this);
@@ -2560,7 +2560,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 732;
 	            this.thf_let_defn();
 	            this.state = 733;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 734;
 	            this.thf_let_defn_list();
 	            break;
@@ -2584,7 +2584,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_unitary_term() {
 	    let localctx = new Thf_unitary_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 84, TPTPParser.RULE_thf_unitary_term);
+	    this.enterRule(localctx, 84, TPTP_v9_0_0_7Parser.RULE_thf_unitary_term);
 	    try {
 	        this.state = 744;
 	        this._errHandler.sync(this);
@@ -2605,11 +2605,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 740;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 741;
 	            this.thf_logic_formula();
 	            this.state = 742;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -2631,7 +2631,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_conn_term() {
 	    let localctx = new Thf_conn_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 86, TPTPParser.RULE_thf_conn_term);
+	    this.enterRule(localctx, 86, TPTP_v9_0_0_7Parser.RULE_thf_conn_term);
 	    try {
 	        this.state = 751;
 	        this._errHandler.sync(this);
@@ -2686,7 +2686,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_tuple() {
 	    let localctx = new Thf_tupleContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 88, TPTPParser.RULE_thf_tuple);
+	    this.enterRule(localctx, 88, TPTP_v9_0_0_7Parser.RULE_thf_tuple);
 	    try {
 	        this.state = 758;
 	        this._errHandler.sync(this);
@@ -2694,16 +2694,16 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 18:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 753;
-	            this.match(TPTPParser.T__17);
+	            this.match(TPTP_v9_0_0_7Parser.T__17);
 	            break;
 	        case 14:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 754;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 755;
 	            this.thf_formula_list();
 	            this.state = 756;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -2726,7 +2726,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_fof_function() {
 	    let localctx = new Thf_fof_functionContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 90, TPTPParser.RULE_thf_fof_function);
+	    this.enterRule(localctx, 90, TPTP_v9_0_0_7Parser.RULE_thf_fof_function);
 	    try {
 	        this.state = 775;
 	        this._errHandler.sync(this);
@@ -2737,33 +2737,33 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 760;
 	            this.functor();
 	            this.state = 761;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 762;
 	            this.thf_arguments();
 	            this.state = 763;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        case 68:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 765;
 	            this.defined_functor();
 	            this.state = 766;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 767;
 	            this.thf_arguments();
 	            this.state = 768;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        case 69:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 770;
 	            this.system_functor();
 	            this.state = 771;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 772;
 	            this.thf_arguments();
 	            this.state = 773;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -2786,7 +2786,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_arguments() {
 	    let localctx = new Thf_argumentsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 92, TPTPParser.RULE_thf_arguments);
+	    this.enterRule(localctx, 92, TPTP_v9_0_0_7Parser.RULE_thf_arguments);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 777;
@@ -2809,7 +2809,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_formula_list() {
 	    let localctx = new Thf_formula_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 94, TPTPParser.RULE_thf_formula_list);
+	    this.enterRule(localctx, 94, TPTP_v9_0_0_7Parser.RULE_thf_formula_list);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -2843,11 +2843,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	comma_thf_logic_formula() {
 	    let localctx = new Comma_thf_logic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 96, TPTPParser.RULE_comma_thf_logic_formula);
+	    this.enterRule(localctx, 96, TPTP_v9_0_0_7Parser.RULE_comma_thf_logic_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 786;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 787;
 	        this.thf_logic_formula();
 	    } catch (re) {
@@ -2868,7 +2868,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_atom_typing() {
 	    let localctx = new Thf_atom_typingContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 98, TPTPParser.RULE_thf_atom_typing);
+	    this.enterRule(localctx, 98, TPTP_v9_0_0_7Parser.RULE_thf_atom_typing);
 	    try {
 	        this.state = 797;
 	        this._errHandler.sync(this);
@@ -2880,18 +2880,18 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 789;
 	            this.untyped_atom();
 	            this.state = 790;
-	            this.match(TPTPParser.T__15);
+	            this.match(TPTP_v9_0_0_7Parser.T__15);
 	            this.state = 791;
 	            this.thf_top_level_type();
 	            break;
 	        case 12:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 793;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 794;
 	            this.thf_atom_typing();
 	            this.state = 795;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -2914,7 +2914,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_top_level_type() {
 	    let localctx = new Thf_top_level_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 100, TPTPParser.RULE_thf_top_level_type);
+	    this.enterRule(localctx, 100, TPTP_v9_0_0_7Parser.RULE_thf_top_level_type);
 	    try {
 	        this.state = 802;
 	        this._errHandler.sync(this);
@@ -2957,7 +2957,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_unitary_type() {
 	    let localctx = new Thf_unitary_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 102, TPTPParser.RULE_thf_unitary_type);
+	    this.enterRule(localctx, 102, TPTP_v9_0_0_7Parser.RULE_thf_unitary_type);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 804;
@@ -2980,7 +2980,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_apply_type() {
 	    let localctx = new Thf_apply_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 104, TPTPParser.RULE_thf_apply_type);
+	    this.enterRule(localctx, 104, TPTP_v9_0_0_7Parser.RULE_thf_apply_type);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 806;
@@ -3003,7 +3003,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_binary_type() {
 	    let localctx = new Thf_binary_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 106, TPTPParser.RULE_thf_binary_type);
+	    this.enterRule(localctx, 106, TPTP_v9_0_0_7Parser.RULE_thf_binary_type);
 	    try {
 	        this.state = 811;
 	        this._errHandler.sync(this);
@@ -3046,7 +3046,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_mapping_type() {
 	    let localctx = new Thf_mapping_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 108, TPTPParser.RULE_thf_mapping_type);
+	    this.enterRule(localctx, 108, TPTP_v9_0_0_7Parser.RULE_thf_mapping_type);
 	    try {
 	        this.state = 821;
 	        this._errHandler.sync(this);
@@ -3057,7 +3057,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 813;
 	            this.thf_unitary_type();
 	            this.state = 814;
-	            this.match(TPTPParser.Arrow);
+	            this.match(TPTP_v9_0_0_7Parser.Arrow);
 	            this.state = 815;
 	            this.thf_unitary_type();
 	            break;
@@ -3067,7 +3067,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 817;
 	            this.thf_unitary_type();
 	            this.state = 818;
-	            this.match(TPTPParser.Arrow);
+	            this.match(TPTP_v9_0_0_7Parser.Arrow);
 	            this.state = 819;
 	            this.thf_mapping_type();
 	            break;
@@ -3097,13 +3097,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Thf_xprod_typeContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 110;
-	    this.enterRecursionRule(localctx, 110, TPTPParser.RULE_thf_xprod_type, _p);
+	    this.enterRecursionRule(localctx, 110, TPTP_v9_0_0_7Parser.RULE_thf_xprod_type, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 824;
 	        this.thf_unitary_type();
 	        this.state = 825;
-	        this.match(TPTPParser.Star);
+	        this.match(TPTP_v9_0_0_7Parser.Star);
 	        this.state = 826;
 	        this.thf_unitary_type();
 	        this._ctx.stop = this._input.LT(-1);
@@ -3117,13 +3117,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Thf_xprod_typeContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_thf_xprod_type);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_thf_xprod_type);
 	                this.state = 828;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 829;
-	                this.match(TPTPParser.Star);
+	                this.match(TPTP_v9_0_0_7Parser.Star);
 	                this.state = 830;
 	                this.thf_unitary_type(); 
 	            }
@@ -3156,13 +3156,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Thf_union_typeContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 112;
-	    this.enterRecursionRule(localctx, 112, TPTPParser.RULE_thf_union_type, _p);
+	    this.enterRecursionRule(localctx, 112, TPTP_v9_0_0_7Parser.RULE_thf_union_type, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 837;
 	        this.thf_unitary_type();
 	        this.state = 838;
-	        this.match(TPTPParser.Plus);
+	        this.match(TPTP_v9_0_0_7Parser.Plus);
 	        this.state = 839;
 	        this.thf_unitary_type();
 	        this._ctx.stop = this._input.LT(-1);
@@ -3176,13 +3176,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Thf_union_typeContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_thf_union_type);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_thf_union_type);
 	                this.state = 841;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 842;
-	                this.match(TPTPParser.Plus);
+	                this.match(TPTP_v9_0_0_7Parser.Plus);
 	                this.state = 843;
 	                this.thf_unitary_type(); 
 	            }
@@ -3209,7 +3209,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_subtype() {
 	    let localctx = new Thf_subtypeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 114, TPTPParser.RULE_thf_subtype);
+	    this.enterRule(localctx, 114, TPTP_v9_0_0_7Parser.RULE_thf_subtype);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 849;
@@ -3236,7 +3236,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_definition() {
 	    let localctx = new Thf_definitionContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 116, TPTPParser.RULE_thf_definition);
+	    this.enterRule(localctx, 116, TPTP_v9_0_0_7Parser.RULE_thf_definition);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 853;
@@ -3263,7 +3263,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_sequent() {
 	    let localctx = new Thf_sequentContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 118, TPTPParser.RULE_thf_sequent);
+	    this.enterRule(localctx, 118, TPTP_v9_0_0_7Parser.RULE_thf_sequent);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 857;
@@ -3290,7 +3290,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_formula() {
 	    let localctx = new Tff_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 120, TPTPParser.RULE_tff_formula);
+	    this.enterRule(localctx, 120, TPTP_v9_0_0_7Parser.RULE_tff_formula);
 	    try {
 	        this.state = 864;
 	        this._errHandler.sync(this);
@@ -3333,7 +3333,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_logic_formula() {
 	    let localctx = new Tff_logic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 122, TPTPParser.RULE_tff_logic_formula);
+	    this.enterRule(localctx, 122, TPTP_v9_0_0_7Parser.RULE_tff_logic_formula);
 	    try {
 	        this.state = 872;
 	        this._errHandler.sync(this);
@@ -3394,7 +3394,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_binary_formula() {
 	    let localctx = new Tff_binary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 124, TPTPParser.RULE_tff_binary_formula);
+	    this.enterRule(localctx, 124, TPTP_v9_0_0_7Parser.RULE_tff_binary_formula);
 	    try {
 	        this.state = 876;
 	        this._errHandler.sync(this);
@@ -3431,7 +3431,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_binary_nonassoc() {
 	    let localctx = new Tff_binary_nonassocContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 126, TPTPParser.RULE_tff_binary_nonassoc);
+	    this.enterRule(localctx, 126, TPTP_v9_0_0_7Parser.RULE_tff_binary_nonassoc);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 878;
@@ -3458,7 +3458,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_binary_assoc() {
 	    let localctx = new Tff_binary_assocContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 128, TPTPParser.RULE_tff_binary_assoc);
+	    this.enterRule(localctx, 128, TPTP_v9_0_0_7Parser.RULE_tff_binary_assoc);
 	    try {
 	        this.state = 884;
 	        this._errHandler.sync(this);
@@ -3501,13 +3501,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Tff_or_formulaContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 130;
-	    this.enterRecursionRule(localctx, 130, TPTPParser.RULE_tff_or_formula, _p);
+	    this.enterRecursionRule(localctx, 130, TPTP_v9_0_0_7Parser.RULE_tff_or_formula, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 887;
 	        this.tff_unit_formula();
 	        this.state = 888;
-	        this.match(TPTPParser.Vline);
+	        this.match(TPTP_v9_0_0_7Parser.Vline);
 	        this.state = 889;
 	        this.tff_unit_formula();
 	        this._ctx.stop = this._input.LT(-1);
@@ -3521,13 +3521,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Tff_or_formulaContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_tff_or_formula);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_tff_or_formula);
 	                this.state = 891;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 892;
-	                this.match(TPTPParser.Vline);
+	                this.match(TPTP_v9_0_0_7Parser.Vline);
 	                this.state = 893;
 	                this.tff_unit_formula(); 
 	            }
@@ -3560,13 +3560,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Tff_and_formulaContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 132;
-	    this.enterRecursionRule(localctx, 132, TPTPParser.RULE_tff_and_formula, _p);
+	    this.enterRecursionRule(localctx, 132, TPTP_v9_0_0_7Parser.RULE_tff_and_formula, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 900;
 	        this.tff_unit_formula();
 	        this.state = 901;
-	        this.match(TPTPParser.T__9);
+	        this.match(TPTP_v9_0_0_7Parser.T__9);
 	        this.state = 902;
 	        this.tff_unit_formula();
 	        this._ctx.stop = this._input.LT(-1);
@@ -3580,13 +3580,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Tff_and_formulaContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_tff_and_formula);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_tff_and_formula);
 	                this.state = 904;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 905;
-	                this.match(TPTPParser.T__9);
+	                this.match(TPTP_v9_0_0_7Parser.T__9);
 	                this.state = 906;
 	                this.tff_unit_formula(); 
 	            }
@@ -3613,7 +3613,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_unit_formula() {
 	    let localctx = new Tff_unit_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 134, TPTPParser.RULE_tff_unit_formula);
+	    this.enterRule(localctx, 134, TPTP_v9_0_0_7Parser.RULE_tff_unit_formula);
 	    try {
 	        this.state = 915;
 	        this._errHandler.sync(this);
@@ -3656,7 +3656,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_preunit_formula() {
 	    let localctx = new Tff_preunit_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 136, TPTPParser.RULE_tff_preunit_formula);
+	    this.enterRule(localctx, 136, TPTP_v9_0_0_7Parser.RULE_tff_preunit_formula);
 	    try {
 	        this.state = 919;
 	        this._errHandler.sync(this);
@@ -3706,7 +3706,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_unitary_formula() {
 	    let localctx = new Tff_unitary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 138, TPTPParser.RULE_tff_unitary_formula);
+	    this.enterRule(localctx, 138, TPTP_v9_0_0_7Parser.RULE_tff_unitary_formula);
 	    try {
 	        this.state = 928;
 	        this._errHandler.sync(this);
@@ -3736,11 +3736,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 12:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 924;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 925;
 	            this.tff_logic_formula();
 	            this.state = 926;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -3763,7 +3763,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_unitary_formula() {
 	    let localctx = new Txf_unitary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 140, TPTPParser.RULE_txf_unitary_formula);
+	    this.enterRule(localctx, 140, TPTP_v9_0_0_7Parser.RULE_txf_unitary_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 930;
@@ -3786,19 +3786,19 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_quantified_formula() {
 	    let localctx = new Tff_quantified_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 142, TPTPParser.RULE_tff_quantified_formula);
+	    this.enterRule(localctx, 142, TPTP_v9_0_0_7Parser.RULE_tff_quantified_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 932;
 	        this.tff_quantifier();
 	        this.state = 933;
-	        this.match(TPTPParser.T__13);
+	        this.match(TPTP_v9_0_0_7Parser.T__13);
 	        this.state = 934;
 	        this.tff_variable_list();
 	        this.state = 935;
-	        this.match(TPTPParser.T__14);
+	        this.match(TPTP_v9_0_0_7Parser.T__14);
 	        this.state = 936;
-	        this.match(TPTPParser.T__15);
+	        this.match(TPTP_v9_0_0_7Parser.T__15);
 	        this.state = 937;
 	        this.tff_unit_formula();
 	    } catch (re) {
@@ -3819,7 +3819,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_variable_list() {
 	    let localctx = new Tff_variable_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 144, TPTPParser.RULE_tff_variable_list);
+	    this.enterRule(localctx, 144, TPTP_v9_0_0_7Parser.RULE_tff_variable_list);
 	    try {
 	        this.state = 944;
 	        this._errHandler.sync(this);
@@ -3836,7 +3836,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 940;
 	            this.tff_variable();
 	            this.state = 941;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 942;
 	            this.tff_variable_list();
 	            break;
@@ -3860,7 +3860,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_variable() {
 	    let localctx = new Tff_variableContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 146, TPTPParser.RULE_tff_variable);
+	    this.enterRule(localctx, 146, TPTP_v9_0_0_7Parser.RULE_tff_variable);
 	    try {
 	        this.state = 948;
 	        this._errHandler.sync(this);
@@ -3897,13 +3897,13 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_typed_variable() {
 	    let localctx = new Tff_typed_variableContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 148, TPTPParser.RULE_tff_typed_variable);
+	    this.enterRule(localctx, 148, TPTP_v9_0_0_7Parser.RULE_tff_typed_variable);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 950;
 	        this.variable();
 	        this.state = 951;
-	        this.match(TPTPParser.T__15);
+	        this.match(TPTP_v9_0_0_7Parser.T__15);
 	        this.state = 952;
 	        this.tff_atomic_type();
 	    } catch (re) {
@@ -3924,7 +3924,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_unary_formula() {
 	    let localctx = new Tff_unary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 150, TPTPParser.RULE_tff_unary_formula);
+	    this.enterRule(localctx, 150, TPTP_v9_0_0_7Parser.RULE_tff_unary_formula);
 	    try {
 	        this.state = 956;
 	        this._errHandler.sync(this);
@@ -3977,7 +3977,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_prefix_unary() {
 	    let localctx = new Tff_prefix_unaryContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 152, TPTPParser.RULE_tff_prefix_unary);
+	    this.enterRule(localctx, 152, TPTP_v9_0_0_7Parser.RULE_tff_prefix_unary);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 958;
@@ -4002,7 +4002,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_infix_unary() {
 	    let localctx = new Tff_infix_unaryContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 154, TPTPParser.RULE_tff_infix_unary);
+	    this.enterRule(localctx, 154, TPTP_v9_0_0_7Parser.RULE_tff_infix_unary);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 961;
@@ -4029,7 +4029,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_atomic_formula() {
 	    let localctx = new Tff_atomic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 156, TPTPParser.RULE_tff_atomic_formula);
+	    this.enterRule(localctx, 156, TPTP_v9_0_0_7Parser.RULE_tff_atomic_formula);
 	    try {
 	        this.state = 968;
 	        this._errHandler.sync(this);
@@ -4073,7 +4073,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_plain_atomic() {
 	    let localctx = new Tff_plain_atomicContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 158, TPTPParser.RULE_tff_plain_atomic);
+	    this.enterRule(localctx, 158, TPTP_v9_0_0_7Parser.RULE_tff_plain_atomic);
 	    try {
 	        this.state = 976;
 	        this._errHandler.sync(this);
@@ -4090,11 +4090,11 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 971;
 	            this.functor();
 	            this.state = 972;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 973;
 	            this.tff_arguments();
 	            this.state = 974;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -4116,7 +4116,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_defined_atomic() {
 	    let localctx = new Tff_defined_atomicContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 160, TPTPParser.RULE_tff_defined_atomic);
+	    this.enterRule(localctx, 160, TPTP_v9_0_0_7Parser.RULE_tff_defined_atomic);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 978;
@@ -4139,7 +4139,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_defined_plain() {
 	    let localctx = new Tff_defined_plainContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 162, TPTPParser.RULE_tff_defined_plain);
+	    this.enterRule(localctx, 162, TPTP_v9_0_0_7Parser.RULE_tff_defined_plain);
 	    try {
 	        this.state = 988;
 	        this._errHandler.sync(this);
@@ -4156,11 +4156,11 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 981;
 	            this.defined_functor();
 	            this.state = 982;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 983;
 	            this.tff_arguments();
 	            this.state = 984;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        case 3:
@@ -4194,7 +4194,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_defined_infix() {
 	    let localctx = new Tff_defined_infixContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 164, TPTPParser.RULE_tff_defined_infix);
+	    this.enterRule(localctx, 164, TPTP_v9_0_0_7Parser.RULE_tff_defined_infix);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 990;
@@ -4221,7 +4221,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_system_atomic() {
 	    let localctx = new Tff_system_atomicContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 166, TPTPParser.RULE_tff_system_atomic);
+	    this.enterRule(localctx, 166, TPTP_v9_0_0_7Parser.RULE_tff_system_atomic);
 	    try {
 	        this.state = 1000;
 	        this._errHandler.sync(this);
@@ -4238,11 +4238,11 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 995;
 	            this.system_functor();
 	            this.state = 996;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 997;
 	            this.tff_arguments();
 	            this.state = 998;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -4264,23 +4264,23 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_let() {
 	    let localctx = new Txf_letContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 168, TPTPParser.RULE_txf_let);
+	    this.enterRule(localctx, 168, TPTP_v9_0_0_7Parser.RULE_txf_let);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1002;
-	        this.match(TPTPParser.T__16);
+	        this.match(TPTP_v9_0_0_7Parser.T__16);
 	        this.state = 1003;
 	        this.txf_let_types();
 	        this.state = 1004;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1005;
 	        this.txf_let_defns();
 	        this.state = 1006;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1007;
 	        this.tff_term();
 	        this.state = 1008;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4299,7 +4299,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_let_types() {
 	    let localctx = new Txf_let_typesContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 170, TPTPParser.RULE_txf_let_types);
+	    this.enterRule(localctx, 170, TPTP_v9_0_0_7Parser.RULE_txf_let_types);
 	    try {
 	        this.state = 1015;
 	        this._errHandler.sync(this);
@@ -4315,11 +4315,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 14:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1011;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1012;
 	            this.tff_atom_typing_list();
 	            this.state = 1013;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -4342,7 +4342,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_atom_typing_list() {
 	    let localctx = new Tff_atom_typing_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 172, TPTPParser.RULE_tff_atom_typing_list);
+	    this.enterRule(localctx, 172, TPTP_v9_0_0_7Parser.RULE_tff_atom_typing_list);
 	    try {
 	        this.state = 1022;
 	        this._errHandler.sync(this);
@@ -4359,7 +4359,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1018;
 	            this.tff_atom_typing();
 	            this.state = 1019;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1020;
 	            this.tff_atom_typing_list();
 	            break;
@@ -4383,7 +4383,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_let_defns() {
 	    let localctx = new Txf_let_defnsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 174, TPTPParser.RULE_txf_let_defns);
+	    this.enterRule(localctx, 174, TPTP_v9_0_0_7Parser.RULE_txf_let_defns);
 	    try {
 	        this.state = 1029;
 	        this._errHandler.sync(this);
@@ -4398,11 +4398,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1025;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1026;
 	            this.txf_let_defn_list();
 	            this.state = 1027;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 
 	        }
@@ -4424,7 +4424,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_let_defn() {
 	    let localctx = new Txf_let_defnContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 176, TPTPParser.RULE_txf_let_defn);
+	    this.enterRule(localctx, 176, TPTP_v9_0_0_7Parser.RULE_txf_let_defn);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1031;
@@ -4451,7 +4451,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_let_LHS() {
 	    let localctx = new Txf_let_LHSContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 178, TPTPParser.RULE_txf_let_LHS);
+	    this.enterRule(localctx, 178, TPTP_v9_0_0_7Parser.RULE_txf_let_LHS);
 	    try {
 	        this.state = 1037;
 	        this._errHandler.sync(this);
@@ -4489,7 +4489,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_let_defn_list() {
 	    let localctx = new Txf_let_defn_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 180, TPTPParser.RULE_txf_let_defn_list);
+	    this.enterRule(localctx, 180, TPTP_v9_0_0_7Parser.RULE_txf_let_defn_list);
 	    try {
 	        this.state = 1044;
 	        this._errHandler.sync(this);
@@ -4506,7 +4506,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1040;
 	            this.txf_let_defn();
 	            this.state = 1041;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1042;
 	            this.txf_let_defn_list();
 	            break;
@@ -4530,19 +4530,19 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nxf_atom() {
 	    let localctx = new Nxf_atomContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 182, TPTPParser.RULE_nxf_atom);
+	    this.enterRule(localctx, 182, TPTP_v9_0_0_7Parser.RULE_nxf_atom);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1046;
 	        this.nxf_long_connective();
 	        this.state = 1047;
-	        this.match(TPTPParser.T__10);
+	        this.match(TPTP_v9_0_0_7Parser.T__10);
 	        this.state = 1048;
-	        this.match(TPTPParser.T__11);
+	        this.match(TPTP_v9_0_0_7Parser.T__11);
 	        this.state = 1049;
 	        this.tff_arguments();
 	        this.state = 1050;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -4561,7 +4561,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_term() {
 	    let localctx = new Tff_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 184, TPTPParser.RULE_tff_term);
+	    this.enterRule(localctx, 184, TPTP_v9_0_0_7Parser.RULE_tff_term);
 	    try {
 	        this.state = 1055;
 	        this._errHandler.sync(this);
@@ -4604,7 +4604,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_unitary_term() {
 	    let localctx = new Tff_unitary_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 186, TPTPParser.RULE_tff_unitary_term);
+	    this.enterRule(localctx, 186, TPTP_v9_0_0_7Parser.RULE_tff_unitary_term);
 	    try {
 	        this.state = 1065;
 	        this._errHandler.sync(this);
@@ -4641,11 +4641,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 12:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 1061;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1062;
 	            this.tff_logic_formula();
 	            this.state = 1063;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -4668,7 +4668,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_tuple() {
 	    let localctx = new Txf_tupleContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 188, TPTPParser.RULE_txf_tuple);
+	    this.enterRule(localctx, 188, TPTP_v9_0_0_7Parser.RULE_txf_tuple);
 	    try {
 	        this.state = 1072;
 	        this._errHandler.sync(this);
@@ -4676,16 +4676,16 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 18:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1067;
-	            this.match(TPTPParser.T__17);
+	            this.match(TPTP_v9_0_0_7Parser.T__17);
 	            break;
 	        case 14:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1068;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1069;
 	            this.tff_arguments();
 	            this.state = 1070;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -4708,7 +4708,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_arguments() {
 	    let localctx = new Tff_argumentsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 190, TPTPParser.RULE_tff_arguments);
+	    this.enterRule(localctx, 190, TPTP_v9_0_0_7Parser.RULE_tff_arguments);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -4742,11 +4742,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	comma_tff_term() {
 	    let localctx = new Comma_tff_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 192, TPTPParser.RULE_comma_tff_term);
+	    this.enterRule(localctx, 192, TPTP_v9_0_0_7Parser.RULE_comma_tff_term);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1081;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1082;
 	        this.tff_term();
 	    } catch (re) {
@@ -4767,7 +4767,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_atom_typing() {
 	    let localctx = new Tff_atom_typingContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 194, TPTPParser.RULE_tff_atom_typing);
+	    this.enterRule(localctx, 194, TPTP_v9_0_0_7Parser.RULE_tff_atom_typing);
 	    try {
 	        this.state = 1092;
 	        this._errHandler.sync(this);
@@ -4779,18 +4779,18 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1084;
 	            this.untyped_atom();
 	            this.state = 1085;
-	            this.match(TPTPParser.T__15);
+	            this.match(TPTP_v9_0_0_7Parser.T__15);
 	            this.state = 1086;
 	            this.tff_top_level_type();
 	            break;
 	        case 12:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1088;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1089;
 	            this.tff_atom_typing();
 	            this.state = 1090;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -4813,7 +4813,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_top_level_type() {
 	    let localctx = new Tff_top_level_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 196, TPTPParser.RULE_tff_top_level_type);
+	    this.enterRule(localctx, 196, TPTP_v9_0_0_7Parser.RULE_tff_top_level_type);
 	    try {
 	        this.state = 1096;
 	        this._errHandler.sync(this);
@@ -4850,7 +4850,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_non_atomic_type() {
 	    let localctx = new Tff_non_atomic_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 198, TPTPParser.RULE_tff_non_atomic_type);
+	    this.enterRule(localctx, 198, TPTP_v9_0_0_7Parser.RULE_tff_non_atomic_type);
 	    try {
 	        this.state = 1104;
 	        this._errHandler.sync(this);
@@ -4871,11 +4871,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1100;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1101;
 	            this.tff_non_atomic_type();
 	            this.state = 1102;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -4897,19 +4897,19 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tf1_quantified_type() {
 	    let localctx = new Tf1_quantified_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 200, TPTPParser.RULE_tf1_quantified_type);
+	    this.enterRule(localctx, 200, TPTP_v9_0_0_7Parser.RULE_tf1_quantified_type);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1106;
-	        this.match(TPTPParser.T__18);
+	        this.match(TPTP_v9_0_0_7Parser.T__18);
 	        this.state = 1107;
-	        this.match(TPTPParser.T__13);
+	        this.match(TPTP_v9_0_0_7Parser.T__13);
 	        this.state = 1108;
 	        this.tff_variable_list();
 	        this.state = 1109;
-	        this.match(TPTPParser.T__14);
+	        this.match(TPTP_v9_0_0_7Parser.T__14);
 	        this.state = 1110;
-	        this.match(TPTPParser.T__15);
+	        this.match(TPTP_v9_0_0_7Parser.T__15);
 	        this.state = 1111;
 	        this.tff_monotype();
 	    } catch (re) {
@@ -4930,7 +4930,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_monotype() {
 	    let localctx = new Tff_monotypeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 202, TPTPParser.RULE_tff_monotype);
+	    this.enterRule(localctx, 202, TPTP_v9_0_0_7Parser.RULE_tff_monotype);
 	    try {
 	        this.state = 1119;
 	        this._errHandler.sync(this);
@@ -4945,11 +4945,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1114;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1115;
 	            this.tff_mapping_type();
 	            this.state = 1116;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        case 3:
@@ -4977,7 +4977,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_unitary_type() {
 	    let localctx = new Tff_unitary_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 204, TPTPParser.RULE_tff_unitary_type);
+	    this.enterRule(localctx, 204, TPTP_v9_0_0_7Parser.RULE_tff_unitary_type);
 	    try {
 	        this.state = 1126;
 	        this._errHandler.sync(this);
@@ -4992,11 +4992,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1122;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1123;
 	            this.tff_xprod_type(0);
 	            this.state = 1124;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -5018,7 +5018,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_atomic_type() {
 	    let localctx = new Tff_atomic_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 206, TPTPParser.RULE_tff_atomic_type);
+	    this.enterRule(localctx, 206, TPTP_v9_0_0_7Parser.RULE_tff_atomic_type);
 	    try {
 	        this.state = 1141;
 	        this._errHandler.sync(this);
@@ -5047,21 +5047,21 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1131;
 	            this.type_functor();
 	            this.state = 1132;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1133;
 	            this.tff_type_arguments();
 	            this.state = 1134;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        case 5:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 1136;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1137;
 	            this.tff_atomic_type();
 	            this.state = 1138;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        case 6:
@@ -5089,7 +5089,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_type_arguments() {
 	    let localctx = new Tff_type_argumentsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 208, TPTPParser.RULE_tff_type_arguments);
+	    this.enterRule(localctx, 208, TPTP_v9_0_0_7Parser.RULE_tff_type_arguments);
 	    try {
 	        this.state = 1148;
 	        this._errHandler.sync(this);
@@ -5106,7 +5106,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1144;
 	            this.tff_atomic_type();
 	            this.state = 1145;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1146;
 	            this.tff_type_arguments();
 	            break;
@@ -5130,13 +5130,13 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_mapping_type() {
 	    let localctx = new Tff_mapping_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 210, TPTPParser.RULE_tff_mapping_type);
+	    this.enterRule(localctx, 210, TPTP_v9_0_0_7Parser.RULE_tff_mapping_type);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1150;
 	        this.tff_unitary_type();
 	        this.state = 1151;
-	        this.match(TPTPParser.Arrow);
+	        this.match(TPTP_v9_0_0_7Parser.Arrow);
 	        this.state = 1152;
 	        this.tff_atomic_type();
 	    } catch (re) {
@@ -5163,13 +5163,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Tff_xprod_typeContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 212;
-	    this.enterRecursionRule(localctx, 212, TPTPParser.RULE_tff_xprod_type, _p);
+	    this.enterRecursionRule(localctx, 212, TPTP_v9_0_0_7Parser.RULE_tff_xprod_type, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1155;
 	        this.tff_unitary_type();
 	        this.state = 1156;
-	        this.match(TPTPParser.Star);
+	        this.match(TPTP_v9_0_0_7Parser.Star);
 	        this.state = 1157;
 	        this.tff_atomic_type();
 	        this._ctx.stop = this._input.LT(-1);
@@ -5183,13 +5183,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Tff_xprod_typeContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_tff_xprod_type);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_tff_xprod_type);
 	                this.state = 1159;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 1160;
-	                this.match(TPTPParser.Star);
+	                this.match(TPTP_v9_0_0_7Parser.Star);
 	                this.state = 1161;
 	                this.tff_atomic_type(); 
 	            }
@@ -5216,15 +5216,15 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_tuple_type() {
 	    let localctx = new Txf_tuple_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 214, TPTPParser.RULE_txf_tuple_type);
+	    this.enterRule(localctx, 214, TPTP_v9_0_0_7Parser.RULE_txf_tuple_type);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1167;
-	        this.match(TPTPParser.T__13);
+	        this.match(TPTP_v9_0_0_7Parser.T__13);
 	        this.state = 1168;
 	        this.tff_type_list();
 	        this.state = 1169;
-	        this.match(TPTPParser.T__14);
+	        this.match(TPTP_v9_0_0_7Parser.T__14);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -5243,7 +5243,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_type_list() {
 	    let localctx = new Tff_type_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 216, TPTPParser.RULE_tff_type_list);
+	    this.enterRule(localctx, 216, TPTP_v9_0_0_7Parser.RULE_tff_type_list);
 	    try {
 	        this.state = 1176;
 	        this._errHandler.sync(this);
@@ -5260,7 +5260,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1172;
 	            this.tff_top_level_type();
 	            this.state = 1173;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1174;
 	            this.tff_type_list();
 	            break;
@@ -5284,7 +5284,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_subtype() {
 	    let localctx = new Tff_subtypeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 218, TPTPParser.RULE_tff_subtype);
+	    this.enterRule(localctx, 218, TPTP_v9_0_0_7Parser.RULE_tff_subtype);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1178;
@@ -5311,7 +5311,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_definition() {
 	    let localctx = new Txf_definitionContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 220, TPTPParser.RULE_txf_definition);
+	    this.enterRule(localctx, 220, TPTP_v9_0_0_7Parser.RULE_txf_definition);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1182;
@@ -5338,7 +5338,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	txf_sequent() {
 	    let localctx = new Txf_sequentContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 222, TPTPParser.RULE_txf_sequent);
+	    this.enterRule(localctx, 222, TPTP_v9_0_0_7Parser.RULE_txf_sequent);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1186;
@@ -5365,7 +5365,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nhf_long_connective() {
 	    let localctx = new Nhf_long_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 224, TPTPParser.RULE_nhf_long_connective);
+	    this.enterRule(localctx, 224, TPTP_v9_0_0_7Parser.RULE_nhf_long_connective);
 	    try {
 	        this.state = 1200;
 	        this._errHandler.sync(this);
@@ -5374,25 +5374,25 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1190;
-	            this.match(TPTPParser.T__19);
+	            this.match(TPTP_v9_0_0_7Parser.T__19);
 	            this.state = 1191;
 	            this.ntf_connective_name();
 	            this.state = 1192;
-	            this.match(TPTPParser.T__20);
+	            this.match(TPTP_v9_0_0_7Parser.T__20);
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1194;
-	            this.match(TPTPParser.T__19);
+	            this.match(TPTP_v9_0_0_7Parser.T__19);
 	            this.state = 1195;
 	            this.ntf_connective_name();
 	            this.state = 1196;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1197;
 	            this.nhf_parameter_list();
 	            this.state = 1198;
-	            this.match(TPTPParser.T__21);
+	            this.match(TPTP_v9_0_0_7Parser.T__21);
 	            break;
 
 	        }
@@ -5414,7 +5414,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nhf_parameter_list() {
 	    let localctx = new Nhf_parameter_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 226, TPTPParser.RULE_nhf_parameter_list);
+	    this.enterRule(localctx, 226, TPTP_v9_0_0_7Parser.RULE_nhf_parameter_list);
 	    try {
 	        this.state = 1207;
 	        this._errHandler.sync(this);
@@ -5431,7 +5431,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1203;
 	            this.nhf_parameter();
 	            this.state = 1204;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1205;
 	            this.nhf_parameter_list();
 	            break;
@@ -5455,7 +5455,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nhf_parameter() {
 	    let localctx = new Nhf_parameterContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 228, TPTPParser.RULE_nhf_parameter);
+	    this.enterRule(localctx, 228, TPTP_v9_0_0_7Parser.RULE_nhf_parameter);
 	    try {
 	        this.state = 1211;
 	        this._errHandler.sync(this);
@@ -5508,7 +5508,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nhf_key_pair() {
 	    let localctx = new Nhf_key_pairContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 230, TPTPParser.RULE_nhf_key_pair);
+	    this.enterRule(localctx, 230, TPTP_v9_0_0_7Parser.RULE_nhf_key_pair);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1213;
@@ -5531,7 +5531,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nxf_long_connective() {
 	    let localctx = new Nxf_long_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 232, TPTPParser.RULE_nxf_long_connective);
+	    this.enterRule(localctx, 232, TPTP_v9_0_0_7Parser.RULE_nxf_long_connective);
 	    try {
 	        this.state = 1225;
 	        this._errHandler.sync(this);
@@ -5540,25 +5540,25 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 1:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1215;
-	            this.match(TPTPParser.T__19);
+	            this.match(TPTP_v9_0_0_7Parser.T__19);
 	            this.state = 1216;
 	            this.ntf_connective_name();
 	            this.state = 1217;
-	            this.match(TPTPParser.T__20);
+	            this.match(TPTP_v9_0_0_7Parser.T__20);
 	            break;
 
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1219;
-	            this.match(TPTPParser.T__19);
+	            this.match(TPTP_v9_0_0_7Parser.T__19);
 	            this.state = 1220;
 	            this.ntf_connective_name();
 	            this.state = 1221;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1222;
 	            this.nxf_parameter_list();
 	            this.state = 1223;
-	            this.match(TPTPParser.T__21);
+	            this.match(TPTP_v9_0_0_7Parser.T__21);
 	            break;
 
 	        }
@@ -5580,7 +5580,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nxf_parameter_list() {
 	    let localctx = new Nxf_parameter_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 234, TPTPParser.RULE_nxf_parameter_list);
+	    this.enterRule(localctx, 234, TPTP_v9_0_0_7Parser.RULE_nxf_parameter_list);
 	    try {
 	        this.state = 1232;
 	        this._errHandler.sync(this);
@@ -5597,7 +5597,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1228;
 	            this.nxf_parameter();
 	            this.state = 1229;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1230;
 	            this.nxf_parameter_list();
 	            break;
@@ -5621,7 +5621,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nxf_parameter() {
 	    let localctx = new Nxf_parameterContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 236, TPTPParser.RULE_nxf_parameter);
+	    this.enterRule(localctx, 236, TPTP_v9_0_0_7Parser.RULE_nxf_parameter);
 	    try {
 	        this.state = 1236;
 	        this._errHandler.sync(this);
@@ -5662,7 +5662,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nxf_key_pair() {
 	    let localctx = new Nxf_key_pairContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 238, TPTPParser.RULE_nxf_key_pair);
+	    this.enterRule(localctx, 238, TPTP_v9_0_0_7Parser.RULE_nxf_key_pair);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1238;
@@ -5685,7 +5685,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	ntf_connective_name() {
 	    let localctx = new Ntf_connective_nameContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 240, TPTPParser.RULE_ntf_connective_name);
+	    this.enterRule(localctx, 240, TPTP_v9_0_0_7Parser.RULE_ntf_connective_name);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1240;
@@ -5708,11 +5708,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	ntf_index() {
 	    let localctx = new Ntf_indexContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 242, TPTPParser.RULE_ntf_index);
+	    this.enterRule(localctx, 242, TPTP_v9_0_0_7Parser.RULE_ntf_index);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1242;
-	        this.match(TPTPParser.Hash);
+	        this.match(TPTP_v9_0_0_7Parser.Hash);
 	        this.state = 1243;
 	        this.tff_unitary_term();
 	    } catch (re) {
@@ -5733,7 +5733,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	ntf_short_connective() {
 	    let localctx = new Ntf_short_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 244, TPTPParser.RULE_ntf_short_connective);
+	    this.enterRule(localctx, 244, TPTP_v9_0_0_7Parser.RULE_ntf_short_connective);
 	    try {
 	        this.state = 1251;
 	        this._errHandler.sync(this);
@@ -5741,26 +5741,26 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 23:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1245;
-	            this.match(TPTPParser.T__22);
+	            this.match(TPTP_v9_0_0_7Parser.T__22);
 	            break;
 	        case 76:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1246;
-	            this.match(TPTPParser.Less_sign);
+	            this.match(TPTP_v9_0_0_7Parser.Less_sign);
 	            this.state = 1247;
-	            this.match(TPTPParser.T__23);
+	            this.match(TPTP_v9_0_0_7Parser.T__23);
 	            this.state = 1248;
-	            this.match(TPTPParser.Arrow);
+	            this.match(TPTP_v9_0_0_7Parser.Arrow);
 	            break;
 	        case 25:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1249;
-	            this.match(TPTPParser.T__24);
+	            this.match(TPTP_v9_0_0_7Parser.T__24);
 	            break;
 	        case 26:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 1250;
-	            this.match(TPTPParser.T__25);
+	            this.match(TPTP_v9_0_0_7Parser.T__25);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -5783,7 +5783,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tcf_formula() {
 	    let localctx = new Tcf_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 246, TPTPParser.RULE_tcf_formula);
+	    this.enterRule(localctx, 246, TPTP_v9_0_0_7Parser.RULE_tcf_formula);
 	    try {
 	        this.state = 1255;
 	        this._errHandler.sync(this);
@@ -5820,7 +5820,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tcf_logic_formula() {
 	    let localctx = new Tcf_logic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 248, TPTPParser.RULE_tcf_logic_formula);
+	    this.enterRule(localctx, 248, TPTP_v9_0_0_7Parser.RULE_tcf_logic_formula);
 	    try {
 	        this.state = 1259;
 	        this._errHandler.sync(this);
@@ -5866,19 +5866,19 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tcf_quantified_formula() {
 	    let localctx = new Tcf_quantified_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 250, TPTPParser.RULE_tcf_quantified_formula);
+	    this.enterRule(localctx, 250, TPTP_v9_0_0_7Parser.RULE_tcf_quantified_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1261;
-	        this.match(TPTPParser.T__26);
+	        this.match(TPTP_v9_0_0_7Parser.T__26);
 	        this.state = 1262;
-	        this.match(TPTPParser.T__13);
+	        this.match(TPTP_v9_0_0_7Parser.T__13);
 	        this.state = 1263;
 	        this.tff_variable_list();
 	        this.state = 1264;
-	        this.match(TPTPParser.T__14);
+	        this.match(TPTP_v9_0_0_7Parser.T__14);
 	        this.state = 1265;
-	        this.match(TPTPParser.T__15);
+	        this.match(TPTP_v9_0_0_7Parser.T__15);
 	        this.state = 1266;
 	        this.tcf_logic_formula();
 	    } catch (re) {
@@ -5899,7 +5899,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_formula() {
 	    let localctx = new Fof_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 252, TPTPParser.RULE_fof_formula);
+	    this.enterRule(localctx, 252, TPTP_v9_0_0_7Parser.RULE_fof_formula);
 	    try {
 	        this.state = 1270;
 	        this._errHandler.sync(this);
@@ -5936,7 +5936,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_logic_formula() {
 	    let localctx = new Fof_logic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 254, TPTPParser.RULE_fof_logic_formula);
+	    this.enterRule(localctx, 254, TPTP_v9_0_0_7Parser.RULE_fof_logic_formula);
 	    try {
 	        this.state = 1275;
 	        this._errHandler.sync(this);
@@ -5979,7 +5979,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_binary_formula() {
 	    let localctx = new Fof_binary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 256, TPTPParser.RULE_fof_binary_formula);
+	    this.enterRule(localctx, 256, TPTP_v9_0_0_7Parser.RULE_fof_binary_formula);
 	    try {
 	        this.state = 1279;
 	        this._errHandler.sync(this);
@@ -6016,7 +6016,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_binary_nonassoc() {
 	    let localctx = new Fof_binary_nonassocContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 258, TPTPParser.RULE_fof_binary_nonassoc);
+	    this.enterRule(localctx, 258, TPTP_v9_0_0_7Parser.RULE_fof_binary_nonassoc);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1281;
@@ -6043,7 +6043,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_binary_assoc() {
 	    let localctx = new Fof_binary_assocContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 260, TPTPParser.RULE_fof_binary_assoc);
+	    this.enterRule(localctx, 260, TPTP_v9_0_0_7Parser.RULE_fof_binary_assoc);
 	    try {
 	        this.state = 1287;
 	        this._errHandler.sync(this);
@@ -6086,13 +6086,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Fof_or_formulaContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 262;
-	    this.enterRecursionRule(localctx, 262, TPTPParser.RULE_fof_or_formula, _p);
+	    this.enterRecursionRule(localctx, 262, TPTP_v9_0_0_7Parser.RULE_fof_or_formula, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1290;
 	        this.fof_unit_formula();
 	        this.state = 1291;
-	        this.match(TPTPParser.Vline);
+	        this.match(TPTP_v9_0_0_7Parser.Vline);
 	        this.state = 1292;
 	        this.fof_unit_formula();
 	        this._ctx.stop = this._input.LT(-1);
@@ -6106,13 +6106,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Fof_or_formulaContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_fof_or_formula);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_fof_or_formula);
 	                this.state = 1294;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 1295;
-	                this.match(TPTPParser.Vline);
+	                this.match(TPTP_v9_0_0_7Parser.Vline);
 	                this.state = 1296;
 	                this.fof_unit_formula(); 
 	            }
@@ -6145,13 +6145,13 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Fof_and_formulaContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 264;
-	    this.enterRecursionRule(localctx, 264, TPTPParser.RULE_fof_and_formula, _p);
+	    this.enterRecursionRule(localctx, 264, TPTP_v9_0_0_7Parser.RULE_fof_and_formula, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1303;
 	        this.fof_unit_formula();
 	        this.state = 1304;
-	        this.match(TPTPParser.T__9);
+	        this.match(TPTP_v9_0_0_7Parser.T__9);
 	        this.state = 1305;
 	        this.fof_unit_formula();
 	        this._ctx.stop = this._input.LT(-1);
@@ -6165,13 +6165,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Fof_and_formulaContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_fof_and_formula);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_fof_and_formula);
 	                this.state = 1307;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 1308;
-	                this.match(TPTPParser.T__9);
+	                this.match(TPTP_v9_0_0_7Parser.T__9);
 	                this.state = 1309;
 	                this.fof_unit_formula(); 
 	            }
@@ -6198,7 +6198,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_unary_formula() {
 	    let localctx = new Fof_unary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 266, TPTPParser.RULE_fof_unary_formula);
+	    this.enterRule(localctx, 266, TPTP_v9_0_0_7Parser.RULE_fof_unary_formula);
 	    try {
 	        this.state = 1319;
 	        this._errHandler.sync(this);
@@ -6244,7 +6244,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_infix_unary() {
 	    let localctx = new Fof_infix_unaryContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 268, TPTPParser.RULE_fof_infix_unary);
+	    this.enterRule(localctx, 268, TPTP_v9_0_0_7Parser.RULE_fof_infix_unary);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1321;
@@ -6271,7 +6271,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_unit_formula() {
 	    let localctx = new Fof_unit_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 270, TPTPParser.RULE_fof_unit_formula);
+	    this.enterRule(localctx, 270, TPTP_v9_0_0_7Parser.RULE_fof_unit_formula);
 	    try {
 	        this.state = 1327;
 	        this._errHandler.sync(this);
@@ -6308,7 +6308,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_unitary_formula() {
 	    let localctx = new Fof_unitary_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 272, TPTPParser.RULE_fof_unitary_formula);
+	    this.enterRule(localctx, 272, TPTP_v9_0_0_7Parser.RULE_fof_unitary_formula);
 	    try {
 	        this.state = 1335;
 	        this._errHandler.sync(this);
@@ -6336,11 +6336,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 12:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1331;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1332;
 	            this.fof_logic_formula();
 	            this.state = 1333;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -6363,19 +6363,19 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_quantified_formula() {
 	    let localctx = new Fof_quantified_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 274, TPTPParser.RULE_fof_quantified_formula);
+	    this.enterRule(localctx, 274, TPTP_v9_0_0_7Parser.RULE_fof_quantified_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1337;
 	        this.fof_quantifier();
 	        this.state = 1338;
-	        this.match(TPTPParser.T__13);
+	        this.match(TPTP_v9_0_0_7Parser.T__13);
 	        this.state = 1339;
 	        this.fof_variable_list();
 	        this.state = 1340;
-	        this.match(TPTPParser.T__14);
+	        this.match(TPTP_v9_0_0_7Parser.T__14);
 	        this.state = 1341;
-	        this.match(TPTPParser.T__15);
+	        this.match(TPTP_v9_0_0_7Parser.T__15);
 	        this.state = 1342;
 	        this.fof_unit_formula();
 	    } catch (re) {
@@ -6396,7 +6396,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_variable_list() {
 	    let localctx = new Fof_variable_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 276, TPTPParser.RULE_fof_variable_list);
+	    this.enterRule(localctx, 276, TPTP_v9_0_0_7Parser.RULE_fof_variable_list);
 	    try {
 	        this.state = 1349;
 	        this._errHandler.sync(this);
@@ -6413,7 +6413,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1345;
 	            this.variable();
 	            this.state = 1346;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1347;
 	            this.fof_variable_list();
 	            break;
@@ -6437,7 +6437,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_atomic_formula() {
 	    let localctx = new Fof_atomic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 278, TPTPParser.RULE_fof_atomic_formula);
+	    this.enterRule(localctx, 278, TPTP_v9_0_0_7Parser.RULE_fof_atomic_formula);
 	    try {
 	        this.state = 1354;
 	        this._errHandler.sync(this);
@@ -6480,7 +6480,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_plain_atomic_formula() {
 	    let localctx = new Fof_plain_atomic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 280, TPTPParser.RULE_fof_plain_atomic_formula);
+	    this.enterRule(localctx, 280, TPTP_v9_0_0_7Parser.RULE_fof_plain_atomic_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1356;
@@ -6503,7 +6503,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_defined_atomic_formula() {
 	    let localctx = new Fof_defined_atomic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 282, TPTPParser.RULE_fof_defined_atomic_formula);
+	    this.enterRule(localctx, 282, TPTP_v9_0_0_7Parser.RULE_fof_defined_atomic_formula);
 	    try {
 	        this.state = 1360;
 	        this._errHandler.sync(this);
@@ -6540,7 +6540,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_defined_plain_formula() {
 	    let localctx = new Fof_defined_plain_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 284, TPTPParser.RULE_fof_defined_plain_formula);
+	    this.enterRule(localctx, 284, TPTP_v9_0_0_7Parser.RULE_fof_defined_plain_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1362;
@@ -6563,7 +6563,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_defined_infix_formula() {
 	    let localctx = new Fof_defined_infix_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 286, TPTPParser.RULE_fof_defined_infix_formula);
+	    this.enterRule(localctx, 286, TPTP_v9_0_0_7Parser.RULE_fof_defined_infix_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1364;
@@ -6590,7 +6590,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_system_atomic_formula() {
 	    let localctx = new Fof_system_atomic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 288, TPTPParser.RULE_fof_system_atomic_formula);
+	    this.enterRule(localctx, 288, TPTP_v9_0_0_7Parser.RULE_fof_system_atomic_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1368;
@@ -6613,7 +6613,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_plain_term() {
 	    let localctx = new Fof_plain_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 290, TPTPParser.RULE_fof_plain_term);
+	    this.enterRule(localctx, 290, TPTP_v9_0_0_7Parser.RULE_fof_plain_term);
 	    try {
 	        this.state = 1376;
 	        this._errHandler.sync(this);
@@ -6630,11 +6630,11 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1371;
 	            this.functor();
 	            this.state = 1372;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1373;
 	            this.fof_arguments();
 	            this.state = 1374;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -6656,7 +6656,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_defined_term() {
 	    let localctx = new Fof_defined_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 292, TPTPParser.RULE_fof_defined_term);
+	    this.enterRule(localctx, 292, TPTP_v9_0_0_7Parser.RULE_fof_defined_term);
 	    try {
 	        this.state = 1380;
 	        this._errHandler.sync(this);
@@ -6695,7 +6695,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_defined_atomic_term() {
 	    let localctx = new Fof_defined_atomic_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 294, TPTPParser.RULE_fof_defined_atomic_term);
+	    this.enterRule(localctx, 294, TPTP_v9_0_0_7Parser.RULE_fof_defined_atomic_term);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1382;
@@ -6718,7 +6718,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_defined_plain_term() {
 	    let localctx = new Fof_defined_plain_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 296, TPTPParser.RULE_fof_defined_plain_term);
+	    this.enterRule(localctx, 296, TPTP_v9_0_0_7Parser.RULE_fof_defined_plain_term);
 	    try {
 	        this.state = 1390;
 	        this._errHandler.sync(this);
@@ -6735,11 +6735,11 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1385;
 	            this.defined_functor();
 	            this.state = 1386;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1387;
 	            this.fof_arguments();
 	            this.state = 1388;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -6761,7 +6761,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_system_term() {
 	    let localctx = new Fof_system_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 298, TPTPParser.RULE_fof_system_term);
+	    this.enterRule(localctx, 298, TPTP_v9_0_0_7Parser.RULE_fof_system_term);
 	    try {
 	        this.state = 1398;
 	        this._errHandler.sync(this);
@@ -6778,11 +6778,11 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1393;
 	            this.system_functor();
 	            this.state = 1394;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1395;
 	            this.fof_arguments();
 	            this.state = 1396;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        }
@@ -6804,7 +6804,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_arguments() {
 	    let localctx = new Fof_argumentsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 300, TPTPParser.RULE_fof_arguments);
+	    this.enterRule(localctx, 300, TPTP_v9_0_0_7Parser.RULE_fof_arguments);
 	    try {
 	        this.state = 1405;
 	        this._errHandler.sync(this);
@@ -6821,7 +6821,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1401;
 	            this.fof_term();
 	            this.state = 1402;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1403;
 	            this.fof_arguments();
 	            break;
@@ -6845,7 +6845,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_term() {
 	    let localctx = new Fof_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 302, TPTPParser.RULE_fof_term);
+	    this.enterRule(localctx, 302, TPTP_v9_0_0_7Parser.RULE_fof_term);
 	    try {
 	        this.state = 1409;
 	        this._errHandler.sync(this);
@@ -6888,7 +6888,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_function_term() {
 	    let localctx = new Fof_function_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 304, TPTPParser.RULE_fof_function_term);
+	    this.enterRule(localctx, 304, TPTP_v9_0_0_7Parser.RULE_fof_function_term);
 	    try {
 	        this.state = 1414;
 	        this._errHandler.sync(this);
@@ -6934,7 +6934,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_sequent() {
 	    let localctx = new Fof_sequentContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 306, TPTPParser.RULE_fof_sequent);
+	    this.enterRule(localctx, 306, TPTP_v9_0_0_7Parser.RULE_fof_sequent);
 	    try {
 	        this.state = 1424;
 	        this._errHandler.sync(this);
@@ -6952,11 +6952,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 12:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1420;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1421;
 	            this.fof_sequent();
 	            this.state = 1422;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -6979,7 +6979,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_formula_tuple() {
 	    let localctx = new Fof_formula_tupleContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 308, TPTPParser.RULE_fof_formula_tuple);
+	    this.enterRule(localctx, 308, TPTP_v9_0_0_7Parser.RULE_fof_formula_tuple);
 	    try {
 	        this.state = 1431;
 	        this._errHandler.sync(this);
@@ -6987,16 +6987,16 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 18:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1426;
-	            this.match(TPTPParser.T__17);
+	            this.match(TPTP_v9_0_0_7Parser.T__17);
 	            break;
 	        case 14:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1427;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1428;
 	            this.fof_formula_tuple_list();
 	            this.state = 1429;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -7019,7 +7019,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_formula_tuple_list() {
 	    let localctx = new Fof_formula_tuple_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 310, TPTPParser.RULE_fof_formula_tuple_list);
+	    this.enterRule(localctx, 310, TPTP_v9_0_0_7Parser.RULE_fof_formula_tuple_list);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -7053,11 +7053,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	comma_fof_logic_formula() {
 	    let localctx = new Comma_fof_logic_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 312, TPTPParser.RULE_comma_fof_logic_formula);
+	    this.enterRule(localctx, 312, TPTP_v9_0_0_7Parser.RULE_comma_fof_logic_formula);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1440;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1441;
 	        this.fof_logic_formula();
 	    } catch (re) {
@@ -7078,7 +7078,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	cnf_formula() {
 	    let localctx = new Cnf_formulaContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 314, TPTPParser.RULE_cnf_formula);
+	    this.enterRule(localctx, 314, TPTP_v9_0_0_7Parser.RULE_cnf_formula);
 	    try {
 	        this.state = 1448;
 	        this._errHandler.sync(this);
@@ -7100,11 +7100,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 12:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1444;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1445;
 	            this.cnf_formula();
 	            this.state = 1446;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -7133,7 +7133,7 @@ export default class TPTPParser extends antlr4.Parser {
 	    let localctx = new Cnf_disjunctionContext(this, this._ctx, _parentState);
 	    let _prevctx = localctx;
 	    const _startState = 316;
-	    this.enterRecursionRule(localctx, 316, TPTPParser.RULE_cnf_disjunction, _p);
+	    this.enterRecursionRule(localctx, 316, TPTP_v9_0_0_7Parser.RULE_cnf_disjunction, _p);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1451;
@@ -7149,13 +7149,13 @@ export default class TPTPParser extends antlr4.Parser {
 	                }
 	                _prevctx = localctx;
 	                localctx = new Cnf_disjunctionContext(this, _parentctx, _parentState);
-	                this.pushNewRecursionContext(localctx, _startState, TPTPParser.RULE_cnf_disjunction);
+	                this.pushNewRecursionContext(localctx, _startState, TPTP_v9_0_0_7Parser.RULE_cnf_disjunction);
 	                this.state = 1453;
 	                if (!( this.precpred(this._ctx, 1))) {
 	                    throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
 	                }
 	                this.state = 1454;
-	                this.match(TPTPParser.Vline);
+	                this.match(TPTP_v9_0_0_7Parser.Vline);
 	                this.state = 1455;
 	                this.cnf_literal(); 
 	            }
@@ -7182,7 +7182,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	cnf_literal() {
 	    let localctx = new Cnf_literalContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 318, TPTPParser.RULE_cnf_literal);
+	    this.enterRule(localctx, 318, TPTP_v9_0_0_7Parser.RULE_cnf_literal);
 	    try {
 	        this.state = 1470;
 	        this._errHandler.sync(this);
@@ -7197,7 +7197,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1462;
-	            this.match(TPTPParser.T__27);
+	            this.match(TPTP_v9_0_0_7Parser.T__27);
 	            this.state = 1463;
 	            this.fof_atomic_formula();
 	            break;
@@ -7205,13 +7205,13 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1464;
-	            this.match(TPTPParser.T__27);
+	            this.match(TPTP_v9_0_0_7Parser.T__27);
 	            this.state = 1465;
-	            this.match(TPTPParser.T__11);
+	            this.match(TPTP_v9_0_0_7Parser.T__11);
 	            this.state = 1466;
 	            this.fof_atomic_formula();
 	            this.state = 1467;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 
 	        case 4:
@@ -7239,7 +7239,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_quantifier() {
 	    let localctx = new Thf_quantifierContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 320, TPTPParser.RULE_thf_quantifier);
+	    this.enterRule(localctx, 320, TPTP_v9_0_0_7Parser.RULE_thf_quantifier);
 	    try {
 	        this.state = 1475;
 	        this._errHandler.sync(this);
@@ -7285,7 +7285,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	thf_unary_connective() {
 	    let localctx = new Thf_unary_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 322, TPTPParser.RULE_thf_unary_connective);
+	    this.enterRule(localctx, 322, TPTP_v9_0_0_7Parser.RULE_thf_unary_connective);
 	    try {
 	        this.state = 1479;
 	        this._errHandler.sync(this);
@@ -7324,7 +7324,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	th1_quantifier() {
 	    let localctx = new Th1_quantifierContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 324, TPTPParser.RULE_th1_quantifier);
+	    this.enterRule(localctx, 324, TPTP_v9_0_0_7Parser.RULE_th1_quantifier);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -7355,7 +7355,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	th0_quantifier() {
 	    let localctx = new Th0_quantifierContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 326, TPTPParser.RULE_th0_quantifier);
+	    this.enterRule(localctx, 326, TPTP_v9_0_0_7Parser.RULE_th0_quantifier);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -7386,11 +7386,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	subtype_sign() {
 	    let localctx = new Subtype_signContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 328, TPTPParser.RULE_subtype_sign);
+	    this.enterRule(localctx, 328, TPTP_v9_0_0_7Parser.RULE_subtype_sign);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1485;
-	        this.match(TPTPParser.T__32);
+	        this.match(TPTP_v9_0_0_7Parser.T__32);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7409,7 +7409,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_unary_connective() {
 	    let localctx = new Tff_unary_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 330, TPTPParser.RULE_tff_unary_connective);
+	    this.enterRule(localctx, 330, TPTP_v9_0_0_7Parser.RULE_tff_unary_connective);
 	    try {
 	        this.state = 1489;
 	        this._errHandler.sync(this);
@@ -7448,7 +7448,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	tff_quantifier() {
 	    let localctx = new Tff_quantifierContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 332, TPTPParser.RULE_tff_quantifier);
+	    this.enterRule(localctx, 332, TPTP_v9_0_0_7Parser.RULE_tff_quantifier);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1491;
@@ -7471,7 +7471,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	fof_quantifier() {
 	    let localctx = new Fof_quantifierContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 334, TPTPParser.RULE_fof_quantifier);
+	    this.enterRule(localctx, 334, TPTP_v9_0_0_7Parser.RULE_fof_quantifier);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -7502,7 +7502,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	nonassoc_connective() {
 	    let localctx = new Nonassoc_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 336, TPTPParser.RULE_nonassoc_connective);
+	    this.enterRule(localctx, 336, TPTP_v9_0_0_7Parser.RULE_nonassoc_connective);
 	    try {
 	        this.state = 1502;
 	        this._errHandler.sync(this);
@@ -7510,34 +7510,34 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 35:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1495;
-	            this.match(TPTPParser.T__34);
+	            this.match(TPTP_v9_0_0_7Parser.T__34);
 	            break;
 	        case 36:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1496;
-	            this.match(TPTPParser.T__35);
+	            this.match(TPTP_v9_0_0_7Parser.T__35);
 	            break;
 	        case 37:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1497;
-	            this.match(TPTPParser.T__36);
+	            this.match(TPTP_v9_0_0_7Parser.T__36);
 	            break;
 	        case 38:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 1498;
-	            this.match(TPTPParser.T__37);
+	            this.match(TPTP_v9_0_0_7Parser.T__37);
 	            break;
 	        case 28:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 1499;
-	            this.match(TPTPParser.T__27);
+	            this.match(TPTP_v9_0_0_7Parser.T__27);
 	            this.state = 1500;
-	            this.match(TPTPParser.Vline);
+	            this.match(TPTP_v9_0_0_7Parser.Vline);
 	            break;
 	        case 39:
 	            this.enterOuterAlt(localctx, 6);
 	            this.state = 1501;
-	            this.match(TPTPParser.T__38);
+	            this.match(TPTP_v9_0_0_7Parser.T__38);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -7560,7 +7560,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	assoc_connective() {
 	    let localctx = new Assoc_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 338, TPTPParser.RULE_assoc_connective);
+	    this.enterRule(localctx, 338, TPTP_v9_0_0_7Parser.RULE_assoc_connective);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -7591,11 +7591,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	unary_connective() {
 	    let localctx = new Unary_connectiveContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 340, TPTPParser.RULE_unary_connective);
+	    this.enterRule(localctx, 340, TPTP_v9_0_0_7Parser.RULE_unary_connective);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1506;
-	        this.match(TPTPParser.T__27);
+	        this.match(TPTP_v9_0_0_7Parser.T__27);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7614,11 +7614,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	gentzen_arrow() {
 	    let localctx = new Gentzen_arrowContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 342, TPTPParser.RULE_gentzen_arrow);
+	    this.enterRule(localctx, 342, TPTP_v9_0_0_7Parser.RULE_gentzen_arrow);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1508;
-	        this.match(TPTPParser.T__39);
+	        this.match(TPTP_v9_0_0_7Parser.T__39);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7637,11 +7637,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	assignment() {
 	    let localctx = new AssignmentContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 344, TPTPParser.RULE_assignment);
+	    this.enterRule(localctx, 344, TPTP_v9_0_0_7Parser.RULE_assignment);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1510;
-	        this.match(TPTPParser.T__40);
+	        this.match(TPTP_v9_0_0_7Parser.T__40);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7660,11 +7660,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	identical() {
 	    let localctx = new IdenticalContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 346, TPTPParser.RULE_identical);
+	    this.enterRule(localctx, 346, TPTP_v9_0_0_7Parser.RULE_identical);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1512;
-	        this.match(TPTPParser.T__41);
+	        this.match(TPTP_v9_0_0_7Parser.T__41);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7683,7 +7683,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	type_constant() {
 	    let localctx = new Type_constantContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 348, TPTPParser.RULE_type_constant);
+	    this.enterRule(localctx, 348, TPTP_v9_0_0_7Parser.RULE_type_constant);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1514;
@@ -7706,7 +7706,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	type_functor() {
 	    let localctx = new Type_functorContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 350, TPTPParser.RULE_type_functor);
+	    this.enterRule(localctx, 350, TPTP_v9_0_0_7Parser.RULE_type_functor);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1516;
@@ -7729,7 +7729,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	defined_type() {
 	    let localctx = new Defined_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 352, TPTPParser.RULE_defined_type);
+	    this.enterRule(localctx, 352, TPTP_v9_0_0_7Parser.RULE_defined_type);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1518;
@@ -7752,7 +7752,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	atom() {
 	    let localctx = new AtomContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 354, TPTPParser.RULE_atom);
+	    this.enterRule(localctx, 354, TPTP_v9_0_0_7Parser.RULE_atom);
 	    try {
 	        this.state = 1522;
 	        this._errHandler.sync(this);
@@ -7790,7 +7790,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	untyped_atom() {
 	    let localctx = new Untyped_atomContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 356, TPTPParser.RULE_untyped_atom);
+	    this.enterRule(localctx, 356, TPTP_v9_0_0_7Parser.RULE_untyped_atom);
 	    try {
 	        this.state = 1526;
 	        this._errHandler.sync(this);
@@ -7827,7 +7827,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	defined_infix_pred() {
 	    let localctx = new Defined_infix_predContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 358, TPTPParser.RULE_defined_infix_pred);
+	    this.enterRule(localctx, 358, TPTP_v9_0_0_7Parser.RULE_defined_infix_pred);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1528;
@@ -7850,11 +7850,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	infix_equality() {
 	    let localctx = new Infix_equalityContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 360, TPTPParser.RULE_infix_equality);
+	    this.enterRule(localctx, 360, TPTP_v9_0_0_7Parser.RULE_infix_equality);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1530;
-	        this.match(TPTPParser.T__42);
+	        this.match(TPTP_v9_0_0_7Parser.T__42);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7873,11 +7873,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	infix_inequality() {
 	    let localctx = new Infix_inequalityContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 362, TPTPParser.RULE_infix_inequality);
+	    this.enterRule(localctx, 362, TPTP_v9_0_0_7Parser.RULE_infix_inequality);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1532;
-	        this.match(TPTPParser.T__43);
+	        this.match(TPTP_v9_0_0_7Parser.T__43);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -7896,7 +7896,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	constant() {
 	    let localctx = new ConstantContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 364, TPTPParser.RULE_constant);
+	    this.enterRule(localctx, 364, TPTP_v9_0_0_7Parser.RULE_constant);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1534;
@@ -7919,7 +7919,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	functor() {
 	    let localctx = new FunctorContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 366, TPTPParser.RULE_functor);
+	    this.enterRule(localctx, 366, TPTP_v9_0_0_7Parser.RULE_functor);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1536;
@@ -7942,7 +7942,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	defined_constant() {
 	    let localctx = new Defined_constantContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 368, TPTPParser.RULE_defined_constant);
+	    this.enterRule(localctx, 368, TPTP_v9_0_0_7Parser.RULE_defined_constant);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1538;
@@ -7965,7 +7965,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	defined_functor() {
 	    let localctx = new Defined_functorContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 370, TPTPParser.RULE_defined_functor);
+	    this.enterRule(localctx, 370, TPTP_v9_0_0_7Parser.RULE_defined_functor);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1540;
@@ -7988,7 +7988,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	system_constant() {
 	    let localctx = new System_constantContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 372, TPTPParser.RULE_system_constant);
+	    this.enterRule(localctx, 372, TPTP_v9_0_0_7Parser.RULE_system_constant);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1542;
@@ -8011,7 +8011,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	system_functor() {
 	    let localctx = new System_functorContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 374, TPTPParser.RULE_system_functor);
+	    this.enterRule(localctx, 374, TPTP_v9_0_0_7Parser.RULE_system_functor);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1544;
@@ -8034,7 +8034,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	def_or_sys_constant() {
 	    let localctx = new Def_or_sys_constantContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 376, TPTPParser.RULE_def_or_sys_constant);
+	    this.enterRule(localctx, 376, TPTP_v9_0_0_7Parser.RULE_def_or_sys_constant);
 	    try {
 	        this.state = 1548;
 	        this._errHandler.sync(this);
@@ -8070,7 +8070,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	th1_defined_term() {
 	    let localctx = new Th1_defined_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 378, TPTPParser.RULE_th1_defined_term);
+	    this.enterRule(localctx, 378, TPTP_v9_0_0_7Parser.RULE_th1_defined_term);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -8101,7 +8101,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	defined_term() {
 	    let localctx = new Defined_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 380, TPTPParser.RULE_defined_term);
+	    this.enterRule(localctx, 380, TPTP_v9_0_0_7Parser.RULE_defined_term);
 	    try {
 	        this.state = 1554;
 	        this._errHandler.sync(this);
@@ -8116,7 +8116,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 67:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1553;
-	            this.match(TPTPParser.Distinct_object);
+	            this.match(TPTP_v9_0_0_7Parser.Distinct_object);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -8139,11 +8139,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	variable() {
 	    let localctx = new VariableContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 382, TPTPParser.RULE_variable);
+	    this.enterRule(localctx, 382, TPTP_v9_0_0_7Parser.RULE_variable);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1556;
-	        this.match(TPTPParser.Upper_word);
+	        this.match(TPTP_v9_0_0_7Parser.Upper_word);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8162,7 +8162,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	source() {
 	    let localctx = new SourceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 384, TPTPParser.RULE_source);
+	    this.enterRule(localctx, 384, TPTP_v9_0_0_7Parser.RULE_source);
 	    try {
 	        this.state = 1566;
 	        this._errHandler.sync(this);
@@ -8190,16 +8190,16 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 50:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 1561;
-	            this.match(TPTPParser.T__49);
+	            this.match(TPTP_v9_0_0_7Parser.T__49);
 	            break;
 	        case 14:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 1562;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1563;
 	            this.sources();
 	            this.state = 1564;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -8222,7 +8222,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	sources() {
 	    let localctx = new SourcesContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 386, TPTPParser.RULE_sources);
+	    this.enterRule(localctx, 386, TPTP_v9_0_0_7Parser.RULE_sources);
 	    try {
 	        this.state = 1573;
 	        this._errHandler.sync(this);
@@ -8239,7 +8239,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1569;
 	            this.source();
 	            this.state = 1570;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1571;
 	            this.sources();
 	            break;
@@ -8263,7 +8263,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	dag_source() {
 	    let localctx = new Dag_sourceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 388, TPTPParser.RULE_dag_source);
+	    this.enterRule(localctx, 388, TPTP_v9_0_0_7Parser.RULE_dag_source);
 	    try {
 	        this.state = 1577;
 	        this._errHandler.sync(this);
@@ -8301,23 +8301,23 @@ export default class TPTPParser extends antlr4.Parser {
 
 	inference_record() {
 	    let localctx = new Inference_recordContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 390, TPTPParser.RULE_inference_record);
+	    this.enterRule(localctx, 390, TPTP_v9_0_0_7Parser.RULE_inference_record);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1579;
-	        this.match(TPTPParser.T__50);
+	        this.match(TPTP_v9_0_0_7Parser.T__50);
 	        this.state = 1580;
 	        this.inference_rule();
 	        this.state = 1581;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1582;
 	        this.useful_info();
 	        this.state = 1583;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1584;
 	        this.parents();
 	        this.state = 1585;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8336,7 +8336,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	inference_rule() {
 	    let localctx = new Inference_ruleContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 392, TPTPParser.RULE_inference_rule);
+	    this.enterRule(localctx, 392, TPTP_v9_0_0_7Parser.RULE_inference_rule);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1587;
@@ -8359,23 +8359,23 @@ export default class TPTPParser extends antlr4.Parser {
 
 	internal_source() {
 	    let localctx = new Internal_sourceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 394, TPTPParser.RULE_internal_source);
+	    this.enterRule(localctx, 394, TPTP_v9_0_0_7Parser.RULE_internal_source);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1589;
-	        this.match(TPTPParser.T__51);
+	        this.match(TPTP_v9_0_0_7Parser.T__51);
 	        this.state = 1590;
 	        this.intro_type();
 	        this.state = 1591;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1592;
 	        this.useful_info();
 	        this.state = 1593;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1594;
 	        this.parents();
 	        this.state = 1595;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8394,7 +8394,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	intro_type() {
 	    let localctx = new Intro_typeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 396, TPTPParser.RULE_intro_type);
+	    this.enterRule(localctx, 396, TPTP_v9_0_0_7Parser.RULE_intro_type);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1597;
@@ -8417,7 +8417,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	external_source() {
 	    let localctx = new External_sourceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 398, TPTPParser.RULE_external_source);
+	    this.enterRule(localctx, 398, TPTP_v9_0_0_7Parser.RULE_external_source);
 	    try {
 	        this.state = 1602;
 	        this._errHandler.sync(this);
@@ -8458,17 +8458,17 @@ export default class TPTPParser extends antlr4.Parser {
 
 	file_source() {
 	    let localctx = new File_sourceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 400, TPTPParser.RULE_file_source);
+	    this.enterRule(localctx, 400, TPTP_v9_0_0_7Parser.RULE_file_source);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1604;
-	        this.match(TPTPParser.T__52);
+	        this.match(TPTP_v9_0_0_7Parser.T__52);
 	        this.state = 1605;
 	        this.file_name();
 	        this.state = 1606;
 	        this.file_info();
 	        this.state = 1607;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8487,7 +8487,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	file_info() {
 	    let localctx = new File_infoContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 402, TPTPParser.RULE_file_info);
+	    this.enterRule(localctx, 402, TPTP_v9_0_0_7Parser.RULE_file_info);
 	    try {
 	        this.state = 1612;
 	        this._errHandler.sync(this);
@@ -8495,7 +8495,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1609;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1610;
 	            this.name();
 	            break;
@@ -8525,17 +8525,17 @@ export default class TPTPParser extends antlr4.Parser {
 
 	theory() {
 	    let localctx = new TheoryContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 404, TPTPParser.RULE_theory);
+	    this.enterRule(localctx, 404, TPTP_v9_0_0_7Parser.RULE_theory);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1614;
-	        this.match(TPTPParser.T__53);
+	        this.match(TPTP_v9_0_0_7Parser.T__53);
 	        this.state = 1615;
 	        this.theory_name();
 	        this.state = 1616;
 	        this.optional_info();
 	        this.state = 1617;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8554,7 +8554,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	theory_name() {
 	    let localctx = new Theory_nameContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 406, TPTPParser.RULE_theory_name);
+	    this.enterRule(localctx, 406, TPTP_v9_0_0_7Parser.RULE_theory_name);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1619;
@@ -8577,23 +8577,23 @@ export default class TPTPParser extends antlr4.Parser {
 
 	creator_source() {
 	    let localctx = new Creator_sourceContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 408, TPTPParser.RULE_creator_source);
+	    this.enterRule(localctx, 408, TPTP_v9_0_0_7Parser.RULE_creator_source);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1621;
-	        this.match(TPTPParser.T__54);
+	        this.match(TPTP_v9_0_0_7Parser.T__54);
 	        this.state = 1622;
 	        this.creator_name();
 	        this.state = 1623;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1624;
 	        this.useful_info();
 	        this.state = 1625;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1626;
 	        this.parents();
 	        this.state = 1627;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8612,7 +8612,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	creator_name() {
 	    let localctx = new Creator_nameContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 410, TPTPParser.RULE_creator_name);
+	    this.enterRule(localctx, 410, TPTP_v9_0_0_7Parser.RULE_creator_name);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1629;
@@ -8635,7 +8635,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	parents() {
 	    let localctx = new ParentsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 412, TPTPParser.RULE_parents);
+	    this.enterRule(localctx, 412, TPTP_v9_0_0_7Parser.RULE_parents);
 	    try {
 	        this.state = 1636;
 	        this._errHandler.sync(this);
@@ -8643,16 +8643,16 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 18:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1631;
-	            this.match(TPTPParser.T__17);
+	            this.match(TPTP_v9_0_0_7Parser.T__17);
 	            break;
 	        case 14:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1632;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1633;
 	            this.parent_list();
 	            this.state = 1634;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -8675,7 +8675,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	parent_list() {
 	    let localctx = new Parent_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 414, TPTPParser.RULE_parent_list);
+	    this.enterRule(localctx, 414, TPTP_v9_0_0_7Parser.RULE_parent_list);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -8709,11 +8709,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	comma_parent_info() {
 	    let localctx = new Comma_parent_infoContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 416, TPTPParser.RULE_comma_parent_info);
+	    this.enterRule(localctx, 416, TPTP_v9_0_0_7Parser.RULE_comma_parent_info);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1645;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1646;
 	        this.parent_info();
 	    } catch (re) {
@@ -8734,7 +8734,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	parent_info() {
 	    let localctx = new Parent_infoContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 418, TPTPParser.RULE_parent_info);
+	    this.enterRule(localctx, 418, TPTP_v9_0_0_7Parser.RULE_parent_info);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1648;
@@ -8759,7 +8759,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	parent_details() {
 	    let localctx = new Parent_detailsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 420, TPTPParser.RULE_parent_details);
+	    this.enterRule(localctx, 420, TPTP_v9_0_0_7Parser.RULE_parent_details);
 	    try {
 	        this.state = 1654;
 	        this._errHandler.sync(this);
@@ -8767,7 +8767,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 16:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1651;
-	            this.match(TPTPParser.T__15);
+	            this.match(TPTP_v9_0_0_7Parser.T__15);
 	            this.state = 1652;
 	            this.general_list();
 	            break;
@@ -8798,7 +8798,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	optional_info() {
 	    let localctx = new Optional_infoContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 422, TPTPParser.RULE_optional_info);
+	    this.enterRule(localctx, 422, TPTP_v9_0_0_7Parser.RULE_optional_info);
 	    try {
 	        this.state = 1659;
 	        this._errHandler.sync(this);
@@ -8806,7 +8806,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1656;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1657;
 	            this.useful_info();
 	            break;
@@ -8837,7 +8837,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	useful_info() {
 	    let localctx = new Useful_infoContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 424, TPTPParser.RULE_useful_info);
+	    this.enterRule(localctx, 424, TPTP_v9_0_0_7Parser.RULE_useful_info);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1661;
@@ -8860,17 +8860,17 @@ export default class TPTPParser extends antlr4.Parser {
 
 	include() {
 	    let localctx = new IncludeContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 426, TPTPParser.RULE_include);
+	    this.enterRule(localctx, 426, TPTP_v9_0_0_7Parser.RULE_include);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1663;
-	        this.match(TPTPParser.T__55);
+	        this.match(TPTP_v9_0_0_7Parser.T__55);
 	        this.state = 1664;
 	        this.file_name();
 	        this.state = 1665;
 	        this.include_optionals();
 	        this.state = 1666;
-	        this.match(TPTPParser.T__2);
+	        this.match(TPTP_v9_0_0_7Parser.T__2);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -8889,7 +8889,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	include_optionals() {
 	    let localctx = new Include_optionalsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 428, TPTPParser.RULE_include_optionals);
+	    this.enterRule(localctx, 428, TPTP_v9_0_0_7Parser.RULE_include_optionals);
 	    try {
 	        this.state = 1676;
 	        this._errHandler.sync(this);
@@ -8904,7 +8904,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 2:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1669;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1670;
 	            this.formula_selection();
 	            break;
@@ -8912,11 +8912,11 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 3:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1671;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1672;
 	            this.formula_selection();
 	            this.state = 1673;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1674;
 	            this.space_name();
 	            break;
@@ -8940,7 +8940,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	formula_selection() {
 	    let localctx = new Formula_selectionContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 430, TPTPParser.RULE_formula_selection);
+	    this.enterRule(localctx, 430, TPTP_v9_0_0_7Parser.RULE_formula_selection);
 	    try {
 	        this.state = 1683;
 	        this._errHandler.sync(this);
@@ -8948,16 +8948,16 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 14:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1678;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1679;
 	            this.name_list();
 	            this.state = 1680;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        case 73:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1682;
-	            this.match(TPTPParser.Star);
+	            this.match(TPTP_v9_0_0_7Parser.Star);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -8980,7 +8980,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	name_list() {
 	    let localctx = new Name_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 432, TPTPParser.RULE_name_list);
+	    this.enterRule(localctx, 432, TPTP_v9_0_0_7Parser.RULE_name_list);
 	    try {
 	        this.state = 1690;
 	        this._errHandler.sync(this);
@@ -8997,7 +8997,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1686;
 	            this.name();
 	            this.state = 1687;
-	            this.match(TPTPParser.T__1);
+	            this.match(TPTP_v9_0_0_7Parser.T__1);
 	            this.state = 1688;
 	            this.name_list();
 	            break;
@@ -9021,7 +9021,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	space_name() {
 	    let localctx = new Space_nameContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 434, TPTPParser.RULE_space_name);
+	    this.enterRule(localctx, 434, TPTP_v9_0_0_7Parser.RULE_space_name);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1692;
@@ -9044,7 +9044,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	general_term() {
 	    let localctx = new General_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 436, TPTPParser.RULE_general_term);
+	    this.enterRule(localctx, 436, TPTP_v9_0_0_7Parser.RULE_general_term);
 	    try {
 	        this.state = 1700;
 	        this._errHandler.sync(this);
@@ -9061,7 +9061,7 @@ export default class TPTPParser extends antlr4.Parser {
 	            this.state = 1695;
 	            this.general_data();
 	            this.state = 1696;
-	            this.match(TPTPParser.T__15);
+	            this.match(TPTP_v9_0_0_7Parser.T__15);
 	            this.state = 1697;
 	            this.general_term();
 	            break;
@@ -9091,7 +9091,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	general_data() {
 	    let localctx = new General_dataContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 438, TPTPParser.RULE_general_data);
+	    this.enterRule(localctx, 438, TPTP_v9_0_0_7Parser.RULE_general_data);
 	    try {
 	        this.state = 1708;
 	        this._errHandler.sync(this);
@@ -9124,7 +9124,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 5:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 1706;
-	            this.match(TPTPParser.Distinct_object);
+	            this.match(TPTP_v9_0_0_7Parser.Distinct_object);
 	            break;
 
 	        case 6:
@@ -9152,17 +9152,17 @@ export default class TPTPParser extends antlr4.Parser {
 
 	general_function() {
 	    let localctx = new General_functionContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 440, TPTPParser.RULE_general_function);
+	    this.enterRule(localctx, 440, TPTP_v9_0_0_7Parser.RULE_general_function);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1710;
 	        this.atomic_word();
 	        this.state = 1711;
-	        this.match(TPTPParser.T__11);
+	        this.match(TPTP_v9_0_0_7Parser.T__11);
 	        this.state = 1712;
 	        this.general_terms();
 	        this.state = 1713;
-	        this.match(TPTPParser.T__12);
+	        this.match(TPTP_v9_0_0_7Parser.T__12);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -9181,7 +9181,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	formula_data() {
 	    let localctx = new Formula_dataContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 442, TPTPParser.RULE_formula_data);
+	    this.enterRule(localctx, 442, TPTP_v9_0_0_7Parser.RULE_formula_data);
 	    try {
 	        this.state = 1735;
 	        this._errHandler.sync(this);
@@ -9189,47 +9189,47 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 57:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1715;
-	            this.match(TPTPParser.T__56);
+	            this.match(TPTP_v9_0_0_7Parser.T__56);
 	            this.state = 1716;
 	            this.thf_formula();
 	            this.state = 1717;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        case 58:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1719;
-	            this.match(TPTPParser.T__57);
+	            this.match(TPTP_v9_0_0_7Parser.T__57);
 	            this.state = 1720;
 	            this.tff_formula();
 	            this.state = 1721;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        case 59:
 	            this.enterOuterAlt(localctx, 3);
 	            this.state = 1723;
-	            this.match(TPTPParser.T__58);
+	            this.match(TPTP_v9_0_0_7Parser.T__58);
 	            this.state = 1724;
 	            this.fof_formula();
 	            this.state = 1725;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        case 60:
 	            this.enterOuterAlt(localctx, 4);
 	            this.state = 1727;
-	            this.match(TPTPParser.T__59);
+	            this.match(TPTP_v9_0_0_7Parser.T__59);
 	            this.state = 1728;
 	            this.cnf_formula();
 	            this.state = 1729;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        case 61:
 	            this.enterOuterAlt(localctx, 5);
 	            this.state = 1731;
-	            this.match(TPTPParser.T__60);
+	            this.match(TPTP_v9_0_0_7Parser.T__60);
 	            this.state = 1732;
 	            this.fof_term();
 	            this.state = 1733;
-	            this.match(TPTPParser.T__12);
+	            this.match(TPTP_v9_0_0_7Parser.T__12);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -9252,7 +9252,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	general_list() {
 	    let localctx = new General_listContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 444, TPTPParser.RULE_general_list);
+	    this.enterRule(localctx, 444, TPTP_v9_0_0_7Parser.RULE_general_list);
 	    try {
 	        this.state = 1742;
 	        this._errHandler.sync(this);
@@ -9260,16 +9260,16 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 18:
 	            this.enterOuterAlt(localctx, 1);
 	            this.state = 1737;
-	            this.match(TPTPParser.T__17);
+	            this.match(TPTP_v9_0_0_7Parser.T__17);
 	            break;
 	        case 14:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1738;
-	            this.match(TPTPParser.T__13);
+	            this.match(TPTP_v9_0_0_7Parser.T__13);
 	            this.state = 1739;
 	            this.general_terms();
 	            this.state = 1740;
-	            this.match(TPTPParser.T__14);
+	            this.match(TPTP_v9_0_0_7Parser.T__14);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -9292,7 +9292,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	general_terms() {
 	    let localctx = new General_termsContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 446, TPTPParser.RULE_general_terms);
+	    this.enterRule(localctx, 446, TPTP_v9_0_0_7Parser.RULE_general_terms);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -9326,11 +9326,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	comma_general_term() {
 	    let localctx = new Comma_general_termContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 448, TPTPParser.RULE_comma_general_term);
+	    this.enterRule(localctx, 448, TPTP_v9_0_0_7Parser.RULE_comma_general_term);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1751;
-	        this.match(TPTPParser.T__1);
+	        this.match(TPTP_v9_0_0_7Parser.T__1);
 	        this.state = 1752;
 	        this.general_term();
 	    } catch (re) {
@@ -9351,7 +9351,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	name() {
 	    let localctx = new NameContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 450, TPTPParser.RULE_name);
+	    this.enterRule(localctx, 450, TPTP_v9_0_0_7Parser.RULE_name);
 	    try {
 	        this.state = 1756;
 	        this._errHandler.sync(this);
@@ -9365,7 +9365,7 @@ export default class TPTPParser extends antlr4.Parser {
 	        case 84:
 	            this.enterOuterAlt(localctx, 2);
 	            this.state = 1755;
-	            this.match(TPTPParser.Integer);
+	            this.match(TPTP_v9_0_0_7Parser.Integer);
 	            break;
 	        default:
 	            throw new antlr4.error.NoViableAltException(this);
@@ -9388,7 +9388,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	atomic_word() {
 	    let localctx = new Atomic_wordContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 452, TPTPParser.RULE_atomic_word);
+	    this.enterRule(localctx, 452, TPTP_v9_0_0_7Parser.RULE_atomic_word);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -9419,11 +9419,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	atomic_defined_word() {
 	    let localctx = new Atomic_defined_wordContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 454, TPTPParser.RULE_atomic_defined_word);
+	    this.enterRule(localctx, 454, TPTP_v9_0_0_7Parser.RULE_atomic_defined_word);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1760;
-	        this.match(TPTPParser.Dollar_word);
+	        this.match(TPTP_v9_0_0_7Parser.Dollar_word);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -9442,11 +9442,11 @@ export default class TPTPParser extends antlr4.Parser {
 
 	atomic_system_word() {
 	    let localctx = new Atomic_system_wordContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 456, TPTPParser.RULE_atomic_system_word);
+	    this.enterRule(localctx, 456, TPTP_v9_0_0_7Parser.RULE_atomic_system_word);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1762;
-	        this.match(TPTPParser.Dollar_dollar_word);
+	        this.match(TPTP_v9_0_0_7Parser.Dollar_dollar_word);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
 		        localctx.exception = re;
@@ -9465,7 +9465,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	number() {
 	    let localctx = new NumberContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 458, TPTPParser.RULE_number);
+	    this.enterRule(localctx, 458, TPTP_v9_0_0_7Parser.RULE_number);
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
@@ -9496,7 +9496,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	file_name() {
 	    let localctx = new File_nameContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 460, TPTPParser.RULE_file_name);
+	    this.enterRule(localctx, 460, TPTP_v9_0_0_7Parser.RULE_file_name);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1766;
@@ -9519,7 +9519,7 @@ export default class TPTPParser extends antlr4.Parser {
 
 	null_() {
 	    let localctx = new NullContext(this, this._ctx, this.state);
-	    this.enterRule(localctx, 462, TPTPParser.RULE_null);
+	    this.enterRule(localctx, 462, TPTP_v9_0_0_7Parser.RULE_null);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 
@@ -9540,346 +9540,346 @@ export default class TPTPParser extends antlr4.Parser {
 
 }
 
-TPTPParser.EOF = antlr4.Token.EOF;
-TPTPParser.T__0 = 1;
-TPTPParser.T__1 = 2;
-TPTPParser.T__2 = 3;
-TPTPParser.T__3 = 4;
-TPTPParser.T__4 = 5;
-TPTPParser.T__5 = 6;
-TPTPParser.T__6 = 7;
-TPTPParser.T__7 = 8;
-TPTPParser.T__8 = 9;
-TPTPParser.T__9 = 10;
-TPTPParser.T__10 = 11;
-TPTPParser.T__11 = 12;
-TPTPParser.T__12 = 13;
-TPTPParser.T__13 = 14;
-TPTPParser.T__14 = 15;
-TPTPParser.T__15 = 16;
-TPTPParser.T__16 = 17;
-TPTPParser.T__17 = 18;
-TPTPParser.T__18 = 19;
-TPTPParser.T__19 = 20;
-TPTPParser.T__20 = 21;
-TPTPParser.T__21 = 22;
-TPTPParser.T__22 = 23;
-TPTPParser.T__23 = 24;
-TPTPParser.T__24 = 25;
-TPTPParser.T__25 = 26;
-TPTPParser.T__26 = 27;
-TPTPParser.T__27 = 28;
-TPTPParser.T__28 = 29;
-TPTPParser.T__29 = 30;
-TPTPParser.T__30 = 31;
-TPTPParser.T__31 = 32;
-TPTPParser.T__32 = 33;
-TPTPParser.T__33 = 34;
-TPTPParser.T__34 = 35;
-TPTPParser.T__35 = 36;
-TPTPParser.T__36 = 37;
-TPTPParser.T__37 = 38;
-TPTPParser.T__38 = 39;
-TPTPParser.T__39 = 40;
-TPTPParser.T__40 = 41;
-TPTPParser.T__41 = 42;
-TPTPParser.T__42 = 43;
-TPTPParser.T__43 = 44;
-TPTPParser.T__44 = 45;
-TPTPParser.T__45 = 46;
-TPTPParser.T__46 = 47;
-TPTPParser.T__47 = 48;
-TPTPParser.T__48 = 49;
-TPTPParser.T__49 = 50;
-TPTPParser.T__50 = 51;
-TPTPParser.T__51 = 52;
-TPTPParser.T__52 = 53;
-TPTPParser.T__53 = 54;
-TPTPParser.T__54 = 55;
-TPTPParser.T__55 = 56;
-TPTPParser.T__56 = 57;
-TPTPParser.T__57 = 58;
-TPTPParser.T__58 = 59;
-TPTPParser.T__59 = 60;
-TPTPParser.T__60 = 61;
-TPTPParser.WS = 62;
-TPTPParser.Comment_line = 63;
-TPTPParser.Comment_block = 64;
-TPTPParser.Not_star_slash = 65;
-TPTPParser.Single_quoted = 66;
-TPTPParser.Distinct_object = 67;
-TPTPParser.Dollar_word = 68;
-TPTPParser.Dollar_dollar_word = 69;
-TPTPParser.Upper_word = 70;
-TPTPParser.Lower_word = 71;
-TPTPParser.Vline = 72;
-TPTPParser.Star = 73;
-TPTPParser.Plus = 74;
-TPTPParser.Arrow = 75;
-TPTPParser.Less_sign = 76;
-TPTPParser.Hash = 77;
-TPTPParser.Real = 78;
-TPTPParser.Signed_real = 79;
-TPTPParser.Unsigned_real = 80;
-TPTPParser.Rational = 81;
-TPTPParser.Signed_rational = 82;
-TPTPParser.Unsigned_rational = 83;
-TPTPParser.Integer = 84;
-TPTPParser.Signed_integer = 85;
-TPTPParser.Unsigned_integer = 86;
-TPTPParser.Decimal = 87;
-TPTPParser.Positive_decimal = 88;
-TPTPParser.Decimal_exponent = 89;
-TPTPParser.Decimal_fraction = 90;
-TPTPParser.Dot_decimal = 91;
-TPTPParser.Exp_integer = 92;
-TPTPParser.Signed_exp_integer = 93;
-TPTPParser.Unsigned_exp_integer = 94;
-TPTPParser.Slash = 95;
-TPTPParser.Slosh = 96;
-TPTPParser.Percentage_sign = 97;
-TPTPParser.Double_quote = 98;
-TPTPParser.Single_quote = 99;
-TPTPParser.Dot = 100;
-TPTPParser.Slash_char = 101;
-TPTPParser.Slosh_char = 102;
-TPTPParser.Zero_numeric = 103;
-TPTPParser.Dollar = 104;
-TPTPParser.Printable_char = 105;
-TPTPParser.Viewable_char = 106;
+TPTP_v9_0_0_7Parser.EOF = antlr4.Token.EOF;
+TPTP_v9_0_0_7Parser.T__0 = 1;
+TPTP_v9_0_0_7Parser.T__1 = 2;
+TPTP_v9_0_0_7Parser.T__2 = 3;
+TPTP_v9_0_0_7Parser.T__3 = 4;
+TPTP_v9_0_0_7Parser.T__4 = 5;
+TPTP_v9_0_0_7Parser.T__5 = 6;
+TPTP_v9_0_0_7Parser.T__6 = 7;
+TPTP_v9_0_0_7Parser.T__7 = 8;
+TPTP_v9_0_0_7Parser.T__8 = 9;
+TPTP_v9_0_0_7Parser.T__9 = 10;
+TPTP_v9_0_0_7Parser.T__10 = 11;
+TPTP_v9_0_0_7Parser.T__11 = 12;
+TPTP_v9_0_0_7Parser.T__12 = 13;
+TPTP_v9_0_0_7Parser.T__13 = 14;
+TPTP_v9_0_0_7Parser.T__14 = 15;
+TPTP_v9_0_0_7Parser.T__15 = 16;
+TPTP_v9_0_0_7Parser.T__16 = 17;
+TPTP_v9_0_0_7Parser.T__17 = 18;
+TPTP_v9_0_0_7Parser.T__18 = 19;
+TPTP_v9_0_0_7Parser.T__19 = 20;
+TPTP_v9_0_0_7Parser.T__20 = 21;
+TPTP_v9_0_0_7Parser.T__21 = 22;
+TPTP_v9_0_0_7Parser.T__22 = 23;
+TPTP_v9_0_0_7Parser.T__23 = 24;
+TPTP_v9_0_0_7Parser.T__24 = 25;
+TPTP_v9_0_0_7Parser.T__25 = 26;
+TPTP_v9_0_0_7Parser.T__26 = 27;
+TPTP_v9_0_0_7Parser.T__27 = 28;
+TPTP_v9_0_0_7Parser.T__28 = 29;
+TPTP_v9_0_0_7Parser.T__29 = 30;
+TPTP_v9_0_0_7Parser.T__30 = 31;
+TPTP_v9_0_0_7Parser.T__31 = 32;
+TPTP_v9_0_0_7Parser.T__32 = 33;
+TPTP_v9_0_0_7Parser.T__33 = 34;
+TPTP_v9_0_0_7Parser.T__34 = 35;
+TPTP_v9_0_0_7Parser.T__35 = 36;
+TPTP_v9_0_0_7Parser.T__36 = 37;
+TPTP_v9_0_0_7Parser.T__37 = 38;
+TPTP_v9_0_0_7Parser.T__38 = 39;
+TPTP_v9_0_0_7Parser.T__39 = 40;
+TPTP_v9_0_0_7Parser.T__40 = 41;
+TPTP_v9_0_0_7Parser.T__41 = 42;
+TPTP_v9_0_0_7Parser.T__42 = 43;
+TPTP_v9_0_0_7Parser.T__43 = 44;
+TPTP_v9_0_0_7Parser.T__44 = 45;
+TPTP_v9_0_0_7Parser.T__45 = 46;
+TPTP_v9_0_0_7Parser.T__46 = 47;
+TPTP_v9_0_0_7Parser.T__47 = 48;
+TPTP_v9_0_0_7Parser.T__48 = 49;
+TPTP_v9_0_0_7Parser.T__49 = 50;
+TPTP_v9_0_0_7Parser.T__50 = 51;
+TPTP_v9_0_0_7Parser.T__51 = 52;
+TPTP_v9_0_0_7Parser.T__52 = 53;
+TPTP_v9_0_0_7Parser.T__53 = 54;
+TPTP_v9_0_0_7Parser.T__54 = 55;
+TPTP_v9_0_0_7Parser.T__55 = 56;
+TPTP_v9_0_0_7Parser.T__56 = 57;
+TPTP_v9_0_0_7Parser.T__57 = 58;
+TPTP_v9_0_0_7Parser.T__58 = 59;
+TPTP_v9_0_0_7Parser.T__59 = 60;
+TPTP_v9_0_0_7Parser.T__60 = 61;
+TPTP_v9_0_0_7Parser.WS = 62;
+TPTP_v9_0_0_7Parser.Comment_line = 63;
+TPTP_v9_0_0_7Parser.Comment_block = 64;
+TPTP_v9_0_0_7Parser.Not_star_slash = 65;
+TPTP_v9_0_0_7Parser.Single_quoted = 66;
+TPTP_v9_0_0_7Parser.Distinct_object = 67;
+TPTP_v9_0_0_7Parser.Dollar_word = 68;
+TPTP_v9_0_0_7Parser.Dollar_dollar_word = 69;
+TPTP_v9_0_0_7Parser.Upper_word = 70;
+TPTP_v9_0_0_7Parser.Lower_word = 71;
+TPTP_v9_0_0_7Parser.Vline = 72;
+TPTP_v9_0_0_7Parser.Star = 73;
+TPTP_v9_0_0_7Parser.Plus = 74;
+TPTP_v9_0_0_7Parser.Arrow = 75;
+TPTP_v9_0_0_7Parser.Less_sign = 76;
+TPTP_v9_0_0_7Parser.Hash = 77;
+TPTP_v9_0_0_7Parser.Real = 78;
+TPTP_v9_0_0_7Parser.Signed_real = 79;
+TPTP_v9_0_0_7Parser.Unsigned_real = 80;
+TPTP_v9_0_0_7Parser.Rational = 81;
+TPTP_v9_0_0_7Parser.Signed_rational = 82;
+TPTP_v9_0_0_7Parser.Unsigned_rational = 83;
+TPTP_v9_0_0_7Parser.Integer = 84;
+TPTP_v9_0_0_7Parser.Signed_integer = 85;
+TPTP_v9_0_0_7Parser.Unsigned_integer = 86;
+TPTP_v9_0_0_7Parser.Decimal = 87;
+TPTP_v9_0_0_7Parser.Positive_decimal = 88;
+TPTP_v9_0_0_7Parser.Decimal_exponent = 89;
+TPTP_v9_0_0_7Parser.Decimal_fraction = 90;
+TPTP_v9_0_0_7Parser.Dot_decimal = 91;
+TPTP_v9_0_0_7Parser.Exp_integer = 92;
+TPTP_v9_0_0_7Parser.Signed_exp_integer = 93;
+TPTP_v9_0_0_7Parser.Unsigned_exp_integer = 94;
+TPTP_v9_0_0_7Parser.Slash = 95;
+TPTP_v9_0_0_7Parser.Slosh = 96;
+TPTP_v9_0_0_7Parser.Percentage_sign = 97;
+TPTP_v9_0_0_7Parser.Double_quote = 98;
+TPTP_v9_0_0_7Parser.Single_quote = 99;
+TPTP_v9_0_0_7Parser.Dot = 100;
+TPTP_v9_0_0_7Parser.Slash_char = 101;
+TPTP_v9_0_0_7Parser.Slosh_char = 102;
+TPTP_v9_0_0_7Parser.Zero_numeric = 103;
+TPTP_v9_0_0_7Parser.Dollar = 104;
+TPTP_v9_0_0_7Parser.Printable_char = 105;
+TPTP_v9_0_0_7Parser.Viewable_char = 106;
 
-TPTPParser.RULE_tptp_file = 0;
-TPTPParser.RULE_tptp_input = 1;
-TPTPParser.RULE_annotated_formula = 2;
-TPTPParser.RULE_tpi_annotated = 3;
-TPTPParser.RULE_tpi_formula = 4;
-TPTPParser.RULE_thf_annotated = 5;
-TPTPParser.RULE_tff_annotated = 6;
-TPTPParser.RULE_tcf_annotated = 7;
-TPTPParser.RULE_fof_annotated = 8;
-TPTPParser.RULE_cnf_annotated = 9;
-TPTPParser.RULE_annotations = 10;
-TPTPParser.RULE_formula_role = 11;
-TPTPParser.RULE_thf_formula = 12;
-TPTPParser.RULE_thf_logic_formula = 13;
-TPTPParser.RULE_thf_binary_formula = 14;
-TPTPParser.RULE_thf_binary_nonassoc = 15;
-TPTPParser.RULE_thf_binary_assoc = 16;
-TPTPParser.RULE_thf_or_formula = 17;
-TPTPParser.RULE_thf_and_formula = 18;
-TPTPParser.RULE_thf_apply_formula = 19;
-TPTPParser.RULE_thf_unit_formula = 20;
-TPTPParser.RULE_thf_preunit_formula = 21;
-TPTPParser.RULE_thf_unitary_formula = 22;
-TPTPParser.RULE_thf_quantified_formula = 23;
-TPTPParser.RULE_thf_quantification = 24;
-TPTPParser.RULE_thf_variable_list = 25;
-TPTPParser.RULE_thf_typed_variable = 26;
-TPTPParser.RULE_thf_unary_formula = 27;
-TPTPParser.RULE_thf_prefix_unary = 28;
-TPTPParser.RULE_thf_infix_unary = 29;
-TPTPParser.RULE_thf_atomic_formula = 30;
-TPTPParser.RULE_thf_plain_atomic = 31;
-TPTPParser.RULE_thf_defined_atomic = 32;
-TPTPParser.RULE_thf_defined_term = 33;
-TPTPParser.RULE_thf_defined_infix = 34;
-TPTPParser.RULE_thf_system_atomic = 35;
-TPTPParser.RULE_thf_let = 36;
-TPTPParser.RULE_thf_let_types = 37;
-TPTPParser.RULE_thf_atom_typing_list = 38;
-TPTPParser.RULE_thf_let_defns = 39;
-TPTPParser.RULE_thf_let_defn = 40;
-TPTPParser.RULE_thf_let_defn_list = 41;
-TPTPParser.RULE_thf_unitary_term = 42;
-TPTPParser.RULE_thf_conn_term = 43;
-TPTPParser.RULE_thf_tuple = 44;
-TPTPParser.RULE_thf_fof_function = 45;
-TPTPParser.RULE_thf_arguments = 46;
-TPTPParser.RULE_thf_formula_list = 47;
-TPTPParser.RULE_comma_thf_logic_formula = 48;
-TPTPParser.RULE_thf_atom_typing = 49;
-TPTPParser.RULE_thf_top_level_type = 50;
-TPTPParser.RULE_thf_unitary_type = 51;
-TPTPParser.RULE_thf_apply_type = 52;
-TPTPParser.RULE_thf_binary_type = 53;
-TPTPParser.RULE_thf_mapping_type = 54;
-TPTPParser.RULE_thf_xprod_type = 55;
-TPTPParser.RULE_thf_union_type = 56;
-TPTPParser.RULE_thf_subtype = 57;
-TPTPParser.RULE_thf_definition = 58;
-TPTPParser.RULE_thf_sequent = 59;
-TPTPParser.RULE_tff_formula = 60;
-TPTPParser.RULE_tff_logic_formula = 61;
-TPTPParser.RULE_tff_binary_formula = 62;
-TPTPParser.RULE_tff_binary_nonassoc = 63;
-TPTPParser.RULE_tff_binary_assoc = 64;
-TPTPParser.RULE_tff_or_formula = 65;
-TPTPParser.RULE_tff_and_formula = 66;
-TPTPParser.RULE_tff_unit_formula = 67;
-TPTPParser.RULE_tff_preunit_formula = 68;
-TPTPParser.RULE_tff_unitary_formula = 69;
-TPTPParser.RULE_txf_unitary_formula = 70;
-TPTPParser.RULE_tff_quantified_formula = 71;
-TPTPParser.RULE_tff_variable_list = 72;
-TPTPParser.RULE_tff_variable = 73;
-TPTPParser.RULE_tff_typed_variable = 74;
-TPTPParser.RULE_tff_unary_formula = 75;
-TPTPParser.RULE_tff_prefix_unary = 76;
-TPTPParser.RULE_tff_infix_unary = 77;
-TPTPParser.RULE_tff_atomic_formula = 78;
-TPTPParser.RULE_tff_plain_atomic = 79;
-TPTPParser.RULE_tff_defined_atomic = 80;
-TPTPParser.RULE_tff_defined_plain = 81;
-TPTPParser.RULE_tff_defined_infix = 82;
-TPTPParser.RULE_tff_system_atomic = 83;
-TPTPParser.RULE_txf_let = 84;
-TPTPParser.RULE_txf_let_types = 85;
-TPTPParser.RULE_tff_atom_typing_list = 86;
-TPTPParser.RULE_txf_let_defns = 87;
-TPTPParser.RULE_txf_let_defn = 88;
-TPTPParser.RULE_txf_let_LHS = 89;
-TPTPParser.RULE_txf_let_defn_list = 90;
-TPTPParser.RULE_nxf_atom = 91;
-TPTPParser.RULE_tff_term = 92;
-TPTPParser.RULE_tff_unitary_term = 93;
-TPTPParser.RULE_txf_tuple = 94;
-TPTPParser.RULE_tff_arguments = 95;
-TPTPParser.RULE_comma_tff_term = 96;
-TPTPParser.RULE_tff_atom_typing = 97;
-TPTPParser.RULE_tff_top_level_type = 98;
-TPTPParser.RULE_tff_non_atomic_type = 99;
-TPTPParser.RULE_tf1_quantified_type = 100;
-TPTPParser.RULE_tff_monotype = 101;
-TPTPParser.RULE_tff_unitary_type = 102;
-TPTPParser.RULE_tff_atomic_type = 103;
-TPTPParser.RULE_tff_type_arguments = 104;
-TPTPParser.RULE_tff_mapping_type = 105;
-TPTPParser.RULE_tff_xprod_type = 106;
-TPTPParser.RULE_txf_tuple_type = 107;
-TPTPParser.RULE_tff_type_list = 108;
-TPTPParser.RULE_tff_subtype = 109;
-TPTPParser.RULE_txf_definition = 110;
-TPTPParser.RULE_txf_sequent = 111;
-TPTPParser.RULE_nhf_long_connective = 112;
-TPTPParser.RULE_nhf_parameter_list = 113;
-TPTPParser.RULE_nhf_parameter = 114;
-TPTPParser.RULE_nhf_key_pair = 115;
-TPTPParser.RULE_nxf_long_connective = 116;
-TPTPParser.RULE_nxf_parameter_list = 117;
-TPTPParser.RULE_nxf_parameter = 118;
-TPTPParser.RULE_nxf_key_pair = 119;
-TPTPParser.RULE_ntf_connective_name = 120;
-TPTPParser.RULE_ntf_index = 121;
-TPTPParser.RULE_ntf_short_connective = 122;
-TPTPParser.RULE_tcf_formula = 123;
-TPTPParser.RULE_tcf_logic_formula = 124;
-TPTPParser.RULE_tcf_quantified_formula = 125;
-TPTPParser.RULE_fof_formula = 126;
-TPTPParser.RULE_fof_logic_formula = 127;
-TPTPParser.RULE_fof_binary_formula = 128;
-TPTPParser.RULE_fof_binary_nonassoc = 129;
-TPTPParser.RULE_fof_binary_assoc = 130;
-TPTPParser.RULE_fof_or_formula = 131;
-TPTPParser.RULE_fof_and_formula = 132;
-TPTPParser.RULE_fof_unary_formula = 133;
-TPTPParser.RULE_fof_infix_unary = 134;
-TPTPParser.RULE_fof_unit_formula = 135;
-TPTPParser.RULE_fof_unitary_formula = 136;
-TPTPParser.RULE_fof_quantified_formula = 137;
-TPTPParser.RULE_fof_variable_list = 138;
-TPTPParser.RULE_fof_atomic_formula = 139;
-TPTPParser.RULE_fof_plain_atomic_formula = 140;
-TPTPParser.RULE_fof_defined_atomic_formula = 141;
-TPTPParser.RULE_fof_defined_plain_formula = 142;
-TPTPParser.RULE_fof_defined_infix_formula = 143;
-TPTPParser.RULE_fof_system_atomic_formula = 144;
-TPTPParser.RULE_fof_plain_term = 145;
-TPTPParser.RULE_fof_defined_term = 146;
-TPTPParser.RULE_fof_defined_atomic_term = 147;
-TPTPParser.RULE_fof_defined_plain_term = 148;
-TPTPParser.RULE_fof_system_term = 149;
-TPTPParser.RULE_fof_arguments = 150;
-TPTPParser.RULE_fof_term = 151;
-TPTPParser.RULE_fof_function_term = 152;
-TPTPParser.RULE_fof_sequent = 153;
-TPTPParser.RULE_fof_formula_tuple = 154;
-TPTPParser.RULE_fof_formula_tuple_list = 155;
-TPTPParser.RULE_comma_fof_logic_formula = 156;
-TPTPParser.RULE_cnf_formula = 157;
-TPTPParser.RULE_cnf_disjunction = 158;
-TPTPParser.RULE_cnf_literal = 159;
-TPTPParser.RULE_thf_quantifier = 160;
-TPTPParser.RULE_thf_unary_connective = 161;
-TPTPParser.RULE_th1_quantifier = 162;
-TPTPParser.RULE_th0_quantifier = 163;
-TPTPParser.RULE_subtype_sign = 164;
-TPTPParser.RULE_tff_unary_connective = 165;
-TPTPParser.RULE_tff_quantifier = 166;
-TPTPParser.RULE_fof_quantifier = 167;
-TPTPParser.RULE_nonassoc_connective = 168;
-TPTPParser.RULE_assoc_connective = 169;
-TPTPParser.RULE_unary_connective = 170;
-TPTPParser.RULE_gentzen_arrow = 171;
-TPTPParser.RULE_assignment = 172;
-TPTPParser.RULE_identical = 173;
-TPTPParser.RULE_type_constant = 174;
-TPTPParser.RULE_type_functor = 175;
-TPTPParser.RULE_defined_type = 176;
-TPTPParser.RULE_atom = 177;
-TPTPParser.RULE_untyped_atom = 178;
-TPTPParser.RULE_defined_infix_pred = 179;
-TPTPParser.RULE_infix_equality = 180;
-TPTPParser.RULE_infix_inequality = 181;
-TPTPParser.RULE_constant = 182;
-TPTPParser.RULE_functor = 183;
-TPTPParser.RULE_defined_constant = 184;
-TPTPParser.RULE_defined_functor = 185;
-TPTPParser.RULE_system_constant = 186;
-TPTPParser.RULE_system_functor = 187;
-TPTPParser.RULE_def_or_sys_constant = 188;
-TPTPParser.RULE_th1_defined_term = 189;
-TPTPParser.RULE_defined_term = 190;
-TPTPParser.RULE_variable = 191;
-TPTPParser.RULE_source = 192;
-TPTPParser.RULE_sources = 193;
-TPTPParser.RULE_dag_source = 194;
-TPTPParser.RULE_inference_record = 195;
-TPTPParser.RULE_inference_rule = 196;
-TPTPParser.RULE_internal_source = 197;
-TPTPParser.RULE_intro_type = 198;
-TPTPParser.RULE_external_source = 199;
-TPTPParser.RULE_file_source = 200;
-TPTPParser.RULE_file_info = 201;
-TPTPParser.RULE_theory = 202;
-TPTPParser.RULE_theory_name = 203;
-TPTPParser.RULE_creator_source = 204;
-TPTPParser.RULE_creator_name = 205;
-TPTPParser.RULE_parents = 206;
-TPTPParser.RULE_parent_list = 207;
-TPTPParser.RULE_comma_parent_info = 208;
-TPTPParser.RULE_parent_info = 209;
-TPTPParser.RULE_parent_details = 210;
-TPTPParser.RULE_optional_info = 211;
-TPTPParser.RULE_useful_info = 212;
-TPTPParser.RULE_include = 213;
-TPTPParser.RULE_include_optionals = 214;
-TPTPParser.RULE_formula_selection = 215;
-TPTPParser.RULE_name_list = 216;
-TPTPParser.RULE_space_name = 217;
-TPTPParser.RULE_general_term = 218;
-TPTPParser.RULE_general_data = 219;
-TPTPParser.RULE_general_function = 220;
-TPTPParser.RULE_formula_data = 221;
-TPTPParser.RULE_general_list = 222;
-TPTPParser.RULE_general_terms = 223;
-TPTPParser.RULE_comma_general_term = 224;
-TPTPParser.RULE_name = 225;
-TPTPParser.RULE_atomic_word = 226;
-TPTPParser.RULE_atomic_defined_word = 227;
-TPTPParser.RULE_atomic_system_word = 228;
-TPTPParser.RULE_number = 229;
-TPTPParser.RULE_file_name = 230;
-TPTPParser.RULE_null = 231;
+TPTP_v9_0_0_7Parser.RULE_tptp_file = 0;
+TPTP_v9_0_0_7Parser.RULE_tptp_input = 1;
+TPTP_v9_0_0_7Parser.RULE_annotated_formula = 2;
+TPTP_v9_0_0_7Parser.RULE_tpi_annotated = 3;
+TPTP_v9_0_0_7Parser.RULE_tpi_formula = 4;
+TPTP_v9_0_0_7Parser.RULE_thf_annotated = 5;
+TPTP_v9_0_0_7Parser.RULE_tff_annotated = 6;
+TPTP_v9_0_0_7Parser.RULE_tcf_annotated = 7;
+TPTP_v9_0_0_7Parser.RULE_fof_annotated = 8;
+TPTP_v9_0_0_7Parser.RULE_cnf_annotated = 9;
+TPTP_v9_0_0_7Parser.RULE_annotations = 10;
+TPTP_v9_0_0_7Parser.RULE_formula_role = 11;
+TPTP_v9_0_0_7Parser.RULE_thf_formula = 12;
+TPTP_v9_0_0_7Parser.RULE_thf_logic_formula = 13;
+TPTP_v9_0_0_7Parser.RULE_thf_binary_formula = 14;
+TPTP_v9_0_0_7Parser.RULE_thf_binary_nonassoc = 15;
+TPTP_v9_0_0_7Parser.RULE_thf_binary_assoc = 16;
+TPTP_v9_0_0_7Parser.RULE_thf_or_formula = 17;
+TPTP_v9_0_0_7Parser.RULE_thf_and_formula = 18;
+TPTP_v9_0_0_7Parser.RULE_thf_apply_formula = 19;
+TPTP_v9_0_0_7Parser.RULE_thf_unit_formula = 20;
+TPTP_v9_0_0_7Parser.RULE_thf_preunit_formula = 21;
+TPTP_v9_0_0_7Parser.RULE_thf_unitary_formula = 22;
+TPTP_v9_0_0_7Parser.RULE_thf_quantified_formula = 23;
+TPTP_v9_0_0_7Parser.RULE_thf_quantification = 24;
+TPTP_v9_0_0_7Parser.RULE_thf_variable_list = 25;
+TPTP_v9_0_0_7Parser.RULE_thf_typed_variable = 26;
+TPTP_v9_0_0_7Parser.RULE_thf_unary_formula = 27;
+TPTP_v9_0_0_7Parser.RULE_thf_prefix_unary = 28;
+TPTP_v9_0_0_7Parser.RULE_thf_infix_unary = 29;
+TPTP_v9_0_0_7Parser.RULE_thf_atomic_formula = 30;
+TPTP_v9_0_0_7Parser.RULE_thf_plain_atomic = 31;
+TPTP_v9_0_0_7Parser.RULE_thf_defined_atomic = 32;
+TPTP_v9_0_0_7Parser.RULE_thf_defined_term = 33;
+TPTP_v9_0_0_7Parser.RULE_thf_defined_infix = 34;
+TPTP_v9_0_0_7Parser.RULE_thf_system_atomic = 35;
+TPTP_v9_0_0_7Parser.RULE_thf_let = 36;
+TPTP_v9_0_0_7Parser.RULE_thf_let_types = 37;
+TPTP_v9_0_0_7Parser.RULE_thf_atom_typing_list = 38;
+TPTP_v9_0_0_7Parser.RULE_thf_let_defns = 39;
+TPTP_v9_0_0_7Parser.RULE_thf_let_defn = 40;
+TPTP_v9_0_0_7Parser.RULE_thf_let_defn_list = 41;
+TPTP_v9_0_0_7Parser.RULE_thf_unitary_term = 42;
+TPTP_v9_0_0_7Parser.RULE_thf_conn_term = 43;
+TPTP_v9_0_0_7Parser.RULE_thf_tuple = 44;
+TPTP_v9_0_0_7Parser.RULE_thf_fof_function = 45;
+TPTP_v9_0_0_7Parser.RULE_thf_arguments = 46;
+TPTP_v9_0_0_7Parser.RULE_thf_formula_list = 47;
+TPTP_v9_0_0_7Parser.RULE_comma_thf_logic_formula = 48;
+TPTP_v9_0_0_7Parser.RULE_thf_atom_typing = 49;
+TPTP_v9_0_0_7Parser.RULE_thf_top_level_type = 50;
+TPTP_v9_0_0_7Parser.RULE_thf_unitary_type = 51;
+TPTP_v9_0_0_7Parser.RULE_thf_apply_type = 52;
+TPTP_v9_0_0_7Parser.RULE_thf_binary_type = 53;
+TPTP_v9_0_0_7Parser.RULE_thf_mapping_type = 54;
+TPTP_v9_0_0_7Parser.RULE_thf_xprod_type = 55;
+TPTP_v9_0_0_7Parser.RULE_thf_union_type = 56;
+TPTP_v9_0_0_7Parser.RULE_thf_subtype = 57;
+TPTP_v9_0_0_7Parser.RULE_thf_definition = 58;
+TPTP_v9_0_0_7Parser.RULE_thf_sequent = 59;
+TPTP_v9_0_0_7Parser.RULE_tff_formula = 60;
+TPTP_v9_0_0_7Parser.RULE_tff_logic_formula = 61;
+TPTP_v9_0_0_7Parser.RULE_tff_binary_formula = 62;
+TPTP_v9_0_0_7Parser.RULE_tff_binary_nonassoc = 63;
+TPTP_v9_0_0_7Parser.RULE_tff_binary_assoc = 64;
+TPTP_v9_0_0_7Parser.RULE_tff_or_formula = 65;
+TPTP_v9_0_0_7Parser.RULE_tff_and_formula = 66;
+TPTP_v9_0_0_7Parser.RULE_tff_unit_formula = 67;
+TPTP_v9_0_0_7Parser.RULE_tff_preunit_formula = 68;
+TPTP_v9_0_0_7Parser.RULE_tff_unitary_formula = 69;
+TPTP_v9_0_0_7Parser.RULE_txf_unitary_formula = 70;
+TPTP_v9_0_0_7Parser.RULE_tff_quantified_formula = 71;
+TPTP_v9_0_0_7Parser.RULE_tff_variable_list = 72;
+TPTP_v9_0_0_7Parser.RULE_tff_variable = 73;
+TPTP_v9_0_0_7Parser.RULE_tff_typed_variable = 74;
+TPTP_v9_0_0_7Parser.RULE_tff_unary_formula = 75;
+TPTP_v9_0_0_7Parser.RULE_tff_prefix_unary = 76;
+TPTP_v9_0_0_7Parser.RULE_tff_infix_unary = 77;
+TPTP_v9_0_0_7Parser.RULE_tff_atomic_formula = 78;
+TPTP_v9_0_0_7Parser.RULE_tff_plain_atomic = 79;
+TPTP_v9_0_0_7Parser.RULE_tff_defined_atomic = 80;
+TPTP_v9_0_0_7Parser.RULE_tff_defined_plain = 81;
+TPTP_v9_0_0_7Parser.RULE_tff_defined_infix = 82;
+TPTP_v9_0_0_7Parser.RULE_tff_system_atomic = 83;
+TPTP_v9_0_0_7Parser.RULE_txf_let = 84;
+TPTP_v9_0_0_7Parser.RULE_txf_let_types = 85;
+TPTP_v9_0_0_7Parser.RULE_tff_atom_typing_list = 86;
+TPTP_v9_0_0_7Parser.RULE_txf_let_defns = 87;
+TPTP_v9_0_0_7Parser.RULE_txf_let_defn = 88;
+TPTP_v9_0_0_7Parser.RULE_txf_let_LHS = 89;
+TPTP_v9_0_0_7Parser.RULE_txf_let_defn_list = 90;
+TPTP_v9_0_0_7Parser.RULE_nxf_atom = 91;
+TPTP_v9_0_0_7Parser.RULE_tff_term = 92;
+TPTP_v9_0_0_7Parser.RULE_tff_unitary_term = 93;
+TPTP_v9_0_0_7Parser.RULE_txf_tuple = 94;
+TPTP_v9_0_0_7Parser.RULE_tff_arguments = 95;
+TPTP_v9_0_0_7Parser.RULE_comma_tff_term = 96;
+TPTP_v9_0_0_7Parser.RULE_tff_atom_typing = 97;
+TPTP_v9_0_0_7Parser.RULE_tff_top_level_type = 98;
+TPTP_v9_0_0_7Parser.RULE_tff_non_atomic_type = 99;
+TPTP_v9_0_0_7Parser.RULE_tf1_quantified_type = 100;
+TPTP_v9_0_0_7Parser.RULE_tff_monotype = 101;
+TPTP_v9_0_0_7Parser.RULE_tff_unitary_type = 102;
+TPTP_v9_0_0_7Parser.RULE_tff_atomic_type = 103;
+TPTP_v9_0_0_7Parser.RULE_tff_type_arguments = 104;
+TPTP_v9_0_0_7Parser.RULE_tff_mapping_type = 105;
+TPTP_v9_0_0_7Parser.RULE_tff_xprod_type = 106;
+TPTP_v9_0_0_7Parser.RULE_txf_tuple_type = 107;
+TPTP_v9_0_0_7Parser.RULE_tff_type_list = 108;
+TPTP_v9_0_0_7Parser.RULE_tff_subtype = 109;
+TPTP_v9_0_0_7Parser.RULE_txf_definition = 110;
+TPTP_v9_0_0_7Parser.RULE_txf_sequent = 111;
+TPTP_v9_0_0_7Parser.RULE_nhf_long_connective = 112;
+TPTP_v9_0_0_7Parser.RULE_nhf_parameter_list = 113;
+TPTP_v9_0_0_7Parser.RULE_nhf_parameter = 114;
+TPTP_v9_0_0_7Parser.RULE_nhf_key_pair = 115;
+TPTP_v9_0_0_7Parser.RULE_nxf_long_connective = 116;
+TPTP_v9_0_0_7Parser.RULE_nxf_parameter_list = 117;
+TPTP_v9_0_0_7Parser.RULE_nxf_parameter = 118;
+TPTP_v9_0_0_7Parser.RULE_nxf_key_pair = 119;
+TPTP_v9_0_0_7Parser.RULE_ntf_connective_name = 120;
+TPTP_v9_0_0_7Parser.RULE_ntf_index = 121;
+TPTP_v9_0_0_7Parser.RULE_ntf_short_connective = 122;
+TPTP_v9_0_0_7Parser.RULE_tcf_formula = 123;
+TPTP_v9_0_0_7Parser.RULE_tcf_logic_formula = 124;
+TPTP_v9_0_0_7Parser.RULE_tcf_quantified_formula = 125;
+TPTP_v9_0_0_7Parser.RULE_fof_formula = 126;
+TPTP_v9_0_0_7Parser.RULE_fof_logic_formula = 127;
+TPTP_v9_0_0_7Parser.RULE_fof_binary_formula = 128;
+TPTP_v9_0_0_7Parser.RULE_fof_binary_nonassoc = 129;
+TPTP_v9_0_0_7Parser.RULE_fof_binary_assoc = 130;
+TPTP_v9_0_0_7Parser.RULE_fof_or_formula = 131;
+TPTP_v9_0_0_7Parser.RULE_fof_and_formula = 132;
+TPTP_v9_0_0_7Parser.RULE_fof_unary_formula = 133;
+TPTP_v9_0_0_7Parser.RULE_fof_infix_unary = 134;
+TPTP_v9_0_0_7Parser.RULE_fof_unit_formula = 135;
+TPTP_v9_0_0_7Parser.RULE_fof_unitary_formula = 136;
+TPTP_v9_0_0_7Parser.RULE_fof_quantified_formula = 137;
+TPTP_v9_0_0_7Parser.RULE_fof_variable_list = 138;
+TPTP_v9_0_0_7Parser.RULE_fof_atomic_formula = 139;
+TPTP_v9_0_0_7Parser.RULE_fof_plain_atomic_formula = 140;
+TPTP_v9_0_0_7Parser.RULE_fof_defined_atomic_formula = 141;
+TPTP_v9_0_0_7Parser.RULE_fof_defined_plain_formula = 142;
+TPTP_v9_0_0_7Parser.RULE_fof_defined_infix_formula = 143;
+TPTP_v9_0_0_7Parser.RULE_fof_system_atomic_formula = 144;
+TPTP_v9_0_0_7Parser.RULE_fof_plain_term = 145;
+TPTP_v9_0_0_7Parser.RULE_fof_defined_term = 146;
+TPTP_v9_0_0_7Parser.RULE_fof_defined_atomic_term = 147;
+TPTP_v9_0_0_7Parser.RULE_fof_defined_plain_term = 148;
+TPTP_v9_0_0_7Parser.RULE_fof_system_term = 149;
+TPTP_v9_0_0_7Parser.RULE_fof_arguments = 150;
+TPTP_v9_0_0_7Parser.RULE_fof_term = 151;
+TPTP_v9_0_0_7Parser.RULE_fof_function_term = 152;
+TPTP_v9_0_0_7Parser.RULE_fof_sequent = 153;
+TPTP_v9_0_0_7Parser.RULE_fof_formula_tuple = 154;
+TPTP_v9_0_0_7Parser.RULE_fof_formula_tuple_list = 155;
+TPTP_v9_0_0_7Parser.RULE_comma_fof_logic_formula = 156;
+TPTP_v9_0_0_7Parser.RULE_cnf_formula = 157;
+TPTP_v9_0_0_7Parser.RULE_cnf_disjunction = 158;
+TPTP_v9_0_0_7Parser.RULE_cnf_literal = 159;
+TPTP_v9_0_0_7Parser.RULE_thf_quantifier = 160;
+TPTP_v9_0_0_7Parser.RULE_thf_unary_connective = 161;
+TPTP_v9_0_0_7Parser.RULE_th1_quantifier = 162;
+TPTP_v9_0_0_7Parser.RULE_th0_quantifier = 163;
+TPTP_v9_0_0_7Parser.RULE_subtype_sign = 164;
+TPTP_v9_0_0_7Parser.RULE_tff_unary_connective = 165;
+TPTP_v9_0_0_7Parser.RULE_tff_quantifier = 166;
+TPTP_v9_0_0_7Parser.RULE_fof_quantifier = 167;
+TPTP_v9_0_0_7Parser.RULE_nonassoc_connective = 168;
+TPTP_v9_0_0_7Parser.RULE_assoc_connective = 169;
+TPTP_v9_0_0_7Parser.RULE_unary_connective = 170;
+TPTP_v9_0_0_7Parser.RULE_gentzen_arrow = 171;
+TPTP_v9_0_0_7Parser.RULE_assignment = 172;
+TPTP_v9_0_0_7Parser.RULE_identical = 173;
+TPTP_v9_0_0_7Parser.RULE_type_constant = 174;
+TPTP_v9_0_0_7Parser.RULE_type_functor = 175;
+TPTP_v9_0_0_7Parser.RULE_defined_type = 176;
+TPTP_v9_0_0_7Parser.RULE_atom = 177;
+TPTP_v9_0_0_7Parser.RULE_untyped_atom = 178;
+TPTP_v9_0_0_7Parser.RULE_defined_infix_pred = 179;
+TPTP_v9_0_0_7Parser.RULE_infix_equality = 180;
+TPTP_v9_0_0_7Parser.RULE_infix_inequality = 181;
+TPTP_v9_0_0_7Parser.RULE_constant = 182;
+TPTP_v9_0_0_7Parser.RULE_functor = 183;
+TPTP_v9_0_0_7Parser.RULE_defined_constant = 184;
+TPTP_v9_0_0_7Parser.RULE_defined_functor = 185;
+TPTP_v9_0_0_7Parser.RULE_system_constant = 186;
+TPTP_v9_0_0_7Parser.RULE_system_functor = 187;
+TPTP_v9_0_0_7Parser.RULE_def_or_sys_constant = 188;
+TPTP_v9_0_0_7Parser.RULE_th1_defined_term = 189;
+TPTP_v9_0_0_7Parser.RULE_defined_term = 190;
+TPTP_v9_0_0_7Parser.RULE_variable = 191;
+TPTP_v9_0_0_7Parser.RULE_source = 192;
+TPTP_v9_0_0_7Parser.RULE_sources = 193;
+TPTP_v9_0_0_7Parser.RULE_dag_source = 194;
+TPTP_v9_0_0_7Parser.RULE_inference_record = 195;
+TPTP_v9_0_0_7Parser.RULE_inference_rule = 196;
+TPTP_v9_0_0_7Parser.RULE_internal_source = 197;
+TPTP_v9_0_0_7Parser.RULE_intro_type = 198;
+TPTP_v9_0_0_7Parser.RULE_external_source = 199;
+TPTP_v9_0_0_7Parser.RULE_file_source = 200;
+TPTP_v9_0_0_7Parser.RULE_file_info = 201;
+TPTP_v9_0_0_7Parser.RULE_theory = 202;
+TPTP_v9_0_0_7Parser.RULE_theory_name = 203;
+TPTP_v9_0_0_7Parser.RULE_creator_source = 204;
+TPTP_v9_0_0_7Parser.RULE_creator_name = 205;
+TPTP_v9_0_0_7Parser.RULE_parents = 206;
+TPTP_v9_0_0_7Parser.RULE_parent_list = 207;
+TPTP_v9_0_0_7Parser.RULE_comma_parent_info = 208;
+TPTP_v9_0_0_7Parser.RULE_parent_info = 209;
+TPTP_v9_0_0_7Parser.RULE_parent_details = 210;
+TPTP_v9_0_0_7Parser.RULE_optional_info = 211;
+TPTP_v9_0_0_7Parser.RULE_useful_info = 212;
+TPTP_v9_0_0_7Parser.RULE_include = 213;
+TPTP_v9_0_0_7Parser.RULE_include_optionals = 214;
+TPTP_v9_0_0_7Parser.RULE_formula_selection = 215;
+TPTP_v9_0_0_7Parser.RULE_name_list = 216;
+TPTP_v9_0_0_7Parser.RULE_space_name = 217;
+TPTP_v9_0_0_7Parser.RULE_general_term = 218;
+TPTP_v9_0_0_7Parser.RULE_general_data = 219;
+TPTP_v9_0_0_7Parser.RULE_general_function = 220;
+TPTP_v9_0_0_7Parser.RULE_formula_data = 221;
+TPTP_v9_0_0_7Parser.RULE_general_list = 222;
+TPTP_v9_0_0_7Parser.RULE_general_terms = 223;
+TPTP_v9_0_0_7Parser.RULE_comma_general_term = 224;
+TPTP_v9_0_0_7Parser.RULE_name = 225;
+TPTP_v9_0_0_7Parser.RULE_atomic_word = 226;
+TPTP_v9_0_0_7Parser.RULE_atomic_defined_word = 227;
+TPTP_v9_0_0_7Parser.RULE_atomic_system_word = 228;
+TPTP_v9_0_0_7Parser.RULE_number = 229;
+TPTP_v9_0_0_7Parser.RULE_file_name = 230;
+TPTP_v9_0_0_7Parser.RULE_null = 231;
 
 class Tptp_fileContext extends antlr4.ParserRuleContext {
 
@@ -9892,11 +9892,11 @@ class Tptp_fileContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tptp_file;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tptp_file;
     }
 
 	EOF() {
-	    return this.getToken(TPTPParser.EOF, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.EOF, 0);
 	};
 
 	tptp_input = function(i) {
@@ -9911,13 +9911,13 @@ class Tptp_fileContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTptp_file(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTptp_file(this);
 		}
 	}
@@ -9938,7 +9938,7 @@ class Tptp_inputContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tptp_input;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tptp_input;
     }
 
 	annotated_formula() {
@@ -9950,13 +9950,13 @@ class Tptp_inputContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTptp_input(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTptp_input(this);
 		}
 	}
@@ -9977,7 +9977,7 @@ class Annotated_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_annotated_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_annotated_formula;
     }
 
 	thf_annotated() {
@@ -10005,13 +10005,13 @@ class Annotated_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAnnotated_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAnnotated_formula(this);
 		}
 	}
@@ -10032,7 +10032,7 @@ class Tpi_annotatedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tpi_annotated;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tpi_annotated;
     }
 
 	name() {
@@ -10052,13 +10052,13 @@ class Tpi_annotatedContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTpi_annotated(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTpi_annotated(this);
 		}
 	}
@@ -10079,7 +10079,7 @@ class Tpi_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tpi_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tpi_formula;
     }
 
 	fof_formula() {
@@ -10087,13 +10087,13 @@ class Tpi_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTpi_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTpi_formula(this);
 		}
 	}
@@ -10114,7 +10114,7 @@ class Thf_annotatedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_annotated;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_annotated;
     }
 
 	name() {
@@ -10134,13 +10134,13 @@ class Thf_annotatedContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_annotated(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_annotated(this);
 		}
 	}
@@ -10161,7 +10161,7 @@ class Tff_annotatedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_annotated;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_annotated;
     }
 
 	name() {
@@ -10181,13 +10181,13 @@ class Tff_annotatedContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_annotated(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_annotated(this);
 		}
 	}
@@ -10208,7 +10208,7 @@ class Tcf_annotatedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tcf_annotated;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tcf_annotated;
     }
 
 	name() {
@@ -10228,13 +10228,13 @@ class Tcf_annotatedContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTcf_annotated(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTcf_annotated(this);
 		}
 	}
@@ -10255,7 +10255,7 @@ class Fof_annotatedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_annotated;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_annotated;
     }
 
 	name() {
@@ -10275,13 +10275,13 @@ class Fof_annotatedContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_annotated(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_annotated(this);
 		}
 	}
@@ -10302,7 +10302,7 @@ class Cnf_annotatedContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_cnf_annotated;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_cnf_annotated;
     }
 
 	name() {
@@ -10322,13 +10322,13 @@ class Cnf_annotatedContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterCnf_annotated(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitCnf_annotated(this);
 		}
 	}
@@ -10349,7 +10349,7 @@ class AnnotationsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_annotations;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_annotations;
     }
 
 	source() {
@@ -10365,13 +10365,13 @@ class AnnotationsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAnnotations(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAnnotations(this);
 		}
 	}
@@ -10392,11 +10392,11 @@ class Formula_roleContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_formula_role;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_formula_role;
     }
 
 	Lower_word() {
-	    return this.getToken(TPTPParser.Lower_word, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Lower_word, 0);
 	};
 
 	general_term() {
@@ -10404,13 +10404,13 @@ class Formula_roleContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFormula_role(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFormula_role(this);
 		}
 	}
@@ -10431,7 +10431,7 @@ class Thf_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_formula;
     }
 
 	thf_logic_formula() {
@@ -10447,13 +10447,13 @@ class Thf_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_formula(this);
 		}
 	}
@@ -10474,7 +10474,7 @@ class Thf_logic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_logic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_logic_formula;
     }
 
 	thf_unitary_formula() {
@@ -10502,13 +10502,13 @@ class Thf_logic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_logic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_logic_formula(this);
 		}
 	}
@@ -10529,7 +10529,7 @@ class Thf_binary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_binary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_binary_formula;
     }
 
 	thf_binary_nonassoc() {
@@ -10545,13 +10545,13 @@ class Thf_binary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_binary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_binary_formula(this);
 		}
 	}
@@ -10572,7 +10572,7 @@ class Thf_binary_nonassocContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_binary_nonassoc;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_binary_nonassoc;
     }
 
 	thf_unit_formula = function(i) {
@@ -10591,13 +10591,13 @@ class Thf_binary_nonassocContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_binary_nonassoc(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_binary_nonassoc(this);
 		}
 	}
@@ -10618,7 +10618,7 @@ class Thf_binary_assocContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_binary_assoc;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_binary_assoc;
     }
 
 	thf_or_formula() {
@@ -10634,13 +10634,13 @@ class Thf_binary_assocContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_binary_assoc(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_binary_assoc(this);
 		}
 	}
@@ -10661,7 +10661,7 @@ class Thf_or_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_or_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_or_formula;
     }
 
 	thf_unit_formula = function(i) {
@@ -10676,7 +10676,7 @@ class Thf_or_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	Vline() {
-	    return this.getToken(TPTPParser.Vline, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Vline, 0);
 	};
 
 	thf_or_formula() {
@@ -10684,13 +10684,13 @@ class Thf_or_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_or_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_or_formula(this);
 		}
 	}
@@ -10711,7 +10711,7 @@ class Thf_and_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_and_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_and_formula;
     }
 
 	thf_unit_formula = function(i) {
@@ -10730,13 +10730,13 @@ class Thf_and_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_and_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_and_formula(this);
 		}
 	}
@@ -10757,7 +10757,7 @@ class Thf_apply_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_apply_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_apply_formula;
     }
 
 	thf_unit_formula = function(i) {
@@ -10776,13 +10776,13 @@ class Thf_apply_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_apply_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_apply_formula(this);
 		}
 	}
@@ -10803,7 +10803,7 @@ class Thf_unit_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_unit_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_unit_formula;
     }
 
 	thf_unitary_formula() {
@@ -10819,13 +10819,13 @@ class Thf_unit_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_unit_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_unit_formula(this);
 		}
 	}
@@ -10846,7 +10846,7 @@ class Thf_preunit_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_preunit_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_preunit_formula;
     }
 
 	thf_unitary_formula() {
@@ -10858,13 +10858,13 @@ class Thf_preunit_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_preunit_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_preunit_formula(this);
 		}
 	}
@@ -10885,7 +10885,7 @@ class Thf_unitary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_unitary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_unitary_formula;
     }
 
 	thf_quantified_formula() {
@@ -10905,13 +10905,13 @@ class Thf_unitary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_unitary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_unitary_formula(this);
 		}
 	}
@@ -10932,7 +10932,7 @@ class Thf_quantified_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_quantified_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_quantified_formula;
     }
 
 	thf_quantification() {
@@ -10944,13 +10944,13 @@ class Thf_quantified_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_quantified_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_quantified_formula(this);
 		}
 	}
@@ -10971,7 +10971,7 @@ class Thf_quantificationContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_quantification;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_quantification;
     }
 
 	thf_quantifier() {
@@ -10983,13 +10983,13 @@ class Thf_quantificationContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_quantification(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_quantification(this);
 		}
 	}
@@ -11010,7 +11010,7 @@ class Thf_variable_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_variable_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_variable_list;
     }
 
 	thf_typed_variable() {
@@ -11022,13 +11022,13 @@ class Thf_variable_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_variable_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_variable_list(this);
 		}
 	}
@@ -11049,7 +11049,7 @@ class Thf_typed_variableContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_typed_variable;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_typed_variable;
     }
 
 	variable() {
@@ -11061,13 +11061,13 @@ class Thf_typed_variableContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_typed_variable(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_typed_variable(this);
 		}
 	}
@@ -11088,7 +11088,7 @@ class Thf_unary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_unary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_unary_formula;
     }
 
 	thf_prefix_unary() {
@@ -11100,13 +11100,13 @@ class Thf_unary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_unary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_unary_formula(this);
 		}
 	}
@@ -11127,7 +11127,7 @@ class Thf_prefix_unaryContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_prefix_unary;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_prefix_unary;
     }
 
 	thf_unary_connective() {
@@ -11139,13 +11139,13 @@ class Thf_prefix_unaryContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_prefix_unary(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_prefix_unary(this);
 		}
 	}
@@ -11166,7 +11166,7 @@ class Thf_infix_unaryContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_infix_unary;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_infix_unary;
     }
 
 	thf_unitary_term = function(i) {
@@ -11185,13 +11185,13 @@ class Thf_infix_unaryContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_infix_unary(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_infix_unary(this);
 		}
 	}
@@ -11212,7 +11212,7 @@ class Thf_atomic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_atomic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_atomic_formula;
     }
 
 	thf_plain_atomic() {
@@ -11232,13 +11232,13 @@ class Thf_atomic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_atomic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_atomic_formula(this);
 		}
 	}
@@ -11259,7 +11259,7 @@ class Thf_plain_atomicContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_plain_atomic;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_plain_atomic;
     }
 
 	constant() {
@@ -11271,13 +11271,13 @@ class Thf_plain_atomicContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_plain_atomic(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_plain_atomic(this);
 		}
 	}
@@ -11298,7 +11298,7 @@ class Thf_defined_atomicContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_defined_atomic;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_defined_atomic;
     }
 
 	defined_constant() {
@@ -11322,13 +11322,13 @@ class Thf_defined_atomicContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_defined_atomic(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_defined_atomic(this);
 		}
 	}
@@ -11349,7 +11349,7 @@ class Thf_defined_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_defined_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_defined_term;
     }
 
 	defined_term() {
@@ -11361,13 +11361,13 @@ class Thf_defined_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_defined_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_defined_term(this);
 		}
 	}
@@ -11388,7 +11388,7 @@ class Thf_defined_infixContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_defined_infix;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_defined_infix;
     }
 
 	thf_unitary_term = function(i) {
@@ -11407,13 +11407,13 @@ class Thf_defined_infixContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_defined_infix(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_defined_infix(this);
 		}
 	}
@@ -11434,7 +11434,7 @@ class Thf_system_atomicContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_system_atomic;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_system_atomic;
     }
 
 	system_constant() {
@@ -11442,13 +11442,13 @@ class Thf_system_atomicContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_system_atomic(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_system_atomic(this);
 		}
 	}
@@ -11469,7 +11469,7 @@ class Thf_letContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_let;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_let;
     }
 
 	thf_let_types() {
@@ -11485,13 +11485,13 @@ class Thf_letContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_let(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_let(this);
 		}
 	}
@@ -11512,7 +11512,7 @@ class Thf_let_typesContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_let_types;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_let_types;
     }
 
 	thf_atom_typing() {
@@ -11524,13 +11524,13 @@ class Thf_let_typesContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_let_types(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_let_types(this);
 		}
 	}
@@ -11551,7 +11551,7 @@ class Thf_atom_typing_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_atom_typing_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_atom_typing_list;
     }
 
 	thf_atom_typing() {
@@ -11563,13 +11563,13 @@ class Thf_atom_typing_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_atom_typing_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_atom_typing_list(this);
 		}
 	}
@@ -11590,7 +11590,7 @@ class Thf_let_defnsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_let_defns;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_let_defns;
     }
 
 	thf_let_defn() {
@@ -11602,13 +11602,13 @@ class Thf_let_defnsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_let_defns(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_let_defns(this);
 		}
 	}
@@ -11629,7 +11629,7 @@ class Thf_let_defnContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_let_defn;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_let_defn;
     }
 
 	thf_logic_formula = function(i) {
@@ -11648,13 +11648,13 @@ class Thf_let_defnContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_let_defn(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_let_defn(this);
 		}
 	}
@@ -11675,7 +11675,7 @@ class Thf_let_defn_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_let_defn_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_let_defn_list;
     }
 
 	thf_let_defn() {
@@ -11687,13 +11687,13 @@ class Thf_let_defn_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_let_defn_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_let_defn_list(this);
 		}
 	}
@@ -11714,7 +11714,7 @@ class Thf_unitary_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_unitary_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_unitary_term;
     }
 
 	thf_atomic_formula() {
@@ -11730,13 +11730,13 @@ class Thf_unitary_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_unitary_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_unitary_term(this);
 		}
 	}
@@ -11757,7 +11757,7 @@ class Thf_conn_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_conn_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_conn_term;
     }
 
 	nonassoc_connective() {
@@ -11781,13 +11781,13 @@ class Thf_conn_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_conn_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_conn_term(this);
 		}
 	}
@@ -11808,7 +11808,7 @@ class Thf_tupleContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_tuple;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_tuple;
     }
 
 	thf_formula_list() {
@@ -11816,13 +11816,13 @@ class Thf_tupleContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_tuple(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_tuple(this);
 		}
 	}
@@ -11843,7 +11843,7 @@ class Thf_fof_functionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_fof_function;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_fof_function;
     }
 
 	functor() {
@@ -11863,13 +11863,13 @@ class Thf_fof_functionContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_fof_function(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_fof_function(this);
 		}
 	}
@@ -11890,7 +11890,7 @@ class Thf_argumentsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_arguments;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_arguments;
     }
 
 	thf_formula_list() {
@@ -11898,13 +11898,13 @@ class Thf_argumentsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_arguments(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_arguments(this);
 		}
 	}
@@ -11925,7 +11925,7 @@ class Thf_formula_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_formula_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_formula_list;
     }
 
 	thf_logic_formula() {
@@ -11944,13 +11944,13 @@ class Thf_formula_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_formula_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_formula_list(this);
 		}
 	}
@@ -11971,7 +11971,7 @@ class Comma_thf_logic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_comma_thf_logic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_comma_thf_logic_formula;
     }
 
 	thf_logic_formula() {
@@ -11979,13 +11979,13 @@ class Comma_thf_logic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterComma_thf_logic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitComma_thf_logic_formula(this);
 		}
 	}
@@ -12006,7 +12006,7 @@ class Thf_atom_typingContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_atom_typing;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_atom_typing;
     }
 
 	untyped_atom() {
@@ -12022,13 +12022,13 @@ class Thf_atom_typingContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_atom_typing(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_atom_typing(this);
 		}
 	}
@@ -12049,7 +12049,7 @@ class Thf_top_level_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_top_level_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_top_level_type;
     }
 
 	thf_unitary_type() {
@@ -12065,13 +12065,13 @@ class Thf_top_level_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_top_level_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_top_level_type(this);
 		}
 	}
@@ -12092,7 +12092,7 @@ class Thf_unitary_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_unitary_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_unitary_type;
     }
 
 	thf_unitary_formula() {
@@ -12100,13 +12100,13 @@ class Thf_unitary_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_unitary_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_unitary_type(this);
 		}
 	}
@@ -12127,7 +12127,7 @@ class Thf_apply_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_apply_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_apply_type;
     }
 
 	thf_apply_formula() {
@@ -12135,13 +12135,13 @@ class Thf_apply_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_apply_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_apply_type(this);
 		}
 	}
@@ -12162,7 +12162,7 @@ class Thf_binary_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_binary_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_binary_type;
     }
 
 	thf_mapping_type() {
@@ -12178,13 +12178,13 @@ class Thf_binary_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_binary_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_binary_type(this);
 		}
 	}
@@ -12205,7 +12205,7 @@ class Thf_mapping_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_mapping_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_mapping_type;
     }
 
 	thf_unitary_type = function(i) {
@@ -12220,7 +12220,7 @@ class Thf_mapping_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	Arrow() {
-	    return this.getToken(TPTPParser.Arrow, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Arrow, 0);
 	};
 
 	thf_mapping_type() {
@@ -12228,13 +12228,13 @@ class Thf_mapping_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_mapping_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_mapping_type(this);
 		}
 	}
@@ -12255,7 +12255,7 @@ class Thf_xprod_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_xprod_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_xprod_type;
     }
 
 	thf_unitary_type = function(i) {
@@ -12270,7 +12270,7 @@ class Thf_xprod_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	Star() {
-	    return this.getToken(TPTPParser.Star, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Star, 0);
 	};
 
 	thf_xprod_type() {
@@ -12278,13 +12278,13 @@ class Thf_xprod_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_xprod_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_xprod_type(this);
 		}
 	}
@@ -12305,7 +12305,7 @@ class Thf_union_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_union_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_union_type;
     }
 
 	thf_unitary_type = function(i) {
@@ -12320,7 +12320,7 @@ class Thf_union_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	Plus() {
-	    return this.getToken(TPTPParser.Plus, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Plus, 0);
 	};
 
 	thf_union_type() {
@@ -12328,13 +12328,13 @@ class Thf_union_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_union_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_union_type(this);
 		}
 	}
@@ -12355,7 +12355,7 @@ class Thf_subtypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_subtype;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_subtype;
     }
 
 	untyped_atom() {
@@ -12371,13 +12371,13 @@ class Thf_subtypeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_subtype(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_subtype(this);
 		}
 	}
@@ -12398,7 +12398,7 @@ class Thf_definitionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_definition;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_definition;
     }
 
 	thf_atomic_formula() {
@@ -12414,13 +12414,13 @@ class Thf_definitionContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_definition(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_definition(this);
 		}
 	}
@@ -12441,7 +12441,7 @@ class Thf_sequentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_sequent;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_sequent;
     }
 
 	thf_tuple = function(i) {
@@ -12460,13 +12460,13 @@ class Thf_sequentContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_sequent(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_sequent(this);
 		}
 	}
@@ -12487,7 +12487,7 @@ class Tff_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_formula;
     }
 
 	tff_logic_formula() {
@@ -12503,13 +12503,13 @@ class Tff_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_formula(this);
 		}
 	}
@@ -12530,7 +12530,7 @@ class Tff_logic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_logic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_logic_formula;
     }
 
 	tff_unitary_formula() {
@@ -12558,13 +12558,13 @@ class Tff_logic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_logic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_logic_formula(this);
 		}
 	}
@@ -12585,7 +12585,7 @@ class Tff_binary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_binary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_binary_formula;
     }
 
 	tff_binary_nonassoc() {
@@ -12597,13 +12597,13 @@ class Tff_binary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_binary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_binary_formula(this);
 		}
 	}
@@ -12624,7 +12624,7 @@ class Tff_binary_nonassocContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_binary_nonassoc;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_binary_nonassoc;
     }
 
 	tff_unit_formula = function(i) {
@@ -12643,13 +12643,13 @@ class Tff_binary_nonassocContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_binary_nonassoc(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_binary_nonassoc(this);
 		}
 	}
@@ -12670,7 +12670,7 @@ class Tff_binary_assocContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_binary_assoc;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_binary_assoc;
     }
 
 	tff_or_formula() {
@@ -12682,13 +12682,13 @@ class Tff_binary_assocContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_binary_assoc(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_binary_assoc(this);
 		}
 	}
@@ -12709,7 +12709,7 @@ class Tff_or_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_or_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_or_formula;
     }
 
 	tff_unit_formula = function(i) {
@@ -12724,7 +12724,7 @@ class Tff_or_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	Vline() {
-	    return this.getToken(TPTPParser.Vline, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Vline, 0);
 	};
 
 	tff_or_formula() {
@@ -12732,13 +12732,13 @@ class Tff_or_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_or_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_or_formula(this);
 		}
 	}
@@ -12759,7 +12759,7 @@ class Tff_and_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_and_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_and_formula;
     }
 
 	tff_unit_formula = function(i) {
@@ -12778,13 +12778,13 @@ class Tff_and_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_and_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_and_formula(this);
 		}
 	}
@@ -12805,7 +12805,7 @@ class Tff_unit_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_unit_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_unit_formula;
     }
 
 	tff_unitary_formula() {
@@ -12821,13 +12821,13 @@ class Tff_unit_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_unit_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_unit_formula(this);
 		}
 	}
@@ -12848,7 +12848,7 @@ class Tff_preunit_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_preunit_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_preunit_formula;
     }
 
 	tff_unitary_formula() {
@@ -12860,13 +12860,13 @@ class Tff_preunit_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_preunit_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_preunit_formula(this);
 		}
 	}
@@ -12887,7 +12887,7 @@ class Tff_unitary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_unitary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_unitary_formula;
     }
 
 	tff_quantified_formula() {
@@ -12907,13 +12907,13 @@ class Tff_unitary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_unitary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_unitary_formula(this);
 		}
 	}
@@ -12934,7 +12934,7 @@ class Txf_unitary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_unitary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_unitary_formula;
     }
 
 	variable() {
@@ -12942,13 +12942,13 @@ class Txf_unitary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_unitary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_unitary_formula(this);
 		}
 	}
@@ -12969,7 +12969,7 @@ class Tff_quantified_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_quantified_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_quantified_formula;
     }
 
 	tff_quantifier() {
@@ -12985,13 +12985,13 @@ class Tff_quantified_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_quantified_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_quantified_formula(this);
 		}
 	}
@@ -13012,7 +13012,7 @@ class Tff_variable_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_variable_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_variable_list;
     }
 
 	tff_variable() {
@@ -13024,13 +13024,13 @@ class Tff_variable_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_variable_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_variable_list(this);
 		}
 	}
@@ -13051,7 +13051,7 @@ class Tff_variableContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_variable;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_variable;
     }
 
 	tff_typed_variable() {
@@ -13063,13 +13063,13 @@ class Tff_variableContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_variable(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_variable(this);
 		}
 	}
@@ -13090,7 +13090,7 @@ class Tff_typed_variableContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_typed_variable;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_typed_variable;
     }
 
 	variable() {
@@ -13102,13 +13102,13 @@ class Tff_typed_variableContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_typed_variable(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_typed_variable(this);
 		}
 	}
@@ -13129,7 +13129,7 @@ class Tff_unary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_unary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_unary_formula;
     }
 
 	tff_prefix_unary() {
@@ -13141,13 +13141,13 @@ class Tff_unary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_unary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_unary_formula(this);
 		}
 	}
@@ -13168,7 +13168,7 @@ class Tff_prefix_unaryContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_prefix_unary;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_prefix_unary;
     }
 
 	tff_unary_connective() {
@@ -13180,13 +13180,13 @@ class Tff_prefix_unaryContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_prefix_unary(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_prefix_unary(this);
 		}
 	}
@@ -13207,7 +13207,7 @@ class Tff_infix_unaryContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_infix_unary;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_infix_unary;
     }
 
 	tff_unitary_term = function(i) {
@@ -13226,13 +13226,13 @@ class Tff_infix_unaryContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_infix_unary(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_infix_unary(this);
 		}
 	}
@@ -13253,7 +13253,7 @@ class Tff_atomic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_atomic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_atomic_formula;
     }
 
 	tff_plain_atomic() {
@@ -13269,13 +13269,13 @@ class Tff_atomic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_atomic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_atomic_formula(this);
 		}
 	}
@@ -13296,7 +13296,7 @@ class Tff_plain_atomicContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_plain_atomic;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_plain_atomic;
     }
 
 	constant() {
@@ -13312,13 +13312,13 @@ class Tff_plain_atomicContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_plain_atomic(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_plain_atomic(this);
 		}
 	}
@@ -13339,7 +13339,7 @@ class Tff_defined_atomicContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_defined_atomic;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_defined_atomic;
     }
 
 	tff_defined_plain() {
@@ -13347,13 +13347,13 @@ class Tff_defined_atomicContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_defined_atomic(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_defined_atomic(this);
 		}
 	}
@@ -13374,7 +13374,7 @@ class Tff_defined_plainContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_defined_plain;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_defined_plain;
     }
 
 	defined_constant() {
@@ -13398,13 +13398,13 @@ class Tff_defined_plainContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_defined_plain(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_defined_plain(this);
 		}
 	}
@@ -13425,7 +13425,7 @@ class Tff_defined_infixContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_defined_infix;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_defined_infix;
     }
 
 	tff_unitary_term = function(i) {
@@ -13444,13 +13444,13 @@ class Tff_defined_infixContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_defined_infix(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_defined_infix(this);
 		}
 	}
@@ -13471,7 +13471,7 @@ class Tff_system_atomicContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_system_atomic;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_system_atomic;
     }
 
 	system_constant() {
@@ -13487,13 +13487,13 @@ class Tff_system_atomicContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_system_atomic(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_system_atomic(this);
 		}
 	}
@@ -13514,7 +13514,7 @@ class Txf_letContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_let;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_let;
     }
 
 	txf_let_types() {
@@ -13530,13 +13530,13 @@ class Txf_letContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_let(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_let(this);
 		}
 	}
@@ -13557,7 +13557,7 @@ class Txf_let_typesContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_let_types;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_let_types;
     }
 
 	tff_atom_typing() {
@@ -13569,13 +13569,13 @@ class Txf_let_typesContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_let_types(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_let_types(this);
 		}
 	}
@@ -13596,7 +13596,7 @@ class Tff_atom_typing_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_atom_typing_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_atom_typing_list;
     }
 
 	tff_atom_typing() {
@@ -13608,13 +13608,13 @@ class Tff_atom_typing_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_atom_typing_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_atom_typing_list(this);
 		}
 	}
@@ -13635,7 +13635,7 @@ class Txf_let_defnsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_let_defns;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_let_defns;
     }
 
 	txf_let_defn() {
@@ -13647,13 +13647,13 @@ class Txf_let_defnsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_let_defns(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_let_defns(this);
 		}
 	}
@@ -13674,7 +13674,7 @@ class Txf_let_defnContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_let_defn;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_let_defn;
     }
 
 	txf_let_LHS() {
@@ -13690,13 +13690,13 @@ class Txf_let_defnContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_let_defn(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_let_defn(this);
 		}
 	}
@@ -13717,7 +13717,7 @@ class Txf_let_LHSContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_let_LHS;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_let_LHS;
     }
 
 	tff_plain_atomic() {
@@ -13729,13 +13729,13 @@ class Txf_let_LHSContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_let_LHS(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_let_LHS(this);
 		}
 	}
@@ -13756,7 +13756,7 @@ class Txf_let_defn_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_let_defn_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_let_defn_list;
     }
 
 	txf_let_defn() {
@@ -13768,13 +13768,13 @@ class Txf_let_defn_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_let_defn_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_let_defn_list(this);
 		}
 	}
@@ -13795,7 +13795,7 @@ class Nxf_atomContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nxf_atom;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nxf_atom;
     }
 
 	nxf_long_connective() {
@@ -13807,13 +13807,13 @@ class Nxf_atomContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNxf_atom(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNxf_atom(this);
 		}
 	}
@@ -13834,7 +13834,7 @@ class Tff_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_term;
     }
 
 	tff_logic_formula() {
@@ -13850,13 +13850,13 @@ class Tff_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_term(this);
 		}
 	}
@@ -13877,7 +13877,7 @@ class Tff_unitary_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_unitary_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_unitary_term;
     }
 
 	tff_atomic_formula() {
@@ -13901,13 +13901,13 @@ class Tff_unitary_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_unitary_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_unitary_term(this);
 		}
 	}
@@ -13928,7 +13928,7 @@ class Txf_tupleContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_tuple;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_tuple;
     }
 
 	tff_arguments() {
@@ -13936,13 +13936,13 @@ class Txf_tupleContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_tuple(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_tuple(this);
 		}
 	}
@@ -13963,7 +13963,7 @@ class Tff_argumentsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_arguments;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_arguments;
     }
 
 	tff_term() {
@@ -13982,13 +13982,13 @@ class Tff_argumentsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_arguments(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_arguments(this);
 		}
 	}
@@ -14009,7 +14009,7 @@ class Comma_tff_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_comma_tff_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_comma_tff_term;
     }
 
 	tff_term() {
@@ -14017,13 +14017,13 @@ class Comma_tff_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterComma_tff_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitComma_tff_term(this);
 		}
 	}
@@ -14044,7 +14044,7 @@ class Tff_atom_typingContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_atom_typing;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_atom_typing;
     }
 
 	untyped_atom() {
@@ -14060,13 +14060,13 @@ class Tff_atom_typingContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_atom_typing(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_atom_typing(this);
 		}
 	}
@@ -14087,7 +14087,7 @@ class Tff_top_level_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_top_level_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_top_level_type;
     }
 
 	tff_atomic_type() {
@@ -14099,13 +14099,13 @@ class Tff_top_level_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_top_level_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_top_level_type(this);
 		}
 	}
@@ -14126,7 +14126,7 @@ class Tff_non_atomic_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_non_atomic_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_non_atomic_type;
     }
 
 	tff_mapping_type() {
@@ -14142,13 +14142,13 @@ class Tff_non_atomic_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_non_atomic_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_non_atomic_type(this);
 		}
 	}
@@ -14169,7 +14169,7 @@ class Tf1_quantified_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tf1_quantified_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tf1_quantified_type;
     }
 
 	tff_variable_list() {
@@ -14181,13 +14181,13 @@ class Tf1_quantified_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTf1_quantified_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTf1_quantified_type(this);
 		}
 	}
@@ -14208,7 +14208,7 @@ class Tff_monotypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_monotype;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_monotype;
     }
 
 	tff_atomic_type() {
@@ -14224,13 +14224,13 @@ class Tff_monotypeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_monotype(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_monotype(this);
 		}
 	}
@@ -14251,7 +14251,7 @@ class Tff_unitary_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_unitary_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_unitary_type;
     }
 
 	tff_atomic_type() {
@@ -14263,13 +14263,13 @@ class Tff_unitary_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_unitary_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_unitary_type(this);
 		}
 	}
@@ -14290,7 +14290,7 @@ class Tff_atomic_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_atomic_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_atomic_type;
     }
 
 	type_constant() {
@@ -14322,13 +14322,13 @@ class Tff_atomic_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_atomic_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_atomic_type(this);
 		}
 	}
@@ -14349,7 +14349,7 @@ class Tff_type_argumentsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_type_arguments;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_type_arguments;
     }
 
 	tff_atomic_type() {
@@ -14361,13 +14361,13 @@ class Tff_type_argumentsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_type_arguments(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_type_arguments(this);
 		}
 	}
@@ -14388,7 +14388,7 @@ class Tff_mapping_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_mapping_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_mapping_type;
     }
 
 	tff_unitary_type() {
@@ -14396,7 +14396,7 @@ class Tff_mapping_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	Arrow() {
-	    return this.getToken(TPTPParser.Arrow, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Arrow, 0);
 	};
 
 	tff_atomic_type() {
@@ -14404,13 +14404,13 @@ class Tff_mapping_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_mapping_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_mapping_type(this);
 		}
 	}
@@ -14431,7 +14431,7 @@ class Tff_xprod_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_xprod_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_xprod_type;
     }
 
 	tff_unitary_type() {
@@ -14439,7 +14439,7 @@ class Tff_xprod_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	Star() {
-	    return this.getToken(TPTPParser.Star, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Star, 0);
 	};
 
 	tff_atomic_type() {
@@ -14451,13 +14451,13 @@ class Tff_xprod_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_xprod_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_xprod_type(this);
 		}
 	}
@@ -14478,7 +14478,7 @@ class Txf_tuple_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_tuple_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_tuple_type;
     }
 
 	tff_type_list() {
@@ -14486,13 +14486,13 @@ class Txf_tuple_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_tuple_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_tuple_type(this);
 		}
 	}
@@ -14513,7 +14513,7 @@ class Tff_type_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_type_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_type_list;
     }
 
 	tff_top_level_type() {
@@ -14525,13 +14525,13 @@ class Tff_type_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_type_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_type_list(this);
 		}
 	}
@@ -14552,7 +14552,7 @@ class Tff_subtypeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_subtype;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_subtype;
     }
 
 	untyped_atom() {
@@ -14568,13 +14568,13 @@ class Tff_subtypeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_subtype(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_subtype(this);
 		}
 	}
@@ -14595,7 +14595,7 @@ class Txf_definitionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_definition;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_definition;
     }
 
 	tff_atomic_formula() {
@@ -14611,13 +14611,13 @@ class Txf_definitionContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_definition(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_definition(this);
 		}
 	}
@@ -14638,7 +14638,7 @@ class Txf_sequentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_txf_sequent;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_txf_sequent;
     }
 
 	txf_tuple = function(i) {
@@ -14657,13 +14657,13 @@ class Txf_sequentContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTxf_sequent(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTxf_sequent(this);
 		}
 	}
@@ -14684,7 +14684,7 @@ class Nhf_long_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nhf_long_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nhf_long_connective;
     }
 
 	ntf_connective_name() {
@@ -14696,13 +14696,13 @@ class Nhf_long_connectiveContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNhf_long_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNhf_long_connective(this);
 		}
 	}
@@ -14723,7 +14723,7 @@ class Nhf_parameter_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nhf_parameter_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nhf_parameter_list;
     }
 
 	nhf_parameter() {
@@ -14735,13 +14735,13 @@ class Nhf_parameter_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNhf_parameter_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNhf_parameter_list(this);
 		}
 	}
@@ -14762,7 +14762,7 @@ class Nhf_parameterContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nhf_parameter;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nhf_parameter;
     }
 
 	ntf_index() {
@@ -14774,13 +14774,13 @@ class Nhf_parameterContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNhf_parameter(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNhf_parameter(this);
 		}
 	}
@@ -14801,7 +14801,7 @@ class Nhf_key_pairContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nhf_key_pair;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nhf_key_pair;
     }
 
 	thf_definition() {
@@ -14809,13 +14809,13 @@ class Nhf_key_pairContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNhf_key_pair(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNhf_key_pair(this);
 		}
 	}
@@ -14836,7 +14836,7 @@ class Nxf_long_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nxf_long_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nxf_long_connective;
     }
 
 	ntf_connective_name() {
@@ -14848,13 +14848,13 @@ class Nxf_long_connectiveContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNxf_long_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNxf_long_connective(this);
 		}
 	}
@@ -14875,7 +14875,7 @@ class Nxf_parameter_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nxf_parameter_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nxf_parameter_list;
     }
 
 	nxf_parameter() {
@@ -14887,13 +14887,13 @@ class Nxf_parameter_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNxf_parameter_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNxf_parameter_list(this);
 		}
 	}
@@ -14914,7 +14914,7 @@ class Nxf_parameterContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nxf_parameter;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nxf_parameter;
     }
 
 	ntf_index() {
@@ -14926,13 +14926,13 @@ class Nxf_parameterContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNxf_parameter(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNxf_parameter(this);
 		}
 	}
@@ -14953,7 +14953,7 @@ class Nxf_key_pairContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nxf_key_pair;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nxf_key_pair;
     }
 
 	txf_definition() {
@@ -14961,13 +14961,13 @@ class Nxf_key_pairContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNxf_key_pair(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNxf_key_pair(this);
 		}
 	}
@@ -14988,7 +14988,7 @@ class Ntf_connective_nameContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_ntf_connective_name;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_ntf_connective_name;
     }
 
 	def_or_sys_constant() {
@@ -14996,13 +14996,13 @@ class Ntf_connective_nameContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNtf_connective_name(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNtf_connective_name(this);
 		}
 	}
@@ -15023,11 +15023,11 @@ class Ntf_indexContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_ntf_index;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_ntf_index;
     }
 
 	Hash() {
-	    return this.getToken(TPTPParser.Hash, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Hash, 0);
 	};
 
 	tff_unitary_term() {
@@ -15035,13 +15035,13 @@ class Ntf_indexContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNtf_index(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNtf_index(this);
 		}
 	}
@@ -15062,25 +15062,25 @@ class Ntf_short_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_ntf_short_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_ntf_short_connective;
     }
 
 	Less_sign() {
-	    return this.getToken(TPTPParser.Less_sign, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Less_sign, 0);
 	};
 
 	Arrow() {
-	    return this.getToken(TPTPParser.Arrow, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Arrow, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNtf_short_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNtf_short_connective(this);
 		}
 	}
@@ -15101,7 +15101,7 @@ class Tcf_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tcf_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tcf_formula;
     }
 
 	tcf_logic_formula() {
@@ -15113,13 +15113,13 @@ class Tcf_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTcf_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTcf_formula(this);
 		}
 	}
@@ -15140,7 +15140,7 @@ class Tcf_logic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tcf_logic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tcf_logic_formula;
     }
 
 	tcf_quantified_formula() {
@@ -15152,13 +15152,13 @@ class Tcf_logic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTcf_logic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTcf_logic_formula(this);
 		}
 	}
@@ -15179,7 +15179,7 @@ class Tcf_quantified_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tcf_quantified_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tcf_quantified_formula;
     }
 
 	tff_variable_list() {
@@ -15191,13 +15191,13 @@ class Tcf_quantified_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTcf_quantified_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTcf_quantified_formula(this);
 		}
 	}
@@ -15218,7 +15218,7 @@ class Fof_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_formula;
     }
 
 	fof_logic_formula() {
@@ -15230,13 +15230,13 @@ class Fof_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_formula(this);
 		}
 	}
@@ -15257,7 +15257,7 @@ class Fof_logic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_logic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_logic_formula;
     }
 
 	fof_binary_formula() {
@@ -15273,13 +15273,13 @@ class Fof_logic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_logic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_logic_formula(this);
 		}
 	}
@@ -15300,7 +15300,7 @@ class Fof_binary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_binary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_binary_formula;
     }
 
 	fof_binary_nonassoc() {
@@ -15312,13 +15312,13 @@ class Fof_binary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_binary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_binary_formula(this);
 		}
 	}
@@ -15339,7 +15339,7 @@ class Fof_binary_nonassocContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_binary_nonassoc;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_binary_nonassoc;
     }
 
 	fof_unit_formula = function(i) {
@@ -15358,13 +15358,13 @@ class Fof_binary_nonassocContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_binary_nonassoc(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_binary_nonassoc(this);
 		}
 	}
@@ -15385,7 +15385,7 @@ class Fof_binary_assocContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_binary_assoc;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_binary_assoc;
     }
 
 	fof_or_formula() {
@@ -15397,13 +15397,13 @@ class Fof_binary_assocContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_binary_assoc(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_binary_assoc(this);
 		}
 	}
@@ -15424,7 +15424,7 @@ class Fof_or_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_or_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_or_formula;
     }
 
 	fof_unit_formula = function(i) {
@@ -15439,7 +15439,7 @@ class Fof_or_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	Vline() {
-	    return this.getToken(TPTPParser.Vline, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Vline, 0);
 	};
 
 	fof_or_formula() {
@@ -15447,13 +15447,13 @@ class Fof_or_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_or_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_or_formula(this);
 		}
 	}
@@ -15474,7 +15474,7 @@ class Fof_and_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_and_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_and_formula;
     }
 
 	fof_unit_formula = function(i) {
@@ -15493,13 +15493,13 @@ class Fof_and_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_and_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_and_formula(this);
 		}
 	}
@@ -15520,7 +15520,7 @@ class Fof_unary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_unary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_unary_formula;
     }
 
 	unary_connective() {
@@ -15536,13 +15536,13 @@ class Fof_unary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_unary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_unary_formula(this);
 		}
 	}
@@ -15563,7 +15563,7 @@ class Fof_infix_unaryContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_infix_unary;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_infix_unary;
     }
 
 	fof_term = function(i) {
@@ -15582,13 +15582,13 @@ class Fof_infix_unaryContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_infix_unary(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_infix_unary(this);
 		}
 	}
@@ -15609,7 +15609,7 @@ class Fof_unit_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_unit_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_unit_formula;
     }
 
 	fof_unitary_formula() {
@@ -15621,13 +15621,13 @@ class Fof_unit_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_unit_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_unit_formula(this);
 		}
 	}
@@ -15648,7 +15648,7 @@ class Fof_unitary_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_unitary_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_unitary_formula;
     }
 
 	fof_quantified_formula() {
@@ -15664,13 +15664,13 @@ class Fof_unitary_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_unitary_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_unitary_formula(this);
 		}
 	}
@@ -15691,7 +15691,7 @@ class Fof_quantified_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_quantified_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_quantified_formula;
     }
 
 	fof_quantifier() {
@@ -15707,13 +15707,13 @@ class Fof_quantified_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_quantified_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_quantified_formula(this);
 		}
 	}
@@ -15734,7 +15734,7 @@ class Fof_variable_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_variable_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_variable_list;
     }
 
 	variable() {
@@ -15746,13 +15746,13 @@ class Fof_variable_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_variable_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_variable_list(this);
 		}
 	}
@@ -15773,7 +15773,7 @@ class Fof_atomic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_atomic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_atomic_formula;
     }
 
 	fof_plain_atomic_formula() {
@@ -15789,13 +15789,13 @@ class Fof_atomic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_atomic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_atomic_formula(this);
 		}
 	}
@@ -15816,7 +15816,7 @@ class Fof_plain_atomic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_plain_atomic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_plain_atomic_formula;
     }
 
 	fof_plain_term() {
@@ -15824,13 +15824,13 @@ class Fof_plain_atomic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_plain_atomic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_plain_atomic_formula(this);
 		}
 	}
@@ -15851,7 +15851,7 @@ class Fof_defined_atomic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_defined_atomic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_defined_atomic_formula;
     }
 
 	fof_defined_plain_formula() {
@@ -15863,13 +15863,13 @@ class Fof_defined_atomic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_defined_atomic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_defined_atomic_formula(this);
 		}
 	}
@@ -15890,7 +15890,7 @@ class Fof_defined_plain_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_defined_plain_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_defined_plain_formula;
     }
 
 	fof_defined_plain_term() {
@@ -15898,13 +15898,13 @@ class Fof_defined_plain_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_defined_plain_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_defined_plain_formula(this);
 		}
 	}
@@ -15925,7 +15925,7 @@ class Fof_defined_infix_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_defined_infix_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_defined_infix_formula;
     }
 
 	fof_term = function(i) {
@@ -15944,13 +15944,13 @@ class Fof_defined_infix_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_defined_infix_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_defined_infix_formula(this);
 		}
 	}
@@ -15971,7 +15971,7 @@ class Fof_system_atomic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_system_atomic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_system_atomic_formula;
     }
 
 	fof_system_term() {
@@ -15979,13 +15979,13 @@ class Fof_system_atomic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_system_atomic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_system_atomic_formula(this);
 		}
 	}
@@ -16006,7 +16006,7 @@ class Fof_plain_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_plain_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_plain_term;
     }
 
 	constant() {
@@ -16022,13 +16022,13 @@ class Fof_plain_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_plain_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_plain_term(this);
 		}
 	}
@@ -16049,7 +16049,7 @@ class Fof_defined_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_defined_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_defined_term;
     }
 
 	defined_term() {
@@ -16061,13 +16061,13 @@ class Fof_defined_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_defined_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_defined_term(this);
 		}
 	}
@@ -16088,7 +16088,7 @@ class Fof_defined_atomic_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_defined_atomic_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_defined_atomic_term;
     }
 
 	fof_defined_plain_term() {
@@ -16096,13 +16096,13 @@ class Fof_defined_atomic_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_defined_atomic_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_defined_atomic_term(this);
 		}
 	}
@@ -16123,7 +16123,7 @@ class Fof_defined_plain_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_defined_plain_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_defined_plain_term;
     }
 
 	defined_constant() {
@@ -16139,13 +16139,13 @@ class Fof_defined_plain_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_defined_plain_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_defined_plain_term(this);
 		}
 	}
@@ -16166,7 +16166,7 @@ class Fof_system_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_system_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_system_term;
     }
 
 	system_constant() {
@@ -16182,13 +16182,13 @@ class Fof_system_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_system_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_system_term(this);
 		}
 	}
@@ -16209,7 +16209,7 @@ class Fof_argumentsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_arguments;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_arguments;
     }
 
 	fof_term() {
@@ -16221,13 +16221,13 @@ class Fof_argumentsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_arguments(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_arguments(this);
 		}
 	}
@@ -16248,7 +16248,7 @@ class Fof_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_term;
     }
 
 	fof_function_term() {
@@ -16260,13 +16260,13 @@ class Fof_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_term(this);
 		}
 	}
@@ -16287,7 +16287,7 @@ class Fof_function_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_function_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_function_term;
     }
 
 	fof_plain_term() {
@@ -16303,13 +16303,13 @@ class Fof_function_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_function_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_function_term(this);
 		}
 	}
@@ -16330,7 +16330,7 @@ class Fof_sequentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_sequent;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_sequent;
     }
 
 	fof_formula_tuple = function(i) {
@@ -16353,13 +16353,13 @@ class Fof_sequentContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_sequent(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_sequent(this);
 		}
 	}
@@ -16380,7 +16380,7 @@ class Fof_formula_tupleContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_formula_tuple;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_formula_tuple;
     }
 
 	fof_formula_tuple_list() {
@@ -16388,13 +16388,13 @@ class Fof_formula_tupleContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_formula_tuple(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_formula_tuple(this);
 		}
 	}
@@ -16415,7 +16415,7 @@ class Fof_formula_tuple_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_formula_tuple_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_formula_tuple_list;
     }
 
 	fof_logic_formula() {
@@ -16434,13 +16434,13 @@ class Fof_formula_tuple_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_formula_tuple_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_formula_tuple_list(this);
 		}
 	}
@@ -16461,7 +16461,7 @@ class Comma_fof_logic_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_comma_fof_logic_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_comma_fof_logic_formula;
     }
 
 	fof_logic_formula() {
@@ -16469,13 +16469,13 @@ class Comma_fof_logic_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterComma_fof_logic_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitComma_fof_logic_formula(this);
 		}
 	}
@@ -16496,7 +16496,7 @@ class Cnf_formulaContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_cnf_formula;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_cnf_formula;
     }
 
 	cnf_disjunction() {
@@ -16508,13 +16508,13 @@ class Cnf_formulaContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterCnf_formula(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitCnf_formula(this);
 		}
 	}
@@ -16535,7 +16535,7 @@ class Cnf_disjunctionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_cnf_disjunction;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_cnf_disjunction;
     }
 
 	cnf_literal() {
@@ -16547,17 +16547,17 @@ class Cnf_disjunctionContext extends antlr4.ParserRuleContext {
 	};
 
 	Vline() {
-	    return this.getToken(TPTPParser.Vline, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Vline, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterCnf_disjunction(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitCnf_disjunction(this);
 		}
 	}
@@ -16578,7 +16578,7 @@ class Cnf_literalContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_cnf_literal;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_cnf_literal;
     }
 
 	fof_atomic_formula() {
@@ -16590,13 +16590,13 @@ class Cnf_literalContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterCnf_literal(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitCnf_literal(this);
 		}
 	}
@@ -16617,7 +16617,7 @@ class Thf_quantifierContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_quantifier;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_quantifier;
     }
 
 	fof_quantifier() {
@@ -16633,13 +16633,13 @@ class Thf_quantifierContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_quantifier(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_quantifier(this);
 		}
 	}
@@ -16660,7 +16660,7 @@ class Thf_unary_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_thf_unary_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_thf_unary_connective;
     }
 
 	unary_connective() {
@@ -16672,13 +16672,13 @@ class Thf_unary_connectiveContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterThf_unary_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitThf_unary_connective(this);
 		}
 	}
@@ -16699,18 +16699,18 @@ class Th1_quantifierContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_th1_quantifier;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_th1_quantifier;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTh1_quantifier(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTh1_quantifier(this);
 		}
 	}
@@ -16731,18 +16731,18 @@ class Th0_quantifierContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_th0_quantifier;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_th0_quantifier;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTh0_quantifier(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTh0_quantifier(this);
 		}
 	}
@@ -16763,18 +16763,18 @@ class Subtype_signContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_subtype_sign;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_subtype_sign;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterSubtype_sign(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitSubtype_sign(this);
 		}
 	}
@@ -16795,7 +16795,7 @@ class Tff_unary_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_unary_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_unary_connective;
     }
 
 	unary_connective() {
@@ -16807,13 +16807,13 @@ class Tff_unary_connectiveContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_unary_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_unary_connective(this);
 		}
 	}
@@ -16834,7 +16834,7 @@ class Tff_quantifierContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_tff_quantifier;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_tff_quantifier;
     }
 
 	fof_quantifier() {
@@ -16842,13 +16842,13 @@ class Tff_quantifierContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTff_quantifier(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTff_quantifier(this);
 		}
 	}
@@ -16869,21 +16869,21 @@ class Fof_quantifierContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_fof_quantifier;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_fof_quantifier;
     }
 
 	Hash() {
-	    return this.getToken(TPTPParser.Hash, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Hash, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFof_quantifier(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFof_quantifier(this);
 		}
 	}
@@ -16904,21 +16904,21 @@ class Nonassoc_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_nonassoc_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_nonassoc_connective;
     }
 
 	Vline() {
-	    return this.getToken(TPTPParser.Vline, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Vline, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNonassoc_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNonassoc_connective(this);
 		}
 	}
@@ -16939,21 +16939,21 @@ class Assoc_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_assoc_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_assoc_connective;
     }
 
 	Vline() {
-	    return this.getToken(TPTPParser.Vline, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Vline, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAssoc_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAssoc_connective(this);
 		}
 	}
@@ -16974,18 +16974,18 @@ class Unary_connectiveContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_unary_connective;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_unary_connective;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterUnary_connective(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitUnary_connective(this);
 		}
 	}
@@ -17006,18 +17006,18 @@ class Gentzen_arrowContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_gentzen_arrow;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_gentzen_arrow;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterGentzen_arrow(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitGentzen_arrow(this);
 		}
 	}
@@ -17038,18 +17038,18 @@ class AssignmentContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_assignment;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_assignment;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAssignment(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAssignment(this);
 		}
 	}
@@ -17070,18 +17070,18 @@ class IdenticalContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_identical;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_identical;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterIdentical(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitIdentical(this);
 		}
 	}
@@ -17102,7 +17102,7 @@ class Type_constantContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_type_constant;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_type_constant;
     }
 
 	type_functor() {
@@ -17110,13 +17110,13 @@ class Type_constantContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterType_constant(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitType_constant(this);
 		}
 	}
@@ -17137,7 +17137,7 @@ class Type_functorContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_type_functor;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_type_functor;
     }
 
 	atomic_word() {
@@ -17145,13 +17145,13 @@ class Type_functorContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterType_functor(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitType_functor(this);
 		}
 	}
@@ -17172,7 +17172,7 @@ class Defined_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_defined_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_defined_type;
     }
 
 	atomic_defined_word() {
@@ -17180,13 +17180,13 @@ class Defined_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterDefined_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitDefined_type(this);
 		}
 	}
@@ -17207,7 +17207,7 @@ class AtomContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_atom;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_atom;
     }
 
 	untyped_atom() {
@@ -17219,13 +17219,13 @@ class AtomContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAtom(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAtom(this);
 		}
 	}
@@ -17246,7 +17246,7 @@ class Untyped_atomContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_untyped_atom;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_untyped_atom;
     }
 
 	constant() {
@@ -17258,13 +17258,13 @@ class Untyped_atomContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterUntyped_atom(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitUntyped_atom(this);
 		}
 	}
@@ -17285,7 +17285,7 @@ class Defined_infix_predContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_defined_infix_pred;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_defined_infix_pred;
     }
 
 	infix_equality() {
@@ -17293,13 +17293,13 @@ class Defined_infix_predContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterDefined_infix_pred(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitDefined_infix_pred(this);
 		}
 	}
@@ -17320,18 +17320,18 @@ class Infix_equalityContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_infix_equality;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_infix_equality;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterInfix_equality(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitInfix_equality(this);
 		}
 	}
@@ -17352,18 +17352,18 @@ class Infix_inequalityContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_infix_inequality;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_infix_inequality;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterInfix_inequality(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitInfix_inequality(this);
 		}
 	}
@@ -17384,7 +17384,7 @@ class ConstantContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_constant;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_constant;
     }
 
 	functor() {
@@ -17392,13 +17392,13 @@ class ConstantContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterConstant(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitConstant(this);
 		}
 	}
@@ -17419,7 +17419,7 @@ class FunctorContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_functor;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_functor;
     }
 
 	atomic_word() {
@@ -17427,13 +17427,13 @@ class FunctorContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFunctor(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFunctor(this);
 		}
 	}
@@ -17454,7 +17454,7 @@ class Defined_constantContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_defined_constant;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_defined_constant;
     }
 
 	defined_functor() {
@@ -17462,13 +17462,13 @@ class Defined_constantContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterDefined_constant(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitDefined_constant(this);
 		}
 	}
@@ -17489,7 +17489,7 @@ class Defined_functorContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_defined_functor;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_defined_functor;
     }
 
 	atomic_defined_word() {
@@ -17497,13 +17497,13 @@ class Defined_functorContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterDefined_functor(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitDefined_functor(this);
 		}
 	}
@@ -17524,7 +17524,7 @@ class System_constantContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_system_constant;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_system_constant;
     }
 
 	system_functor() {
@@ -17532,13 +17532,13 @@ class System_constantContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterSystem_constant(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitSystem_constant(this);
 		}
 	}
@@ -17559,7 +17559,7 @@ class System_functorContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_system_functor;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_system_functor;
     }
 
 	atomic_system_word() {
@@ -17567,13 +17567,13 @@ class System_functorContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterSystem_functor(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitSystem_functor(this);
 		}
 	}
@@ -17594,7 +17594,7 @@ class Def_or_sys_constantContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_def_or_sys_constant;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_def_or_sys_constant;
     }
 
 	defined_constant() {
@@ -17606,13 +17606,13 @@ class Def_or_sys_constantContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterDef_or_sys_constant(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitDef_or_sys_constant(this);
 		}
 	}
@@ -17633,18 +17633,18 @@ class Th1_defined_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_th1_defined_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_th1_defined_term;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTh1_defined_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTh1_defined_term(this);
 		}
 	}
@@ -17665,7 +17665,7 @@ class Defined_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_defined_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_defined_term;
     }
 
 	number() {
@@ -17673,17 +17673,17 @@ class Defined_termContext extends antlr4.ParserRuleContext {
 	};
 
 	Distinct_object() {
-	    return this.getToken(TPTPParser.Distinct_object, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Distinct_object, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterDefined_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitDefined_term(this);
 		}
 	}
@@ -17704,21 +17704,21 @@ class VariableContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_variable;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_variable;
     }
 
 	Upper_word() {
-	    return this.getToken(TPTPParser.Upper_word, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Upper_word, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterVariable(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitVariable(this);
 		}
 	}
@@ -17739,7 +17739,7 @@ class SourceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_source;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_source;
     }
 
 	dag_source() {
@@ -17759,13 +17759,13 @@ class SourceContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterSource(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitSource(this);
 		}
 	}
@@ -17786,7 +17786,7 @@ class SourcesContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_sources;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_sources;
     }
 
 	source() {
@@ -17798,13 +17798,13 @@ class SourcesContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterSources(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitSources(this);
 		}
 	}
@@ -17825,7 +17825,7 @@ class Dag_sourceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_dag_source;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_dag_source;
     }
 
 	name() {
@@ -17837,13 +17837,13 @@ class Dag_sourceContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterDag_source(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitDag_source(this);
 		}
 	}
@@ -17864,7 +17864,7 @@ class Inference_recordContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_inference_record;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_inference_record;
     }
 
 	inference_rule() {
@@ -17880,13 +17880,13 @@ class Inference_recordContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterInference_record(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitInference_record(this);
 		}
 	}
@@ -17907,7 +17907,7 @@ class Inference_ruleContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_inference_rule;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_inference_rule;
     }
 
 	atomic_word() {
@@ -17915,13 +17915,13 @@ class Inference_ruleContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterInference_rule(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitInference_rule(this);
 		}
 	}
@@ -17942,7 +17942,7 @@ class Internal_sourceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_internal_source;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_internal_source;
     }
 
 	intro_type() {
@@ -17958,13 +17958,13 @@ class Internal_sourceContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterInternal_source(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitInternal_source(this);
 		}
 	}
@@ -17985,7 +17985,7 @@ class Intro_typeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_intro_type;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_intro_type;
     }
 
 	atomic_word() {
@@ -17993,13 +17993,13 @@ class Intro_typeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterIntro_type(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitIntro_type(this);
 		}
 	}
@@ -18020,7 +18020,7 @@ class External_sourceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_external_source;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_external_source;
     }
 
 	file_source() {
@@ -18036,13 +18036,13 @@ class External_sourceContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterExternal_source(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitExternal_source(this);
 		}
 	}
@@ -18063,7 +18063,7 @@ class File_sourceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_file_source;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_file_source;
     }
 
 	file_name() {
@@ -18075,13 +18075,13 @@ class File_sourceContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFile_source(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFile_source(this);
 		}
 	}
@@ -18102,7 +18102,7 @@ class File_infoContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_file_info;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_file_info;
     }
 
 	name() {
@@ -18114,13 +18114,13 @@ class File_infoContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFile_info(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFile_info(this);
 		}
 	}
@@ -18141,7 +18141,7 @@ class TheoryContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_theory;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_theory;
     }
 
 	theory_name() {
@@ -18153,13 +18153,13 @@ class TheoryContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTheory(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTheory(this);
 		}
 	}
@@ -18180,7 +18180,7 @@ class Theory_nameContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_theory_name;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_theory_name;
     }
 
 	atomic_word() {
@@ -18188,13 +18188,13 @@ class Theory_nameContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterTheory_name(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitTheory_name(this);
 		}
 	}
@@ -18215,7 +18215,7 @@ class Creator_sourceContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_creator_source;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_creator_source;
     }
 
 	creator_name() {
@@ -18231,13 +18231,13 @@ class Creator_sourceContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterCreator_source(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitCreator_source(this);
 		}
 	}
@@ -18258,7 +18258,7 @@ class Creator_nameContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_creator_name;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_creator_name;
     }
 
 	atomic_word() {
@@ -18266,13 +18266,13 @@ class Creator_nameContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterCreator_name(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitCreator_name(this);
 		}
 	}
@@ -18293,7 +18293,7 @@ class ParentsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_parents;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_parents;
     }
 
 	parent_list() {
@@ -18301,13 +18301,13 @@ class ParentsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterParents(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitParents(this);
 		}
 	}
@@ -18328,7 +18328,7 @@ class Parent_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_parent_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_parent_list;
     }
 
 	parent_info() {
@@ -18347,13 +18347,13 @@ class Parent_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterParent_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitParent_list(this);
 		}
 	}
@@ -18374,7 +18374,7 @@ class Comma_parent_infoContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_comma_parent_info;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_comma_parent_info;
     }
 
 	parent_info() {
@@ -18382,13 +18382,13 @@ class Comma_parent_infoContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterComma_parent_info(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitComma_parent_info(this);
 		}
 	}
@@ -18409,7 +18409,7 @@ class Parent_infoContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_parent_info;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_parent_info;
     }
 
 	source() {
@@ -18421,13 +18421,13 @@ class Parent_infoContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterParent_info(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitParent_info(this);
 		}
 	}
@@ -18448,7 +18448,7 @@ class Parent_detailsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_parent_details;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_parent_details;
     }
 
 	general_list() {
@@ -18460,13 +18460,13 @@ class Parent_detailsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterParent_details(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitParent_details(this);
 		}
 	}
@@ -18487,7 +18487,7 @@ class Optional_infoContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_optional_info;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_optional_info;
     }
 
 	useful_info() {
@@ -18499,13 +18499,13 @@ class Optional_infoContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterOptional_info(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitOptional_info(this);
 		}
 	}
@@ -18526,7 +18526,7 @@ class Useful_infoContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_useful_info;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_useful_info;
     }
 
 	general_list() {
@@ -18534,13 +18534,13 @@ class Useful_infoContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterUseful_info(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitUseful_info(this);
 		}
 	}
@@ -18561,7 +18561,7 @@ class IncludeContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_include;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_include;
     }
 
 	file_name() {
@@ -18573,13 +18573,13 @@ class IncludeContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterInclude(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitInclude(this);
 		}
 	}
@@ -18600,7 +18600,7 @@ class Include_optionalsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_include_optionals;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_include_optionals;
     }
 
 	null_() {
@@ -18616,13 +18616,13 @@ class Include_optionalsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterInclude_optionals(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitInclude_optionals(this);
 		}
 	}
@@ -18643,7 +18643,7 @@ class Formula_selectionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_formula_selection;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_formula_selection;
     }
 
 	name_list() {
@@ -18651,17 +18651,17 @@ class Formula_selectionContext extends antlr4.ParserRuleContext {
 	};
 
 	Star() {
-	    return this.getToken(TPTPParser.Star, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Star, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFormula_selection(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFormula_selection(this);
 		}
 	}
@@ -18682,7 +18682,7 @@ class Name_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_name_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_name_list;
     }
 
 	name() {
@@ -18694,13 +18694,13 @@ class Name_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterName_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitName_list(this);
 		}
 	}
@@ -18721,7 +18721,7 @@ class Space_nameContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_space_name;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_space_name;
     }
 
 	name() {
@@ -18729,13 +18729,13 @@ class Space_nameContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterSpace_name(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitSpace_name(this);
 		}
 	}
@@ -18756,7 +18756,7 @@ class General_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_general_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_general_term;
     }
 
 	general_data() {
@@ -18772,13 +18772,13 @@ class General_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterGeneral_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitGeneral_term(this);
 		}
 	}
@@ -18799,7 +18799,7 @@ class General_dataContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_general_data;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_general_data;
     }
 
 	atomic_word() {
@@ -18819,7 +18819,7 @@ class General_dataContext extends antlr4.ParserRuleContext {
 	};
 
 	Distinct_object() {
-	    return this.getToken(TPTPParser.Distinct_object, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Distinct_object, 0);
 	};
 
 	formula_data() {
@@ -18827,13 +18827,13 @@ class General_dataContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterGeneral_data(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitGeneral_data(this);
 		}
 	}
@@ -18854,7 +18854,7 @@ class General_functionContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_general_function;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_general_function;
     }
 
 	atomic_word() {
@@ -18866,13 +18866,13 @@ class General_functionContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterGeneral_function(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitGeneral_function(this);
 		}
 	}
@@ -18893,7 +18893,7 @@ class Formula_dataContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_formula_data;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_formula_data;
     }
 
 	thf_formula() {
@@ -18917,13 +18917,13 @@ class Formula_dataContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFormula_data(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFormula_data(this);
 		}
 	}
@@ -18944,7 +18944,7 @@ class General_listContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_general_list;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_general_list;
     }
 
 	general_terms() {
@@ -18952,13 +18952,13 @@ class General_listContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterGeneral_list(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitGeneral_list(this);
 		}
 	}
@@ -18979,7 +18979,7 @@ class General_termsContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_general_terms;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_general_terms;
     }
 
 	general_term() {
@@ -18998,13 +18998,13 @@ class General_termsContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterGeneral_terms(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitGeneral_terms(this);
 		}
 	}
@@ -19025,7 +19025,7 @@ class Comma_general_termContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_comma_general_term;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_comma_general_term;
     }
 
 	general_term() {
@@ -19033,13 +19033,13 @@ class Comma_general_termContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterComma_general_term(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitComma_general_term(this);
 		}
 	}
@@ -19060,7 +19060,7 @@ class NameContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_name;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_name;
     }
 
 	atomic_word() {
@@ -19068,17 +19068,17 @@ class NameContext extends antlr4.ParserRuleContext {
 	};
 
 	Integer() {
-	    return this.getToken(TPTPParser.Integer, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Integer, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterName(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitName(this);
 		}
 	}
@@ -19099,25 +19099,25 @@ class Atomic_wordContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_atomic_word;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_atomic_word;
     }
 
 	Lower_word() {
-	    return this.getToken(TPTPParser.Lower_word, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Lower_word, 0);
 	};
 
 	Single_quoted() {
-	    return this.getToken(TPTPParser.Single_quoted, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Single_quoted, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAtomic_word(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAtomic_word(this);
 		}
 	}
@@ -19138,21 +19138,21 @@ class Atomic_defined_wordContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_atomic_defined_word;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_atomic_defined_word;
     }
 
 	Dollar_word() {
-	    return this.getToken(TPTPParser.Dollar_word, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Dollar_word, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAtomic_defined_word(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAtomic_defined_word(this);
 		}
 	}
@@ -19173,21 +19173,21 @@ class Atomic_system_wordContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_atomic_system_word;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_atomic_system_word;
     }
 
 	Dollar_dollar_word() {
-	    return this.getToken(TPTPParser.Dollar_dollar_word, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Dollar_dollar_word, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterAtomic_system_word(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitAtomic_system_word(this);
 		}
 	}
@@ -19208,29 +19208,29 @@ class NumberContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_number;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_number;
     }
 
 	Integer() {
-	    return this.getToken(TPTPParser.Integer, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Integer, 0);
 	};
 
 	Rational() {
-	    return this.getToken(TPTPParser.Rational, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Rational, 0);
 	};
 
 	Real() {
-	    return this.getToken(TPTPParser.Real, 0);
+	    return this.getToken(TPTP_v9_0_0_7Parser.Real, 0);
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNumber(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNumber(this);
 		}
 	}
@@ -19251,7 +19251,7 @@ class File_nameContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_file_name;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_file_name;
     }
 
 	atomic_word() {
@@ -19259,13 +19259,13 @@ class File_nameContext extends antlr4.ParserRuleContext {
 	};
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterFile_name(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitFile_name(this);
 		}
 	}
@@ -19286,18 +19286,18 @@ class NullContext extends antlr4.ParserRuleContext {
         }
         super(parent, invokingState);
         this.parser = parser;
-        this.ruleIndex = TPTPParser.RULE_null;
+        this.ruleIndex = TPTP_v9_0_0_7Parser.RULE_null;
     }
 
 
 	enterRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.enterNull(this);
 		}
 	}
 
 	exitRule(listener) {
-	    if(listener instanceof TPTPListener ) {
+	    if(listener instanceof TPTP_v9_0_0_7Listener ) {
 	        listener.exitNull(this);
 		}
 	}
@@ -19308,235 +19308,235 @@ class NullContext extends antlr4.ParserRuleContext {
 
 
 
-TPTPParser.Tptp_fileContext = Tptp_fileContext; 
-TPTPParser.Tptp_inputContext = Tptp_inputContext; 
-TPTPParser.Annotated_formulaContext = Annotated_formulaContext; 
-TPTPParser.Tpi_annotatedContext = Tpi_annotatedContext; 
-TPTPParser.Tpi_formulaContext = Tpi_formulaContext; 
-TPTPParser.Thf_annotatedContext = Thf_annotatedContext; 
-TPTPParser.Tff_annotatedContext = Tff_annotatedContext; 
-TPTPParser.Tcf_annotatedContext = Tcf_annotatedContext; 
-TPTPParser.Fof_annotatedContext = Fof_annotatedContext; 
-TPTPParser.Cnf_annotatedContext = Cnf_annotatedContext; 
-TPTPParser.AnnotationsContext = AnnotationsContext; 
-TPTPParser.Formula_roleContext = Formula_roleContext; 
-TPTPParser.Thf_formulaContext = Thf_formulaContext; 
-TPTPParser.Thf_logic_formulaContext = Thf_logic_formulaContext; 
-TPTPParser.Thf_binary_formulaContext = Thf_binary_formulaContext; 
-TPTPParser.Thf_binary_nonassocContext = Thf_binary_nonassocContext; 
-TPTPParser.Thf_binary_assocContext = Thf_binary_assocContext; 
-TPTPParser.Thf_or_formulaContext = Thf_or_formulaContext; 
-TPTPParser.Thf_and_formulaContext = Thf_and_formulaContext; 
-TPTPParser.Thf_apply_formulaContext = Thf_apply_formulaContext; 
-TPTPParser.Thf_unit_formulaContext = Thf_unit_formulaContext; 
-TPTPParser.Thf_preunit_formulaContext = Thf_preunit_formulaContext; 
-TPTPParser.Thf_unitary_formulaContext = Thf_unitary_formulaContext; 
-TPTPParser.Thf_quantified_formulaContext = Thf_quantified_formulaContext; 
-TPTPParser.Thf_quantificationContext = Thf_quantificationContext; 
-TPTPParser.Thf_variable_listContext = Thf_variable_listContext; 
-TPTPParser.Thf_typed_variableContext = Thf_typed_variableContext; 
-TPTPParser.Thf_unary_formulaContext = Thf_unary_formulaContext; 
-TPTPParser.Thf_prefix_unaryContext = Thf_prefix_unaryContext; 
-TPTPParser.Thf_infix_unaryContext = Thf_infix_unaryContext; 
-TPTPParser.Thf_atomic_formulaContext = Thf_atomic_formulaContext; 
-TPTPParser.Thf_plain_atomicContext = Thf_plain_atomicContext; 
-TPTPParser.Thf_defined_atomicContext = Thf_defined_atomicContext; 
-TPTPParser.Thf_defined_termContext = Thf_defined_termContext; 
-TPTPParser.Thf_defined_infixContext = Thf_defined_infixContext; 
-TPTPParser.Thf_system_atomicContext = Thf_system_atomicContext; 
-TPTPParser.Thf_letContext = Thf_letContext; 
-TPTPParser.Thf_let_typesContext = Thf_let_typesContext; 
-TPTPParser.Thf_atom_typing_listContext = Thf_atom_typing_listContext; 
-TPTPParser.Thf_let_defnsContext = Thf_let_defnsContext; 
-TPTPParser.Thf_let_defnContext = Thf_let_defnContext; 
-TPTPParser.Thf_let_defn_listContext = Thf_let_defn_listContext; 
-TPTPParser.Thf_unitary_termContext = Thf_unitary_termContext; 
-TPTPParser.Thf_conn_termContext = Thf_conn_termContext; 
-TPTPParser.Thf_tupleContext = Thf_tupleContext; 
-TPTPParser.Thf_fof_functionContext = Thf_fof_functionContext; 
-TPTPParser.Thf_argumentsContext = Thf_argumentsContext; 
-TPTPParser.Thf_formula_listContext = Thf_formula_listContext; 
-TPTPParser.Comma_thf_logic_formulaContext = Comma_thf_logic_formulaContext; 
-TPTPParser.Thf_atom_typingContext = Thf_atom_typingContext; 
-TPTPParser.Thf_top_level_typeContext = Thf_top_level_typeContext; 
-TPTPParser.Thf_unitary_typeContext = Thf_unitary_typeContext; 
-TPTPParser.Thf_apply_typeContext = Thf_apply_typeContext; 
-TPTPParser.Thf_binary_typeContext = Thf_binary_typeContext; 
-TPTPParser.Thf_mapping_typeContext = Thf_mapping_typeContext; 
-TPTPParser.Thf_xprod_typeContext = Thf_xprod_typeContext; 
-TPTPParser.Thf_union_typeContext = Thf_union_typeContext; 
-TPTPParser.Thf_subtypeContext = Thf_subtypeContext; 
-TPTPParser.Thf_definitionContext = Thf_definitionContext; 
-TPTPParser.Thf_sequentContext = Thf_sequentContext; 
-TPTPParser.Tff_formulaContext = Tff_formulaContext; 
-TPTPParser.Tff_logic_formulaContext = Tff_logic_formulaContext; 
-TPTPParser.Tff_binary_formulaContext = Tff_binary_formulaContext; 
-TPTPParser.Tff_binary_nonassocContext = Tff_binary_nonassocContext; 
-TPTPParser.Tff_binary_assocContext = Tff_binary_assocContext; 
-TPTPParser.Tff_or_formulaContext = Tff_or_formulaContext; 
-TPTPParser.Tff_and_formulaContext = Tff_and_formulaContext; 
-TPTPParser.Tff_unit_formulaContext = Tff_unit_formulaContext; 
-TPTPParser.Tff_preunit_formulaContext = Tff_preunit_formulaContext; 
-TPTPParser.Tff_unitary_formulaContext = Tff_unitary_formulaContext; 
-TPTPParser.Txf_unitary_formulaContext = Txf_unitary_formulaContext; 
-TPTPParser.Tff_quantified_formulaContext = Tff_quantified_formulaContext; 
-TPTPParser.Tff_variable_listContext = Tff_variable_listContext; 
-TPTPParser.Tff_variableContext = Tff_variableContext; 
-TPTPParser.Tff_typed_variableContext = Tff_typed_variableContext; 
-TPTPParser.Tff_unary_formulaContext = Tff_unary_formulaContext; 
-TPTPParser.Tff_prefix_unaryContext = Tff_prefix_unaryContext; 
-TPTPParser.Tff_infix_unaryContext = Tff_infix_unaryContext; 
-TPTPParser.Tff_atomic_formulaContext = Tff_atomic_formulaContext; 
-TPTPParser.Tff_plain_atomicContext = Tff_plain_atomicContext; 
-TPTPParser.Tff_defined_atomicContext = Tff_defined_atomicContext; 
-TPTPParser.Tff_defined_plainContext = Tff_defined_plainContext; 
-TPTPParser.Tff_defined_infixContext = Tff_defined_infixContext; 
-TPTPParser.Tff_system_atomicContext = Tff_system_atomicContext; 
-TPTPParser.Txf_letContext = Txf_letContext; 
-TPTPParser.Txf_let_typesContext = Txf_let_typesContext; 
-TPTPParser.Tff_atom_typing_listContext = Tff_atom_typing_listContext; 
-TPTPParser.Txf_let_defnsContext = Txf_let_defnsContext; 
-TPTPParser.Txf_let_defnContext = Txf_let_defnContext; 
-TPTPParser.Txf_let_LHSContext = Txf_let_LHSContext; 
-TPTPParser.Txf_let_defn_listContext = Txf_let_defn_listContext; 
-TPTPParser.Nxf_atomContext = Nxf_atomContext; 
-TPTPParser.Tff_termContext = Tff_termContext; 
-TPTPParser.Tff_unitary_termContext = Tff_unitary_termContext; 
-TPTPParser.Txf_tupleContext = Txf_tupleContext; 
-TPTPParser.Tff_argumentsContext = Tff_argumentsContext; 
-TPTPParser.Comma_tff_termContext = Comma_tff_termContext; 
-TPTPParser.Tff_atom_typingContext = Tff_atom_typingContext; 
-TPTPParser.Tff_top_level_typeContext = Tff_top_level_typeContext; 
-TPTPParser.Tff_non_atomic_typeContext = Tff_non_atomic_typeContext; 
-TPTPParser.Tf1_quantified_typeContext = Tf1_quantified_typeContext; 
-TPTPParser.Tff_monotypeContext = Tff_monotypeContext; 
-TPTPParser.Tff_unitary_typeContext = Tff_unitary_typeContext; 
-TPTPParser.Tff_atomic_typeContext = Tff_atomic_typeContext; 
-TPTPParser.Tff_type_argumentsContext = Tff_type_argumentsContext; 
-TPTPParser.Tff_mapping_typeContext = Tff_mapping_typeContext; 
-TPTPParser.Tff_xprod_typeContext = Tff_xprod_typeContext; 
-TPTPParser.Txf_tuple_typeContext = Txf_tuple_typeContext; 
-TPTPParser.Tff_type_listContext = Tff_type_listContext; 
-TPTPParser.Tff_subtypeContext = Tff_subtypeContext; 
-TPTPParser.Txf_definitionContext = Txf_definitionContext; 
-TPTPParser.Txf_sequentContext = Txf_sequentContext; 
-TPTPParser.Nhf_long_connectiveContext = Nhf_long_connectiveContext; 
-TPTPParser.Nhf_parameter_listContext = Nhf_parameter_listContext; 
-TPTPParser.Nhf_parameterContext = Nhf_parameterContext; 
-TPTPParser.Nhf_key_pairContext = Nhf_key_pairContext; 
-TPTPParser.Nxf_long_connectiveContext = Nxf_long_connectiveContext; 
-TPTPParser.Nxf_parameter_listContext = Nxf_parameter_listContext; 
-TPTPParser.Nxf_parameterContext = Nxf_parameterContext; 
-TPTPParser.Nxf_key_pairContext = Nxf_key_pairContext; 
-TPTPParser.Ntf_connective_nameContext = Ntf_connective_nameContext; 
-TPTPParser.Ntf_indexContext = Ntf_indexContext; 
-TPTPParser.Ntf_short_connectiveContext = Ntf_short_connectiveContext; 
-TPTPParser.Tcf_formulaContext = Tcf_formulaContext; 
-TPTPParser.Tcf_logic_formulaContext = Tcf_logic_formulaContext; 
-TPTPParser.Tcf_quantified_formulaContext = Tcf_quantified_formulaContext; 
-TPTPParser.Fof_formulaContext = Fof_formulaContext; 
-TPTPParser.Fof_logic_formulaContext = Fof_logic_formulaContext; 
-TPTPParser.Fof_binary_formulaContext = Fof_binary_formulaContext; 
-TPTPParser.Fof_binary_nonassocContext = Fof_binary_nonassocContext; 
-TPTPParser.Fof_binary_assocContext = Fof_binary_assocContext; 
-TPTPParser.Fof_or_formulaContext = Fof_or_formulaContext; 
-TPTPParser.Fof_and_formulaContext = Fof_and_formulaContext; 
-TPTPParser.Fof_unary_formulaContext = Fof_unary_formulaContext; 
-TPTPParser.Fof_infix_unaryContext = Fof_infix_unaryContext; 
-TPTPParser.Fof_unit_formulaContext = Fof_unit_formulaContext; 
-TPTPParser.Fof_unitary_formulaContext = Fof_unitary_formulaContext; 
-TPTPParser.Fof_quantified_formulaContext = Fof_quantified_formulaContext; 
-TPTPParser.Fof_variable_listContext = Fof_variable_listContext; 
-TPTPParser.Fof_atomic_formulaContext = Fof_atomic_formulaContext; 
-TPTPParser.Fof_plain_atomic_formulaContext = Fof_plain_atomic_formulaContext; 
-TPTPParser.Fof_defined_atomic_formulaContext = Fof_defined_atomic_formulaContext; 
-TPTPParser.Fof_defined_plain_formulaContext = Fof_defined_plain_formulaContext; 
-TPTPParser.Fof_defined_infix_formulaContext = Fof_defined_infix_formulaContext; 
-TPTPParser.Fof_system_atomic_formulaContext = Fof_system_atomic_formulaContext; 
-TPTPParser.Fof_plain_termContext = Fof_plain_termContext; 
-TPTPParser.Fof_defined_termContext = Fof_defined_termContext; 
-TPTPParser.Fof_defined_atomic_termContext = Fof_defined_atomic_termContext; 
-TPTPParser.Fof_defined_plain_termContext = Fof_defined_plain_termContext; 
-TPTPParser.Fof_system_termContext = Fof_system_termContext; 
-TPTPParser.Fof_argumentsContext = Fof_argumentsContext; 
-TPTPParser.Fof_termContext = Fof_termContext; 
-TPTPParser.Fof_function_termContext = Fof_function_termContext; 
-TPTPParser.Fof_sequentContext = Fof_sequentContext; 
-TPTPParser.Fof_formula_tupleContext = Fof_formula_tupleContext; 
-TPTPParser.Fof_formula_tuple_listContext = Fof_formula_tuple_listContext; 
-TPTPParser.Comma_fof_logic_formulaContext = Comma_fof_logic_formulaContext; 
-TPTPParser.Cnf_formulaContext = Cnf_formulaContext; 
-TPTPParser.Cnf_disjunctionContext = Cnf_disjunctionContext; 
-TPTPParser.Cnf_literalContext = Cnf_literalContext; 
-TPTPParser.Thf_quantifierContext = Thf_quantifierContext; 
-TPTPParser.Thf_unary_connectiveContext = Thf_unary_connectiveContext; 
-TPTPParser.Th1_quantifierContext = Th1_quantifierContext; 
-TPTPParser.Th0_quantifierContext = Th0_quantifierContext; 
-TPTPParser.Subtype_signContext = Subtype_signContext; 
-TPTPParser.Tff_unary_connectiveContext = Tff_unary_connectiveContext; 
-TPTPParser.Tff_quantifierContext = Tff_quantifierContext; 
-TPTPParser.Fof_quantifierContext = Fof_quantifierContext; 
-TPTPParser.Nonassoc_connectiveContext = Nonassoc_connectiveContext; 
-TPTPParser.Assoc_connectiveContext = Assoc_connectiveContext; 
-TPTPParser.Unary_connectiveContext = Unary_connectiveContext; 
-TPTPParser.Gentzen_arrowContext = Gentzen_arrowContext; 
-TPTPParser.AssignmentContext = AssignmentContext; 
-TPTPParser.IdenticalContext = IdenticalContext; 
-TPTPParser.Type_constantContext = Type_constantContext; 
-TPTPParser.Type_functorContext = Type_functorContext; 
-TPTPParser.Defined_typeContext = Defined_typeContext; 
-TPTPParser.AtomContext = AtomContext; 
-TPTPParser.Untyped_atomContext = Untyped_atomContext; 
-TPTPParser.Defined_infix_predContext = Defined_infix_predContext; 
-TPTPParser.Infix_equalityContext = Infix_equalityContext; 
-TPTPParser.Infix_inequalityContext = Infix_inequalityContext; 
-TPTPParser.ConstantContext = ConstantContext; 
-TPTPParser.FunctorContext = FunctorContext; 
-TPTPParser.Defined_constantContext = Defined_constantContext; 
-TPTPParser.Defined_functorContext = Defined_functorContext; 
-TPTPParser.System_constantContext = System_constantContext; 
-TPTPParser.System_functorContext = System_functorContext; 
-TPTPParser.Def_or_sys_constantContext = Def_or_sys_constantContext; 
-TPTPParser.Th1_defined_termContext = Th1_defined_termContext; 
-TPTPParser.Defined_termContext = Defined_termContext; 
-TPTPParser.VariableContext = VariableContext; 
-TPTPParser.SourceContext = SourceContext; 
-TPTPParser.SourcesContext = SourcesContext; 
-TPTPParser.Dag_sourceContext = Dag_sourceContext; 
-TPTPParser.Inference_recordContext = Inference_recordContext; 
-TPTPParser.Inference_ruleContext = Inference_ruleContext; 
-TPTPParser.Internal_sourceContext = Internal_sourceContext; 
-TPTPParser.Intro_typeContext = Intro_typeContext; 
-TPTPParser.External_sourceContext = External_sourceContext; 
-TPTPParser.File_sourceContext = File_sourceContext; 
-TPTPParser.File_infoContext = File_infoContext; 
-TPTPParser.TheoryContext = TheoryContext; 
-TPTPParser.Theory_nameContext = Theory_nameContext; 
-TPTPParser.Creator_sourceContext = Creator_sourceContext; 
-TPTPParser.Creator_nameContext = Creator_nameContext; 
-TPTPParser.ParentsContext = ParentsContext; 
-TPTPParser.Parent_listContext = Parent_listContext; 
-TPTPParser.Comma_parent_infoContext = Comma_parent_infoContext; 
-TPTPParser.Parent_infoContext = Parent_infoContext; 
-TPTPParser.Parent_detailsContext = Parent_detailsContext; 
-TPTPParser.Optional_infoContext = Optional_infoContext; 
-TPTPParser.Useful_infoContext = Useful_infoContext; 
-TPTPParser.IncludeContext = IncludeContext; 
-TPTPParser.Include_optionalsContext = Include_optionalsContext; 
-TPTPParser.Formula_selectionContext = Formula_selectionContext; 
-TPTPParser.Name_listContext = Name_listContext; 
-TPTPParser.Space_nameContext = Space_nameContext; 
-TPTPParser.General_termContext = General_termContext; 
-TPTPParser.General_dataContext = General_dataContext; 
-TPTPParser.General_functionContext = General_functionContext; 
-TPTPParser.Formula_dataContext = Formula_dataContext; 
-TPTPParser.General_listContext = General_listContext; 
-TPTPParser.General_termsContext = General_termsContext; 
-TPTPParser.Comma_general_termContext = Comma_general_termContext; 
-TPTPParser.NameContext = NameContext; 
-TPTPParser.Atomic_wordContext = Atomic_wordContext; 
-TPTPParser.Atomic_defined_wordContext = Atomic_defined_wordContext; 
-TPTPParser.Atomic_system_wordContext = Atomic_system_wordContext; 
-TPTPParser.NumberContext = NumberContext; 
-TPTPParser.File_nameContext = File_nameContext; 
-TPTPParser.NullContext = NullContext; 
+TPTP_v9_0_0_7Parser.Tptp_fileContext = Tptp_fileContext; 
+TPTP_v9_0_0_7Parser.Tptp_inputContext = Tptp_inputContext; 
+TPTP_v9_0_0_7Parser.Annotated_formulaContext = Annotated_formulaContext; 
+TPTP_v9_0_0_7Parser.Tpi_annotatedContext = Tpi_annotatedContext; 
+TPTP_v9_0_0_7Parser.Tpi_formulaContext = Tpi_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_annotatedContext = Thf_annotatedContext; 
+TPTP_v9_0_0_7Parser.Tff_annotatedContext = Tff_annotatedContext; 
+TPTP_v9_0_0_7Parser.Tcf_annotatedContext = Tcf_annotatedContext; 
+TPTP_v9_0_0_7Parser.Fof_annotatedContext = Fof_annotatedContext; 
+TPTP_v9_0_0_7Parser.Cnf_annotatedContext = Cnf_annotatedContext; 
+TPTP_v9_0_0_7Parser.AnnotationsContext = AnnotationsContext; 
+TPTP_v9_0_0_7Parser.Formula_roleContext = Formula_roleContext; 
+TPTP_v9_0_0_7Parser.Thf_formulaContext = Thf_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_logic_formulaContext = Thf_logic_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_binary_formulaContext = Thf_binary_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_binary_nonassocContext = Thf_binary_nonassocContext; 
+TPTP_v9_0_0_7Parser.Thf_binary_assocContext = Thf_binary_assocContext; 
+TPTP_v9_0_0_7Parser.Thf_or_formulaContext = Thf_or_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_and_formulaContext = Thf_and_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_apply_formulaContext = Thf_apply_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_unit_formulaContext = Thf_unit_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_preunit_formulaContext = Thf_preunit_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_unitary_formulaContext = Thf_unitary_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_quantified_formulaContext = Thf_quantified_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_quantificationContext = Thf_quantificationContext; 
+TPTP_v9_0_0_7Parser.Thf_variable_listContext = Thf_variable_listContext; 
+TPTP_v9_0_0_7Parser.Thf_typed_variableContext = Thf_typed_variableContext; 
+TPTP_v9_0_0_7Parser.Thf_unary_formulaContext = Thf_unary_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_prefix_unaryContext = Thf_prefix_unaryContext; 
+TPTP_v9_0_0_7Parser.Thf_infix_unaryContext = Thf_infix_unaryContext; 
+TPTP_v9_0_0_7Parser.Thf_atomic_formulaContext = Thf_atomic_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_plain_atomicContext = Thf_plain_atomicContext; 
+TPTP_v9_0_0_7Parser.Thf_defined_atomicContext = Thf_defined_atomicContext; 
+TPTP_v9_0_0_7Parser.Thf_defined_termContext = Thf_defined_termContext; 
+TPTP_v9_0_0_7Parser.Thf_defined_infixContext = Thf_defined_infixContext; 
+TPTP_v9_0_0_7Parser.Thf_system_atomicContext = Thf_system_atomicContext; 
+TPTP_v9_0_0_7Parser.Thf_letContext = Thf_letContext; 
+TPTP_v9_0_0_7Parser.Thf_let_typesContext = Thf_let_typesContext; 
+TPTP_v9_0_0_7Parser.Thf_atom_typing_listContext = Thf_atom_typing_listContext; 
+TPTP_v9_0_0_7Parser.Thf_let_defnsContext = Thf_let_defnsContext; 
+TPTP_v9_0_0_7Parser.Thf_let_defnContext = Thf_let_defnContext; 
+TPTP_v9_0_0_7Parser.Thf_let_defn_listContext = Thf_let_defn_listContext; 
+TPTP_v9_0_0_7Parser.Thf_unitary_termContext = Thf_unitary_termContext; 
+TPTP_v9_0_0_7Parser.Thf_conn_termContext = Thf_conn_termContext; 
+TPTP_v9_0_0_7Parser.Thf_tupleContext = Thf_tupleContext; 
+TPTP_v9_0_0_7Parser.Thf_fof_functionContext = Thf_fof_functionContext; 
+TPTP_v9_0_0_7Parser.Thf_argumentsContext = Thf_argumentsContext; 
+TPTP_v9_0_0_7Parser.Thf_formula_listContext = Thf_formula_listContext; 
+TPTP_v9_0_0_7Parser.Comma_thf_logic_formulaContext = Comma_thf_logic_formulaContext; 
+TPTP_v9_0_0_7Parser.Thf_atom_typingContext = Thf_atom_typingContext; 
+TPTP_v9_0_0_7Parser.Thf_top_level_typeContext = Thf_top_level_typeContext; 
+TPTP_v9_0_0_7Parser.Thf_unitary_typeContext = Thf_unitary_typeContext; 
+TPTP_v9_0_0_7Parser.Thf_apply_typeContext = Thf_apply_typeContext; 
+TPTP_v9_0_0_7Parser.Thf_binary_typeContext = Thf_binary_typeContext; 
+TPTP_v9_0_0_7Parser.Thf_mapping_typeContext = Thf_mapping_typeContext; 
+TPTP_v9_0_0_7Parser.Thf_xprod_typeContext = Thf_xprod_typeContext; 
+TPTP_v9_0_0_7Parser.Thf_union_typeContext = Thf_union_typeContext; 
+TPTP_v9_0_0_7Parser.Thf_subtypeContext = Thf_subtypeContext; 
+TPTP_v9_0_0_7Parser.Thf_definitionContext = Thf_definitionContext; 
+TPTP_v9_0_0_7Parser.Thf_sequentContext = Thf_sequentContext; 
+TPTP_v9_0_0_7Parser.Tff_formulaContext = Tff_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_logic_formulaContext = Tff_logic_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_binary_formulaContext = Tff_binary_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_binary_nonassocContext = Tff_binary_nonassocContext; 
+TPTP_v9_0_0_7Parser.Tff_binary_assocContext = Tff_binary_assocContext; 
+TPTP_v9_0_0_7Parser.Tff_or_formulaContext = Tff_or_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_and_formulaContext = Tff_and_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_unit_formulaContext = Tff_unit_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_preunit_formulaContext = Tff_preunit_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_unitary_formulaContext = Tff_unitary_formulaContext; 
+TPTP_v9_0_0_7Parser.Txf_unitary_formulaContext = Txf_unitary_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_quantified_formulaContext = Tff_quantified_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_variable_listContext = Tff_variable_listContext; 
+TPTP_v9_0_0_7Parser.Tff_variableContext = Tff_variableContext; 
+TPTP_v9_0_0_7Parser.Tff_typed_variableContext = Tff_typed_variableContext; 
+TPTP_v9_0_0_7Parser.Tff_unary_formulaContext = Tff_unary_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_prefix_unaryContext = Tff_prefix_unaryContext; 
+TPTP_v9_0_0_7Parser.Tff_infix_unaryContext = Tff_infix_unaryContext; 
+TPTP_v9_0_0_7Parser.Tff_atomic_formulaContext = Tff_atomic_formulaContext; 
+TPTP_v9_0_0_7Parser.Tff_plain_atomicContext = Tff_plain_atomicContext; 
+TPTP_v9_0_0_7Parser.Tff_defined_atomicContext = Tff_defined_atomicContext; 
+TPTP_v9_0_0_7Parser.Tff_defined_plainContext = Tff_defined_plainContext; 
+TPTP_v9_0_0_7Parser.Tff_defined_infixContext = Tff_defined_infixContext; 
+TPTP_v9_0_0_7Parser.Tff_system_atomicContext = Tff_system_atomicContext; 
+TPTP_v9_0_0_7Parser.Txf_letContext = Txf_letContext; 
+TPTP_v9_0_0_7Parser.Txf_let_typesContext = Txf_let_typesContext; 
+TPTP_v9_0_0_7Parser.Tff_atom_typing_listContext = Tff_atom_typing_listContext; 
+TPTP_v9_0_0_7Parser.Txf_let_defnsContext = Txf_let_defnsContext; 
+TPTP_v9_0_0_7Parser.Txf_let_defnContext = Txf_let_defnContext; 
+TPTP_v9_0_0_7Parser.Txf_let_LHSContext = Txf_let_LHSContext; 
+TPTP_v9_0_0_7Parser.Txf_let_defn_listContext = Txf_let_defn_listContext; 
+TPTP_v9_0_0_7Parser.Nxf_atomContext = Nxf_atomContext; 
+TPTP_v9_0_0_7Parser.Tff_termContext = Tff_termContext; 
+TPTP_v9_0_0_7Parser.Tff_unitary_termContext = Tff_unitary_termContext; 
+TPTP_v9_0_0_7Parser.Txf_tupleContext = Txf_tupleContext; 
+TPTP_v9_0_0_7Parser.Tff_argumentsContext = Tff_argumentsContext; 
+TPTP_v9_0_0_7Parser.Comma_tff_termContext = Comma_tff_termContext; 
+TPTP_v9_0_0_7Parser.Tff_atom_typingContext = Tff_atom_typingContext; 
+TPTP_v9_0_0_7Parser.Tff_top_level_typeContext = Tff_top_level_typeContext; 
+TPTP_v9_0_0_7Parser.Tff_non_atomic_typeContext = Tff_non_atomic_typeContext; 
+TPTP_v9_0_0_7Parser.Tf1_quantified_typeContext = Tf1_quantified_typeContext; 
+TPTP_v9_0_0_7Parser.Tff_monotypeContext = Tff_monotypeContext; 
+TPTP_v9_0_0_7Parser.Tff_unitary_typeContext = Tff_unitary_typeContext; 
+TPTP_v9_0_0_7Parser.Tff_atomic_typeContext = Tff_atomic_typeContext; 
+TPTP_v9_0_0_7Parser.Tff_type_argumentsContext = Tff_type_argumentsContext; 
+TPTP_v9_0_0_7Parser.Tff_mapping_typeContext = Tff_mapping_typeContext; 
+TPTP_v9_0_0_7Parser.Tff_xprod_typeContext = Tff_xprod_typeContext; 
+TPTP_v9_0_0_7Parser.Txf_tuple_typeContext = Txf_tuple_typeContext; 
+TPTP_v9_0_0_7Parser.Tff_type_listContext = Tff_type_listContext; 
+TPTP_v9_0_0_7Parser.Tff_subtypeContext = Tff_subtypeContext; 
+TPTP_v9_0_0_7Parser.Txf_definitionContext = Txf_definitionContext; 
+TPTP_v9_0_0_7Parser.Txf_sequentContext = Txf_sequentContext; 
+TPTP_v9_0_0_7Parser.Nhf_long_connectiveContext = Nhf_long_connectiveContext; 
+TPTP_v9_0_0_7Parser.Nhf_parameter_listContext = Nhf_parameter_listContext; 
+TPTP_v9_0_0_7Parser.Nhf_parameterContext = Nhf_parameterContext; 
+TPTP_v9_0_0_7Parser.Nhf_key_pairContext = Nhf_key_pairContext; 
+TPTP_v9_0_0_7Parser.Nxf_long_connectiveContext = Nxf_long_connectiveContext; 
+TPTP_v9_0_0_7Parser.Nxf_parameter_listContext = Nxf_parameter_listContext; 
+TPTP_v9_0_0_7Parser.Nxf_parameterContext = Nxf_parameterContext; 
+TPTP_v9_0_0_7Parser.Nxf_key_pairContext = Nxf_key_pairContext; 
+TPTP_v9_0_0_7Parser.Ntf_connective_nameContext = Ntf_connective_nameContext; 
+TPTP_v9_0_0_7Parser.Ntf_indexContext = Ntf_indexContext; 
+TPTP_v9_0_0_7Parser.Ntf_short_connectiveContext = Ntf_short_connectiveContext; 
+TPTP_v9_0_0_7Parser.Tcf_formulaContext = Tcf_formulaContext; 
+TPTP_v9_0_0_7Parser.Tcf_logic_formulaContext = Tcf_logic_formulaContext; 
+TPTP_v9_0_0_7Parser.Tcf_quantified_formulaContext = Tcf_quantified_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_formulaContext = Fof_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_logic_formulaContext = Fof_logic_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_binary_formulaContext = Fof_binary_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_binary_nonassocContext = Fof_binary_nonassocContext; 
+TPTP_v9_0_0_7Parser.Fof_binary_assocContext = Fof_binary_assocContext; 
+TPTP_v9_0_0_7Parser.Fof_or_formulaContext = Fof_or_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_and_formulaContext = Fof_and_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_unary_formulaContext = Fof_unary_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_infix_unaryContext = Fof_infix_unaryContext; 
+TPTP_v9_0_0_7Parser.Fof_unit_formulaContext = Fof_unit_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_unitary_formulaContext = Fof_unitary_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_quantified_formulaContext = Fof_quantified_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_variable_listContext = Fof_variable_listContext; 
+TPTP_v9_0_0_7Parser.Fof_atomic_formulaContext = Fof_atomic_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_plain_atomic_formulaContext = Fof_plain_atomic_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_defined_atomic_formulaContext = Fof_defined_atomic_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_defined_plain_formulaContext = Fof_defined_plain_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_defined_infix_formulaContext = Fof_defined_infix_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_system_atomic_formulaContext = Fof_system_atomic_formulaContext; 
+TPTP_v9_0_0_7Parser.Fof_plain_termContext = Fof_plain_termContext; 
+TPTP_v9_0_0_7Parser.Fof_defined_termContext = Fof_defined_termContext; 
+TPTP_v9_0_0_7Parser.Fof_defined_atomic_termContext = Fof_defined_atomic_termContext; 
+TPTP_v9_0_0_7Parser.Fof_defined_plain_termContext = Fof_defined_plain_termContext; 
+TPTP_v9_0_0_7Parser.Fof_system_termContext = Fof_system_termContext; 
+TPTP_v9_0_0_7Parser.Fof_argumentsContext = Fof_argumentsContext; 
+TPTP_v9_0_0_7Parser.Fof_termContext = Fof_termContext; 
+TPTP_v9_0_0_7Parser.Fof_function_termContext = Fof_function_termContext; 
+TPTP_v9_0_0_7Parser.Fof_sequentContext = Fof_sequentContext; 
+TPTP_v9_0_0_7Parser.Fof_formula_tupleContext = Fof_formula_tupleContext; 
+TPTP_v9_0_0_7Parser.Fof_formula_tuple_listContext = Fof_formula_tuple_listContext; 
+TPTP_v9_0_0_7Parser.Comma_fof_logic_formulaContext = Comma_fof_logic_formulaContext; 
+TPTP_v9_0_0_7Parser.Cnf_formulaContext = Cnf_formulaContext; 
+TPTP_v9_0_0_7Parser.Cnf_disjunctionContext = Cnf_disjunctionContext; 
+TPTP_v9_0_0_7Parser.Cnf_literalContext = Cnf_literalContext; 
+TPTP_v9_0_0_7Parser.Thf_quantifierContext = Thf_quantifierContext; 
+TPTP_v9_0_0_7Parser.Thf_unary_connectiveContext = Thf_unary_connectiveContext; 
+TPTP_v9_0_0_7Parser.Th1_quantifierContext = Th1_quantifierContext; 
+TPTP_v9_0_0_7Parser.Th0_quantifierContext = Th0_quantifierContext; 
+TPTP_v9_0_0_7Parser.Subtype_signContext = Subtype_signContext; 
+TPTP_v9_0_0_7Parser.Tff_unary_connectiveContext = Tff_unary_connectiveContext; 
+TPTP_v9_0_0_7Parser.Tff_quantifierContext = Tff_quantifierContext; 
+TPTP_v9_0_0_7Parser.Fof_quantifierContext = Fof_quantifierContext; 
+TPTP_v9_0_0_7Parser.Nonassoc_connectiveContext = Nonassoc_connectiveContext; 
+TPTP_v9_0_0_7Parser.Assoc_connectiveContext = Assoc_connectiveContext; 
+TPTP_v9_0_0_7Parser.Unary_connectiveContext = Unary_connectiveContext; 
+TPTP_v9_0_0_7Parser.Gentzen_arrowContext = Gentzen_arrowContext; 
+TPTP_v9_0_0_7Parser.AssignmentContext = AssignmentContext; 
+TPTP_v9_0_0_7Parser.IdenticalContext = IdenticalContext; 
+TPTP_v9_0_0_7Parser.Type_constantContext = Type_constantContext; 
+TPTP_v9_0_0_7Parser.Type_functorContext = Type_functorContext; 
+TPTP_v9_0_0_7Parser.Defined_typeContext = Defined_typeContext; 
+TPTP_v9_0_0_7Parser.AtomContext = AtomContext; 
+TPTP_v9_0_0_7Parser.Untyped_atomContext = Untyped_atomContext; 
+TPTP_v9_0_0_7Parser.Defined_infix_predContext = Defined_infix_predContext; 
+TPTP_v9_0_0_7Parser.Infix_equalityContext = Infix_equalityContext; 
+TPTP_v9_0_0_7Parser.Infix_inequalityContext = Infix_inequalityContext; 
+TPTP_v9_0_0_7Parser.ConstantContext = ConstantContext; 
+TPTP_v9_0_0_7Parser.FunctorContext = FunctorContext; 
+TPTP_v9_0_0_7Parser.Defined_constantContext = Defined_constantContext; 
+TPTP_v9_0_0_7Parser.Defined_functorContext = Defined_functorContext; 
+TPTP_v9_0_0_7Parser.System_constantContext = System_constantContext; 
+TPTP_v9_0_0_7Parser.System_functorContext = System_functorContext; 
+TPTP_v9_0_0_7Parser.Def_or_sys_constantContext = Def_or_sys_constantContext; 
+TPTP_v9_0_0_7Parser.Th1_defined_termContext = Th1_defined_termContext; 
+TPTP_v9_0_0_7Parser.Defined_termContext = Defined_termContext; 
+TPTP_v9_0_0_7Parser.VariableContext = VariableContext; 
+TPTP_v9_0_0_7Parser.SourceContext = SourceContext; 
+TPTP_v9_0_0_7Parser.SourcesContext = SourcesContext; 
+TPTP_v9_0_0_7Parser.Dag_sourceContext = Dag_sourceContext; 
+TPTP_v9_0_0_7Parser.Inference_recordContext = Inference_recordContext; 
+TPTP_v9_0_0_7Parser.Inference_ruleContext = Inference_ruleContext; 
+TPTP_v9_0_0_7Parser.Internal_sourceContext = Internal_sourceContext; 
+TPTP_v9_0_0_7Parser.Intro_typeContext = Intro_typeContext; 
+TPTP_v9_0_0_7Parser.External_sourceContext = External_sourceContext; 
+TPTP_v9_0_0_7Parser.File_sourceContext = File_sourceContext; 
+TPTP_v9_0_0_7Parser.File_infoContext = File_infoContext; 
+TPTP_v9_0_0_7Parser.TheoryContext = TheoryContext; 
+TPTP_v9_0_0_7Parser.Theory_nameContext = Theory_nameContext; 
+TPTP_v9_0_0_7Parser.Creator_sourceContext = Creator_sourceContext; 
+TPTP_v9_0_0_7Parser.Creator_nameContext = Creator_nameContext; 
+TPTP_v9_0_0_7Parser.ParentsContext = ParentsContext; 
+TPTP_v9_0_0_7Parser.Parent_listContext = Parent_listContext; 
+TPTP_v9_0_0_7Parser.Comma_parent_infoContext = Comma_parent_infoContext; 
+TPTP_v9_0_0_7Parser.Parent_infoContext = Parent_infoContext; 
+TPTP_v9_0_0_7Parser.Parent_detailsContext = Parent_detailsContext; 
+TPTP_v9_0_0_7Parser.Optional_infoContext = Optional_infoContext; 
+TPTP_v9_0_0_7Parser.Useful_infoContext = Useful_infoContext; 
+TPTP_v9_0_0_7Parser.IncludeContext = IncludeContext; 
+TPTP_v9_0_0_7Parser.Include_optionalsContext = Include_optionalsContext; 
+TPTP_v9_0_0_7Parser.Formula_selectionContext = Formula_selectionContext; 
+TPTP_v9_0_0_7Parser.Name_listContext = Name_listContext; 
+TPTP_v9_0_0_7Parser.Space_nameContext = Space_nameContext; 
+TPTP_v9_0_0_7Parser.General_termContext = General_termContext; 
+TPTP_v9_0_0_7Parser.General_dataContext = General_dataContext; 
+TPTP_v9_0_0_7Parser.General_functionContext = General_functionContext; 
+TPTP_v9_0_0_7Parser.Formula_dataContext = Formula_dataContext; 
+TPTP_v9_0_0_7Parser.General_listContext = General_listContext; 
+TPTP_v9_0_0_7Parser.General_termsContext = General_termsContext; 
+TPTP_v9_0_0_7Parser.Comma_general_termContext = Comma_general_termContext; 
+TPTP_v9_0_0_7Parser.NameContext = NameContext; 
+TPTP_v9_0_0_7Parser.Atomic_wordContext = Atomic_wordContext; 
+TPTP_v9_0_0_7Parser.Atomic_defined_wordContext = Atomic_defined_wordContext; 
+TPTP_v9_0_0_7Parser.Atomic_system_wordContext = Atomic_system_wordContext; 
+TPTP_v9_0_0_7Parser.NumberContext = NumberContext; 
+TPTP_v9_0_0_7Parser.File_nameContext = File_nameContext; 
+TPTP_v9_0_0_7Parser.NullContext = NullContext; 

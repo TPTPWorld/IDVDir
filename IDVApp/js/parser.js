@@ -91,7 +91,7 @@ function getParentsFromSource(source, node){
 
 		//@=========================================================================================
 		//~ ORIGINAL FROM JACK
-		// let parent_list = inference_record.parents().parent_list().parent_info();
+		// let parent_list = inference_record.inference_parents().parent_list().parent_info();
 
 		//~ MODIFIED TO USE COMMA_PARENT_INFO
 		let parent_list = [inference_record.parents().parent_list().parent_info()];
@@ -209,7 +209,7 @@ class Formatter extends Listener {
             level: undefined,
 			tptp: ctx.parentCtx.parentCtx.getText()
 		};
-
+ 
 		// try to get node info...(contains interestingness)
 		try {
 			//@=========================================================================================

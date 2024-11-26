@@ -33,3 +33,14 @@ pip install antlr4-tools
 ```
 
 - Output JS antlr parsers will be in IDVApp for the electron app to use
+
+
+
+
+
+### For Daniel and Esteban use ONLY:
+
+
+```
+cd g4; antlr4 -Dlanguage=JavaScript TPTP.g4 -o ../../IDVApp/tptp; cd ../../IDVApp; npm run build; cd ../BNF2ANTLR
+```
