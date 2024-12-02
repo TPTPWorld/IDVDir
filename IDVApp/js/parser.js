@@ -86,15 +86,18 @@ function getParentsFromSource(source, node){
 	}
 
 	if (dag.inference_record()) {
+		console.log("got inference record");
 		let inference_record = dag.inference_record();
 		node.inference_record = inference_record.getText();
 
 		//@=========================================================================================
 		//~ ORIGINAL FROM JACK
 		// let parent_list = inference_record.parents().parent_list().parent_info();
-
+		
 		//~ MODIFIED TO USE COMMA_PARENT_INFO
 		let parent_list = [inference_record.parents().parent_list().parent_info()];
+		window.parent_list = parent_list;
+		window.inference_record = inference_record;
 
 		parent_list = parent_list.concat(
 			inference_record.parents().parent_list().comma_parent_info()
@@ -102,6 +105,8 @@ function getParentsFromSource(source, node){
 		);
 		//@=========================================================================================
 		
+		console.log("parent_list", parent_list);
+
 		for (let i = 0; i < parent_list.length; i++) {
 			let p = parent_list[i];
 			let ps = p.source();
@@ -113,7 +118,10 @@ function getParentsFromSource(source, node){
 				else{
 					try{
 						let sources = [];
+						window.ps = ps;
 						let parents = ps.dag_source().inference_record().parents().parent_list().parent_info();
+						parents = [parents, ...ps.dag_source().inference_record().parents().parent_list().comma_parent_info().map(x => x.parent_info())];
+						// window.parents = parents;
 						sources = parents.map(x => x.source());
 						
 						for(let s of sources){
@@ -121,6 +129,7 @@ function getParentsFromSource(source, node){
 						}
 					}catch(e){
 						console.log(`failed to parse dag source: ${ps.dag_source().getText()}`);
+						console.log(e);
 					}
 				}
 			}
@@ -139,6 +148,7 @@ function getParentsFromSource(source, node){
 		node.parents.push(dag.name().getText());
 	}
 }
+window.getParentsFromSource = getParentsFromSource;
 
 
 
