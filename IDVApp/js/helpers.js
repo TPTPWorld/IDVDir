@@ -13,6 +13,15 @@ function htmlDecode(value) {
 	return el.innerText;
 }
 
+function showLoadingSpinner() {
+	document.getElementById("loadingSymbol").classList.remove("hidden");
+}
+
+function hideLoadingSpinner() {
+	document.getElementById("loadingSymbol").classList.add("hidden")
+}
+
+
 function ancestors(node, depth = 0, proofObj = window.proof){
 	let l = [];
 	let queue = [[node, depth]];
@@ -101,6 +110,7 @@ function getNodeName(hovered){
 }
 
 function showGV(dot) {
+	showLoadingSpinner()
 	graphviz.renderDot(htmlDecode(dot));
 	graphviz.on("end", function () {
 		// add hover eventlisteners and update window.proof to tell
@@ -115,6 +125,7 @@ function showGV(dot) {
 				window.nodeName = nodeName;
 			}
 		}
+		hideLoadingSpinner();
 	});
 }
 
@@ -239,6 +250,7 @@ function getInterest() {
 		toggleInterestScaling();
 	}
 
+	showLoadingSpinner()
 
 	// MODIFIED FOR STANDALONE HTML
 	const formData = new FormData();
@@ -264,10 +276,10 @@ function getInterest() {
 		const end = text.indexOf("</PRE>");
 		text = text.slice(begin, end);
 
-		console.log(text);
+		// console.log(text);
 
 		text = htmlDecode(text);
-		window.text = text;
+		// window.text = text;
 		
 		let interestProof = parseProof(text);
 
@@ -276,6 +288,8 @@ function getInterest() {
 		}
 		redrawNodesByInterest();
 	})
+	.catch(function(v){alert("Failed to query TPTP for interestingness!");})
+	.finally(function(v) {hideLoadingSpinner()});
 }
 window.getInterest = getInterest;
 
