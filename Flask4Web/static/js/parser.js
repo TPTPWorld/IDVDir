@@ -114,6 +114,7 @@ function getParentsFromSource(source, node){
 					try{
 						let sources = [];
 						let parents = ps.dag_source().inference_record().parents().parent_list().parent_info();
+						parents = [parents, ...ps.dag_source().inference_record().parents().parent_list().comma_parent_info().map(x => x.parent_info())];
 						sources = parents.map(x => x.source());
 						
 						for(let s of sources){

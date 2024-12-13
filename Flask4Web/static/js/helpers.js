@@ -247,28 +247,41 @@ window.assignInterestingnessToHeightAndWidth = assignInterestingnessToHeightAndW
 function getInterest() {
 	showLoadingSpinner();
 	Array.from(document.querySelectorAll(".interestHidden")).map(x => x.style.display = "block");
-	if(!window.interestScalingBool){
-		toggleInterestScaling();
-	}
+	        if(!window.interestScalingBool){
+                toggleInterestScaling();
+        }
 
-	fetch("/idv/interestingness", {
-		method: 'POST',
-		body: JSON.stringify({
-			"proof": document.getElementById("proofText").innerText
-		})
-	})
-	.then(response => response.text())
-	.then(function (response) { console.log(response); return response })
-	.then(function (text) {
-		text = htmlDecode(text);
-		let interestProof = parseProof(text);
+        // MODIFIED FOR STANDALONE HTML
+        const formData = new FormData();
+        formData.append('ProblemSource', 'FORMULAE');
+        formData.append('FORMULAEProblem', document.getElementById("proofText").innerText);
+        formData.append('SolutionFormat', 'TPTP');
+        formData.append('QuietFlag', '-q01');
+        formData.append('SubmitButton', 'ProcessSolution');
+        formData.append('System___AGInTRater---0.0', 'AGInTRater---0.0');
+        formData.append('TimeLimit___AGInTRater---0.0', '60');
+        formData.append('Transform___AGInTRater---0.0', 'none');
+        formData.append('Format___AGInTRater---0.0', 'tptp:raw');
+        formData.append('Command___AGInTRater---0.0', 'AGInTRater -c %s');
 
-		for (let key of Object.keys(originalProof)) {
-			originalProof[key].info.interesting = interestProof[key].info.interesting;
-		}
-		redrawNodesByInterest();
-	})
-	.catch(function(v){alert("Failed to query TPTP for interestingness!");})
+        fetch("https://tptp.org/cgi-bin/SystemOnTPTPFormReply", {
+                method: 'POST',
+                body: formData
+        })
+        .then(response => response.text())
+        .then(function (response) { console.log(response); return response })
+        .then(function (text) {
+                const begin = text.indexOf("<PRE>") + 5;
+                const end = text.indexOf("</PRE>");
+                text = text.slice(begin, end);
+                text = htmlDecode(text);
+                let interestProof = parseProof(text);
+
+                for (let key of Object.keys(originalProof)) {
+                        originalProof[key].info.interesting = interestProof[key].info.interesting;
+                }
+                redrawNodesByInterest();
+        }).catch(function(v){alert("Failed to query TPTP for interestingness!");})
 	.finally(function(v) {hideLoadingSpinner()});
 }
 window.getInterest = getInterest;
