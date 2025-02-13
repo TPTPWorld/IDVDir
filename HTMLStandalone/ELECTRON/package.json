@@ -1,0 +1,21 @@
+{
+  "name": "idv-app",
+  "productName": "IDV App",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . dev",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DE",
+  "license": "MIT",
+  "description": "IDV APP",
+  "dependencies": {
+    "antlr4": "^4.13.2",
+    "webpack": "^5.96.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}
