@@ -1,14 +1,5 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>IDV App</title>
-
-    <link
-      rel="shortcut icon"
-      href="https://tptp.org/CGIcons/IDV.png"
-      type="image/x-icon"
-    />
-
+  <body>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script
       src="https://unpkg.com/@hpcc-js/wasm@1.20.1/dist/index.js"
@@ -1591,31 +1582,29 @@
 
       /*# sourceMappingURL=three-dots.css.map */
     </style>
-  </head>
-
-  <body>
     <div id="index">
-      <h1>Upload a File</h1>
+      <pre id="output" style="display: none">
+PROOF_GOES_HERE
+      </pre>
 
       <input type="file" name="fileUploadBtn" id="fileUploadBtn" />
-
-      <pre id="output" style="display: none"></pre>
-
       <button id="visualizeBtn" onclick="visualize()">Visualize</button>
-
       <script type="text/javascript">
-        document
-          .getElementById("fileUploadBtn")
-          .addEventListener("change", function () {
+        if (document.getElementById("output").textContent.trim().includes("PROOF_GOES_HERE")) {
+          document.getElementById("fileUploadBtn").addEventListener("change", function () {
             let fr = new FileReader();
             fr.onload = function () {
               document.getElementById("output").textContent = fr.result;
             };
-
             fr.readAsBinaryString(this.files[0]);
           });
-
+        } else {
+          document.getElementById("fileUploadBtn").style.display = "none";
+        }
+      </script>
+      <script type="text/javascript">
         function visualize() {
+//----Hide the button
           document.querySelector("#index").style.display = "none";
           document.querySelector("#idv").style.display = "flex";
           document.querySelector("#proofText").innerHTML =
@@ -1701,13 +1690,10 @@
               <hr />
               <ul>
                 <li>
-                  The Interactive Derivation Viewer (IDV) <br />was written at
-                  the <a href="https://miami.edu">University of Miami.</a>
+                  The Interactive Derivation Viewer (IDV) <br />was written as part of the
+                  <a href="https://tptp.org">TPTP World.</a>
                 </li>
-                <li>
-                  Daniel Li & Esteban Morales developed a standalone IDV to be
-                  distributed
-                </li>
+                <li> Daniel Li & Esteban Morales developed a standalone IDV.</li>
                 <li>Jack McKeown finished the conversion and deployment.</li>
                 <li>Jack McKeown adapted it for viewing intepretations.</li>
                 <li>Joe Masterjohn started the conversion to a web app.</li>
@@ -1735,7 +1721,6 @@
       <p id="proofText" style="display: none"></p>
 
       <script src="https://tptp.org/CGIFormData/IDVBundle.js"></script>
-      <!-- <script src="../js/bundle.js"></script> -->
       <script>
         window.interestScalingBool = false;
 

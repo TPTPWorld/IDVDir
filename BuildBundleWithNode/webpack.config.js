@@ -1,13 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: '../Flask4Web/static/js/helpers.js',
+  entry: './static/js/helpers.js',
   output: {
-    path: path.resolve(__dirname, '../Flask4Web/static/js'),
+    path: path.resolve(__dirname, './static/js'),
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".css"],
+    extensions: [".ts", ".tsx", ".js", ".css", ".mjs"],
     fallback: {
       fs: false,
       module: false,
