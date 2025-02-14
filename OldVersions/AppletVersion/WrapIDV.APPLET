@@ -1,0 +1,96 @@
+#!/usr/bin/perl -w
+
+use strict "vars";
+use IPC::Open2;
+#------------------------------------------------------------------------------
+my $TPTPDirectory = "/home/tptp";
+
+if (exists($ENV{TPTP_HOME})) {
+    $TPTPDirectory = $ENV{TPTP_HOME};
+}
+
+my $CLayoutCommand = "$TPTPDirectory/Systems/IDV---0.0/CLayout";
+my $tptp4XCommand = "$TPTPDirectory/ServiceTools/tptp4X";
+#------------------------------------------------------------------------------
+    my $Coordinates;
+    my @Lines;
+    my $TPTPLines;
+    my $COORDLines;
+    my @TPTPFormulae;
+    my $FormulaIndex;
+    my $Formula;
+
+    $| = 1;
+    if (!defined($ARGV[0]) || ($ARGV[0] ne "--" && (!(-f $ARGV[0]) || 
+!(-r $ARGV[0])))) { 
+        print("\nERROR: Cannot find solution file\n");
+        exit;
+    }
+
+    open(READHANDLE,"$tptp4XCommand -N -c $ARGV[0]|") or 
+die("ERROR: Cannot open $ARGV[0]\n");
+    @Lines = <READHANDLE>;
+    close(READHANDLE);
+#----Check that there are some formulae
+    if (!ATPTPFormatDerivation(@Lines)) {
+        print("\nERROR: That does not look like a TPTP format derivation\n");
+        exit;
+    }
+
+    $TPTPLines = join("",@Lines);
+    @TPTPFormulae = split(/\. *\n/,$TPTPLines);
+    foreach $Formula (@TPTPFormulae) {
+        $Formula =~ s/^[ \n]*//;
+        $Formula =~ s/\n */ /g;
+        $Formula .= ".";
+    }
+
+#----Compute coordinates
+    open2(READHANDLE,WRITEHANDLE,"$CLayoutCommand") ||
+die("ERROR: Cannot run CLayout\n");
+    print(WRITEHANDLE $TPTPLines);
+    close(WRITEHANDLE);
+    @Lines = <READHANDLE>;
+    close(READHANDLE);
+    $COORDLines = join("",@Lines);
+#DEBUG print("CLayout says ==$COORDLines==\n");
+    if ($COORDLines eq "") {
+        print(
+"WARNING: Coordinates will be computed in the browser - be patient\n");
+    }
+
+    print("<HTML>\n");
+    print("Loading IDV ... \n");
+    print("<APPLET CODE=\"IDVApplet.class\" ARCHIVE=\"http://www.cs.miami.edu/~tptp/JARS/IDV.jar,http://www.cs.miami.edu/~tptp/JARS/TptpParser.jar,http://www.cs.miami.edu/~tptp/JARS/antlr-2.7.5.jar,http://www.cs.miami.edu/~tptp/JARS/ClientHttpRequest.jar\" WIDTH=100 HEIGHT=1>\n");
+# print("<PARAM NAME=\"TPTP\" VALUE=\"$TPTPLines\">\n");
+    $FormulaIndex = 1;
+    foreach $Formula (@TPTPFormulae) {
+        print("<PARAM NAME=TPTP$FormulaIndex VALUE=\"$Formula\">\n");
+        $FormulaIndex++;
+    }
+    if ($COORDLines ne "") {
+        print("<PARAM NAME=\"COORD\" VALUE=\"$COORDLines\">\n");
+    }
+    print("</APPLET>\n");
+    print("<P>\n% SZS status Success\n");
+    print("</HTML>\n");
+#------------------------------------------------------------------------------
+sub ATPTPFormatDerivation {
+    my (@Lines) = @_;
+
+    my @FormulaHeadingLines;
+
+    @FormulaHeadingLines = grep(/[cft][noh]f\(/,@Lines);
+#DEBUG print("====@FormulaHeadingLines===\n");
+    if (scalar(@FormulaHeadingLines) >= 1) {
+#----Rough check it's not a model
+        if (grep(/fi_domain/,@FormulaHeadingLines)) {
+            return(0);
+        } else {
+            return(1);
+        }
+    } else {
+        return(0);
+    }
+}
+#------------------------------------------------------------------------------

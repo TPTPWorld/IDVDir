@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+import argparse
+
+template = """
+    <HTML>
+    <div id="proof">
+        PROOF_GOES_HERE
+    </div>
+
+    <script>
+        window.url = "https://tptp.org/idv/idv"
+        function submitProofToIDV(proof) {
+            let form = document.createElement("form");
+            form.id = "form"
+            form.method = "POST"
+            form.enctype = "multipart/form-data"
+            form.action = window.url
+
+            let proofInput = document.createElement("textarea");
+            proofInput.value = proof
+            proofInput.name = "proof"
+            proofInput.form = "form"
+
+            let button = document.createElement("input");
+            button.type = "submit"
+
+            let interpretationBool = document.createElement("input");
+            interpretationBool.name = "interpretation"
+            interpretationBool.type = "text"
+            interpretationBool.value = "INTERPRETATION_BOOL"
+
+            form.appendChild(proofInput)
+            form.appendChild(button)
+            form.appendChild(interpretationBool)
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        let proof = document.getElementById("proof").innerText;
+        submitProofToIDV(proof);
+    </script>
+    </HTML>
+"""
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filename")
+    parser.add_argument("--interpretation", action="store_true")
+    args = parser.parse_args()
+    filename = args.filename
+
+    with open(filename) as solutionFile:
+        outputHTML = template.replace("PROOF_GOES_HERE", "<br>".join(solutionFile.readlines()))
+        outputHTML = outputHTML.replace("INTERPRETATION_BOOL", "true" if args.interpretation else "false")
+        print(outputHTML)
+

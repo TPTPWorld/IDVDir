@@ -1,0 +1,66 @@
+#!/usr/bin/perl -w
+#----------------------------------------------------------------------
+use CGI;
+use IPC::Open2;
+#----------------------------------------------------------------------
+    my $TSTPDirectory = "/home/tptp/TSTP/Solutions";
+    my $CGI;
+    my @Problem;
+    my $CLayout = "/home/tptp/public_html/cgi-bin/IDV/CLayout";
+    my $RDR;
+    my $WTR;
+
+#----Read in Params
+    $CGI = new CGI;
+    print($CGI->header);
+    print($CGI->start_html(-title => 'IDV',
+                           -onLoad => 'window.resizeTo(20,10)'));
+
+    $Category = $CGI->param("Category");
+    $Domain = $CGI->param("Domain");
+    $File = $CGI->param("File");
+    $System = $CGI->param("System");
+    if (!defined($Category) || !defined($Domain) || !defined($File) || !defined($System)) {
+        print("Missing parameters\n");
+        print($CGI->end_html);
+        return;
+    }
+    if ($Category ne "Solutions") {
+        print("Can only draw solution DAGs");
+        print($CGI->end_html);
+        return;
+    }
+
+#----Get the problem
+    open($RDR,"<$TSTPDirectory/$Domain/$File/$System") or 
+die("Cannot open problem file");
+    @Problem = <$RDR>;
+    close($RDR);
+
+#----Call CLayout
+#DEBUG print("begin \n");
+
+    open2($RDR, $WTR, "$CLayout") || die "Cannot open file";
+    print $WTR @Problem;
+    close $WTR;
+
+#DEBUG print("about to read\n");
+    while(<$RDR>) {
+        $Coord .= "$_";
+    }
+    close($RDR);
+#DEBUG print("done reading\n");
+
+#    $Problem =~ s/\r/\\/g;
+
+#DEBUG print $Coord;
+    print("<APPLET CODE=\"IDVApplet.class\" ARCHIVE=\"http://www.cs.miami.edu/~tptp/IDV.jar,http://www.cs.miami.edu/~tptp/TptpParser.jar,http://www.cs.miami.edu/~tptp/antlr-2.7.5.jar\" WIDTH=100 HEIGHT=1>\n");
+    print("<PARAM NAME=\"COORD\" VALUE=\"$Coord\"\n");
+#HEAVY WAY    print("<PARAM NAME=\"TPTP\" VALUE=\"@Problem\">\n");
+    print("<PARAM NAME=\"URL\" VALUE=\"http://www.cs.miami.edu/~tptp/cgi-bin/DVTPTP2WWW/view_file.pl?Category=$Category&Domain=$Domain&File=$File&System=$System&HTMLized=no\">\n");
+    print("</APPLET>\n");
+
+    print($CGI->end_html);
+
+#DEBUG print("done \n");
+#----------------------------------------------------------------------
