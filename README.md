@@ -7,6 +7,7 @@
 `cd ..`
 `npm run build`
 
+# THIS IS NO LONGER IN USE
 - How to setup with Apache using mod-wsgi.
 mod-wsgi works better if python is compiled using the --enable-shared flag:
 
