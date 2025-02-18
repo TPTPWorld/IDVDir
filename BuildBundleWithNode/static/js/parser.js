@@ -152,6 +152,7 @@ function getNodeLevel(source, node){
             source.internal_source().getText().match(regex)[1]
         );
     }
+    // console.log("Got node level", node.level);
 }
 
 // this class exists to format the relevant parts of the parse tree for ease of use.
@@ -220,8 +221,8 @@ class Formatter extends Listener {
 			}
 			node.info = infoObj;
 		} catch (e) {
-			console.log(`"${node.name}" has no info (or we failed getting it)`)
-			console.log(e)
+			console.log(`"${node.name}" has no useful info (or we failed getting it)`)
+			// console.log(e)
 		}
 
 		// try to get source...(contains parents)

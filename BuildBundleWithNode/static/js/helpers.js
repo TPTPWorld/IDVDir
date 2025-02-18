@@ -20,8 +20,6 @@ function hideLoadingSpinner() {
 	document.getElementById("loadingSymbol").classList.add("hidden")
 }
 
-
-
 function ancestors(node, depth = 0, proofObj = window.proof){
 	let l = [];
 	let queue = [[node, depth]];
@@ -35,11 +33,9 @@ function ancestors(node, depth = 0, proofObj = window.proof){
 		l.push(...parents);
 		queue.push(...parents);
 	}
-
 	return l;
 }
 window.ancestors = ancestors;
-
 
 function descendants(node, depth = 0, proofObj = window.proof){
 	let l = [];
@@ -58,7 +54,6 @@ function descendants(node, depth = 0, proofObj = window.proof){
 	return l;
 }
 window.descendants = descendants;
-
 
 function assignColorToNode(color, node) {
 	try{
@@ -351,7 +346,6 @@ function redrawNodesByInterest(){
 				child.parents.push(...node.parents);
 				child.parents = Array.from(new Set(child.parents));
 			}
-
 			delete window.proof[node.name];
 		}
 	}
@@ -382,17 +376,11 @@ function toggleConjectureVisible(el) {
 }
 window.toggleConjectureVisible = toggleConjectureVisible;
 
-
 //// end interestingness helpers ///////////////////
-
-
-
 
 window.parseProof = parseProof
 window.proofToGV = proofToGV
 window.showGV = showGV;
-
-
 
 window.collapseBox = function (title) {
 	let el = title.parentNode.children[1];
@@ -408,5 +396,4 @@ window.collapseBox = function (title) {
 		el.style.height = "auto";	
 		el.style.display = "block";
 	}
-
 }
