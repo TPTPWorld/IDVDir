@@ -1,11 +1,11 @@
 # IDV DIR
 
-- How to build `bundle.js` 
-`cd BuildBundleWithNode`
-`npm install`     % To update dependencies
-`java -jar antlr-4.10.1-complete.jar -Dlanguage=JavaScript TPTPv8.g4`
-`cd ..`
-`npm run build`
+- How to build `bundle.js`  
+`cd BuildBundleWithNode`  
+`npm install`     % To update dependencies  
+`java -jar antlr-4.10.1-complete.jar -Dlanguage=JavaScript TPTPv8.g4`  
+`cd ..`  
+`npm run build`  
 
 # THIS IS NO LONGER IN USE
 - How to setup with Apache using mod-wsgi.
