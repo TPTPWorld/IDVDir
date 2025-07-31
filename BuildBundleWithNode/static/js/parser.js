@@ -188,7 +188,13 @@ class Formatter extends Listener {
 	process(ctx, type) {
 		let role = ctx.formula_role().getText();
 		
-		if(!["conjecture", "negated_conjecture", "axiom", "plain"].includes(role)){
+		//@ D&E ADDED TO FIX THEOREM TYPE
+		// if(!["conjecture", "negated_conjecture", "axiom", "plain", "type"].includes(role)){
+		// 	console.log(`"${role}" role not shown for "${ctx.name().getText()}"`);
+		// 	return;
+		// }
+
+		if(!["conjecture", "negated_conjecture", "axiom", "plain", "type", "theorem"].includes(role)){
 			console.log(`"${role}" role not shown for "${ctx.name().getText()}"`);
 			return;
 		}
