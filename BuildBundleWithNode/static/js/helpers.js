@@ -68,7 +68,7 @@ function nodeIsUninteresting(node){
 	if(node.children.length == 0){
 		return false;
 	}
-
+i
 	let anc = ancestors(originalProof[node.name], 0, originalProof).map(function(vals){return vals[0].role;})
 
 	if (window.hideConjecture){
