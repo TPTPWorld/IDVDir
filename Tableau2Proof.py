@@ -10,7 +10,6 @@ from PythonParser.TPTPLexer import TPTPLexer
 from PythonParser.TPTPParser import TPTPParser
 from PythonParser.TPTPVisitor import TPTPVisitor
 
-
 class MyCNFVisitor(TPTPVisitor):
     def visitCnf_annotated(self, ctx):
         return ctx
@@ -63,41 +62,6 @@ def get_all_cnfs(filename="input.s"):
     for formula in all_formulas:
         if formula.startswith("cnf(") and "parent" in formula:
             ctx = parse_cnf(formula)
-            
-            # inference = ",".join(cut_formula.split(",")[3:])
-            # inference = inference.strip()
-            
-            # import json
-            
-            # print(json.dumps(
-            #     {
-            #         "raw": formula,
-            #         "name": ctx.name().getText(),
-            #         "formula_role": ctx.formula_role().getText(),
-            #         "formula": ctx.cnf_formula().getText(),
-            #         # "annotations": inference,
-            #         "inference_rule": ctx.annotations().source().dag_source().inference_record().inference_rule().getText(),
-            #         # "useful_info": re.match(pattern, inference).group(2),
-            #         "path": ctx.annotations().source().dag_source().inference_record().useful_info().getText().split("parent(")[1].split(")")[0],
-            #         "parents": ctx.annotations().source().dag_source().inference_record().parents().getText(),
-            #         "below": ctx.annotations().source().dag_source().inference_record().useful_info().getText().split("below(")[1].split(")")[0] if "below" in ctx.annotations().source().dag_source().inference_record().useful_info().getText() else None
-            #     }, indent=4)
-            # )
-            
-            # print(json.dumps(
-            #     {
-            #         "raw": formula,
-            #         "name": cut_formula.split(",")[0],
-            #         "formula_role": cut_formula.split(",")[1],
-            #         "formula": cnf_formula[1:-1].strip() if cnf_formula.strip().startswith('(') and cnf_formula.strip().endswith(')') else cnf_formula.strip(),
-            #         # "annotations": inference,
-            #         "inference_rule": re.match(inference_pattern, inference).group(1),
-            #         # "useful_info": re.match(pattern, inference).group(2),
-            #         "path": re.search(r'parent\(\s*([^)\s]+)\s*\)', inference).group(1) if "parent" in inference else re.match(inference_pattern, inference).group(2).strip("[]").split(","),
-            #         "parents": re.match(inference_pattern, inference).group(3),
-            #         "below": re.search(r'below\(\s*([^)\s]+)\s*\)', inference).group(1) if "below" in inference else None
-            #     }, indent=4)
-            # )
             
             all_cnfs['cnfs'].append(
                 {
@@ -184,7 +148,7 @@ def convert_cnfs(filename="input.s", output_filename=None, delete=False):
         
     # convert each cnf
     for cnf in all_cnfs:
-        if cnf['inference_rule'] != "lemma_extension" and cnf['inference_rule'] != "lemma": # for formulas
+        if cnf['inference_rule'] != "lemma_extension" and cnf['inference_rule'] != "lemma" and "false" not in cnf['formula']: # for formulas
             if cnf['formula'].startswith("(") and cnf['formula'].endswith(")"):
                 cnf['formula'] = cnf['formula'][1:-1]
                 
