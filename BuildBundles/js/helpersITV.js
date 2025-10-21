@@ -254,7 +254,7 @@ function nodeHoverEventListener(e) {
 				currDepth--;
 			}
 
-			console.log("ancestors after hoverParent", ignoredAnc);
+			// console.log("ancestors after hoverParent", ignoredAnc);
 		}
 
 		let minDepth = 0;
@@ -296,7 +296,7 @@ function nodeHoverEventListener(e) {
 				}
 			}
 	
-			console.log("descendants after hoverParent", ignoredDes);
+			// console.log("descendants after hoverParent", ignoredDes);
 		}
 		else {
 			let tmpDescendants = descendants(node);
@@ -304,10 +304,10 @@ function nodeHoverEventListener(e) {
 				let nodes = getNodeFromParent(nodeList, tmpDes[0].name);
 				let loopDepth = 1;
 				while (nodes.length == 0) {
-					console.log("tmpDes", tmpDes);
+					// console.log("tmpDes", tmpDes);
 					ignoredDes.push([tmpDes[0], loopDepth + 1]);
 					tmpDes = descendants(tmpDes[0])[0];
-					console.log("newtmpDes", tmpDes);
+					// console.log("newtmpDes", tmpDes);
 					nodes = getNodeFromParent(nodeList, tmpDes[0].name);
 					loopDepth++;
 				}
@@ -324,26 +324,11 @@ function nodeHoverEventListener(e) {
 					}
 				}
 
-				console.log("descendants after hoverParent", ignoredDes);			
+				// console.log("descendants after hoverParent", ignoredDes);			
 			}
 		}
 
-		let maxDepth = 0;
-		ignoredDes.forEach(function (d) {
-			if (d[1] > maxDepth) {
-				maxDepth = d[1];
-			}
-		});
-
-		for (let [d, depth] of ignoredDes) {
-			if(d.graphviz.fillcolor != "#000000")
-				assignColorToNode(colorHelper(depth, minDepth, maxDepth), d);
-		}
-
-
-		//~ ancestors part for pre-start nodes
 		let ignoredAnc = [];
-
 		let index = -1;
 		for (let ancNode of ancestors(node)) {
 			ignoredAnc.push([ancNode[0], index]);
@@ -357,6 +342,20 @@ function nodeHoverEventListener(e) {
 			}
 		});
 
+		let maxDepth = 0;
+		ignoredDes.forEach(function (d) {
+			if (d[1] > maxDepth) {
+				maxDepth = d[1];
+			}
+		});
+
+		for (let [d, depth] of ignoredDes) {
+			if(d.graphviz.fillcolor != "#000000")
+				assignColorToNode(colorHelper(depth, minDepth, maxDepth), d);
+		}
+
+		//~ ancestors part for pre-start nodes
+
 		for (let [a, depth] of ignoredAnc) { //~ same code as Jacks but coloring for ignoredAnc
 			if(a.graphviz.fillcolor != "#000000")
 				assignColorToNode(colorHelper(depth, minDepth, maxDepth), a);
@@ -367,7 +366,7 @@ function nodeHoverEventListener(e) {
 	}
 	//@========================================================================
 	else { // all regular nodes with level
-		console.log("regular node with level" + node.name);
+		// console.log("regular node with level" + node.name);
 
 		// console.log("ancestors", anc);
 		// console.log("descendants", des);

@@ -45,10 +45,10 @@ function interpretationLabel(node){
 function getNodeShape(node) {
 	let shapeMap = {
 		axiom: "invtriangle",
-		hypothesis: "diamond",
 		conjecture: "house",
 		negated_conjecture: "invhouse",
-		plain: "ellipse"
+		plain: "ellipse",
+		hypothesis: "diamond"
 	}
 	if (stripParens(node.formula) == "$false") {
 		return "box";
@@ -118,7 +118,7 @@ function getParentsFromSource(source, node){
 		// console.log("got inference record");
 		let inference_record = dag.inference_record();
 		node.inference_record = inference_record.getText();
-		console.log(inference_record.getText());
+		// console.log(inference_record.getText());
 
 		//@=========================================================================================
 		//~ ORIGINAL FROM JACK
@@ -202,7 +202,7 @@ function getNodeNextTo(source, node) {
 		node.nextTo = node.tptp.match(regex)[1];
 	}
 	catch(e) {
-		console.log(`node ${node.name} has no nextTo`)
+		// console.log(`node ${node.name} has no nextTo`)
 	}
 }
 
@@ -241,7 +241,7 @@ class Formatter extends Listener {
 	process(ctx, type) {
 		let role = ctx.formula_role().getText();
 		
-		if(!["conjecture", "negated_conjecture", "axiom", "hypothesis", "plain"].includes(role)){
+		if(!["conjecture", "negated_conjecture", "axiom", "plain", "hypothesis"].includes(role)){
 			console.log(`"${role}" role not shown for "${ctx.name().getText()}"`);
 			return;
 		}
@@ -274,7 +274,7 @@ class Formatter extends Listener {
 			}
 			node.info = infoObj;
 		} catch (e) {
-			console.log(`"${node.name}" has no useful info (or we failed getting it)`)
+			// console.log(`"${node.name}" has no useful info (or we failed getting it)`)
 			// console.log(e)
 		}
 
@@ -292,8 +292,8 @@ class Formatter extends Listener {
             getNodeLevel(source, node);
         }
         catch (e) {
-            console.log(`"${node.name}" has no level (or we failed getting it).`);
-			console.log(e);
+            // console.log(`"${node.name}" has no level (or we failed getting it).`);
+			// console.log(e);
         }
 		//@=========================================================================================
 		//~ D&E added to get nextTo 
@@ -301,8 +301,8 @@ class Formatter extends Listener {
             getNodeNextTo(source, node);
         }
         catch (e) {
-            console.log(`"${node.name}" has no nextTo (or we failed getting it).`);
-			console.log(e);
+            // console.log(`"${node.name}" has no nextTo (or we failed getting it).`);
+			// console.log(e);
         }
 		//@=========================================================================================
 
@@ -427,7 +427,7 @@ let proofToGV = function (nodes) {
     for(let node of nodeList){
         if (typeof node.level == 'number'){
             if (!Object.keys(levels).includes(`${node.level}`)){
-                console.log(`Level ${node.level} not in levels, making new`);
+                // console.log(`Level ${node.level} not in levels, making new`);
                 levels[node.level] = [];
             }
             levels[node.level].push(node.name);
@@ -539,6 +539,7 @@ let parseProof = function (proofText) {
 		}
 
 		let parentsCopy = Array.from(node['parents']);
+		// console.log(`Node ${node.name} has parents: ${parentsCopy}`);
 		for (let parentName of parentsCopy) {
 			if (parentName in nm) {
 				if (nm[parentName]["children"] === undefined) {
