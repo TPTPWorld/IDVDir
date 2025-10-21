@@ -83,7 +83,7 @@
         for (o = a, a = []; ++h < e2; ) o && o[h].run();
         h = -1, e2 = a.length;
       }
-      o = null, l = false, function(t3) {
+      o = null, l = false, (function(t3) {
         if (i === clearTimeout) return clearTimeout(t3);
         if ((i === n || !i) && clearTimeout) return i = clearTimeout, clearTimeout(t3);
         try {
@@ -95,7 +95,7 @@
             return i.call(this, t3);
           }
         }
-      }(t2);
+      })(t2);
     }
   }
   function d(t2, e2) {
@@ -274,7 +274,7 @@
       return null != this.get(t2);
     }
     values() {
-      return this.buckets.filter((t2) => null != t2).flat(1);
+      return this.buckets.filter(((t2) => null != t2)).flat(1);
     }
     toString() {
       return M(this.values());
@@ -327,17 +327,17 @@
     constructor(t2, e2) {
       super();
       const n2 = new U();
-      t2 instanceof _z ? t2.opnds.map(function(t3) {
+      t2 instanceof _z ? t2.opnds.map((function(t3) {
         n2.add(t3);
-      }) : n2.add(t2), e2 instanceof _z ? e2.opnds.map(function(t3) {
+      })) : n2.add(t2), e2 instanceof _z ? e2.opnds.map((function(t3) {
         n2.add(t3);
-      }) : n2.add(e2);
+      })) : n2.add(e2);
       const s2 = q(n2);
       if (s2.length > 0) {
         let t3 = null;
-        s2.map(function(e3) {
+        s2.map((function(e3) {
           (null === t3 || e3.precedence < t3.precedence) && (t3 = e3);
-        }), n2.add(t3);
+        })), n2.add(t3);
       }
       this.opnds = Array.from(n2.values());
     }
@@ -362,12 +362,12 @@
       if (!n2) return this;
       if (0 === s2.length) return B.NONE;
       let i2 = null;
-      return s2.map(function(t3) {
+      return s2.map((function(t3) {
         i2 = null === i2 ? t3 : B.andContext(i2, t3);
-      }), i2;
+      })), i2;
     }
     toString() {
-      const t2 = this.opnds.map((t3) => t3.toString());
+      const t2 = this.opnds.map(((t3) => t3.toString()));
       return (t2.length > 3 ? t2.slice(3) : t2).join("&&");
     }
   };
@@ -375,16 +375,16 @@
     constructor(t2, e2) {
       super();
       const n2 = new U();
-      t2 instanceof _V ? t2.opnds.map(function(t3) {
+      t2 instanceof _V ? t2.opnds.map((function(t3) {
         n2.add(t3);
-      }) : n2.add(t2), e2 instanceof _V ? e2.opnds.map(function(t3) {
+      })) : n2.add(t2), e2 instanceof _V ? e2.opnds.map((function(t3) {
         n2.add(t3);
-      }) : n2.add(e2);
+      })) : n2.add(e2);
       const s2 = q(n2);
       if (s2.length > 0) {
-        const t3 = s2.sort(function(t4, e4) {
+        const t3 = s2.sort((function(t4, e4) {
           return t4.compareTo(e4);
-        }), e3 = t3[t3.length - 1];
+        })), e3 = t3[t3.length - 1];
         n2.add(e3);
       }
       this.opnds = Array.from(n2.values());
@@ -410,15 +410,15 @@
       return n2 ? (s2.length, null) : this;
     }
     toString() {
-      const t2 = this.opnds.map((t3) => t3.toString());
+      const t2 = this.opnds.map(((t3) => t3.toString()));
       return (t2.length > 3 ? t2.slice(3) : t2).join("||");
     }
   };
   function q(t2) {
     const e2 = [];
-    return t2.values().map(function(t3) {
+    return t2.values().map((function(t3) {
       t3 instanceof B.PrecedencePredicate && e2.push(t3);
-    }), e2;
+    })), e2;
   }
   function H(t2, e2) {
     if (null === t2) {
@@ -502,7 +502,7 @@
       }
     }
     addSet(t2) {
-      return null !== t2.intervals && t2.intervals.forEach((t3) => this.addInterval(t3), this), this;
+      return null !== t2.intervals && t2.intervals.forEach(((t3) => this.addInterval(t3)), this), this;
     }
     reduce(t2) {
       if (t2 < this.intervals.length - 1) {
@@ -512,7 +512,7 @@
     }
     complement(t2, e2) {
       const n2 = new _G();
-      return n2.addInterval(new Y(t2, e2 + 1)), null !== this.intervals && this.intervals.forEach((t3) => n2.removeRange(t3)), n2;
+      return n2.addInterval(new Y(t2, e2 + 1)), null !== this.intervals && this.intervals.forEach(((t3) => n2.removeRange(t3))), n2;
     }
     contains(t2) {
       if (null === this.intervals) return false;
@@ -579,7 +579,7 @@
       return n2 === O.EOF ? "<EOF>" : n2 === O.EPSILON ? "<EPSILON>" : t2[n2] || e2[n2];
     }
     get length() {
-      return this.intervals.map((t2) => t2.length).reduce((t2, e2) => t2 + e2);
+      return this.intervals.map(((t2) => t2.length)).reduce(((t2, e2) => t2 + e2));
     }
   };
   var W = class _W {
@@ -676,9 +676,9 @@
   var at = { toStringTree: function(t2, e2, n2) {
     e2 = e2 || null, null !== (n2 = n2 || null) && (e2 = n2.ruleNames);
     let s2 = at.getNodeText(t2, e2);
-    s2 = function(t3) {
+    s2 = (function(t3) {
       return t3.replace(/\t/g, "\\t").replace(/\n/g, "\\n").replace(/\r/g, "\\r");
-    }(s2);
+    })(s2);
     const i2 = t2.getChildCount();
     if (0 === i2) return s2;
     let r2 = "(" + s2 + " ";
@@ -742,9 +742,9 @@
       return this;
     }
     getText() {
-      return 0 === this.getChildCount() ? "" : this.children.map(function(t2) {
+      return 0 === this.getChildCount() ? "" : this.children.map((function(t2) {
         return t2.getText();
-      }).join("");
+      })).join("");
     }
     getAltNumber() {
       return 0;
@@ -880,7 +880,7 @@
       const n2 = this._getSlot(t2);
       let s2 = this.buckets[n2];
       if (!s2) return s2 = [[t2, e2]], this.buckets[n2] = s2, this.itemCount++, e2;
-      const i2 = s2.find((e3) => this.equalsFunction(e3[0], t2), this);
+      const i2 = s2.find(((e3) => this.equalsFunction(e3[0], t2)), this);
       if (i2) {
         const t3 = i2[1];
         return i2[1] = e2, t3;
@@ -889,25 +889,25 @@
     }
     containsKey(t2) {
       const e2 = this._getBucket(t2);
-      return !!e2 && !!e2.find((e3) => this.equalsFunction(e3[0], t2), this);
+      return !!e2 && !!e2.find(((e3) => this.equalsFunction(e3[0], t2)), this);
     }
     get(t2) {
       const e2 = this._getBucket(t2);
       if (!e2) return null;
-      const n2 = e2.find((e3) => this.equalsFunction(e3[0], t2), this);
+      const n2 = e2.find(((e3) => this.equalsFunction(e3[0], t2)), this);
       return n2 ? n2[1] : null;
     }
     entries() {
-      return this.buckets.filter((t2) => null != t2).flat(1);
+      return this.buckets.filter(((t2) => null != t2)).flat(1);
     }
     getKeys() {
-      return this.entries().map((t2) => t2[0]);
+      return this.entries().map(((t2) => t2[0]));
     }
     getValues() {
-      return this.entries().map((t2) => t2[1]);
+      return this.entries().map(((t2) => t2[1]));
     }
     toString() {
-      return "[" + this.entries().map((t2) => "{" + t2[0] + ":" + t2[1] + "}").join(", ") + "]";
+      return "[" + this.entries().map(((t2) => "{" + t2[0] + ":" + t2[1] + "}")).join(", ") + "]";
     }
     get length() {
       return this.itemCount;
@@ -957,13 +957,13 @@
   }
   function Tt(t2, e2, n2, s2) {
     if (t2 === e2) return t2;
-    if (t2 instanceof dt && e2 instanceof dt) return function(t3, e3, n3, s3) {
+    if (t2 instanceof dt && e2 instanceof dt) return (function(t3, e3, n3, s3) {
       if (null !== s3) {
         let n4 = s3.get(t3, e3);
         if (null !== n4) return n4;
         if (n4 = s3.get(e3, t3), null !== n4) return n4;
       }
-      const i2 = function(t4, e4, n4) {
+      const i2 = (function(t4, e4, n4) {
         if (n4) {
           if (t4 === ct.EMPTY) return ct.EMPTY;
           if (e4 === ct.EMPTY) return ct.EMPTY;
@@ -979,7 +979,7 @@
           }
         }
         return null;
-      }(t3, e3, n3);
+      })(t3, e3, n3);
       if (null !== i2) return null !== s3 && s3.set(t3, e3, i2), i2;
       if (t3.returnState === e3.returnState) {
         const i3 = Tt(t3.parentCtx, e3.parentCtx, n3, s3);
@@ -1002,12 +1002,12 @@
         const o2 = new ut(r2, i3);
         return null !== s3 && s3.set(t3, e3, o2), o2;
       }
-    }(t2, e2, n2, s2);
+    })(t2, e2, n2, s2);
     if (n2) {
       if (t2 instanceof gt) return t2;
       if (e2 instanceof gt) return e2;
     }
-    return t2 instanceof dt && (t2 = new ut([t2.getParent()], [t2.returnState])), e2 instanceof dt && (e2 = new ut([e2.getParent()], [e2.returnState])), function(t3, e3, n3, s3) {
+    return t2 instanceof dt && (t2 = new ut([t2.getParent()], [t2.returnState])), e2 instanceof dt && (e2 = new ut([e2.getParent()], [e2.returnState])), (function(t3, e3, n3, s3) {
       if (null !== s3) {
         let n4 = s3.get(t3, e3);
         if (null !== n4) return ct.trace_atn_sim && console.log("mergeArrays a=" + t3 + ",b=" + e3 + " -> previous"), n4;
@@ -1032,15 +1032,15 @@
         l2 = l2.slice(0, o2), a2 = a2.slice(0, o2);
       }
       const h2 = new ut(l2, a2);
-      return h2.equals(t3) ? (null !== s3 && s3.set(t3, e3, t3), ct.trace_atn_sim && console.log("mergeArrays a=" + t3 + ",b=" + e3 + " -> a"), t3) : h2.equals(e3) ? (null !== s3 && s3.set(t3, e3, e3), ct.trace_atn_sim && console.log("mergeArrays a=" + t3 + ",b=" + e3 + " -> b"), e3) : (function(t4) {
+      return h2.equals(t3) ? (null !== s3 && s3.set(t3, e3, t3), ct.trace_atn_sim && console.log("mergeArrays a=" + t3 + ",b=" + e3 + " -> a"), t3) : h2.equals(e3) ? (null !== s3 && s3.set(t3, e3, e3), ct.trace_atn_sim && console.log("mergeArrays a=" + t3 + ",b=" + e3 + " -> b"), e3) : ((function(t4) {
         const e4 = new pt();
         for (let n4 = 0; n4 < t4.length; n4++) {
           const s4 = t4[n4];
           e4.containsKey(s4) || e4.set(s4, s4);
         }
         for (let n4 = 0; n4 < t4.length; n4++) t4[n4] = e4.get(t4[n4]);
-      }(l2), null !== s3 && s3.set(t3, e3, h2), ct.trace_atn_sim && console.log("mergeArrays a=" + t3 + ",b=" + e3 + " -> " + h2), h2);
-    }(t2, e2, n2, s2);
+      })(l2), null !== s3 && s3.set(t3, e3, h2), ct.trace_atn_sim && console.log("mergeArrays a=" + t3 + ",b=" + e3 + " -> " + h2), h2);
+    })(t2, e2, n2, s2);
   }
   var St = class _St {
     constructor() {
@@ -1102,7 +1102,7 @@
       return "{" + this.values().join(", ") + "}";
     }
     get length() {
-      return this.data.map((t2) => _St._bitCount(t2)).reduce((t2, e2) => t2 + e2, 0);
+      return this.data.map(((t2) => _St._bitCount(t2))).reduce(((t2, e2) => t2 + e2), 0);
     }
     _resize(t2) {
       const e2 = t2 + 32 >>> 5;
@@ -1549,9 +1549,9 @@
   };
   function Zt(t2, e2) {
     const n2 = [];
-    return n2[t2 - 1] = e2, n2.map(function(t3) {
+    return n2[t2 - 1] = e2, n2.map((function(t3) {
       return e2;
-    });
+    }));
   }
   var Qt = class {
     constructor(t2) {
@@ -1834,16 +1834,16 @@
       return this.delegates = t2, this;
     }
     syntaxError(t2, e2, n2, s2, i2, r2) {
-      this.delegates.map((o2) => o2.syntaxError(t2, e2, n2, s2, i2, r2));
+      this.delegates.map(((o2) => o2.syntaxError(t2, e2, n2, s2, i2, r2)));
     }
     reportAmbiguity(t2, e2, n2, s2, i2, r2, o2) {
-      this.delegates.map((a2) => a2.reportAmbiguity(t2, e2, n2, s2, i2, r2, o2));
+      this.delegates.map(((a2) => a2.reportAmbiguity(t2, e2, n2, s2, i2, r2, o2)));
     }
     reportAttemptingFullContext(t2, e2, n2, s2, i2, r2) {
-      this.delegates.map((o2) => o2.reportAttemptingFullContext(t2, e2, n2, s2, i2, r2));
+      this.delegates.map(((o2) => o2.reportAttemptingFullContext(t2, e2, n2, s2, i2, r2)));
     }
     reportContextSensitivity(t2, e2, n2, s2, i2, r2) {
-      this.delegates.map((o2) => o2.reportContextSensitivity(t2, e2, n2, s2, i2, r2));
+      this.delegates.map(((o2) => o2.reportContextSensitivity(t2, e2, n2, s2, i2, r2)));
     }
   };
   var se = class {
@@ -1878,17 +1878,17 @@
       const t2 = this.getTokenNames();
       if (null === t2) throw "The current recognizer does not provide a list of token names.";
       let e2 = this.tokenTypeMapCache[t2];
-      return void 0 === e2 && (e2 = t2.reduce(function(t3, e3, n2) {
+      return void 0 === e2 && (e2 = t2.reduce((function(t3, e3, n2) {
         t3[e3] = n2;
-      }), e2.EOF = O.EOF, this.tokenTypeMapCache[t2] = e2), e2;
+      })), e2.EOF = O.EOF, this.tokenTypeMapCache[t2] = e2), e2;
     }
     getRuleIndexMap() {
       const t2 = this.ruleNames;
       if (null === t2) throw "The current recognizer does not provide a list of rule names.";
       let e2 = this.ruleIndexMapCache[t2];
-      return void 0 === e2 && (e2 = t2.reduce(function(t3, e3, n2) {
+      return void 0 === e2 && (e2 = t2.reduce((function(t3, e3, n2) {
         t3[e3] = n2;
-      }), this.ruleIndexMapCache[t2] = e2), e2;
+      })), this.ruleIndexMapCache[t2] = e2), e2;
     }
     getTokenType(t2) {
       const e2 = this.getTokenTypeMap()[t2];
@@ -2533,7 +2533,7 @@
       this.data["k-" + t2] = e2;
     }
     values() {
-      return Object.keys(this.data).filter((t2) => t2.startsWith("k-")).map((t2) => this.data[t2], this);
+      return Object.keys(this.data).filter(((t2) => t2.startsWith("k-"))).map(((t2) => this.data[t2]), this);
     }
   };
   var Ne = { SLL: 0, LL: 1, LL_EXACT_AMBIG_DETECTION: 2, hasSLLConflictTerminatingPrediction: function(t2, e2) {
@@ -2577,25 +2577,25 @@
     return 1 === e2.length ? e2.minValue() : Et.INVALID_ALT_NUMBER;
   }, getAlts: function(t2) {
     const e2 = new St();
-    return t2.map(function(t3) {
+    return t2.map((function(t3) {
       e2.or(t3);
-    }), e2;
+    })), e2;
   }, getConflictingAltSubsets: function(t2) {
     const e2 = new pt();
     return e2.hashFunction = function(t3) {
       b.hashStuff(t3.state.stateNumber, t3.context);
     }, e2.equalsFunction = function(t3, e3) {
       return t3.state.stateNumber === e3.state.stateNumber && t3.context.equals(e3.context);
-    }, t2.items.map(function(t3) {
+    }, t2.items.map((function(t3) {
       let n2 = e2.get(t3);
       null === n2 && (n2 = new St(), e2.set(t3, n2)), n2.set(t3.alt);
-    }), e2.getValues();
+    })), e2.getValues();
   }, getStateToAltMap: function(t2) {
     const e2 = new Ce();
-    return t2.items.map(function(t3) {
+    return t2.items.map((function(t3) {
       let n2 = e2.get(t3.state);
       null === n2 && (n2 = new St(), e2.set(t3.state, n2)), n2.set(t3.alt);
-    }), e2;
+    })), e2;
   }, hasStateAssociatedWithOneAlt: function(t2) {
     const e2 = Ne.getStateToAltMap(t2).values();
     for (let t3 = 0; t3 < e2.length; t3++) if (1 === e2[t3].length) return true;
@@ -3141,9 +3141,9 @@
       }
     }
     sortedStates() {
-      return this._states.values().sort(function(t2, e2) {
+      return this._states.values().sort((function(t2, e2) {
         return t2.stateNumber - e2.stateNumber;
-      });
+      }));
     }
     toString(t2, e2) {
       return t2 = t2 || null, e2 = e2 || null, null === this.s0 ? "" : new Re(this, t2, e2).toString();
@@ -3170,9 +3170,9 @@
   };
   var Ue = class {
     visit(t2) {
-      return Array.isArray(t2) ? t2.map(function(t3) {
+      return Array.isArray(t2) ? t2.map((function(t3) {
         return t3.accept(this);
-      }, this) : t2.accept(this);
+      }), this) : t2.accept(this);
     }
     visitChildren(t2) {
       return t2.children ? this.visit(t2.children) : null;
@@ -3480,10 +3480,10 @@
   var tn = class extends Je {
     static fromPath(t2, e2, n2) {
       if (!Qe) throw new Error("FileStream is only available when running in Node!");
-      Ze.readFile(t2, e2, function(t3, e3) {
+      Ze.readFile(t2, e2, (function(t3, e3) {
         let s2 = null;
         null !== e3 && (s2 = new Xe(e3, true)), n2(t3, s2);
-      });
+      }));
     }
     constructor(t2, e2, n2) {
       if (!Qe) throw new Error("FileStream is only available when running in Node!");
@@ -3722,17 +3722,17 @@
     triggerEnterRuleEvent() {
       if (null !== this._parseListeners) {
         const t2 = this._ctx;
-        this._parseListeners.forEach(function(e2) {
+        this._parseListeners.forEach((function(e2) {
           e2.enterEveryRule(t2), t2.enterRule(e2);
-        });
+        }));
       }
     }
     triggerExitRuleEvent() {
       if (null !== this._parseListeners) {
         const t2 = this._ctx;
-        this._parseListeners.slice(0).reverse().forEach(function(e2) {
+        this._parseListeners.slice(0).reverse().forEach((function(e2) {
           t2.exitRule(e2), e2.exitEveryRule(t2);
-        });
+        }));
       }
     }
     getTokenFactory() {
@@ -3780,9 +3780,9 @@
       const e2 = null !== this._parseListeners && this._parseListeners.length > 0;
       if (this.buildParseTrees || e2) {
         let n2;
-        n2 = this._errHandler.inErrorRecoveryMode(this) ? this._ctx.addErrorNode(t2) : this._ctx.addTokenNode(t2), n2.invokingState = this.state, e2 && this._parseListeners.forEach(function(t3) {
+        n2 = this._errHandler.inErrorRecoveryMode(this) ? this._ctx.addErrorNode(t2) : this._ctx.addTokenNode(t2), n2.invokingState = this.state, e2 && this._parseListeners.forEach((function(t3) {
           n2 instanceof ot || void 0 !== n2.isErrorNode && n2.isErrorNode() ? t3.visitErrorNode(n2) : n2 instanceof rt && t3.visitTerminal(n2);
-        });
+        }));
       }
       return t2;
     }
@@ -3931,9 +3931,9 @@
       super(t2, e2), this.children = null, this.start = null, this.stop = null, this.exception = null;
     }
     copyFrom(t2) {
-      this.parentCtx = t2.parentCtx, this.invokingState = t2.invokingState, this.children = null, this.start = t2.start, this.stop = t2.stop, t2.children && (this.children = [], t2.children.map(function(t3) {
+      this.parentCtx = t2.parentCtx, this.invokingState = t2.invokingState, this.children = null, this.start = t2.start, this.stop = t2.stop, t2.children && (this.children = [], t2.children.map((function(t3) {
         t3 instanceof cn && (this.children.push(t3), t3.parentCtx = this);
-      }, this));
+      }), this));
     }
     enterRule(t2) {
     }
@@ -4109,7 +4109,7 @@
       return null != t2 && (n2 = t2.toString()), null != e2 && (s2 = e2.toString()), n2 + s2;
     }
     getKindOfOps(t2, e2, n2) {
-      return t2.slice(0, n2).filter((t3) => t3 && t3 instanceof e2);
+      return t2.slice(0, n2).filter(((t3) => t3 && t3 instanceof e2));
     }
   };
   var gn = class {
@@ -42980,6 +42980,7 @@
   function getNodeShape(node) {
     let shapeMap = {
       axiom: "invtriangle",
+      hypothesis: "diamond",
       conjecture: "house",
       negated_conjecture: "invhouse",
       plain: "ellipse"
@@ -43100,7 +43101,8 @@
     }
     process(ctx, type) {
       let role = ctx.formula_role().getText();
-      if (!["conjecture", "negated_conjecture", "axiom", "plain", "type", "theorem"].includes(role)) {
+      if (!["conjecture", "negated_conjecture", "axiom", "hypothesis", "plain", "type", "theorem"].includes(role)) {
+        console.log(`"${role}" role not shown for "${ctx.name().getText()}"`);
         return;
       }
       let node = {

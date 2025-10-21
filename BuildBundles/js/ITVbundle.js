@@ -5,7 +5,7 @@
       __defProp(target, name, { get: all[name], enumerable: true });
   };
 
-  // js/antlr4.js
+  // antlr4.js
   var antlr4_exports = {};
   __export(antlr4_exports, {
     ATN: () => Sn,
@@ -4184,7 +4184,7 @@
   var Zn = L.mD;
   var Qn = L.Ay;
 
-  // js/TPTPLexer.js
+  // TPTPLexer.js
   var serializedATN = [
     4,
     0,
@@ -10918,7 +10918,7 @@
   TPTPLexer.Printable_char = 107;
   TPTPLexer.Viewable_char = 108;
 
-  // js/TPTPListener.js
+  // TPTPListener.js
   var TPTPListener = class extends Qn.tree.ParseTreeListener {
     // Enter a parse tree produced by TPTPParser#tptp_file.
     enterTptp_file(ctx) {
@@ -12314,7 +12314,7 @@
     }
   };
 
-  // js/TPTPParser.js
+  // TPTPParser.js
   var serializedATN2 = [
     4,
     1,
@@ -42963,7 +42963,7 @@
   TPTPParser.File_nameContext = File_nameContext;
   TPTPParser.NothingContext = NothingContext;
 
-  // js/parserITV.js
+  // parserITV.js
   window.antlr4 = antlr4_exports;
   var body = document.body;
   var preconnect1 = document.createElement("link");
@@ -43339,7 +43339,7 @@
     return nm;
   };
 
-  // js/helpersITV.js
+  // helpersITV.js
   function choose(choices) {
     var index = Math.floor(Math.random() * choices.length);
     return choices[index];
