@@ -1,0 +1,21 @@
+{
+  "name": "idvjs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "webpackVersion": "webpack --version",
+    "build": "webpack --config webpack.config.js",
+    "start": "echo 'Run webpack and start the webserver (flask through apache is what I've done in the past...).'"
+  },
+  "dependencies": {
+    "antlr4": "^4.13.2",
+    "babel-loader": "^9.2.1",
+    "webpack": "^5.95.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.26.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
