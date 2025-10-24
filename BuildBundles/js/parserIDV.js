@@ -364,7 +364,7 @@ let proofToGV = function (nodes) {
 	}
 
 	gvLines.push("digraph G {");
-	gvLines.push("node [style=filled];");
+	gvLines.push('node [style=filled, fontname="JetBrains Mono", fontsize=10];');
 	gvLines.push("newrank=\"true\"");
 
     // let clusterColor = 'lightgrey';
