@@ -287,51 +287,6 @@ function nodeToGV(s) {
 	}
 }
 
-function getAllLevels(other_nodes) {
-	let langs = ["thf", "tff", "tcf", "fof", "cnf"];
-
-	const levels = {};
-	let changed = true;
-
-	// Step 1: assign level 0 to root nodes
-	for (const [name, node] of Object.entries(other_nodes)) {
-		if (!node.parents || node.parents.length === 0) {
-			levels[name] = 0;
-		}
-	}
-
-	// Step 2: propagate levels based on parent depth
-	while (changed) {
-		changed = false;
-		for (const [name, node] of Object.entries(other_nodes)) {
-			if (levels[name] !== undefined) continue;
-			const parents = node.parents || [];
-			if (parents.every(p => levels[p] !== undefined)) {
-				const maxParent = parents.length
-					? Math.max(...parents.map(p => levels[p]))
-					: 0;
-				levels[name] = maxParent + 1;
-				changed = true;
-			}
-		}
-	}
-
-	// Step 3: adjust levels according to language type ordering
-	const groupedLevels = {};
-	for (const [name, lvl] of Object.entries(levels)) {
-		const kind = proof[name].type; // e.g. "fof", "cnf", etc.
-		const langIndex = langs.indexOf(kind);
-		const adjustedLvl = lvl * langs.length + langIndex; 
-		// multiply to separate major ranks, add lang order offset
-
-		if (!groupedLevels[adjustedLvl]) groupedLevels[adjustedLvl] = [];
-		groupedLevels[adjustedLvl].push(name);
-	}
-
-	return groupedLevels;
-}
-
-
 // nodes is a JSON object where the keys are node names.
 // and the values are the JSON objects of the nodes.
 let proofToGV = function (nodes) {
@@ -389,12 +344,6 @@ let proofToGV = function (nodes) {
 	gvLines.push("}");
 	//end Top Row
 
-	// groupedLevels = getAllLevels(nodes)
-
-	// for (const [lvl, names] of Object.entries(groupedLevels)) {
-	// 	gvLines.push(`{ rank = same; ${names.map(n => `"${n}"`).join(" ")} }`);
-	// }
-
 	for(let lang of langs){
         if (!window.interpretation){
 	    	gvLines.push(`subgraph cluster${lang}s {`);
@@ -402,10 +351,9 @@ let proofToGV = function (nodes) {
         }
 		ns[lang].forEach(nodeToGV(gvLines));
         if (!window.interpretation) {
-			gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e) => `"${e.name}"`).join(' ') + `}`);
-			gvLines.push(`}`);
-		}
-
+		    gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e) => `"${e.name}"`).join(' ') + `}`);
+		    gvLines.push(`}`);
+        }
 	}
 
     // Add Level Information to GraphViz
