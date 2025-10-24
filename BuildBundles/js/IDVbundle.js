@@ -42837,10 +42837,10 @@
   function getNodeShape(node) {
     let shapeMap = {
       axiom: "invtriangle",
+      hypothesis: "diamond",
       conjecture: "house",
       negated_conjecture: "invhouse",
-      plain: "ellipse",
-      hypothesis: "diamond"
+      plain: "ellipse"
     };
     if (stripParens(node.formula) == "$false") {
       return "box";
@@ -42958,7 +42958,8 @@
     }
     process(ctx, type) {
       let role = ctx.formula_role().getText();
-      if (!["conjecture", "negated_conjecture", "axiom", "plain", "type", "theorem", "hypothesis"].includes(role)) {
+      if (!["conjecture", "negated_conjecture", "axiom", "hypothesis", "plain", "type", "theorem"].includes(role)) {
+        console.log(`"${role}" role not shown for "${ctx.name().getText()}"`);
         return;
       }
       let node = {
@@ -43054,7 +43055,8 @@
     gvLines.push(`pencolor=${clusterColor}`);
     top_row.forEach(nodeToGV(gvLines));
     if (!window.interpretation)
-      gvLines.push("}");
+      gvLines.push("{rank=same; " + top_row.map((e2) => `"${e2.name}"`).join(" ") + "}");
+    gvLines.push("}");
     for (let lang of langs) {
       if (!window.interpretation) {
         gvLines.push(`subgraph cluster${lang}s {`);
@@ -43062,7 +43064,9 @@
       }
       ns[lang].forEach(nodeToGV(gvLines));
       if (!window.interpretation) {
-        gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e2) => `"${e2.name}"`).join(" ") + `}`);
+        gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e2) => {
+          if (e2.formula != "$false") return `"${e2.name}"`;
+        }).join(" ") + `}`);
         gvLines.push(`}`);
       }
     }
@@ -43103,7 +43107,6 @@
     }
     console.log("Finished parsing!");
     let nm = formatter.node_map;
-    window.formatter = formatter;
     for (let name of Object.keys(nm)) {
       let node = nm[name];
       node.graphviz = {
