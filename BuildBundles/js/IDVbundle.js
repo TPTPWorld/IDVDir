@@ -1,8 +1,8 @@
 (() => {
   var __defProp = Object.defineProperty;
   var __export = (target, all) => {
-    for (var name2 in all)
-      __defProp(target, name2, { get: all[name2], enumerable: true });
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
   };
 
   // antlr4.js
@@ -42825,8 +42825,8 @@
   function stripParens(formula) {
     return formula.replace(/\s+/g, "").replace(/[()]/g, "");
   }
-  function interpretationLabel(node2) {
-    let s2 = node2.formula.replace(/"/g, '\\"');
+  function interpretationLabel(node) {
+    let s2 = node.formula.replace(/"/g, '\\"');
     let lastColonPos = s2.lastIndexOf(":");
     let beforeColon = s2.substr(0, lastColonPos).trim();
     if (beforeColon.startsWith("'") && beforeColon.endsWith("'")) {
@@ -42834,7 +42834,7 @@
     }
     return lastColonPos == -1 ? s2 : beforeColon;
   }
-  function getNodeShape(node2) {
+  function getNodeShape(node) {
     let shapeMap = {
       axiom: "invtriangle",
       conjecture: "house",
@@ -42842,15 +42842,15 @@
       plain: "ellipse",
       hypothesis: "diamond"
     };
-    if (stripParens(node2.formula) == "$false") {
+    if (stripParens(node.formula) == "$false") {
       return "box";
     }
-    if (window.interpretation && stripParens(node2.formula) == "$true") {
+    if (window.interpretation && stripParens(node.formula) == "$true") {
       return "box";
     }
-    return shapeMap[node2.role];
+    return shapeMap[node.role];
   }
-  function getNodeColor(node2) {
+  function getNodeColor(node) {
     let colorMap = {
       thf: "blue",
       tff: "orange",
@@ -42858,7 +42858,7 @@
       fof: "green",
       cnf: "red"
     };
-    return colorMap[node2.type];
+    return colorMap[node.type];
   }
   function scaleFromInterestingness2(interestingness) {
     interestingness = +interestingness;
@@ -42870,19 +42870,19 @@
     }
   }
   window.scaleFromInterestingness = scaleFromInterestingness2;
-  function getParentsFromSource(source, node2) {
+  function getParentsFromSource(source, node) {
     let dag = source.dag_source();
     let sources = source.sources();
     if (sources !== null) {
       for (let s2 of sources) {
-        getParentsFromSource(s2, node2);
+        getParentsFromSource(s2, node);
       }
     } else if (dag === null) {
       return;
     }
     if (dag.inference_record()) {
       let inference_record = dag.inference_record();
-      node2.inference_record = inference_record.getText();
+      node.inference_record = inference_record.getText();
       let parent_list = [inference_record.parents().parent_list().parent_info()];
       window.parent_list = parent_list;
       window.inference_record = inference_record;
@@ -42894,7 +42894,7 @@
         let ps = p2.source();
         if (ps.dag_source()) {
           if (ps.dag_source().name()) {
-            node2.parents.push(ps.getText());
+            node.parents.push(ps.getText());
           } else {
             try {
               let sources2 = [];
@@ -42903,7 +42903,7 @@
               parents = [parents, ...ps.dag_source().inference_record().parents().parent_list().comma_parent_info().map((x2) => x2.parent_info())];
               sources2 = parents.map((x2) => x2.source());
               for (let s2 of sources2) {
-                getParentsFromSource(s2, node2);
+                getParentsFromSource(s2, node);
               }
             } catch (e2) {
               console.log(`failed to parse dag source: ${ps.dag_source().getText()}`);
@@ -42913,24 +42913,24 @@
         } else if (ps.sources()) {
           let sources2 = ps.sources().source();
           for (let s2 of sources2) {
-            getParentsFromSource(s2, node2);
+            getParentsFromSource(s2, node);
           }
         } else {
-          console.log(`${node2.name} has source ${source}`);
+          console.log(`${node.name} has source ${source}`);
         }
       }
     } else if (dag.name()) {
-      node2.parents.push(dag.name().getText());
+      node.parents.push(dag.name().getText());
     }
   }
   window.getParentsFromSource = getParentsFromSource;
-  function getNodeLevel(source, node2) {
+  function getNodeLevel(source, node) {
     let regex = /level\(([0-9]+)\)/;
     try {
-      node2.level = parseInt(node2.inference_record.match(regex)[1]);
+      node.level = parseInt(node.inference_record.match(regex)[1]);
     } catch (e2) {
       window.source = source;
-      node2.level = parseInt(
+      node.level = parseInt(
         source.internal_source().getText().match(regex)[1]
       );
     }
@@ -42961,7 +42961,7 @@
       if (!["conjecture", "negated_conjecture", "axiom", "plain", "type", "theorem", "hypothesis"].includes(role)) {
         return;
       }
-      let node2 = {
+      let node = {
         name: ctx.name().getText(),
         type,
         role,
@@ -42980,20 +42980,20 @@
           value = value.substring(0, value.length - 1);
           infoObj[key] = value;
         }
-        node2.info = infoObj;
+        node.info = infoObj;
       } catch (e2) {
       }
       let source;
       try {
         source = ctx.annotations().source();
-        getParentsFromSource(source, node2);
+        getParentsFromSource(source, node);
       } catch (e2) {
       }
       try {
-        getNodeLevel(source, node2);
+        getNodeLevel(source, node);
       } catch (e2) {
       }
-      this.node_map[node2.name] = node2;
+      this.node_map[node.name] = node;
     }
   };
   function abbreviate(label) {
@@ -43003,53 +43003,26 @@
     return label;
   }
   function nodeToGV(s2) {
-    return function(node2) {
-      let label = window.interpretation ? interpretationLabel(node2) : node2.name;
-      label = node2.graphviz.inviz ? "" : abbreviate(label);
-      s2.push(`"${node2.name}" [
+    return function(node) {
+      let label = window.interpretation ? interpretationLabel(node) : node.name;
+      label = node.graphviz.inviz ? "" : abbreviate(label);
+      s2.push(`"${node.name}" [
 			fixedsize=true,
 			label="${label}",
-			${node2.graphviz.invis ? "style=invis," : ""}
-			shape=${node2.graphviz.invis ? "point" : node2.graphviz.shape},
-			color="${node2.graphviz.color}",
-			fillcolor="${node2.graphviz.fillcolor}",
-			width="${node2.graphviz.width}",
-			height="${node2.graphviz.height}",
+			${node.graphviz.invis ? "style=invis," : ""}
+			shape=${node.graphviz.invis ? "point" : node.graphviz.shape},
+			color="${node.graphviz.color}",
+			fillcolor="${node.graphviz.fillcolor}",
+			width="${node.graphviz.width}",
+			height="${node.graphviz.height}",
 			penwidth="3.0"
 		]`);
     };
   }
-  function getAllLevels(other_nodes) {
-    const levels2 = {};
-    let changed = true;
-    for ([name, node] of Object.entries(other_nodes)) {
-      if (!node.parents || node.parents.length === 0) {
-        levels2[name] = 0;
-      }
-    }
-    while (changed) {
-      changed = false;
-      for (const [name2, node2] of Object.entries(other_nodes)) {
-        if (levels2[name2] !== void 0) continue;
-        const parents = node2.parents || [];
-        if (parents.every((p2) => levels2[p2] !== void 0)) {
-          const maxParent = parents.length ? Math.max(...parents.map((p2) => levels2[p2])) : 0;
-          levels2[name2] = maxParent + 1;
-          changed = true;
-        }
-      }
-    }
-    const groupedLevels2 = {};
-    for (const [name2, lvl] of Object.entries(levels2)) {
-      if (!groupedLevels2[lvl]) groupedLevels2[lvl] = [];
-      groupedLevels2[lvl].push(name2);
-    }
-    return groupedLevels2;
-  }
   var proofToGV = function(nodes) {
     function isTopRow(type) {
-      return function(node2) {
-        return node2.parents.every(function(parentName) {
+      return function(node) {
+        return node.parents.every(function(parentName) {
           let parent = nodes[parentName];
           if (parent === void 0) {
             return false;
@@ -43074,7 +43047,7 @@
       ns[`top_${lang}`] = ns[lang].filter(isTopRow(lang));
     }
     gvLines.push("digraph G {");
-    gvLines.push("node [style=filled];");
+    gvLines.push('node [style=filled, fontname="JetBrains Mono", fontsize=10];');
     gvLines.push('newrank="true"');
     let clusterColor = "transparent";
     gvLines.push("subgraph clusterAxioms {");
@@ -43082,10 +43055,6 @@
     top_row.forEach(nodeToGV(gvLines));
     if (!window.interpretation)
       gvLines.push("}");
-    groupedLevels = getAllLevels(nodes);
-    for (const [lvl, names] of Object.entries(groupedLevels)) {
-      gvLines.push(`{ rank = same; ${names.map((n2) => `"${n2}"`).join(" ")} }`);
-    }
     for (let lang of langs) {
       if (!window.interpretation) {
         gvLines.push(`subgraph cluster${lang}s {`);
@@ -43093,26 +43062,27 @@
       }
       ns[lang].forEach(nodeToGV(gvLines));
       if (!window.interpretation) {
+        gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e2) => `"${e2.name}"`).join(" ") + `}`);
         gvLines.push(`}`);
       }
     }
     window.levels = {};
-    for (let node2 of nodeList) {
-      if (typeof node2.level == "number") {
-        if (!Object.keys(levels).includes(`${node2.level}`)) {
-          console.log(`Level ${node2.level} not in levels, making new`);
-          levels[node2.level] = [];
+    for (let node of nodeList) {
+      if (typeof node.level == "number") {
+        if (!Object.keys(levels).includes(`${node.level}`)) {
+          console.log(`Level ${node.level} not in levels, making new`);
+          levels[node.level] = [];
         }
-        levels[node2.level].push(node2.name);
+        levels[node.level].push(node.name);
       }
     }
     for (const [level, names] of Object.entries(levels)) {
       gvLines.push(`{rank=same; ${names.map((x2) => `"${x2}"`).join(" ")}}`);
     }
-    for (let node2 of nodeList) {
-      let arrowOrNot = node2.graphviz.invis ? " [dir=none] " : "";
-      node2.parents.forEach(function(p2) {
-        gvLines.push(`"${p2}" -> "${node2.name}"` + arrowOrNot);
+    for (let node of nodeList) {
+      let arrowOrNot = node.graphviz.invis ? " [dir=none] " : "";
+      node.parents.forEach(function(p2) {
+        gvLines.push(`"${p2}" -> "${node.name}"` + arrowOrNot);
       });
     }
     gvLines.push("}");
@@ -43134,34 +43104,34 @@
     console.log("Finished parsing!");
     let nm = formatter.node_map;
     window.formatter = formatter;
-    for (let name2 of Object.keys(nm)) {
-      let node2 = nm[name2];
-      node2.graphviz = {
-        shape: getNodeShape(node2),
-        color: getNodeColor(node2),
+    for (let name of Object.keys(nm)) {
+      let node = nm[name];
+      node.graphviz = {
+        shape: getNodeShape(node),
+        color: getNodeColor(node),
         fillcolor: "#c0c0c0"
       };
-      if (node2.info["interesting"] !== void 0) {
-        node2.graphviz.width = scaleFromInterestingness2(node2.info.interesting);
-        node2.graphviz.height = scaleFromInterestingness2(node2.info.interesting);
+      if (node.info["interesting"] !== void 0) {
+        node.graphviz.width = scaleFromInterestingness2(node.info.interesting);
+        node.graphviz.height = scaleFromInterestingness2(node.info.interesting);
       }
-      if (node2.children === void 0) {
-        node2.children = [];
+      if (node.children === void 0) {
+        node.children = [];
       }
-      let parentsCopy = Array.from(node2["parents"]);
+      let parentsCopy = Array.from(node["parents"]);
       for (let parentName of parentsCopy) {
         if (parentName in nm) {
           if (nm[parentName]["children"] === void 0) {
-            nm[parentName]["children"] = [name2];
+            nm[parentName]["children"] = [name];
           } else {
-            nm[parentName]["children"].push(name2);
+            nm[parentName]["children"].push(name);
           }
         } else {
-          console.log(`Error: ${parentName} was a parentNode of ${node2["name"]}, but is not in the map!`);
-          while (node2["parents"].includes(parentName)) {
-            console.log(`Removing ${parentName} from ${node2.name}'s parents`);
-            let location = node2["parents"].indexOf(parentName);
-            node2["parents"].splice(location, 1);
+          console.log(`Error: ${parentName} was a parentNode of ${node["name"]}, but is not in the map!`);
+          while (node["parents"].includes(parentName)) {
+            console.log(`Removing ${parentName} from ${node.name}'s parents`);
+            let location = node["parents"].indexOf(parentName);
+            node["parents"].splice(location, 1);
           }
         }
       }
@@ -43186,56 +43156,56 @@
   function hideLoadingSpinner() {
     document.getElementById("loadingSymbol").classList.add("hidden");
   }
-  function ancestors(node2, depth = 0, proofObj = window.proof) {
+  function ancestors(node, depth = 0, proofObj = window.proof) {
     let l2 = [];
-    let queue = [[node2, depth]];
-    let interpretationOffset = node2.level;
+    let queue = [[node, depth]];
+    let interpretationOffset = node.level;
     let nodeName;
     while (queue.length > 0) {
-      [node2, depth] = queue.shift();
-      let parents = node2.parents.map((name2) => [proofObj[name2], window.interpretation ? proofObj[name2].level - interpretationOffset : depth - 1]);
+      [node, depth] = queue.shift();
+      let parents = node.parents.map((name) => [proofObj[name], window.interpretation ? proofObj[name].level - interpretationOffset : depth - 1]);
       l2.push(...parents);
       queue.push(...parents);
     }
     return l2;
   }
   window.ancestors = ancestors;
-  function descendants(node2, depth = 0, proofObj = window.proof) {
+  function descendants(node, depth = 0, proofObj = window.proof) {
     let l2 = [];
-    let queue = [[node2, depth]];
-    let interpretationOffset = node2.level;
+    let queue = [[node, depth]];
+    let interpretationOffset = node.level;
     let nodeName;
     while (queue.length > 0) {
-      [node2, depth] = queue.shift();
-      let children = node2.children.map((name2) => [proofObj[name2], window.interpretation ? proofObj[name2].level - interpretationOffset : depth + 1]);
+      [node, depth] = queue.shift();
+      let children = node.children.map((name) => [proofObj[name], window.interpretation ? proofObj[name].level - interpretationOffset : depth + 1]);
       l2.push(...children);
       queue.push(...children);
     }
     return l2;
   }
   window.descendants = descendants;
-  function assignColorToNode(color, node2) {
+  function assignColorToNode(color, node) {
     try {
-      node2.graphviz.fillcolor = color;
-      node2.svgNode.style.fill = color;
+      node.graphviz.fillcolor = color;
+      node.svgNode.style.fill = color;
     } catch (e2) {
     }
   }
-  function nodeIsUninteresting(node2) {
-    if (node2.children.length == 0) {
+  function nodeIsUninteresting(node) {
+    if (node.children.length == 0) {
       return false;
     }
-    let anc = ancestors(originalProof[node2.name], 0, originalProof).map(function(vals) {
+    let anc = ancestors(originalProof[node.name], 0, originalProof).map(function(vals) {
       return vals[0].role;
     });
     if (window.hideConjecture) {
-      if (["conjecture", "negated_conjecture"].includes(node2.role)) {
+      if (["conjecture", "negated_conjecture"].includes(node.role)) {
         return true;
       } else if (anc.includes("conjecture") || anc.includes("negated_conjecture")) {
         return true;
       }
     }
-    return +node2.info.interesting < window.interestFilterVal && ![-1, void 0].includes(+node2.info.interesting);
+    return +node.info.interesting < window.interestFilterVal && ![-1, void 0].includes(+node.info.interesting);
   }
   var graphviz = d3.select("#graph").graphviz();
   window.graphviz = graphviz;
@@ -43251,11 +43221,11 @@
     showLoadingSpinner();
     graphviz.renderDot(htmlDecode(dot));
     graphviz.on("end", function() {
-      for (let node2 of document.querySelectorAll("g.node")) {
-        node2.addEventListener("mouseenter", nodeHoverEventListener);
-        let nodeName = getNodeName(node2);
+      for (let node of document.querySelectorAll("g.node")) {
+        node.addEventListener("mouseenter", nodeHoverEventListener);
+        let nodeName = getNodeName(node);
         try {
-          window.proof[nodeName].svgNode = node2.querySelector("polygon, ellipse");
+          window.proof[nodeName].svgNode = node.querySelector("polygon, ellipse");
         } catch (e2) {
           window.nodeName = nodeName;
         }
@@ -43268,7 +43238,7 @@
       return;
     }
     let nodeName = getNodeName(e2.currentTarget);
-    let node2 = proof[nodeName];
+    let node = proof[nodeName];
     let nodeInfo = document.getElementById("nodeInfo");
     let tptpTextareaOpen = "";
     try {
@@ -43276,16 +43246,16 @@
     } catch (e3) {
     }
     let interestingnessHTML = "";
-    if (node2.info.interesting != void 0) {
-      interestingnessHTML = `<b>Interestingness: </b>${node2.info.interesting}<br>`;
+    if (node.info.interesting != void 0) {
+      interestingnessHTML = `<b>Interestingness: </b>${node.info.interesting}<br>`;
     }
     nodeInfo.innerHTML = `<hr>
-		<b>Name:</b> ${node2["name"]}<br>
-		<b>Type:</b> ${node2["type"]}<br>
-		<b>Role:</b> ${node2["role"]}<br>
+		<b>Name:</b> ${node["name"]}<br>
+		<b>Type:</b> ${node["type"]}<br>
+		<b>Role:</b> ${node["role"]}<br>
 		${interestingnessHTML}
-		<b>Formula:</b> ${node2["formula"]}<br>
-		<b>Inference Record:</b> ${node2["inference_record"]}
+		<b>Formula:</b> ${node["formula"]}<br>
+		<b>Inference Record:</b> ${node["inference_record"]}
 		<hr>
 
 		<div class="box">
@@ -43295,7 +43265,7 @@
 					Full TPTP Statement: 
 					<span class="triangle"></span>
 			</h4>
-			<textarea id="tptpTextarea" class="${tptpTextareaOpen}">${node2["tptp"]}</textarea>
+			<textarea id="tptpTextarea" class="${tptpTextareaOpen}">${node["tptp"]}</textarea>
 		</div>
   `;
     recolorNodesByInterest();
@@ -43322,14 +43292,14 @@
       }
       return `#${hex(r2)}${hex(g2)}${hex(b2)}`;
     }
-    let anc = ancestors(node2);
+    let anc = ancestors(node);
     let minDepth = 0;
     anc.forEach(function(a2) {
       if (a2[1] < minDepth) {
         minDepth = a2[1];
       }
     });
-    let des = descendants(node2);
+    let des = descendants(node);
     let maxDepth = 0;
     des.forEach(function(d2) {
       if (d2[1] > maxDepth) {
@@ -43344,17 +43314,17 @@
       if (d2.graphviz.fillcolor != "#000000")
         assignColorToNode(colorHelper(depth, minDepth, maxDepth), d2);
     }
-    if (node2.graphviz.fillcolor != "#000000")
-      assignColorToNode(colorHelper(0, minDepth, maxDepth), node2);
+    if (node.graphviz.fillcolor != "#000000")
+      assignColorToNode(colorHelper(0, minDepth, maxDepth), node);
   }
   function assignInterestingnessToHeightAndWidth() {
-    for (let node2 of Object.values(window.proof)) {
-      if (window.interestScalingBool && node2.info.interesting !== void 0) {
-        node2.graphviz.width = scaleFromInterestingness(node2.info.interesting);
-        node2.graphviz.height = scaleFromInterestingness(node2.info.interesting);
+    for (let node of Object.values(window.proof)) {
+      if (window.interestScalingBool && node.info.interesting !== void 0) {
+        node.graphviz.width = scaleFromInterestingness(node.info.interesting);
+        node.graphviz.height = scaleFromInterestingness(node.info.interesting);
       } else {
-        node2.graphviz.width = void 0;
-        node2.graphviz.height = void 0;
+        node.graphviz.width = void 0;
+        node.graphviz.height = void 0;
       }
     }
   }
@@ -43418,11 +43388,11 @@
   function recolorNodesByInterest() {
     window.interestFilterVal = document.getElementById("interestingnessSlider").value;
     for (let key of Object.keys(proof)) {
-      let node2 = proof[key];
-      if (nodeIsUninteresting(node2)) {
-        assignColorToNode("#000000", node2);
+      let node = proof[key];
+      if (nodeIsUninteresting(node)) {
+        assignColorToNode("#000000", node);
       } else {
-        assignColorToNode("#c0c0c0", node2);
+        assignColorToNode("#c0c0c0", node);
       }
     }
     assignInterestingnessToHeightAndWidth();
@@ -43432,21 +43402,21 @@
     window.interestFilterVal = document.getElementById("interestingnessSlider").value;
     window.proof = JSON.parse(JSON.stringify(originalProof));
     assignInterestingnessToHeightAndWidth();
-    for (let node2 of Object.values(window.proof)) {
-      if (nodeIsUninteresting(node2)) {
-        for (let parentName of node2.parents) {
+    for (let node of Object.values(window.proof)) {
+      if (nodeIsUninteresting(node)) {
+        for (let parentName of node.parents) {
           let parent = proof[parentName];
-          parent.children.splice(parent.children.indexOf(node2.name), 1);
-          parent.children.push(...node2.children);
+          parent.children.splice(parent.children.indexOf(node.name), 1);
+          parent.children.push(...node.children);
           parent.children = Array.from(new Set(parent.children));
         }
-        for (let childName of node2.children) {
+        for (let childName of node.children) {
           let child = proof[childName];
-          child.parents.splice(child.parents.indexOf(node2.name), 1);
-          child.parents.push(...node2.parents);
+          child.parents.splice(child.parents.indexOf(node.name), 1);
+          child.parents.push(...node.parents);
           child.parents = Array.from(new Set(child.parents));
         }
-        delete window.proof[node2.name];
+        delete window.proof[node.name];
       }
     }
     showGV(proofToGV(window.proof));
