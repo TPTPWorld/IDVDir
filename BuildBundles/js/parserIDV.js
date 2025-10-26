@@ -20,6 +20,7 @@ function interpretationLabel(node){
 }
 
 function getNodeShape(node) {
+<<<<<<< HEAD
     let shapeMap = {
         axiom: "invtriangle",
 		hypothesis: "diamond",
@@ -30,6 +31,18 @@ function getNodeShape(node) {
     if (stripParens(node.formula) == "$false") {
         return "box";
     }
+=======
+	let shapeMap = {
+		axiom: "invtriangle",
+		hypothesis: "diamond",
+		conjecture: "house",
+		negated_conjecture: "invhouse",
+		plain: "ellipse"
+	}
+	if (stripParens(node.formula) == "$false") {
+		return "box";
+	}
+>>>>>>> 5478a280f969f44e7e91d5b503de4cedcb2dc3f3
 
     if (window.interpretation && stripParens(node.formula) == "$true"){
         return "box";
@@ -185,6 +198,7 @@ class Formatter extends Listener {
         window.ctx = ctx;
     }
 
+<<<<<<< HEAD
     process(ctx, type) {
         let role = ctx.formula_role().getText();
         
@@ -201,6 +215,24 @@ class Formatter extends Listener {
             parents: [],
             inference_record: "",
             info: {},
+=======
+	process(ctx, type) {
+		let role = ctx.formula_role().getText();
+		
+		if(!["conjecture", "negated_conjecture", "axiom", "hypothesis", "plain", "type", "theorem"].includes(role)){
+			console.log(`"${role}" role not shown for "${ctx.name().getText()}"`); //@ COMMENTED OUT
+			return;
+		}
+
+		let node = {
+			name: ctx.name().getText(),
+			type: type,
+			role: role,
+			formula: ctx[`${type}_formula`]().getText(),
+			parents: [],
+			inference_record: "",
+			info: {},
+>>>>>>> 5478a280f969f44e7e91d5b503de4cedcb2dc3f3
             level: undefined,
             tptp: ctx.parentCtx.parentCtx.getText()
         };
@@ -331,6 +363,7 @@ let proofToGV = function (nodes) {
     // let clusterColor = 'lightgrey';
     let clusterColor = 'transparent';
 
+<<<<<<< HEAD
     //begin Top Row...
     gvLines.push("subgraph clusterAxioms {");
     gvLines.push(`pencolor=${clusterColor}`);
@@ -341,16 +374,38 @@ let proofToGV = function (nodes) {
     //end Top Row
 
     for(let lang of langs){
+=======
+
+	//begin Top Row...
+	gvLines.push("subgraph clusterAxioms {");
+	gvLines.push(`pencolor=${clusterColor}`);
+	top_row.forEach(nodeToGV(gvLines));
+    if (!window.interpretation)
+	    gvLines.push("{rank=same; " + top_row.map((e) => `"${e.name}"`).join(' ') + "}");
+	gvLines.push("}");
+	//end Top Row
+
+	for(let lang of langs){
+>>>>>>> 5478a280f969f44e7e91d5b503de4cedcb2dc3f3
         if (!window.interpretation){
             gvLines.push(`subgraph cluster${lang}s {`);
             gvLines.push(`pencolor=${clusterColor}`);
         }
         ns[lang].forEach(nodeToGV(gvLines));
         if (!window.interpretation) {
+<<<<<<< HEAD
             gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e) => `"${e.name}"`).join(' ') + `}`);
             gvLines.push(`}`);
         }
     }
+
+=======
+			// console.log("NO INTERPRETATION");
+		    gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e) => { if (e.formula != "$false") return `"${e.name}"`}).join(' ') + `}`);
+		    gvLines.push(`}`);
+        }
+	}
+>>>>>>> 5478a280f969f44e7e91d5b503de4cedcb2dc3f3
 
 
     // Add Level Information to GraphViz
@@ -375,8 +430,13 @@ let proofToGV = function (nodes) {
         node.parents.forEach(function (p) {gvLines.push(`"${p}"` + " -> " + `"${node.name}"` + arrowOrNot)});
     }
 
+<<<<<<< HEAD
     gvLines.push("}");
     return gvLines.join('\n');
+=======
+	gvLines.push("}");
+	return gvLines.join('\n');
+>>>>>>> 5478a280f969f44e7e91d5b503de4cedcb2dc3f3
 }
 
 
@@ -398,7 +458,11 @@ let parseProof = function (proofText) {
     }
     console.log("Finished parsing!")
 
+<<<<<<< HEAD
     let nm = formatter.node_map;
+=======
+	let nm = formatter.node_map;
+>>>>>>> 5478a280f969f44e7e91d5b503de4cedcb2dc3f3
 
     // post-processing of node-map.
     for (let name of Object.keys(nm)) {
