@@ -349,6 +349,7 @@ let proofToGV = function (nodes) {
         }
 		ns[lang].forEach(nodeToGV(gvLines));
         if (!window.interpretation) {
+			// console.log("NO INTERPRETATION");
 		    gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e) => { if (e.formula != "$false") return `"${e.name}"`}).join(' ') + `}`);
 		    gvLines.push(`}`);
         }
