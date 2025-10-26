@@ -23,10 +23,10 @@ function interpretationLabel(node){
 function getNodeShape(node) {
 	let shapeMap = {
 		axiom: "invtriangle",
+		hypothesis: "diamond",
 		conjecture: "house",
 		negated_conjecture: "invhouse",
-		plain: "ellipse",
-		hypothesis: "diamond"
+		plain: "ellipse"
 	}
 	if (stripParens(node.formula) == "$false") {
 		return "box";
@@ -189,14 +189,8 @@ class Formatter extends Listener {
 	process(ctx, type) {
 		let role = ctx.formula_role().getText();
 		
-		//@ D&E ADDED TO FIX THEOREM TYPE
-		// if(!["conjecture", "negated_conjecture", "axiom", "plain", "type"].includes(role)){
-		// 	console.log(`"${role}" role not shown for "${ctx.name().getText()}"`);
-		// 	return;
-		// }
-
-		if(!["conjecture", "negated_conjecture", "axiom", "plain", "type", "theorem", "hypothesis"].includes(role)){
-			// console.log(`"${role}" role not shown for "${ctx.name().getText()}"`); //@ COMMENTED OUT
+		if(!["conjecture", "negated_conjecture", "axiom", "hypothesis", "plain", "type", "theorem"].includes(role)){
+			console.log(`"${role}" role not shown for "${ctx.name().getText()}"`); //@ COMMENTED OUT
 			return;
 		}
 
@@ -255,6 +249,7 @@ class Formatter extends Listener {
 
 }
 
+
 function abbreviate(label){
 	if(label.length > 7){
 		return label.substring(0, 4) + '...'
@@ -287,49 +282,6 @@ function nodeToGV(s) {
 	}
 }
 
-function getAllLevels(other_nodes) {
-	let langs = ["thf", "tff", "tcf", "fof", "cnf"];
-
-	const levels = {};
-	let changed = true;
-
-	// Step 1: assign level 0 to root nodes
-	for (const [name, node] of Object.entries(other_nodes)) {
-		if (!node.parents || node.parents.length === 0) {
-			levels[name] = 0;
-		}
-	}
-
-	// Step 2: propagate levels based on parent depth
-	while (changed) {
-		changed = false;
-		for (const [name, node] of Object.entries(other_nodes)) {
-			if (levels[name] !== undefined) continue;
-			const parents = node.parents || [];
-			if (parents.every(p => levels[p] !== undefined)) {
-				const maxParent = parents.length
-					? Math.max(...parents.map(p => levels[p]))
-					: 0;
-				levels[name] = maxParent + 1;
-				changed = true;
-			}
-		}
-	}
-
-	// Step 3: adjust levels according to language type ordering
-	const groupedLevels = {};
-	for (const [name, lvl] of Object.entries(levels)) {
-		const kind = proof[name].type; // e.g. "fof", "cnf", etc.
-		const langIndex = langs.indexOf(kind);
-		const adjustedLvl = lvl * langs.length + langIndex; 
-		// multiply to separate major ranks, add lang order offset
-
-		if (!groupedLevels[adjustedLvl]) groupedLevels[adjustedLvl] = [];
-		groupedLevels[adjustedLvl].push(name);
-	}
-
-	return groupedLevels;
-}
 
 
 // nodes is a JSON object where the keys are node names.
@@ -380,20 +332,15 @@ let proofToGV = function (nodes) {
     // let clusterColor = 'lightgrey';
     let clusterColor = 'transparent';
 
+
 	//begin Top Row...
 	gvLines.push("subgraph clusterAxioms {");
 	gvLines.push(`pencolor=${clusterColor}`);
 	top_row.forEach(nodeToGV(gvLines));
     if (!window.interpretation)
-	    // gvLines.push("{rank=same; " + top_row.map((e) => `"${e.name}"`).join(' ') + "}");
+	    gvLines.push("{rank=same; " + top_row.map((e) => `"${e.name}"`).join(' ') + "}");
 	gvLines.push("}");
 	//end Top Row
-
-	// groupedLevels = getAllLevels(nodes)
-
-	// for (const [lvl, names] of Object.entries(groupedLevels)) {
-	// 	gvLines.push(`{ rank = same; ${names.map(n => `"${n}"`).join(" ")} }`);
-	// }
 
 	for(let lang of langs){
         if (!window.interpretation){
@@ -402,11 +349,12 @@ let proofToGV = function (nodes) {
         }
 		ns[lang].forEach(nodeToGV(gvLines));
         if (!window.interpretation) {
-			gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e) => `"${e.name}"`).join(' ') + `}`);
-			gvLines.push(`}`);
-		}
-
+			// console.log("NO INTERPRETATION");
+		    gvLines.push(`{rank=same; ` + ns[`top_${lang}`].map((e) => { if (e.formula != "$false") return `"${e.name}"`}).join(' ') + `}`);
+		    gvLines.push(`}`);
+        }
 	}
+
 
     // Add Level Information to GraphViz
     window.levels = {};
@@ -431,9 +379,6 @@ let proofToGV = function (nodes) {
     }
 
 	gvLines.push("}");
-
-	// console.log(gvLines.join('\n'));
-
 	return gvLines.join('\n');
 }
 
@@ -457,7 +402,6 @@ let parseProof = function (proofText) {
 	console.log("Finished parsing!")
 
 	let nm = formatter.node_map;
-	window.formatter = formatter;
 
 	// post-processing of node-map.
 	for (let name of Object.keys(nm)) {
