@@ -1094,6 +1094,15 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by TPTPParser#ntf_defined_connective.
+	enterNtf_defined_connective(ctx) {
+	}
+
+	// Exit a parse tree produced by TPTPParser#ntf_defined_connective.
+	exitNtf_defined_connective(ctx) {
+	}
+
+
 	// Enter a parse tree produced by TPTPParser#ntf_index.
 	enterNtf_index(ctx) {
 	}
@@ -1694,15 +1703,6 @@ export default class TPTPListener extends antlr4.tree.ParseTreeListener {
 
 	// Exit a parse tree produced by TPTPParser#system_functor.
 	exitSystem_functor(ctx) {
-	}
-
-
-	// Enter a parse tree produced by TPTPParser#def_or_sys_constant.
-	enterDef_or_sys_constant(ctx) {
-	}
-
-	// Exit a parse tree produced by TPTPParser#def_or_sys_constant.
-	exitDef_or_sys_constant(ctx) {
 	}
 
 
