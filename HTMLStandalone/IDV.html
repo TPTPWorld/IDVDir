@@ -4,21 +4,23 @@
       src="https://unpkg.com/@hpcc-js/wasm@1.20.1/dist/index.js"
       type="text/javascript"
     ></script>
-<!-- Quite confident this is not needed
-    <script
-      type="javascript/worker"
-      src="https://unpkg.com/viz.js@2.0.0/viz.js"
-    ></script>
--->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/d3-graphviz@4.4.0/build/d3-graphviz.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap">
     <script>
       document.body.onload = function() {
-        window.stuff = document.querySelectorAll("body > pre");
-        window.stuff[0].innerText = "";
-        window.stuff[1].innerText = "";
+  //      window.stuff = document.querySelectorAll("body > pre");
+//        window.stuff[0].innerText = "";
+ //       window.stuff[1].innerText = "";
+
+        const preTags = document.querySelectorAll("body > pre");
+        window.stuff = preTags;
+        for (const tag of preTags){
+            tag.innerText = "";
+
+        }// end of for
+
       };
     </script>
     <script>
@@ -26,17 +28,12 @@
     </script>
 
     <style>
-      title {
-        display: none;
-      }
       html,
       body {
         font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-        margin: 0;
         padding: 0px;
         width: 100%;
         height: 100%;
-        overflow: hidden;
       }
 
       * {
@@ -173,22 +170,9 @@
 
       /* graphviz */
 
-      #graph {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
       #graph svg {
         width: 100%;
         height: 100%;
-        display: block;
-      }
-
-      #index {
-        margin: 10px;
       }
 
       /* generated slider css */
@@ -443,9 +427,6 @@ PROOF_GOES_HERE
             </div>
           </div>
 
-          <div id="back" class="box">
-            <a href=""><h2>Back To Home</h2></a>
-          </div>
         </div>
       </div>
 
@@ -462,10 +443,12 @@ PROOF_GOES_HERE
       <p id="proofText" style="display: none"></p>
 
       <script src="https://tptp.org/CGIFormData/WHICH_BUNDLE.js"></script>
-      <!-- <script src="https://tptp.org/CGIFormData/IDVBundle.js"></script> -->
       <script>
+        window.bundleVersion = "WHICH_BUNDLE";
         window.interestScalingBool = false;
 
+        /*
+        old jack implementation 
         function removeTooltips() {
           // Remove all title tags beneath svg tags to remove tooltips
           let keys = Array.from(document.querySelectorAll("g.node title")).map(
@@ -475,7 +458,7 @@ PROOF_GOES_HERE
 
           // We might have to try again if the graph isn't loaded yet
           if (keys.length < Object.keys(window.proof).length) {
-            setTimeout(removeTooltips, 2000);
+            setTimeout(removeTooltips, 500);
             return;
           }
 
@@ -494,7 +477,56 @@ PROOF_GOES_HERE
           nodes.forEach(function (x, i) {
             x.setAttribute("proofKey", keys[i]);
           });
-        }
+        }// end of removeTooltips
+
+          */
+function removeTooltips() {
+          const graphContainer = document.querySelector("#graph");
+          const targetCount = Object.keys(window.proof).length;
+
+          // cleanup logic
+          const executeRemoval = () => {
+            let graphNodes = document.querySelectorAll("g.node");
+              console.log(`Processing ${graphNodes.length} nodes...`);
+
+            graphNodes.forEach((nodeGroup) => {
+
+              let title = nodeGroup.querySelector("title");
+              
+              let texts = nodeGroup.querySelectorAll("text");
+              if (title) {
+                let key = title.innerHTML;
+             
+                texts.forEach((text) => text.setAttribute("proofKey", key));
+                 title.remove();
+              }
+            });
+          };
+          // end of cleanup logic;
+
+          // if graph ready 
+          if (document.querySelectorAll("g.node").length >= targetCount) {
+            executeRemoval();
+            return;
+          }
+
+          // if not, wait using mut observer
+          const observer = new MutationObserver((mutations, obs) => {
+            
+            const currentNodes = document.querySelectorAll("g.node").length;
+            
+            // once we have enough nodes, run the logic and stop watching
+            if (currentNodes >= targetCount) {
+              executeRemoval();
+              
+              obs.disconnect(); 
+            }
+          });
+
+          // Start watching the graph container for added child elements
+          observer.observe(graphContainer, { childList: true, subtree: true });
+        }// end of removeTooltips
+
 
         if (window.interpretation){
           document.querySelector("#interestingnessOptions").hidden = true;
@@ -509,7 +541,7 @@ PROOF_GOES_HERE
             assignInterestingnessToHeightAndWidth();
             showGV(proofToGV(proof));
             if (window.interpretation) {
-            	// removeTooltips();
+            	removeTooltips();
             }
             // Weird Hacks for initializing gui
             document.querySelector("#settings").children[0].click();
