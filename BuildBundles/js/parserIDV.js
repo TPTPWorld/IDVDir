@@ -26,7 +26,9 @@ function getNodeShape(node) {
 		hypothesis: "diamond",
 		conjecture: "house",
 		negated_conjecture: "invhouse",
-		plain: "ellipse"
+		plain: "ellipse",
+        theorem: "box",
+        lemma: "diamond"
 	}
 	if (stripParens(node.formula) == "$false") {
 		return "box";
@@ -189,7 +191,7 @@ class Formatter extends Listener {
 	process(ctx, type) {
 		let role = ctx.formula_role().getText();
 		
-		if(!["conjecture", "negated_conjecture", "axiom", "hypothesis", "plain", "type", "theorem"].includes(role)){
+		if(!["conjecture", "negated_conjecture", "axiom", "hypothesis", "plain", "type", "lemma", "theorem"].includes(role)){
 			console.log(`"${role}" role not shown for "${ctx.name().getText()}"`); //@ COMMENTED OUT
 			return;
 		}

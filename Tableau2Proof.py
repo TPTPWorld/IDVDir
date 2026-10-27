@@ -1,10 +1,10 @@
-
 import re
 import os
 import argparse
 import requests
 from collections import defaultdict, deque
 from antlr4 import *
+import json
 
 from PythonParser.TPTPLexer import TPTPLexer
 from PythonParser.TPTPParser import TPTPParser
@@ -60,7 +60,7 @@ def get_all_cnfs(filename="input.s"):
     all_cnfs = { 'cnfs' : [], 'others': [] }
 
     for formula in all_formulas:
-        if formula.startswith("cnf(") and "parent" in formula:
+        if formula.startswith("cnf(") and "path" in formula:
             ctx = parse_cnf(formula)
             
             all_cnfs['cnfs'].append(
@@ -72,9 +72,11 @@ def get_all_cnfs(filename="input.s"):
                     # "annotations": inference,
                     "inference_rule": ctx.annotations().source().dag_source().inference_record().inference_rule().getText(),
                     # "useful_info": re.match(pattern, inference).group(2),
-                    "path": ctx.annotations().source().dag_source().inference_record().useful_info().getText().split("parent(")[1].split(")")[0],
-                    "parents": ctx.annotations().source().dag_source().inference_record().parents().getText(),
-                    "below": ctx.annotations().source().dag_source().inference_record().useful_info().getText().split("below(")[1].split(")")[0] if "below" in ctx.annotations().source().dag_source().inference_record().useful_info().getText() else None
+                    "path": ctx.annotations().source().dag_source().inference_record().useful_info().getText().split("path(")[1].split(")")[0],
+                    "path_list": str([ctx.annotations().source().dag_source().inference_record().useful_info().getText().split("path(")[1].split(")")[0].replace("[", "").replace("]", "").split(",")[0]]).replace(" ", ""),
+                    "parents": ctx.annotations().source().dag_source().inference_record().useful_info().getText().split("path(")[1].split(")")[0].replace("[", "").replace("]", "").split(",")[0],
+                    "inference_parents": ctx.annotations().optional_info().getText().split(",")[-1].split(")")[0].strip("[]").split(",")[0],
+                    "below": ctx.annotations().source().dag_source().getText().split("below(")[1].split(")")[0] if "below" in ctx.annotations().source().dag_source().getText() else None
                 }
             )
         else:
@@ -116,7 +118,7 @@ def convert_cnfs(filename="input.s", output_filename=None, delete=False):
     parent = {}
     for cnf in all_cnfs:
         child = cnf['name']
-        par = cnf['path'].split(":")[0]
+        par = cnf['path'].split(":")[0][1:] if cnf['path'].startswith("[") else cnf['path'].split(":")[0]
         parent[child] = par
 
     children = defaultdict(list)
@@ -138,8 +140,6 @@ def convert_cnfs(filename="input.s", output_filename=None, delete=False):
             depth[ch] = depth[node] + 1
             q.append(ch)
             
-    # print(depth)
-            
     # if has delete flag
     if delete:
         output = [STARTING_LINE]
@@ -155,11 +155,11 @@ def convert_cnfs(filename="input.s", output_filename=None, delete=False):
             literals = cnf['formula'].split("|")
             for i, literal in enumerate(literals):
                 if depth[cnf['name']] == 2 and i + 2 <= len(literals): # for second level formulas
-                    if len(cnf['parents'].strip("[]").split(",")) == 1 and ":" not in cnf['parents'].strip("[]").split(",")[0]:
+                    if len(cnf['parents'].strip("[]").split(",")) == 1 and ":" not in cnf['inference_parents'].strip("[]").split(",")[0]:
                         new_formula = f"""
 fof('{cnf['name']}:{i + 1}',plain,
     {literal},
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverParent("{cnf['parents'].strip("[]").split(",")[0]}"),nextTo('{cnf['name']}:{i + 2}')],['{cnf['path']}']), 
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverParent("{cnf['inference_parents']}"),nextTo('{cnf['name']}:{i + 2}')],{cnf['path_list']}), 
     [] ).
                     """
                         output.append(new_formula)
@@ -168,17 +168,17 @@ fof('{cnf['name']}:{i + 1}',plain,
                         new_formula = f"""
 fof('{cnf['name']}:{i + 1}',plain, 
     {literal},
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),nextTo('{cnf['name']}:{i + 2}')],['{cnf['path']}']), 
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),nextTo('{cnf['name']}:{i + 2}')],{cnf['path_list']}), 
     [] ).
                     """
                         output.append(new_formula)
                         continue
-                else:
-                    if len(cnf['parents'].strip("[]").split(",")) == 1 and ":" not in cnf['parents'].strip("[]").split(",")[0]:
+                else: # extensions
+                    if len(cnf['parents'].strip("[]").split(",")) == 1 and ":" not in cnf['inference_parents'].strip("[]").split(",")[0]:
                         new_formula = f"""
 fof('{cnf['name']}:{i + 1}',plain, 
     {literal},
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverParent("{cnf['parents'].strip("[]").split(",")[0]}")],['{cnf['path']}']), 
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverParent("{cnf['inference_parents']}")],{cnf['path_list']}), 
     [] ).
                     """
                         output.append(new_formula)
@@ -187,7 +187,7 @@ fof('{cnf['name']}:{i + 1}',plain,
                         new_formula = f"""
 fof('{cnf['name']}:{i + 1}',plain, 
     {literal},
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]})],['{cnf['path']}']), 
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]})],{cnf['path_list']}), 
     [] ).
                     """
                         output.append(new_formula)
@@ -199,7 +199,7 @@ fof('{cnf['name']}:{i + 1}',plain,
                 new_formula = f"""
 fof('{cnf['name']}:{i + 1}',plain,
     {literal},
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverNode('{cnf['parents'].strip("[]")}')],['{cnf['path']}']), 
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverNode('{cnf['parents'].strip("[]")}')],{cnf['path_list']}),
     [] ).
                 """
                 output.append(new_formula)
@@ -211,7 +211,7 @@ fof('{cnf['name']}:{i + 1}',plain,
                 new_formula = f"""
 tcf({cnf['name']},conjecture,
     {cnf['formula']},
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]})],['{cnf['path']}']),
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]})],{cnf['path_list']}),
     [] ).
                 """
                 output.append(new_formula)
@@ -222,7 +222,7 @@ tcf({cnf['name']},conjecture,
                 new_formula = f"""
 tcf({cnf['name']},conjecture,
     {cnf['formula']},
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverNode('{cnf['parents'].strip("[]").split(",")[0]}')],['{cnf['path']}']),
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverNode('{cnf['parents'].strip("[]").split(",")[0]}')],{cnf['path_list']}),
     [] ).
                 """
                 output.append(new_formula)
@@ -231,25 +231,28 @@ tcf({cnf['name']},conjecture,
             # reduction
             else:
                 new_parents = cnf['parents'].strip("[]").split(",")
-                new_parents.remove(cnf['path'])
+                # print(new_parents)
+                # print(cnf['path'])
+                # new_parents.remove(cnf['path'])
 
                 new_formula = f"""
 tcf({cnf['name']},conjecture, 
     {cnf['formula']}, 
-    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverNode('{new_parents[0]}')],['{cnf['path']}']), 
+    inference({cnf['inference_rule']},[level({depth[cnf['name']]}),hoverNode('{new_parents[0]}')],{cnf['path_list']}), 
     [] ).
                 """
                 output.append(new_formula)
                 continue
 
         elif cnf['inference_rule'] == "lemma": # for lemmas
-            below_level = depth[cnf['below'].split(':')[0]] if cnf['below'].split(':')[0] in depth else 0
+            # below_level = depth[cnf['below'].split(':')[0]] if cnf['below'].split(':')[0] in depth else 0
+            below_level = depth[cnf['below'].split(':')[0]]
             # print(f"Below level for {cnf['name']} ({cnf['below'].split(':')[0]}): {below_level}")
             # print(depth)
             new_formula = f"""
 thf('{cnf['name']}:{1}',axiom, 
     {cnf['formula']}, 
-    inference({cnf['inference_rule']},[level({below_level}),nextTo('{cnf['path']}'),below({cnf['below']})],['{cnf['path']}']), 
+    inference({cnf['inference_rule']},[level({below_level}),nextTo('{cnf['parents']}'),below('{cnf['below']}')],{cnf['path_list']}), 
     [] ).
             """
             output.append(new_formula)
@@ -279,6 +282,7 @@ def has_errors(input_file):
     f.close()
 
     files = {
+        'NoHTML': (None, '1'),
         'TPTPProblem': (None, ''),
         'ProblemSource': (None, 'FORMULAE'),
         'FORMULAEProblem': (None, inp),
@@ -287,139 +291,21 @@ def has_errors(input_file):
         'InputFormat': (None, 'TPTP'),
         'QuietFlag': (None, '-q01'),
         'SubmitButton': (None, 'ProcessProblem'),
-        'TimeLimit___AddTypes---1.2.4': (None, '60'),
-        'Transform___AddTypes---1.2.4': (None, 'none'),
-        'Format___AddTypes---1.2.4': (None, 'tptp:raw'),
-        'Command___AddTypes---1.2.4': (None, 'run_addtypes %s'),
-        'TimeLimit___ASk---0.2.3': (None, '60'),
-        'Transform___ASk---0.2.3': (None, 'none'),
-        'Format___ASk---0.2.3': (None, 'tptp:raw'),
-        'Command___ASk---0.2.3': (None, 'run_ASk %s'),
-        'TimeLimit___BNFParser---0.0': (None, '60'),
-        'Transform___BNFParser---0.0': (None, 'none'),
-        'Format___BNFParser---0.0': (None, 'tptp:raw'),
-        'Command___BNFParser---0.0': (None, 'BNFParser %s'),
-        'TimeLimit___BNFParserTree---0.0': (None, '60'),
-        'Transform___BNFParserTree---0.0': (None, 'none'),
-        'Format___BNFParserTree---0.0': (None, 'tptp:raw'),
-        'Command___BNFParserTree---0.0': (None, 'BNFParserTree %s'),
-        'TimeLimit___CheckTyping---0.0': (None, '60'),
-        'Transform___CheckTyping---0.0': (None, 'none'),
-        'Format___CheckTyping---0.0': (None, 'tptp:raw'),
-        'Command___CheckTyping---0.0': (None, 'CheckTyping -all %s'),
-        'TimeLimit___ECNF---3.2.5': (None, '60'),
-        'Transform___ECNF---3.2.5': (None, 'none'),
-        'Format___ECNF---3.2.5': (None, 'tptp:raw'),
-        'Command___ECNF---3.2.5': (None, 'run_ECNF %d %s'),
-        'TimeLimit___EGround---3.2.5': (None, '60'),
-        'Transform___EGround---3.2.5': (None, 'add_equality'),
-        'Format___EGround---3.2.5': (None, 'tptp:raw'),
-        'Command___EGround---3.2.5': (None, 'eground --tstp-in --tstp-out --silent --resources-info --split-tries=100 --memory-limit=200 --soft-cpu-limit=%d --add-one-instance --constraints %s'),
-        'TimeLimit___ESelect---3.2.5': (None, '60'),
-        'Transform___ESelect---3.2.5': (None, 'none'),
-        'Format___ESelect---3.2.5': (None, 'tptp:raw'),
-        'Command___ESelect---3.2.5': (None, 'eprover --sine=Auto --prune %s'),
-        'TimeLimit___GetSymbols---0.0': (None, '60'),
-        'Transform___GetSymbols---0.0': (None, 'none'),
-        'Format___GetSymbols---0.0': (None, 'tptp:raw'),
-        'Command___GetSymbols---0.0': (None, 'GetSymbols -all %s'),
-        'TimeLimit___Horn2UEQ---0.4.1': (None, '60'),
-        'Transform___Horn2UEQ---0.4.1': (None, 'none'),
-        'Format___Horn2UEQ---0.4.1': (None, 'tptp:raw'),
-        'Command___Horn2UEQ---0.4.1': (None, 'jukebox_horn2ueq %s'),
-        'TimeLimit___Isabelle---2FOF': (None, '60'),
-        'Transform___Isabelle---2FOF': (None, 'none'),
-        'Format___Isabelle---2FOF': (None, 'tptp'),
-        'Command___Isabelle---2FOF': (None, 'run_isabelle_2X FOF %s'),
-        'TimeLimit___Isabelle---2TF0': (None, '60'),
-        'Transform___Isabelle---2TF0': (None, 'none'),
-        'Format___Isabelle---2TF0': (None, 'tptp'),
-        'Command___Isabelle---2TF0': (None, 'run_isabelle_2X TF0 %s'),
-        'TimeLimit___Isabelle---2TH0': (None, '60'),
-        'Transform___Isabelle---2TH0': (None, 'none'),
-        'Format___Isabelle---2TH0': (None, 'tptp'),
-        'Command___Isabelle---2TH0': (None, 'run_isabelle_2X TH0 %s'),
-        'TimeLimit___Leo-III-STC---1.7.18': (None, '60'),
-        'Transform___Leo-III-STC---1.7.18': (None, 'none'),
-        'Format___Leo-III-STC---1.7.18': (None, 'tptp:raw'),
-        'Command___Leo-III-STC---1.7.18': (None, 'run_Leo-III %s %d STC'),
-        'TimeLimit___Monotonox---0.4.1': (None, '60'),
-        'Transform___Monotonox---0.4.1': (None, 'none'),
-        'Format___Monotonox---0.4.1': (None, 'tptp:raw'),
-        'Command___Monotonox---0.4.1': (None, 'jukebox monotonox %s'),
-        'TimeLimit___Monotonox-2CNF---0.4.1': (None, '60'),
-        'Transform___Monotonox-2CNF---0.4.1': (None, 'none'),
-        'Format___Monotonox-2CNF---0.4.1': (None, 'tptp:raw'),
-        'Command___Monotonox-2CNF---0.4.1': (None, 'jukebox_cnf %s'),
-        'TimeLimit___Monotonox-2FOF---0.4.1': (None, '60'),
-        'Transform___Monotonox-2FOF---0.4.1': (None, 'none'),
-        'Format___Monotonox-2FOF---0.4.1': (None, 'tptp:raw'),
-        'Command___Monotonox-2FOF---0.4.1': (None, 'jukebox_fof %s'),
-        'TimeLimit___NTFLET---1.8.5': (None, '60'),
-        'Transform___NTFLET---1.8.5': (None, 'none'),
-        'Format___NTFLET---1.8.5': (None, 'tptp:raw'),
-        'Command___NTFLET---1.8.5': (None, 'run_embed %s'),
-        'TimeLimit___ProblemStats---1.0': (None, '60'),
-        'Transform___ProblemStats---1.0': (None, 'none'),
-        'Format___ProblemStats---1.0': (None, 'tptp:raw'),
-        'Command___ProblemStats---1.0': (None, 'run_MakeListStats %s'),
-        'TimeLimit___Prophet---0.0': (None, '60'),
-        'Transform___Prophet---0.0': (None, 'none'),
-        'Format___Prophet---0.0': (None, 'tptp'),
-        'Command___Prophet---0.0': (None, 'prophet %s'),
-        'TimeLimit___Saffron---4.5': (None, '60'),
-        'Transform___Saffron---4.5': (None, 'none'),
-        'Format___Saffron---4.5': (None, 'tptp:raw'),
-        'Command___Saffron---4.5': (None, 'run_saffron %s %d'),
-        'TimeLimit___SPCForProblem---1.0': (None, '60'),
-        'Transform___SPCForProblem---1.0': (None, 'none'),
-        'Format___SPCForProblem---1.0': (None, 'tptp:raw'),
-        'Command___SPCForProblem---1.0': (None, 'run_SPCForProblem %s'),
-        'TimeLimit___TPII---0.0': (None, '60'),
-        'Transform___TPII---0.0': (None, 'none'),
-        'Format___TPII---0.0': (None, 'tptp:raw'),
-        'Command___TPII---0.0': (None, 'TPII %s'),
-        'TimeLimit___TPTP2JSON---0.1': (None, '60'),
-        'Transform___TPTP2JSON---0.1': (None, 'none'),
-        'Format___TPTP2JSON---0.1': (None, 'tptp:raw'),
-        'Command___TPTP2JSON---0.1': (None, 'run_tptp2json %s'),
-        'TimeLimit___TPTP2X---0.0': (None, '60'),
-        'Transform___TPTP2X---0.0': (None, 'none'),
-        'Format___TPTP2X---0.0': (None, 'tptp:raw'),
-        'Command___TPTP2X---0.0': (None, 'tptp2X -q2 -d- %s'),
-        'TimeLimit___TPTP4X---0.0': (None, '60'),
-        'Transform___TPTP4X---0.0': (None, 'none'),
-        'Format___TPTP4X---0.0': (None, 'tptp:raw'),
-        'Command___TPTP4X---0.0': (None, 'tptp4X %s'),
-        'TimeLimit___VCNF---4.8': (None, '60'),
-        'Transform___VCNF---4.8': (None, 'none'),
-        'Format___VCNF---4.8': (None, 'tptp:raw'),
-        'Command___VCNF---4.8': (None, 'run_vclausify_rel %s %d'),
-        'TimeLimit___VSelect---4.4': (None, '60'),
-        'Transform___VSelect---4.4': (None, 'none'),
-        'Format___VSelect---4.4': (None, 'tptp:raw'),
-        'Command___VSelect---4.4': (None, 'run_sine_select %s'),
-        'TimeLimit___Why3-FOF---0.85': (None, '60'),
-        'Transform___Why3-FOF---0.85': (None, 'none'),
-        'Format___Why3-FOF---0.85': (None, 'tptp:raw'),
-        'Command___Why3-FOF---0.85': (None, 'bin/why3 prove -F tptp -C /home/tptp/Systems/Why3---0.85/why3.conf -D /home/tptp/Systems/Why3---0.85/Source/drivers/tptp.gen %s'),
-        'TimeLimit___Why3-TF0---0.85': (None, '60'),
-        'Transform___Why3-TF0---0.85': (None, 'none'),
-        'Format___Why3-TF0---0.85': (None, 'tptp:raw'),
-        'Command___Why3-TF0---0.85': (None, 'bin/why3 prove -F tptp -C /home/tptp/Systems/Why3---0.85/why3.conf -D /home/tptp/Systems/Why3---0.85/Source/drivers/tptp-tff0.drv %s'),
     }
 
     response = requests.post('https://tptp.org/cgi-bin/SystemOnTPTPFormReply', files=files)
+    # print(f"---- The post returned ----\n{response.text}\n-------------------")
     match = re.search(r'<body[^>]*>(.*?)</body>', response.text, re.DOTALL | re.IGNORECASE)
+    match = re.search(r'% START OF SYSTEM OUTPUT(.*?)% END OF SYSTEM OUTPUT', response.text, re.DOTALL | re.IGNORECASE)
 
     if match:
         body_text = match.group(1)
-        if "% No errors" in response.text:
-            return (False, body_text)
-        else:
+        if "ERROR:" in response.text:
             return (True, body_text)
+        else:
+            return (False, body_text)
     else:
-        print("Error")
+        print("Error extracting SYSTEM OUTPUT")
         exit()
 
 parser = argparse.ArgumentParser(description="Process one input file and one output file.")
@@ -448,6 +334,6 @@ if not has_error:
             convert_cnfs(args.input_file, delete=False)
     print(f"% SZS output end ListOfFormulae for {args.input_file}")
 else:
-    print(f"% SZS status Error")
+    print("% SZS status Error")
     print(f"% {error_text}")
 
